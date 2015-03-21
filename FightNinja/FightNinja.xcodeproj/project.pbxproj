@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8D725B01952E0EF005B7011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D725AF1952E0EF005B7011 /* AppDelegate.swift */; };
+		D8D725B21952E0EF005B7011 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D8D725B11952E0EF005B7011 /* GameScene.sks */; };
+		D8D725B41952E0EF005B7011 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D725B31952E0EF005B7011 /* GameScene.swift */; };
+		D8D725B61952E0EF005B7011 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D725B51952E0EF005B7011 /* GameViewController.swift */; };
+		D8D725B91952E0EF005B7011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D725B71952E0EF005B7011 /* Main.storyboard */; };
+		D8D725BB1952E0EF005B7011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D725BA1952E0EF005B7011 /* Images.xcassets */; };
+		D8D725C71952E0EF005B7011 /* FightNinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D725C61952E0EF005B7011 /* FightNinjaTests.swift */; };
+		D8D9F8F71954046B003C5ED0 /* AppWarpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9F8F61954046B003C5ED0 /* AppWarpHelper.swift */; };
+		D8D9F8F9195404A2003C5ED0 /* ConnectionListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9F8F8195404A2003C5ED0 /* ConnectionListener.swift */; };
+		D8D9F8FB195414E0003C5ED0 /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D9F8FA195414E0003C5ED0 /* AppWarp_iOS_SDK.framework */; };
+		D8D9F9011954254C003C5ED0 /* ZoneListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9F9001954254C003C5ED0 /* ZoneListener.swift */; };
+		D8D9F90319542586003C5ED0 /* RoomListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9F90219542586003C5ED0 /* RoomListener.swift */; };
+		D8D9F905195425B0003C5ED0 /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9F904195425B0003C5ED0 /* NotificationListener.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8D725C11952E0EF005B7011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8D725A21952E0EF005B7011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8D725A91952E0EF005B7011;
+			remoteInfo = FightNinja;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8D725AA1952E0EF005B7011 /* FightNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FightNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D725AE1952E0EF005B7011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D725AF1952E0EF005B7011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8D725B11952E0EF005B7011 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		D8D725B31952E0EF005B7011 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D8D725B51952E0EF005B7011 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D8D725B81952E0EF005B7011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8D725BA1952E0EF005B7011 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D8D725C01952E0EF005B7011 /* FightNinjaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FightNinjaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D725C51952E0EF005B7011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D725C61952E0EF005B7011 /* FightNinjaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightNinjaTests.swift; sourceTree = "<group>"; };
+		D8D9F8F61954046B003C5ED0 /* AppWarpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWarpHelper.swift; sourceTree = "<group>"; };
+		D8D9F8F8195404A2003C5ED0 /* ConnectionListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListener.swift; sourceTree = "<group>"; };
+		D8D9F8FA195414E0003C5ED0 /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
+		D8D9F8FC19541518003C5ED0 /* FightNinja-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FightNinja-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8D9F9001954254C003C5ED0 /* ZoneListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneListener.swift; sourceTree = "<group>"; };
+		D8D9F90219542586003C5ED0 /* RoomListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListener.swift; sourceTree = "<group>"; };
+		D8D9F904195425B0003C5ED0 /* NotificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8D725A71952E0EF005B7011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D9F8FB195414E0003C5ED0 /* AppWarp_iOS_SDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D725BD1952E0EF005B7011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8D725A11952E0EF005B7011 = {
+			isa = PBXGroup;
+			children = (
+				D8D725AC1952E0EF005B7011 /* FightNinja */,
+				D8D725C31952E0EF005B7011 /* FightNinjaTests */,
+				D8D725AB1952E0EF005B7011 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8D725AB1952E0EF005B7011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8D725AA1952E0EF005B7011 /* FightNinja.app */,
+				D8D725C01952E0EF005B7011 /* FightNinjaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8D725AC1952E0EF005B7011 /* FightNinja */ = {
+			isa = PBXGroup;
+			children = (
+				D8D9F8F519540351003C5ED0 /* AppWarpHelperClasses */,
+				D8D725AF1952E0EF005B7011 /* AppDelegate.swift */,
+				D8D725B11952E0EF005B7011 /* GameScene.sks */,
+				D8D725B31952E0EF005B7011 /* GameScene.swift */,
+				D8D725B51952E0EF005B7011 /* GameViewController.swift */,
+				D8D725B71952E0EF005B7011 /* Main.storyboard */,
+				D8D725BA1952E0EF005B7011 /* Images.xcassets */,
+				D8D725AD1952E0EF005B7011 /* Supporting Files */,
+			);
+			path = FightNinja;
+			sourceTree = "<group>";
+		};
+		D8D725AD1952E0EF005B7011 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8D725AE1952E0EF005B7011 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8D725C31952E0EF005B7011 /* FightNinjaTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8D725C61952E0EF005B7011 /* FightNinjaTests.swift */,
+				D8D725C41952E0EF005B7011 /* Supporting Files */,
+			);
+			path = FightNinjaTests;
+			sourceTree = "<group>";
+		};
+		D8D725C41952E0EF005B7011 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8D725C51952E0EF005B7011 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8D9F8F519540351003C5ED0 /* AppWarpHelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D8D9F8FA195414E0003C5ED0 /* AppWarp_iOS_SDK.framework */,
+				D8D9F8F61954046B003C5ED0 /* AppWarpHelper.swift */,
+				D8D9F8F8195404A2003C5ED0 /* ConnectionListener.swift */,
+				D8D9F9001954254C003C5ED0 /* ZoneListener.swift */,
+				D8D9F90219542586003C5ED0 /* RoomListener.swift */,
+				D8D9F904195425B0003C5ED0 /* NotificationListener.swift */,
+				D8D9F8FC19541518003C5ED0 /* FightNinja-Bridging-Header.h */,
+			);
+			path = AppWarpHelperClasses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8D725A91952E0EF005B7011 /* FightNinja */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8D725CA1952E0EF005B7011 /* Build configuration list for PBXNativeTarget "FightNinja" */;
+			buildPhases = (
+				D8D725A61952E0EF005B7011 /* Sources */,
+				D8D725A71952E0EF005B7011 /* Frameworks */,
+				D8D725A81952E0EF005B7011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FightNinja;
+			productName = FightNinja;
+			productReference = D8D725AA1952E0EF005B7011 /* FightNinja.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8D725BF1952E0EF005B7011 /* FightNinjaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8D725CD1952E0F0005B7011 /* Build configuration list for PBXNativeTarget "FightNinjaTests" */;
+			buildPhases = (
+				D8D725BC1952E0EF005B7011 /* Sources */,
+				D8D725BD1952E0EF005B7011 /* Frameworks */,
+				D8D725BE1952E0EF005B7011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8D725C21952E0EF005B7011 /* PBXTargetDependency */,
+			);
+			name = FightNinjaTests;
+			productName = FightNinjaTests;
+			productReference = D8D725C01952E0EF005B7011 /* FightNinjaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8D725A21952E0EF005B7011 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Shephertz;
+				TargetAttributes = {
+					D8D725A91952E0EF005B7011 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					D8D725BF1952E0EF005B7011 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = D8D725A91952E0EF005B7011;
+					};
+				};
+			};
+			buildConfigurationList = D8D725A51952E0EF005B7011 /* Build configuration list for PBXProject "FightNinja" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8D725A11952E0EF005B7011;
+			productRefGroup = D8D725AB1952E0EF005B7011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8D725A91952E0EF005B7011 /* FightNinja */,
+				D8D725BF1952E0EF005B7011 /* FightNinjaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8D725A81952E0EF005B7011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D725BB1952E0EF005B7011 /* Images.xcassets in Resources */,
+				D8D725B21952E0EF005B7011 /* GameScene.sks in Resources */,
+				D8D725B91952E0EF005B7011 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D725BE1952E0EF005B7011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8D725A61952E0EF005B7011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D725B41952E0EF005B7011 /* GameScene.swift in Sources */,
+				D8D9F9011954254C003C5ED0 /* ZoneListener.swift in Sources */,
+				D8D9F905195425B0003C5ED0 /* NotificationListener.swift in Sources */,
+				D8D9F8F71954046B003C5ED0 /* AppWarpHelper.swift in Sources */,
+				D8D9F8F9195404A2003C5ED0 /* ConnectionListener.swift in Sources */,
+				D8D9F90319542586003C5ED0 /* RoomListener.swift in Sources */,
+				D8D725B61952E0EF005B7011 /* GameViewController.swift in Sources */,
+				D8D725B01952E0EF005B7011 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D725BC1952E0EF005B7011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D725C71952E0EF005B7011 /* FightNinjaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8D725C21952E0EF005B7011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8D725A91952E0EF005B7011 /* FightNinja */;
+			targetProxy = D8D725C11952E0EF005B7011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8D725B71952E0EF005B7011 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8D725B81952E0EF005B7011 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8D725C81952E0EF005B7011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8D725C91952E0EF005B7011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8D725CB1952E0EF005B7011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FightNinja/AppWarpHelperClasses",
+				);
+				INFOPLIST_FILE = FightNinja/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FightNinja/AppWarpHelperClasses/FightNinja-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D8D725CC1952E0F0005B7011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FightNinja/AppWarpHelperClasses",
+				);
+				INFOPLIST_FILE = FightNinja/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FightNinja/AppWarpHelperClasses/FightNinja-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		D8D725CE1952E0F0005B7011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FightNinja.app/FightNinja";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FightNinjaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		D8D725CF1952E0F0005B7011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FightNinja.app/FightNinja";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FightNinjaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8D725A51952E0EF005B7011 /* Build configuration list for PBXProject "FightNinja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8D725C81952E0EF005B7011 /* Debug */,
+				D8D725C91952E0EF005B7011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8D725CA1952E0EF005B7011 /* Build configuration list for PBXNativeTarget "FightNinja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8D725CB1952E0EF005B7011 /* Debug */,
+				D8D725CC1952E0F0005B7011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8D725CD1952E0F0005B7011 /* Build configuration list for PBXNativeTarget "FightNinjaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8D725CE1952E0F0005B7011 /* Debug */,
+				D8D725CF1952E0F0005B7011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8D725A21952E0EF005B7011 /* Project object */;
+}
