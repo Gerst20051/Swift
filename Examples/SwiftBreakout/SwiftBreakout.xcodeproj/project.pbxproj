@@ -11,7 +11,6 @@
 		93574F05193D5AFC00493FA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93574F04193D5AFC00493FA9 /* ViewController.swift */; };
 		93574F08193D5AFC00493FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93574F06193D5AFC00493FA9 /* Main.storyboard */; };
 		93574F0A193D5AFC00493FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93574F09193D5AFC00493FA9 /* Images.xcassets */; };
-		93574F16193D5AFD00493FA9 /* SwiftBreakoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93574F15193D5AFD00493FA9 /* SwiftBreakoutTests.swift */; };
 		935D405D193DAA38008C14A7 /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D405C193DAA38008C14A7 /* MyScene.swift */; };
 		935D4063193E0C48008C14A7 /* Basso.caf in Resources */ = {isa = PBXBuildFile; fileRef = 935D405E193E0C48008C14A7 /* Basso.caf */; };
 		935D4064193E0C48008C14A7 /* Ping.caf in Resources */ = {isa = PBXBuildFile; fileRef = 935D405F193E0C48008C14A7 /* Ping.caf */; };
@@ -37,9 +36,6 @@
 		93574F04193D5AFC00493FA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93574F07193D5AFC00493FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93574F09193D5AFC00493FA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		93574F0F193D5AFD00493FA9 /* SwiftBreakoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftBreakoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		93574F14193D5AFD00493FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93574F15193D5AFD00493FA9 /* SwiftBreakoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBreakoutTests.swift; sourceTree = "<group>"; };
 		935D405C193DAA38008C14A7 /* MyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
 		935D405E193E0C48008C14A7 /* Basso.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Basso.caf; sourceTree = "<group>"; };
 		935D405F193E0C48008C14A7 /* Ping.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ping.caf; sourceTree = "<group>"; };
@@ -71,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				93574EFF193D5AFC00493FA9 /* SwiftBreakout */,
-				93574F12193D5AFD00493FA9 /* SwiftBreakoutTests */,
 				93574EFE193D5AFC00493FA9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				93574EFD193D5AFC00493FA9 /* SwiftBreakout.app */,
-				93574F0F193D5AFD00493FA9 /* SwiftBreakoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,23 +106,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		93574F12193D5AFD00493FA9 /* SwiftBreakoutTests */ = {
-			isa = PBXGroup;
-			children = (
-				93574F15193D5AFD00493FA9 /* SwiftBreakoutTests.swift */,
-				93574F13193D5AFD00493FA9 /* Supporting Files */,
-			);
-			path = SwiftBreakoutTests;
-			sourceTree = "<group>";
-		};
-		93574F13193D5AFD00493FA9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				93574F14193D5AFD00493FA9 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,24 +125,6 @@
 			productName = Xcode6Test;
 			productReference = 93574EFD193D5AFC00493FA9 /* SwiftBreakout.app */;
 			productType = "com.apple.product-type.application";
-		};
-		93574F0E193D5AFD00493FA9 /* SwiftBreakoutTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93574F1C193D5AFD00493FA9 /* Build configuration list for PBXNativeTarget "SwiftBreakoutTests" */;
-			buildPhases = (
-				93574F0B193D5AFD00493FA9 /* Sources */,
-				93574F0C193D5AFD00493FA9 /* Frameworks */,
-				93574F0D193D5AFD00493FA9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				93574F11193D5AFD00493FA9 /* PBXTargetDependency */,
-			);
-			name = SwiftBreakoutTests;
-			productName = Xcode6TestTests;
-			productReference = 93574F0F193D5AFD00493FA9 /* SwiftBreakoutTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -243,7 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93574F16193D5AFD00493FA9 /* SwiftBreakoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
