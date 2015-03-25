@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Photog" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartViewControllerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="77x-YL-4zV">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqG-X7-2yY">
+                    <rect key="frame" x="10" y="560" width="580" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="vTE-Cc-zEJ"/>
+                    </constraints>
+                    <state key="normal" title="Sign In">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="vtB-bZ-9BJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSR-Kt-ppA">
+                    <rect key="frame" x="10" y="520" width="580" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="gCq-g2-LvK"/>
+                    </constraints>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapSignUp:" destination="-1" eventType="touchUpInside" id="8de-KA-gzy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="iqG-X7-2yY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4a0-16-M9S"/>
+                <constraint firstAttribute="trailing" secondItem="lSR-Kt-ppA" secondAttribute="trailing" constant="10" id="8Se-jQ-C2e"/>
+                <constraint firstAttribute="trailing" secondItem="77x-YL-4zV" secondAttribute="trailing" id="DYe-O1-a9R"/>
+                <constraint firstAttribute="bottom" secondItem="iqG-X7-2yY" secondAttribute="bottom" constant="10" id="FXd-FH-rhq"/>
+                <constraint firstAttribute="bottom" secondItem="77x-YL-4zV" secondAttribute="bottom" id="NBr-vq-3fG"/>
+                <constraint firstItem="77x-YL-4zV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xej-Dx-R9c"/>
+                <constraint firstItem="77x-YL-4zV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="epx-S7-K1R"/>
+                <constraint firstItem="iqG-X7-2yY" firstAttribute="top" secondItem="lSR-Kt-ppA" secondAttribute="bottom" constant="10" id="h9b-Xa-vuf"/>
+                <constraint firstItem="lSR-Kt-ppA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="ibF-5t-2YM"/>
+                <constraint firstAttribute="trailing" secondItem="iqG-X7-2yY" secondAttribute="trailing" constant="10" id="tWr-r0-ngW"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="StartViewControllerBackground" width="320" height="480"/>
+    </resources>
+</document>
