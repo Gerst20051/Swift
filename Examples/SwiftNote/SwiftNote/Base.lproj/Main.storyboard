@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JLg-k7-edh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JLg-k7-edh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Notes Table View Controller - SwiftNote-->
+        <!--SwiftNote-->
         <scene sceneID="FHf-Q9-m0b">
             <objects>
                 <tableViewController id="zLZ-dl-P42" customClass="NotesTableViewController" customModule="SwiftNote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UUl-BX-gKJ">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ruid_notesTableViewCell" rowHeight="70" id="ogT-5N-2l4" customClass="NotesTableViewCell" customModule="SwiftNote" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ruid_notesTableViewCell" rowHeight="70" id="ogT-5N-2l4" customClass="NotesTableViewCell" customModule="SwiftNote" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ogT-5N-2l4" id="3gD-4B-pYG">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -66,11 +65,11 @@
                         <viewControllerLayoutGuide type="bottom" id="lIK-ca-4ab"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3hV-4x-SSg">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJo-2Q-Lrt">
-                                <rect key="frame" x="20" y="76" width="440" height="30"/>
+                                <rect key="frame" x="20" y="76" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="83J-SJ-SlA"/>
                                 </constraints>
@@ -78,12 +77,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tap to edit body" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-oM-v4X">
-                                <rect key="frame" x="20" y="108" width="440" height="17"/>
+                                <rect key="frame" x="20" y="108" width="560" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wut-IK-uxR">
-                                <rect key="frame" x="20" y="109" width="440" height="351"/>
+                                <rect key="frame" x="20" y="109" width="560" height="471"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -105,7 +104,6 @@
                             <constraint firstAttribute="trailing" secondItem="DJo-2Q-Lrt" secondAttribute="trailing" constant="20" symbolic="YES" id="lsQ-XZ-LHo"/>
                             <constraint firstItem="2bb-oM-v4X" firstAttribute="top" secondItem="qTz-pY-y1F" secondAttribute="bottom" constant="44" id="yOR-Wb-jq5"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="bodyTextView" destination="wut-IK-uxR" id="syD-km-XOv"/>
