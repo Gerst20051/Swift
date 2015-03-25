@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354C7FEE19DC582500FEA51F /* Pig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C7FED19DC582500FEA51F /* Pig.swift */; };
 		EE21910A19A8A94200002108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21910919A8A94200002108 /* AppDelegate.swift */; };
 		EE21910E19A8A94200002108 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21910D19A8A94200002108 /* GameScene.swift */; };
 		EE21911019A8A94200002108 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21910F19A8A94200002108 /* GameViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		354C7FED19DC582500FEA51F /* Pig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pig.swift; sourceTree = "<group>"; };
 		EE21910419A8A94200002108 /* Hogville.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hogville.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE21910819A8A94200002108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE21910919A8A94200002108 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -81,6 +83,7 @@
 			children = (
 				EE21910919A8A94200002108 /* AppDelegate.swift */,
 				EE21910D19A8A94200002108 /* GameScene.swift */,
+				354C7FED19DC582500FEA51F /* Pig.swift */,
 				EE21910F19A8A94200002108 /* GameViewController.swift */,
 				EE21911119A8A94200002108 /* Main.storyboard */,
 				EE21912A19A8A9B800002108 /* sprites.atlas */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				354C7FEE19DC582500FEA51F /* Pig.swift in Sources */,
 				EE21910E19A8A94200002108 /* GameScene.swift in Sources */,
 				EE21911019A8A94200002108 /* GameViewController.swift in Sources */,
 				EE21910A19A8A94200002108 /* AppDelegate.swift in Sources */,
@@ -403,6 +407,7 @@
 				EE21912619A8A94200002108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE21912719A8A94200002108 /* Build configuration list for PBXNativeTarget "HogvilleTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +416,7 @@
 				EE21912919A8A94200002108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

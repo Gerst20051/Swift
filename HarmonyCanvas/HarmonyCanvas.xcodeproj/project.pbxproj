@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		49DB7B361AC28A2100EAA7D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */; };
-		49DB7B381AC28A2200EAA7D6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DB7B371AC28A2200EAA7D6 /* art.scnassets */; };
 		49DB7B3A1AC28A2200EAA7D6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */; };
 		49DB7B3D1AC28A2200EAA7D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DB7B3B1AC28A2200EAA7D6 /* Main.storyboard */; };
 		49DB7B3F1AC28A2200EAA7D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */; };
@@ -30,7 +29,6 @@
 		49DB7B301AC28A2100EAA7D6 /* HarmonyCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarmonyCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DB7B341AC28A2100EAA7D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49DB7B371AC28A2200EAA7D6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		49DB7B3C1AC28A2200EAA7D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */,
-				49DB7B371AC28A2200EAA7D6 /* art.scnassets */,
 				49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */,
 				49DB7B3B1AC28A2200EAA7D6 /* Main.storyboard */,
 				49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */,
@@ -197,7 +194,6 @@
 			files = (
 				49DB7B421AC28A2200EAA7D6 /* LaunchScreen.xib in Resources */,
 				49DB7B3F1AC28A2200EAA7D6 /* Images.xcassets in Resources */,
-				49DB7B381AC28A2200EAA7D6 /* art.scnassets in Resources */,
 				49DB7B3D1AC28A2200EAA7D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +407,7 @@
 				49DB7B531AC28A2200EAA7D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49DB7B541AC28A2200EAA7D6 /* Build configuration list for PBXNativeTarget "HarmonyCanvasTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +416,7 @@
 				49DB7B561AC28A2200EAA7D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
