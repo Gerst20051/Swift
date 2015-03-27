@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49CE722B1AC328BA00F039F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CE72261AC328BA00F039F5 /* Main.storyboard */; };
+		49CE722C1AC328BA00F039F5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CE72281AC328BA00F039F5 /* GameScene.swift */; };
+		49CE722E1AC328BA00F039F5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CE722A1AC328BA00F039F5 /* Line.swift */; };
+		49CE72301AC522C500F039F5 /* DynamicLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CE722F1AC522C500F039F5 /* DynamicLine.swift */; };
 		49DB7B361AC28A2100EAA7D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */; };
 		49DB7B3A1AC28A2200EAA7D6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */; };
 		49DB7B3D1AC28A2200EAA7D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DB7B3B1AC28A2200EAA7D6 /* Main.storyboard */; };
 		49DB7B3F1AC28A2200EAA7D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */; };
-		49DB7B421AC28A2200EAA7D6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DB7B401AC28A2200EAA7D6 /* LaunchScreen.xib */; };
 		49DB7B4E1AC28A2200EAA7D6 /* HarmonyCanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB7B4D1AC28A2200EAA7D6 /* HarmonyCanvasTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,13 +29,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49CE72271AC328BA00F039F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		49CE72281AC328BA00F039F5 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		49CE722A1AC328BA00F039F5 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		49CE722F1AC522C500F039F5 /* DynamicLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLine.swift; sourceTree = "<group>"; };
 		49DB7B301AC28A2100EAA7D6 /* HarmonyCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarmonyCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DB7B341AC28A2100EAA7D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		49DB7B3C1AC28A2200EAA7D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		49DB7B411AC28A2200EAA7D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49DB7B471AC28A2200EAA7D6 /* HarmonyCanvasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonyCanvasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DB7B4C1AC28A2200EAA7D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DB7B4D1AC28A2200EAA7D6 /* HarmonyCanvasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonyCanvasTests.swift; sourceTree = "<group>"; };
@@ -56,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49CE72251AC328BA00F039F5 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				49CE72261AC328BA00F039F5 /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
 		49DB7B271AC28A2100EAA7D6 = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +92,13 @@
 			isa = PBXGroup;
 			children = (
 				49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */,
+				49CE72251AC328BA00F039F5 /* Base.lproj */,
+				49CE722F1AC522C500F039F5 /* DynamicLine.swift */,
+				49CE72281AC328BA00F039F5 /* GameScene.swift */,
 				49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */,
-				49DB7B3B1AC28A2200EAA7D6 /* Main.storyboard */,
 				49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */,
-				49DB7B401AC28A2200EAA7D6 /* LaunchScreen.xib */,
+				49CE722A1AC328BA00F039F5 /* Line.swift */,
+				49DB7B3B1AC28A2200EAA7D6 /* Main.storyboard */,
 				49DB7B331AC28A2100EAA7D6 /* Supporting Files */,
 			);
 			path = HarmonyCanvas;
@@ -192,7 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DB7B421AC28A2200EAA7D6 /* LaunchScreen.xib in Resources */,
+				49CE722B1AC328BA00F039F5 /* Main.storyboard in Resources */,
 				49DB7B3F1AC28A2200EAA7D6 /* Images.xcassets in Resources */,
 				49DB7B3D1AC28A2200EAA7D6 /* Main.storyboard in Resources */,
 			);
@@ -212,6 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CE72301AC522C500F039F5 /* DynamicLine.swift in Sources */,
+				49CE722C1AC328BA00F039F5 /* GameScene.swift in Sources */,
+				49CE722E1AC328BA00F039F5 /* Line.swift in Sources */,
 				49DB7B3A1AC28A2200EAA7D6 /* GameViewController.swift in Sources */,
 				49DB7B361AC28A2100EAA7D6 /* AppDelegate.swift in Sources */,
 			);
@@ -236,20 +256,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		49CE72261AC328BA00F039F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49CE72271AC328BA00F039F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		49DB7B3B1AC28A2200EAA7D6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				49DB7B3C1AC28A2200EAA7D6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		49DB7B401AC28A2200EAA7D6 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49DB7B411AC28A2200EAA7D6 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

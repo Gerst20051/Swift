@@ -1,30 +1,46 @@
 import UIKit
-import QuartzCore
-import SceneKit
+import SpriteKit
 
 class GameViewController: UIViewController {
 
+    var gameScene: GameScene?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-        var gestureRecognizers = [AnyObject]()
-        gestureRecognizers.append(tapGesture)
-        if let existingGestureRecognizers = self.view.gestureRecognizers {
-            gestureRecognizers.extend(existingGestureRecognizers)
+        if let scene = GameScene(size: view.frame.size) as GameScene? {
+            gameScene = scene
+            let skView = self.view as SKView
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            skView.showsPhysics = true
+            skView.ignoresSiblingOrder = false
+            scene.scaleMode = .AspectFill
+            scene.name = "HarmonyCanvas"
+            skView.presentScene(scene)
         }
-        self.view.gestureRecognizers = gestureRecognizers
+        createLongPressGesture()
     }
 
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
-        println("TAP")
+    func createLongPressGesture() {
+        var gesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+        gesture.minimumPressDuration = 2.0
+        self.view.addGestureRecognizer(gesture)
     }
 
-    override func shouldAutorotate() -> Bool {
-        return true
+    func longPressed(longPress: UIGestureRecognizer) {
+        gameScene!.clearLines()
+        if (longPress.state == UIGestureRecognizerState.Ended) {
+            println("Long Press Ended")
+        } else if (longPress.state == UIGestureRecognizerState.Began) {
+            println("Long Press Began")
+        }
     }
 
     override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
+    override func shouldAutorotate() -> Bool {
         return true
     }
 
@@ -38,7 +54,6 @@ class GameViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
 }
