@@ -16,39 +16,43 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let location = touches.anyObject()!.locationInNode(self)
-        println("touchesBegan location => \(location)")
-        let node = nodeAtPoint(location)
-        println("touchesBegan node => \(node)")
-        var dynamicLine = DynamicLine()
-        println("touchesBegan dynamicLine => \(dynamicLine)")
-        dynamicLine.addPoint(location)
-        currentDynamicLine = dynamicLine
-        currentDynamicLine!.draw(self)
-        // var line = Line()
-        // println("touchesBegan line => \(line)")
-        // line.clearPoints()
-        // line.addPoint(location)
-        // currentLine = line
-    }
-
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        let location = touches.anyObject()!.locationInNode(self)
-        println("touchesMoved location => \(location)")
-        if let line = currentDynamicLine {
-            line.addPoint(location)
-            line.updatePath()
-            // line.draw(self)
-            // drawLine(line, tmp: true)
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if let touch = touches.first as? UITouch {
+            let location = touch.locationInNode(self)
+            println("touchesBegan location => \(location)")
+            let node = nodeAtPoint(location)
+            println("touchesBegan node => \(node)")
+            var dynamicLine = DynamicLine()
+            println("touchesBegan dynamicLine => \(dynamicLine)")
+            dynamicLine.addPoint(location)
+            currentDynamicLine = dynamicLine
+            currentDynamicLine!.draw(self)
+            // var line = Line()
+            // println("touchesBegan line => \(line)")
+            // line.clearPoints()
+            // line.addPoint(location)
+            // currentLine = line
         }
-        // if let line = currentLine {
-        //     line.addPoint(location)
-        //     drawLine(line, tmp: true)
-        // }
     }
 
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if let touch = touches.first as? UITouch {
+            let location = touch.locationInNode(self)
+            println("touchesMoved location => \(location)")
+            if let line = currentDynamicLine {
+                line.addPoint(location)
+                line.updatePath()
+                // line.draw(self)
+                // drawLine(line, tmp: true)
+            }
+            // if let line = currentLine {
+            //     line.addPoint(location)
+            //     drawLine(line, tmp: true)
+            // }
+        }
+    }
+
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("touchesEnded currentDynamicLine => \(currentDynamicLine)")
         if let line = currentDynamicLine {
             dynamicLines.append(line)

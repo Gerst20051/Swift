@@ -31,20 +31,13 @@ class DynamicLine {
 
     func draw(scene: GameScene) {
         if let node = shapeNode {
-            node.path = path
-            node.name = "line"
-            node.strokeColor = getRandomColor()
             node.lineWidth = 2
+            node.name = "line"
+            node.path = path
+            node.strokeColor = UIColor.randomGoldenRatioColor()
             node.zPosition = 1
             scene.addChild(node)
         }
-    }
-
-    func getRandomColor() -> UIColor {
-        var randomRed: CGFloat = CGFloat(drand48())
-        var randomGreen: CGFloat = CGFloat(drand48())
-        var randomBlue: CGFloat = CGFloat(drand48())
-        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
 
 }

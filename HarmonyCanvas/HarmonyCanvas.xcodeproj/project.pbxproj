@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4983EF201AF082AD005F1B3A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983EF1F1AF082AD005F1B3A /* Extensions.swift */; };
 		49CE722B1AC328BA00F039F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CE72261AC328BA00F039F5 /* Main.storyboard */; };
 		49CE722C1AC328BA00F039F5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CE72281AC328BA00F039F5 /* GameScene.swift */; };
 		49CE722E1AC328BA00F039F5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CE722A1AC328BA00F039F5 /* Line.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4983EF1F1AF082AD005F1B3A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49CE72271AC328BA00F039F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		49CE72281AC328BA00F039F5 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		49CE722A1AC328BA00F039F5 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				49DB7B351AC28A2100EAA7D6 /* AppDelegate.swift */,
 				49CE72251AC328BA00F039F5 /* Base.lproj */,
 				49CE722F1AC522C500F039F5 /* DynamicLine.swift */,
+				4983EF1F1AF082AD005F1B3A /* Extensions.swift */,
 				49CE72281AC328BA00F039F5 /* GameScene.swift */,
 				49DB7B391AC28A2200EAA7D6 /* GameViewController.swift */,
 				49DB7B3E1AC28A2200EAA7D6 /* Images.xcassets */,
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CE72301AC522C500F039F5 /* DynamicLine.swift in Sources */,
+				4983EF201AF082AD005F1B3A /* Extensions.swift in Sources */,
 				49CE722C1AC328BA00F039F5 /* GameScene.swift in Sources */,
 				49CE722E1AC328BA00F039F5 /* Line.swift in Sources */,
 				49DB7B3A1AC28A2200EAA7D6 /* GameViewController.swift in Sources */,
