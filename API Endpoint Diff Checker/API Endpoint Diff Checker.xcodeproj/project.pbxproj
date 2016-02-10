@@ -13,8 +13,9 @@
 		F7B118C31C6938D8006041E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B118C11C6938D8006041E8 /* MainMenu.xib */; };
 		F7DBD8831C699351001C2448 /* MySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD8811C699351001C2448 /* MySecondViewController.swift */; };
 		F7DBD8841C699351001C2448 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD8821C699351001C2448 /* MyViewController.swift */; };
-		F7DBD8861C699FE5001C2448 /* Extension+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD8851C699FE5001C2448 /* Extension+NSViewController.swift */; };
-		F7DBD8881C69A0C3001C2448 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD8871C69A0C3001C2448 /* Temp.swift */; };
+		F7DBD88C1C6AE17B001C2448 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD8891C6AE17B001C2448 /* BaseViewController.swift */; };
+		F7DBD88D1C6AE17B001C2448 /* Extension+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD88A1C6AE17B001C2448 /* Extension+NSViewController.swift */; };
+		F7DBD88E1C6AE17B001C2448 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBD88B1C6AE17B001C2448 /* Temp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		F7B118C41C6938D8006041E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7DBD8811C699351001C2448 /* MySecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySecondViewController.swift; path = Source/MySecondViewController.swift; sourceTree = "<group>"; };
 		F7DBD8821C699351001C2448 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyViewController.swift; path = Source/MyViewController.swift; sourceTree = "<group>"; };
-		F7DBD8851C699FE5001C2448 /* Extension+NSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+NSViewController.swift"; sourceTree = "<group>"; };
-		F7DBD8871C69A0C3001C2448 /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		F7DBD8891C6AE17B001C2448 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Source/BaseViewController.swift; sourceTree = "<group>"; };
+		F7DBD88A1C6AE17B001C2448 /* Extension+NSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+NSViewController.swift"; path = "Source/Extension+NSViewController.swift"; sourceTree = "<group>"; };
+		F7DBD88B1C6AE17B001C2448 /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Temp.swift; path = Source/Temp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +97,11 @@
 		F7DBD87D1C699308001C2448 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBD8891C6AE17B001C2448 /* BaseViewController.swift */,
+				F7DBD88A1C6AE17B001C2448 /* Extension+NSViewController.swift */,
 				F7DBD8811C699351001C2448 /* MySecondViewController.swift */,
 				F7DBD8821C699351001C2448 /* MyViewController.swift */,
-				F7DBD8851C699FE5001C2448 /* Extension+NSViewController.swift */,
-				F7DBD8871C69A0C3001C2448 /* Temp.swift */,
+				F7DBD88B1C6AE17B001C2448 /* Temp.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -232,10 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7DBD8831C699351001C2448 /* MySecondViewController.swift in Sources */,
+				F7DBD88C1C6AE17B001C2448 /* BaseViewController.swift in Sources */,
 				F7DBD8841C699351001C2448 /* MyViewController.swift in Sources */,
-				F7DBD8881C69A0C3001C2448 /* Temp.swift in Sources */,
-				F7DBD8861C699FE5001C2448 /* Extension+NSViewController.swift in Sources */,
+				F7DBD88D1C6AE17B001C2448 /* Extension+NSViewController.swift in Sources */,
 				F7B118BE1C6938D8006041E8 /* AppDelegate.swift in Sources */,
+				F7DBD88E1C6AE17B001C2448 /* Temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,8 @@ import Cocoa
 import Forrest
 import SnapKit
 
-class MySecondViewController : NSViewController {
+class MySecondViewController : BaseViewController {
+
     override func loadView() {
         let view = NSView(frame: NSMakeRect(0, 0, 50, 50))
         view.wantsLayer = true
@@ -24,7 +25,7 @@ class MySecondViewController : NSViewController {
 
     func myAction(sender: AnyObject) {
         testForrest()
-        getAppDelegate().showMyViewController()
+        app.showMyViewController()
     }
 
     func testForrest() {
@@ -34,4 +35,5 @@ class MySecondViewController : NSViewController {
         let swiftFiles = forrest.run("ls -la | grep swift").stdout // Piped Commands
         print("swiftFiles => \(swiftFiles)")
     }
+
 }

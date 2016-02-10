@@ -3,7 +3,8 @@ use_frameworks!
 
 target 'API Endpoint Diff Checker' do
     pod 'Dollar', '4.1.0'
-    pod 'Forrest', '~> 1.0'
+    pod 'FileKit', '2.0.0'
+    pod 'Forrest', '1.0.3'
     pod 'RealmSwift', '0.98.0'
     pod 'SnapKit', '0.19.1'
 end

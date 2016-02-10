@@ -1,5 +1,6 @@
 PODS:
   - Dollar (4.1.0)
+  - FileKit (2.0.0)
   - Forrest (1.0.3)
   - Realm (0.98.0):
     - Realm/Headers (= 0.98.0)
@@ -10,12 +11,14 @@ PODS:
 
 DEPENDENCIES:
   - Dollar (= 4.1.0)
-  - Forrest (~> 1.0)
+  - FileKit (= 2.0.0)
+  - Forrest (= 1.0.3)
   - RealmSwift (= 0.98.0)
   - SnapKit (= 0.19.1)
 
 SPEC CHECKSUMS:
   Dollar: 1ee47922ccdfda5b572c8a4956b08986f1b4c429
+  FileKit: fd360f82f62a1f70dd2ccdbe0950d3a6d1e25d1d
   Forrest: dbe628c3e46eccd04e8c74baed7e4bd53ef52889
   Realm: 28efc598b8b1b378d27a222d9fc037a29ae68642
   RealmSwift: 7ef4b9ee449d711cd5a7d69a3af1cc5cd0efb619

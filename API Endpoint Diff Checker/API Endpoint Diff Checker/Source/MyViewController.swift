@@ -1,7 +1,8 @@
 import Cocoa
 import SnapKit
 
-class MyViewController : NSViewController {
+class MyViewController : BaseViewController {
+
     override func loadView() {
         let view = NSView(frame: NSMakeRect(0, 0, 100, 100))
         view.wantsLayer = true
@@ -22,6 +23,7 @@ class MyViewController : NSViewController {
     }
 
     func myAction(sender: AnyObject) {
-        getAppDelegate().showMySecondViewController()
+        app.showMySecondViewController()
     }
+
 }
