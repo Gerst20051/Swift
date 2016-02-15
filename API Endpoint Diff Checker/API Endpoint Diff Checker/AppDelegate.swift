@@ -1,7 +1,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate : NSObject, NSApplicationDelegate {
+class AppDelegate : NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     @IBOutlet weak var window: NSWindow!
     let myViewController = MyViewController()
@@ -12,6 +12,11 @@ class AppDelegate : NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
+    }
+
+    func windowWillResize(sender: NSWindow, toSize frameSize: NSSize) -> NSSize { // TODO: Figure Out Why This Isn't Working...
+        print("frameSize => \(frameSize)")
+        return frameSize
     }
 
     func showMyViewController() {
