@@ -12,7 +12,7 @@ class MySecondViewController : BaseViewController {
         self.view = view
 
         let button = NSButton()
-        button.action = "myAction:"
+        button.action = #selector(MySecondViewController.myAction(_:))
         button.target = self
         self.view.addSubview(button)
 

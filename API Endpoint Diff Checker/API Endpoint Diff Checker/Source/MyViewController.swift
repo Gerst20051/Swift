@@ -5,8 +5,11 @@ import SnapKit
 class MyViewController : BaseViewController {
 
     let listView = NSView()
-    let tableView = NSTableView()
+    let diffTableView = NSTableView()
+    let diffDataSource = DiffDataSource()
     let diffView = NSView()
+    let savedDiffTableView = NSTableView()
+    let savedDiffDataSource = SavedDiffDataSource()
 
     override func loadView() {
         let view = NSView()
@@ -34,21 +37,21 @@ class MyViewController : BaseViewController {
             make.width.equalTo(self.view).multipliedBy(0.25)
         }
 
-        tableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
-        tableView.gridColor = NSColor.clearColor()
-        tableView.gridStyleMask = NSTableViewGridLineStyle.GridNone
-        tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
-        tableView.setDelegate(self)
-        tableView.setDataSource(self)
-        listView.addSubview(tableView)
+        diffTableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
+        diffTableView.gridColor = NSColor.clearColor()
+        diffTableView.gridStyleMask = NSTableViewGridLineStyle.GridNone
+        diffTableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
+        diffTableView.setDelegate(diffDataSource)
+        diffTableView.setDataSource(diffDataSource)
+        listView.addSubview(diffTableView)
 
-        tableView.snp_makeConstraints { (make) -> Void in
+        diffTableView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(0.0)
             make.width.equalTo(listView)
         }
 
-        let column = NSTableColumn(identifier: "column")
-        tableView.addTableColumn(column)
+        let column = NSTableColumn(identifier: "diffcolumn")
+        diffTableView.addTableColumn(column)
     }
 
     func buildDiffUI() {
@@ -92,7 +95,7 @@ class MyViewController : BaseViewController {
         }
 
         let button = NSButton()
-        button.action = "myAction:"
+        button.action = #selector(MyViewController.myAction(_:))
         button.target = self
         bottomRightView.addSubview(button)
 
@@ -100,6 +103,22 @@ class MyViewController : BaseViewController {
             make.height.width.equalTo(50.0)
             make.center.equalTo(bottomRightView)
         }
+
+        savedDiffTableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
+        savedDiffTableView.gridColor = NSColor.clearColor()
+        savedDiffTableView.gridStyleMask = NSTableViewGridLineStyle.GridNone
+        savedDiffTableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
+        savedDiffTableView.setDelegate(savedDiffDataSource)
+        savedDiffTableView.setDataSource(savedDiffDataSource)
+        bottomLeftView.addSubview(savedDiffTableView)
+
+        savedDiffTableView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(0.0)
+            make.width.equalTo(bottomLeftView)
+        }
+
+        let column = NSTableColumn(identifier: "saveddiffcolumn")
+        savedDiffTableView.addTableColumn(column)
     }
 
     func myAction(sender: AnyObject) {
