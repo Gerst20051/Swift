@@ -1,0 +1,10 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'Music Discovery' do
+  pod 'Dollar', '5.1.0'
+  pod 'FileKit', '2.0.0'
+  pod 'RealmSwift', '1.0.1'
+  pod 'SnapKit', '0.30.0.beta2'
+  pod 'YouTubePlayer', '0.3.0'
+end
