@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F7BB04E71D1C71F200B1A270 /* HnS-All-Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HnS-All-Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7BB04E71D1C71F200B1A270 /* Music Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BB04EC1D1C71F200B1A270 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7BB04F11D1C71F200B1A270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		F7BB04DE1D1C71F200B1A270 = {
 			isa = PBXGroup;
 			children = (
-				F7BB04E91D1C71F200B1A270 /* HnS-All-Music */,
+				F7BB04E91D1C71F200B1A270 /* Music Discovery */,
 				F7BB04E81D1C71F200B1A270 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,12 +44,12 @@
 		F7BB04E81D1C71F200B1A270 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F7BB04E71D1C71F200B1A270 /* HnS-All-Music.app */,
+				F7BB04E71D1C71F200B1A270 /* Music Discovery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F7BB04E91D1C71F200B1A270 /* HnS-All-Music */ = {
+		F7BB04E91D1C71F200B1A270 /* Music Discovery */ = {
 			isa = PBXGroup;
 			children = (
 				F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */,
@@ -58,15 +58,15 @@
 				F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */,
 				F7BB04F61D1C71F200B1A270 /* Info.plist */,
 			);
-			path = "HnS-All-Music";
+			path = "Music Discovery";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F7BB04E61D1C71F200B1A270 /* HnS-All-Music */ = {
+		F7BB04E61D1C71F200B1A270 /* Music Discovery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F7BB04F91D1C71F200B1A270 /* Build configuration list for PBXNativeTarget "HnS-All-Music" */;
+			buildConfigurationList = F7BB04F91D1C71F200B1A270 /* Build configuration list for PBXNativeTarget "Music Discovery" */;
 			buildPhases = (
 				F7BB04E31D1C71F200B1A270 /* Sources */,
 				F7BB04E41D1C71F200B1A270 /* Frameworks */,
@@ -76,9 +76,9 @@
 			);
 			dependencies = (
 			);
-			name = "HnS-All-Music";
-			productName = "HnS-All-Music";
-			productReference = F7BB04E71D1C71F200B1A270 /* HnS-All-Music.app */;
+			name = "Music Discovery";
+			productName = "Music Discovery";
+			productReference = F7BB04E71D1C71F200B1A270 /* Music Discovery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F7BB04E21D1C71F200B1A270 /* Build configuration list for PBXProject "HnS-All-Music" */;
+			buildConfigurationList = F7BB04E21D1C71F200B1A270 /* Build configuration list for PBXProject "Music Discovery" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F7BB04E61D1C71F200B1A270 /* HnS-All-Music */,
+				F7BB04E61D1C71F200B1A270 /* Music Discovery */,
 			);
 		};
 /* End PBXProject section */
@@ -242,9 +242,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "HnS-All-Music/Info.plist";
+				INFOPLIST_FILE = "Music Discovery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.HnS-All-Music";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.music.discovery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -256,9 +256,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "HnS-All-Music/Info.plist";
+				INFOPLIST_FILE = "Music Discovery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.HnS-All-Music";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.music.discovery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -267,7 +267,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F7BB04E21D1C71F200B1A270 /* Build configuration list for PBXProject "HnS-All-Music" */ = {
+		F7BB04E21D1C71F200B1A270 /* Build configuration list for PBXProject "Music Discovery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7BB04F71D1C71F200B1A270 /* Debug */,
@@ -276,7 +276,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F7BB04F91D1C71F200B1A270 /* Build configuration list for PBXNativeTarget "HnS-All-Music" */ = {
+		F7BB04F91D1C71F200B1A270 /* Build configuration list for PBXNativeTarget "Music Discovery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7BB04FA1D1C71F200B1A270 /* Debug */,

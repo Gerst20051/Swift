@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HnS-All-Music.xcodeproj">
+      location = "self:Music Discovery.xcodeproj">
    </FileRef>
 </Workspace>
