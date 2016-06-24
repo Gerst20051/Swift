@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		71A9C14669B26F8F6FF7602D /* Pods_Music_Discovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7687BFBE958DFEE696B359 /* Pods_Music_Discovery.framework */; };
+		F709B3A71D1CCF62005704EC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F709B3A31D1CCF62005704EC /* Base.lproj */; };
+		F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */; };
+		F709B3AF1D1CCFCE005704EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3AD1D1CCFCE005704EC /* ViewController.swift */; };
+		F709B3B11D1CD54D005704EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B01D1CD54D005704EC /* BaseViewController.swift */; };
 		F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */; };
-		F7BB04ED1D1C71F200B1A270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EC1D1C71F200B1A270 /* ViewController.swift */; };
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
 		F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +21,12 @@
 		16B63678B2E4F848B8B79A33 /* Pods-Music Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Discovery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Music Discovery/Pods-Music Discovery.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7687BFBE958DFEE696B359 /* Pods_Music_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5ACF9E80562CC5E7E8E76A /* Pods-Music Discovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Discovery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Music Discovery/Pods-Music Discovery.release.xcconfig"; sourceTree = "<group>"; };
+		F709B3A31D1CCF62005704EC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Sources/SecondViewController.swift; sourceTree = "<group>"; };
+		F709B3AD1D1CCFCE005704EC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
+		F709B3B01D1CD54D005704EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
 		F7BB04E71D1C71F200B1A270 /* Music Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7BB04EC1D1C71F200B1A270 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7BB04F11D1C71F200B1A270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7BB04F41D1C71F200B1A270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7BB04F61D1C71F200B1A270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +61,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F709B3AA1D1CCFB6005704EC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F709B3B01D1CD54D005704EC /* BaseViewController.swift */,
+				F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */,
+				F709B3AD1D1CCFCE005704EC /* ViewController.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		F709B3AB1D1CCFBD005704EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		F7BB04DE1D1C71F200B1A270 = {
 			isa = PBXGroup;
 			children = (
@@ -77,10 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */,
-				F7BB04EC1D1C71F200B1A270 /* ViewController.swift */,
 				F7BB04F11D1C71F200B1A270 /* Assets.xcassets */,
-				F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */,
+				F709B3A31D1CCF62005704EC /* Base.lproj */,
 				F7BB04F61D1C71F200B1A270 /* Info.plist */,
+				F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */,
+				F709B3AB1D1CCFBD005704EC /* Resources */,
+				F709B3AA1D1CCFB6005704EC /* Sources */,
 			);
 			path = "Music Discovery";
 			sourceTree = "<group>";
@@ -148,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */,
+				F709B3A71D1CCF62005704EC /* Base.lproj in Resources */,
 				F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7BB04ED1D1C71F200B1A270 /* ViewController.swift in Sources */,
+				F709B3AF1D1CCFCE005704EC /* ViewController.swift in Sources */,
+				F709B3B11D1CD54D005704EC /* BaseViewController.swift in Sources */,
+				F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */,
 				F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

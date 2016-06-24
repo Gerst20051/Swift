@@ -6,14 +6,14 @@ PODS:
   - Realm/Headers (1.0.1)
   - RealmSwift (1.0.1):
     - Realm (= 1.0.1)
-  - SnapKit (0.30.0.beta2)
+  - SnapKit (0.21.0)
   - YouTubePlayer (0.3.0)
 
 DEPENDENCIES:
   - Dollar (= 5.1.0)
   - FileKit (= 2.0.0)
   - RealmSwift (= 1.0.1)
-  - SnapKit (= 0.30.0.beta2)
+  - SnapKit (= 0.21.0)
   - YouTubePlayer (= 0.3.0)
 
 SPEC CHECKSUMS:
@@ -21,9 +21,9 @@ SPEC CHECKSUMS:
   FileKit: fd360f82f62a1f70dd2ccdbe0950d3a6d1e25d1d
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
-  SnapKit: c4bb32b1d3c5d18ff63bf95ffcbc599d2bab964c
+  SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
   YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
 
-PODFILE CHECKSUM: 9820f907271eca4d1f2ed66856252d76c62d4441
+PODFILE CHECKSUM: 7ad922d084efff4d3d98e012fd9d3839cb9f52f7
 
 COCOAPODS: 1.0.1
