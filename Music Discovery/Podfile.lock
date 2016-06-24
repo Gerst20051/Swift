@@ -1,6 +1,30 @@
 PODS:
+  - Alamofire (3.4.1)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
   - Dollar (5.1.0)
   - FileKit (2.0.0)
+  - ObjectMapper (1.3.0)
+  - OMGHTTPURLRQ (3.1.2):
+    - OMGHTTPURLRQ/RQ (= 3.1.2)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.2)
+  - OMGHTTPURLRQ/RQ (3.1.2):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.1.2)
+  - PromiseKit (3.2.0):
+    - PromiseKit/Foundation (= 3.2.0)
+    - PromiseKit/QuartzCore (= 3.2.0)
+    - PromiseKit/UIKit (= 3.2.0)
+  - PromiseKit/CorePromise (3.2.0)
+  - PromiseKit/Foundation (3.2.0):
+    - OMGHTTPURLRQ (~> 3.1.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.2.0):
+    - PromiseKit/CorePromise
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -10,20 +34,28 @@ PODS:
   - YouTubePlayer (0.3.0)
 
 DEPENDENCIES:
+  - Alamofire (= 3.4.1)
+  - AlamofireObjectMapper (= 3.0.0)
   - Dollar (= 5.1.0)
   - FileKit (= 2.0.0)
+  - PromiseKit (= 3.2.0)
   - RealmSwift (= 1.0.1)
   - SnapKit (= 0.21.0)
   - YouTubePlayer (= 0.3.0)
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
   Dollar: d40032c85eced868f65b86aaede4ef7c093a1bb2
   FileKit: fd360f82f62a1f70dd2ccdbe0950d3a6d1e25d1d
+  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
+  OMGHTTPURLRQ: 38316b56d88125c600bcdb16df8329147da2b0ee
+  PromiseKit: 1db024241265f428137a9f3c00ff9590740c4be6
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
   YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
 
-PODFILE CHECKSUM: 7ad922d084efff4d3d98e012fd9d3839cb9f52f7
+PODFILE CHECKSUM: 8c4d497c862ea861c77941b49420707684d8848b
 
 COCOAPODS: 1.0.1

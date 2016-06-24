@@ -12,6 +12,7 @@
 		F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */; };
 		F709B3AF1D1CCFCE005704EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3AD1D1CCFCE005704EC /* ViewController.swift */; };
 		F709B3B11D1CD54D005704EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B01D1CD54D005704EC /* BaseViewController.swift */; };
+		F709B3B31D1DAD15005704EC /* playlists.json in Resources */ = {isa = PBXBuildFile; fileRef = F709B3B21D1DAD15005704EC /* playlists.json */; };
 		F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */; };
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
 		F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 		F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Sources/SecondViewController.swift; sourceTree = "<group>"; };
 		F709B3AD1D1CCFCE005704EC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
 		F709B3B01D1CD54D005704EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
+		F709B3B21D1DAD15005704EC /* playlists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = playlists.json; path = Resources/playlists.json; sourceTree = "<group>"; };
 		F7BB04E71D1C71F200B1A270 /* Music Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BB04F11D1C71F200B1A270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		F709B3AB1D1CCFBD005704EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F709B3B21D1DAD15005704EC /* playlists.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */,
 				F709B3A71D1CCF62005704EC /* Base.lproj in Resources */,
 				F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */,
+				F709B3B31D1DAD15005704EC /* playlists.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
