@@ -6,4 +6,9 @@ class BaseViewController: UIViewController {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        automaticallyAdjustsScrollViewInsets = false
+    }
+
 }

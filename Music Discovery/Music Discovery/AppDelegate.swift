@@ -4,7 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
-    let nav = UINavigationController()
+    let nav = UINavigationController(rootViewController: ViewController())
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupNavigationController()
@@ -23,9 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setupNavigationController() {
         nav.navigationBarHidden = true
-        nav.viewControllers = [ ViewController() ]
-        self.window?.rootViewController = nav
-        self.window?.makeKeyAndVisible()
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
     }
 
 }

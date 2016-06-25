@@ -15,6 +15,8 @@
 		F709B3B31D1DAD15005704EC /* playlists.json in Resources */ = {isa = PBXBuildFile; fileRef = F709B3B21D1DAD15005704EC /* playlists.json */; };
 		F709B3B51D1E18D8005704EC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B41D1E18D8005704EC /* Models.swift */; };
 		F709B3B71D1E234E005704EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B61D1E234E005704EC /* Constants.swift */; };
+		F709B3B91D1E5AD2005704EC /* RealmControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B81D1E5AD2005704EC /* RealmControllers.swift */; };
+		F709B3BB1D1E6F27005704EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3BA1D1E6F27005704EC /* Extensions.swift */; };
 		F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */; };
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
 		F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */; };
@@ -31,6 +33,8 @@
 		F709B3B21D1DAD15005704EC /* playlists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = playlists.json; path = Resources/playlists.json; sourceTree = "<group>"; };
 		F709B3B41D1E18D8005704EC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
 		F709B3B61D1E234E005704EC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Sources/Constants.swift; sourceTree = "<group>"; };
+		F709B3B81D1E5AD2005704EC /* RealmControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmControllers.swift; path = Sources/RealmControllers.swift; sourceTree = "<group>"; };
+		F709B3BA1D1E6F27005704EC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
 		F7BB04E71D1C71F200B1A270 /* Music Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BB04F11D1C71F200B1A270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +76,9 @@
 			children = (
 				F709B3B01D1CD54D005704EC /* BaseViewController.swift */,
 				F709B3B61D1E234E005704EC /* Constants.swift */,
+				F709B3BA1D1E6F27005704EC /* Extensions.swift */,
 				F709B3B41D1E18D8005704EC /* Models.swift */,
+				F709B3B81D1E5AD2005704EC /* RealmControllers.swift */,
 				F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */,
 				F709B3AD1D1CCFCE005704EC /* ViewController.swift */,
 			);
@@ -246,9 +252,11 @@
 				F709B3AF1D1CCFCE005704EC /* ViewController.swift in Sources */,
 				F709B3B11D1CD54D005704EC /* BaseViewController.swift in Sources */,
 				F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */,
+				F709B3BB1D1E6F27005704EC /* Extensions.swift in Sources */,
 				F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */,
 				F709B3B51D1E18D8005704EC /* Models.swift in Sources */,
 				F709B3B71D1E234E005704EC /* Constants.swift in Sources */,
+				F709B3B91D1E5AD2005704EC /* RealmControllers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
