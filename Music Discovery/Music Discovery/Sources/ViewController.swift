@@ -28,7 +28,18 @@ class ViewController: BaseViewController {
 
     func buttonClicked() {
         print("Next Button Clicked")
+        getPlaylistJSON()
         app.nav.pushViewController(SecondViewController(), animated: true)
+    }
+
+    func getPlaylistJSON() {
+        if let filePath = NSBundle.mainBundle().pathForResource("playlists", ofType: "json"), data = NSData(contentsOfFile: filePath) {
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+            } catch let error {
+                print("error parsing json => \(error)")
+            }
+        }
     }
 
 }
