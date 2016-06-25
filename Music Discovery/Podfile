@@ -6,6 +6,8 @@ target 'Music Discovery' do
   pod 'AlamofireObjectMapper', '3.0.0'
   pod 'Dollar', '5.1.0'
   pod 'FileKit', '2.0.0'
+  pod 'Material', '1.42.6'
+  pod 'NMPopUpViewSwift', '3.0.1'
   pod 'PromiseKit', '3.2.0'
   pod 'RealmSwift', '1.0.1'
   pod 'SnapKit', '0.21.0'

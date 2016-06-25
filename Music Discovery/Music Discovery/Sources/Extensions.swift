@@ -1,5 +1,11 @@
 import UIKit
 
+extension String {
+    var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
+}
+
 extension UITableViewCell {
     func removeMargins() {
         self.layoutMargins = UIEdgeInsetsZero

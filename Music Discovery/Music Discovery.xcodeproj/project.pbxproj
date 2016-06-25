@@ -17,6 +17,10 @@
 		F709B3B71D1E234E005704EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B61D1E234E005704EC /* Constants.swift */; };
 		F709B3B91D1E5AD2005704EC /* RealmControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3B81D1E5AD2005704EC /* RealmControllers.swift */; };
 		F709B3BB1D1E6F27005704EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3BA1D1E6F27005704EC /* Extensions.swift */; };
+		F709B3C31D1F18AA005704EC /* pinch.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3BF1D1F18AA005704EC /* pinch.png */; };
+		F709B3C41D1F18AA005704EC /* pinch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C01D1F18AA005704EC /* pinch@2x.png */; };
+		F709B3C51D1F18AA005704EC /* spread.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C11D1F18AA005704EC /* spread.png */; };
+		F709B3C61D1F18AA005704EC /* spread@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C21D1F18AA005704EC /* spread@2x.png */; };
 		F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */; };
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
 		F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */; };
@@ -35,6 +39,10 @@
 		F709B3B61D1E234E005704EC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Sources/Constants.swift; sourceTree = "<group>"; };
 		F709B3B81D1E5AD2005704EC /* RealmControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmControllers.swift; path = Sources/RealmControllers.swift; sourceTree = "<group>"; };
 		F709B3BA1D1E6F27005704EC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
+		F709B3BF1D1F18AA005704EC /* pinch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pinch.png; path = Resources/Images/pinch.png; sourceTree = "<group>"; };
+		F709B3C01D1F18AA005704EC /* pinch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinch@2x.png"; path = "Resources/Images/pinch@2x.png"; sourceTree = "<group>"; };
+		F709B3C11D1F18AA005704EC /* spread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spread.png; path = Resources/Images/spread.png; sourceTree = "<group>"; };
+		F709B3C21D1F18AA005704EC /* spread@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spread@2x.png"; path = "Resources/Images/spread@2x.png"; sourceTree = "<group>"; };
 		F7BB04E71D1C71F200B1A270 /* Music Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BB04F11D1C71F200B1A270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,9 +96,21 @@
 		F709B3AB1D1CCFBD005704EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F709B3BE1D1F189D005704EC /* Images */,
 				F709B3B21D1DAD15005704EC /* playlists.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		F709B3BE1D1F189D005704EC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F709B3BF1D1F18AA005704EC /* pinch.png */,
+				F709B3C01D1F18AA005704EC /* pinch@2x.png */,
+				F709B3C11D1F18AA005704EC /* spread.png */,
+				F709B3C21D1F18AA005704EC /* spread@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		F7BB04DE1D1C71F200B1A270 = {
@@ -187,10 +207,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F709B3C51D1F18AA005704EC /* spread.png in Resources */,
+				F709B3C61D1F18AA005704EC /* spread@2x.png in Resources */,
 				F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */,
+				F709B3C31D1F18AA005704EC /* pinch.png in Resources */,
 				F709B3A71D1CCF62005704EC /* Base.lproj in Resources */,
 				F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */,
 				F709B3B31D1DAD15005704EC /* playlists.json in Resources */,
+				F709B3C41D1F18AA005704EC /* pinch@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

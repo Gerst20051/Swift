@@ -1,5 +1,6 @@
 import Alamofire
 import AlamofireObjectMapper
+import NMPopUpViewSwift
 import PromiseKit
 import RealmSwift
 import SnapKit
@@ -37,25 +38,6 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         loadPlaylistData()
         createTableView()
         createPinchGesture()
-        // showNavigationButton()
-    }
-
-    func showNavigationButton() {
-        let button: UIButton = UIButton()
-        button.backgroundColor = UIColor.blackColor()
-        button.setTitle("Next", forState: UIControlState.Normal)
-        button.addTarget(self, action: #selector(self.buttonClicked), forControlEvents: .TouchUpInside)
-        view.addSubview(button)
-        button.snp_makeConstraints { (make) -> Void in
-            make.height.equalTo(50.0)
-            make.width.equalTo(100.0)
-            make.center.equalTo(self.view)
-        }
-    }
-
-    func buttonClicked() {
-        print("Next Button Clicked")
-        app.nav.pushViewController(SecondViewController(), animated: true)
     }
 
     func loadPlaylistData() {
@@ -174,8 +156,10 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if selectedPlaylistName.isEmpty {
             selectedPlaylistName = playlists[indexPath.row].name
+            showPopupView(image: "pinch", title: "Pinch Gesture", message: "A pinch gesture will take you back to your playlists.")
         } else {
             print("item name => \(items[indexPath.row].value)")
+            showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
         }
     }
 
@@ -186,7 +170,14 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func detectPinch(sender: UIPinchGestureRecognizer) {
-        selectedPlaylistName = ""
+        if sender.scale > 1.0 {
+            print("spread gesture")
+        } else {
+            print("pinch gesture")
+            if selectedPlaylistName.isNotEmpty {
+                selectedPlaylistName = ""
+            }
+        }
     }
 
 }
