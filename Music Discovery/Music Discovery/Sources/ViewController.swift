@@ -12,21 +12,23 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
 
     let realm = try! Realm()
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    let tableView = UITableView()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
         get {
-            return realm.objects(Playlist).filter("items.@count > 0")
+            let sortDescriptors = [ SortDescriptor(property: "favorite", ascending: true), SortDescriptor(property: "name", ascending: true) ]
+            return realm.objects(Playlist).filter("items.@count > 0").sorted(sortDescriptors)
         }
     }
-    var items: List<StringObject> {
+    var items: Results<StringObject> {
         get {
-            return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items
+            return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted("favorite").sorted("value")
         }
     }
-    let tableView = UITableView()
     var selectedPlaylistName: String = "" {
         didSet {
             tableView.reloadData()
+            scrollTableViewToTop()
         }
     }
     var hasShownPinchGesture = false
@@ -35,7 +37,16 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Realm File Location => \(Realm.Configuration.defaultConfiguration.fileURL)")
+        monitorDeviceOrientationChange()
         setupUI()
+    }
+
+    func monitorDeviceOrientationChange() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.deviceOrientationDidChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+
+    func deviceOrientationDidChange() {
+        addTableViewContraints()
     }
 
     func setupUI() {
@@ -55,6 +66,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                 self.downloadPlaylistJSON().then { Void -> Void in
                     self.userDefaults.setInteger(currentPlaylistVersion, forKey: UserDefaultsKey.PlaylistVersion)
                     self.tableView.reloadData()
+                    self.scrollTableViewToTop()
                     return
                 }.always {
                     self.hideLoader()
@@ -84,6 +96,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
             self.getLocalPlaylistJSON()
         }
     }
+
     func getPlaylistVersion() -> Int {
         return userDefaults.integerForKey(UserDefaultsKey.PlaylistVersion)
     }
@@ -150,6 +163,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
             }
         }
         tableView.reloadData()
+        scrollTableViewToTop()
     }
 
     func createTableView() {
@@ -159,8 +173,12 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView(frame: CGRectZero)
         view.addSubview(tableView)
-        tableView.snp_makeConstraints { (make) -> Void in
-            let statusBarHeight: CGFloat = UIDevice.currentDevice().orientation.isLandscape.boolValue ? 0.0 : 20.0
+        addTableViewContraints()
+    }
+
+    func addTableViewContraints() {
+        tableView.snp_remakeConstraints { (make) -> Void in
+            let statusBarHeight: CGFloat = UIDevice.currentDevice().orientation.isLandscape ? 0.0 : 20.0
             make.top.equalTo(statusBarHeight)
             make.height.equalTo(self.view).offset(-statusBarHeight)
             make.width.equalTo(self.view)
@@ -226,6 +244,10 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         return true
     }
 
+    func scrollTableViewToTop() {
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+    }
+
     func createPinchGesture() {
         let gesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.detectPinch(_:)))
         gesture.delegate = self
@@ -233,14 +255,16 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func detectPinch(sender: UIPinchGestureRecognizer) {
-        if sender.scale > 1.0 {
-            print("spread gesture")
-        } else {
-            print("pinch gesture")
+        if sender.scale > 1.0 { // spread gesture
+        } else { // pinch gesture
             if selectedPlaylistName.isNotEmpty {
                 selectedPlaylistName = ""
             }
         }
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
 
 }

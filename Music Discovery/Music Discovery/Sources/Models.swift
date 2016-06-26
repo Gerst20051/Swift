@@ -3,6 +3,7 @@ import RealmSwift
 
 public class StringObject: Object {
     public dynamic var value: String?
+    dynamic var favorite = false
 
     convenience init(_ string: String) {
         self.init()
@@ -12,6 +13,7 @@ public class StringObject: Object {
 
 class Playlist: Object, Mappable {
     dynamic var name: String = ""
+    dynamic var favorite = false
     dynamic var itemCount: Int = 0
     internal let items = List<StringObject>()
 
