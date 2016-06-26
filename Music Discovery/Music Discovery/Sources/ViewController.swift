@@ -7,11 +7,15 @@ import PromiseKit
 import RealmSwift
 import SnapKit
 import UIKit
+import XCDYouTubeKit
+import YouTubePlayer
 
-class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     let realm = try! Realm()
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    var videoPlayer: YouTubePlayerView?
+    var client = XCDYouTubeClient(languageIdentifier: "en")
     let tableView = UITableView()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
@@ -26,6 +30,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
             scrollTableViewToTop()
         }
     }
+    var selectedPlaylistItem: String = ""
     var hasShownPinchGesture = false
     var hasShownSpreadGesture = false
 
@@ -42,6 +47,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
 
     func deviceOrientationDidChange() {
         addTableViewContraints()
+        addVideoPlayerContraints()
     }
 
     func setupUI() {
@@ -49,6 +55,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         loadPlaylistData()
         createTableView()
         createPinchGesture()
+        createVideoPlayer()
     }
 
     func loadPlaylistData() {
@@ -161,6 +168,33 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         scrollTableViewToTop()
     }
 
+    func getYouTubeApiUrl(query: String) -> String? {
+        if let query = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()), fields = "items/id/videoId".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
+            let results = 1, key = "AIzaSyBSXDaYvJGY4dbLFDF66NrSrlUYH9rVZ9A"
+            return "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=\(results)&q=\(query)&type=video&videoEmbeddable=true&videoSyndicated=true&fields=\(fields)&key=\(key)"
+        }
+        return nil
+    }
+
+    func getYouTubeVideo(url: String) -> Promise<String> {
+        return Promise<String> { fulfill, reject in
+            Alamofire.request(.GET, url).responseObject { (response: Response<YouTubeVideoSearchResults, NSError>) in
+                if response.result.isSuccess {
+                    if let results = response.result.value, result = results.items?.first, videoId = result.id?.videoId {
+                        fulfill(videoId) // maybe return an array of videoIds since so many videos are restricted on certain sites
+                    } else {
+                        reject(PromiseError.NoYouTubeSearchResults())
+                    }
+                } else {
+                    reject(PromiseError.ApiFailure(response.result.error))
+                }
+            }.responseString { response in
+                print("Success: \(response.result.isSuccess)")
+                print("Response String: \(response.result.value)")
+            }
+        }
+    }
+
     func createTableView() {
         tableView.backgroundColor = UIColor.clearColor()
         tableView.dataSource = self
@@ -201,8 +235,24 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                 showPopupView(image: "pinch", title: "Pinch Gesture", message: "A pinch gesture will take you back to your playlists.")
             }
         } else {
-            print("item name => \(items[indexPath.row].value)")
-            if hasShownSpreadGesture == false {
+            selectedPlaylistItem = items[indexPath.row].value!
+            if let apiUrl = getYouTubeApiUrl(selectedPlaylistItem) {
+                print("apiUrl => \(apiUrl)")
+                getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
+                    print("youtube video id => \(videoId)")
+                    self.showLoader()
+                    self.videoPlayer?.loadVideoID(videoId)
+                    // self.client.getVideoWithIdentifier(videoId) { (video: XCDYouTubeVideo?, error: NSError?) -> Void in
+                    //     video
+                    //     error?.localizedDescription
+                    // }
+                }.error { error in
+                    print("error loading youtube video id => \(error)")
+                }
+            } else {
+                print("error parsing youtube api url")
+            }
+            if hasShownSpreadGesture == false && false {
                 hasShownSpreadGesture = true
                 showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
             }
@@ -252,10 +302,51 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     func detectPinch(sender: UIPinchGestureRecognizer) {
         if sender.scale > 1.0 { // spread gesture
         } else { // pinch gesture
+            hideVideoPlayer()
             if selectedPlaylistName.isNotEmpty {
                 selectedPlaylistName = ""
             }
         }
+    }
+
+    func createVideoPlayer() {
+        videoPlayer = YouTubePlayerView(frame: CGRectMake(0.0, 0.0, 0.0, 0.0))
+        videoPlayer!.delegate = self
+        hideVideoPlayer()
+        view.addSubview(videoPlayer!)
+        addVideoPlayerContraints()
+    }
+
+    func addVideoPlayerContraints() {
+        videoPlayer?.snp_remakeConstraints { (make) -> Void in
+            make.bottom.equalTo(0.0)
+            make.height.equalTo(100.0)
+            make.width.equalTo(self.view.frame.size.width)
+        }
+    }
+
+    func showVideoPlayer() {
+        videoPlayer?.hidden = false
+    }
+
+    func hideVideoPlayer() {
+        videoPlayer?.hidden = true
+    }
+
+    func playerReady(videoPlayer: YouTubePlayerView) {
+        videoPlayer.play()
+    }
+
+    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        print("playerStateChanged - playerState => \(playerState)")
+        if [ .Unstarted, .Ended, .Paused ].contains(playerState) {
+            hideLoader()
+            // show dialog explaining that the video is restricted...
+        }
+    }
+
+    func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        print("playerQualityChanged - playbackQuality => \(playbackQuality)")
     }
 
     deinit {

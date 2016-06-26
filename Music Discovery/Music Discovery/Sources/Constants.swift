@@ -12,4 +12,5 @@ enum PromiseError: ErrorType {
     case ApiFailure(ErrorType?)
     case InvalidPlaylist()
     case InvalidPlaylistVersion()
+    case NoYouTubeSearchResults()
 }

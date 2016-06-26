@@ -37,3 +37,33 @@ class Playlist: Object, Mappable {
         itemCount += 1
     }
 }
+
+class YouTubeVideoSearchResults: Mappable {
+    var items: [YouTubeVideoSearchResult]?
+
+    required init?(_ map: Map) {}
+
+    func mapping(map: Map) {
+        items <- map["items"]
+    }
+}
+
+class YouTubeVideoSearchResult: Mappable {
+    var id: YouTubeVideoSearchResultId?
+
+    required init?(_ map: Map) {}
+
+    func mapping(map: Map) {
+        id <- map["id"]
+    }
+}
+
+class YouTubeVideoSearchResultId: Mappable {
+    var videoId: String?
+
+    required init?(_ map: Map) {}
+
+    func mapping(map: Map) {
+        videoId <- map["videoId"]
+    }
+}
