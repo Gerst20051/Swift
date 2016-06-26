@@ -1,5 +1,11 @@
 import UIKit
 
+extension Int {
+    var isEmpty: Bool {
+        return self == 0
+    }
+}
+
 extension String {
     var isNotEmpty: Bool {
         return !self.isEmpty

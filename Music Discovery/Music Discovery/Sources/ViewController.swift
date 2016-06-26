@@ -2,14 +2,16 @@ import Alamofire
 import AlamofireObjectMapper
 import NMPopUpViewSwift
 import NVActivityIndicatorView
+import ObjectMapper
 import PromiseKit
 import RealmSwift
 import SnapKit
 import UIKit
 
-class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     let realm = try! Realm()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
         get {
@@ -27,6 +29,8 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
             tableView.reloadData()
         }
     }
+    var hasShownPinchGesture = false
+    var hasShownSpreadGesture = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +48,12 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
     func loadPlaylistData() {
         showLoader()
         downloadPlaylistVersion().then { currentPlaylistVersion -> Void in
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            let playlistVersion = userDefaults.integerForKey(UserDefaultsKey.PlaylistVersion)
-            if playlistVersion == currentPlaylistVersion && false {
+            if self.getPlaylistVersion() == currentPlaylistVersion {
                 print("playlist is up-to-date")
             } else {
                 self.showLoader()
                 self.downloadPlaylistJSON().then { Void -> Void in
-                    userDefaults.setInteger(currentPlaylistVersion, forKey: UserDefaultsKey.PlaylistVersion)
+                    self.userDefaults.setInteger(currentPlaylistVersion, forKey: UserDefaultsKey.PlaylistVersion)
                     self.tableView.reloadData()
                     return
                 }.always {
@@ -79,11 +81,15 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
                 default:
                     print("unhandled error => \(error)")
             }
+            self.getLocalPlaylistJSON()
         }
+    }
+    func getPlaylistVersion() -> Int {
+        return userDefaults.integerForKey(UserDefaultsKey.PlaylistVersion)
     }
 
     func downloadPlaylistVersion() -> Promise<Int> {
-        let versionUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/version.txt2"
+        let versionUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/version.txt"
         return Promise { fulfill, reject in
             Alamofire.request(.GET, versionUrl).validate().responseString { response in
                 if response.result.isSuccess {
@@ -100,7 +106,7 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
     }
 
     func downloadPlaylistJSON() -> Promise<Void> {
-        let playlistUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/playlists.json2"
+        let playlistUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/playlists.json"
         return Promise<Void> { fulfill, reject in
             Alamofire.request(.GET, playlistUrl).validate().responseArray { (response: Response<[Playlist], NSError>) in
                 if response.result.isSuccess {
@@ -121,13 +127,29 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
     }
 
     func getLocalPlaylistJSON() {
+        guard playlists.count.isEmpty || getPlaylistVersion().isEmpty else {
+            print("failed to update playlists. using stored playlist version #\(getPlaylistVersion()).")
+            return
+        }
+        print("loading local playlist json file")
         if let filePath = NSBundle.mainBundle().pathForResource("playlists", ofType: "json"), data = NSData(contentsOfFile: filePath) {
             do {
-                _ = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+                parseLocalPlaylist(json as! [[String: AnyObject]])
             } catch let error {
                 print("error parsing local json file => \(error)")
             }
         }
+    }
+
+    func parseLocalPlaylist(playlists: [[String: AnyObject]]) {
+        playlistController.clearPlaylists()
+        for playlist in playlists {
+            if let playlistObject = Mapper<Playlist>().map(playlist) {
+                playlistController.addPlaylist(playlistObject)
+            }
+        }
+        tableView.reloadData()
     }
 
     func createTableView() {
@@ -138,20 +160,15 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
         tableView.tableFooterView = UIView(frame: CGRectZero)
         view.addSubview(tableView)
         tableView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(20.0)
-            make.height.equalTo(self.view).offset(-20.0)
+            let statusBarHeight: CGFloat = UIDevice.currentDevice().orientation.isLandscape.boolValue ? 0.0 : 20.0
+            make.top.equalTo(statusBarHeight)
+            make.height.equalTo(self.view).offset(-statusBarHeight)
             make.width.equalTo(self.view)
         }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectedPlaylistName.isEmpty {
-            print("count => \(playlists.count)")
-            return playlists.count
-        } else {
-            print("count => \(items.count)")
-            return items.count
-        }
+        return selectedPlaylistName.isEmpty ? playlists.count : items.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -166,37 +183,48 @@ class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGesture
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if selectedPlaylistName.isEmpty {
             selectedPlaylistName = playlists[indexPath.row].name
-            showPopupView(image: "pinch", title: "Pinch Gesture", message: "A pinch gesture will take you back to your playlists.")
+            if hasShownPinchGesture == false {
+                hasShownPinchGesture = true
+                showPopupView(image: "pinch", title: "Pinch Gesture", message: "A pinch gesture will take you back to your playlists.")
+            }
         } else {
             print("item name => \(items[indexPath.row].value)")
-            showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
+            if hasShownSpreadGesture == false {
+                hasShownSpreadGesture = true
+                showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
+            }
         }
     }
 
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let more = UITableViewRowAction(style: .Normal, title: "More") { action, index in
-            print("more button tapped")
+            print("more button tapped") // idk
         }
         more.backgroundColor = UIColor.lightGrayColor()
 
         let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
-            print("favorite button tapped")
+            print("favorite button tapped") // add playlist or playlist item to favorites
         }
         favorite.backgroundColor = UIColor.orangeColor()
 
         let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
-            print("share button tapped")
+            print("share button tapped") // load youtube link
         }
         share.backgroundColor = UIColor.blueColor()
 
-        return [ more, favorite, share ].reverse()
+        var editActions: [UITableViewRowAction]? = []
+        // editActions!.append(more)
+        editActions!.append(favorite)
+        if selectedPlaylistName.isNotEmpty {
+            editActions!.append(share)
+        }
+
+        return editActions!.reverse()
     }
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
 
     func createPinchGesture() {
         let gesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.detectPinch(_:)))
