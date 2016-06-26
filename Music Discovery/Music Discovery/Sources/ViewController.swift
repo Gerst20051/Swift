@@ -15,15 +15,10 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     let tableView = UITableView()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
-        get {
-            let sortDescriptors = [ SortDescriptor(property: "favorite", ascending: true), SortDescriptor(property: "name", ascending: true) ]
-            return realm.objects(Playlist).filter("items.@count > 0").sorted(sortDescriptors)
-        }
+        return realm.objects(Playlist).filter("items.@count > 0").sorted([ "favorite", "name" ])
     }
     var items: Results<StringObject> {
-        get {
-            return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted("favorite").sorted("value")
-        }
+        return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted([ "favorite", "value" ])
     }
     var selectedPlaylistName: String = "" {
         didSet {
