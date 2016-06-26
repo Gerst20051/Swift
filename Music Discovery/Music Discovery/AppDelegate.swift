@@ -1,3 +1,4 @@
+import AlamofireNetworkActivityIndicator
 import UIKit
 
 @UIApplicationMain
@@ -7,6 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let nav = UINavigationController(rootViewController: ViewController())
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        setupNetworkActivityIndicatorManager()
         setupNavigationController()
         return true
     }
@@ -20,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {}
 
     func applicationWillTerminate(application: UIApplication) {}
+
+    func setupNetworkActivityIndicatorManager() {
+        NetworkActivityIndicatorManager.sharedManager.isEnabled = true
+    }
 
     func setupNavigationController() {
         nav.navigationBarHidden = true

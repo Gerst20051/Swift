@@ -1,12 +1,13 @@
 import Alamofire
 import AlamofireObjectMapper
 import NMPopUpViewSwift
+import NVActivityIndicatorView
 import PromiseKit
 import RealmSwift
 import SnapKit
 import UIKit
 
-class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, NVActivityIndicatorViewable, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     let realm = try! Realm()
     let playlistController = PlaylistController()
@@ -34,23 +35,27 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func setupUI() {
-        view.backgroundColor = UIColor(red: 216.0 / 255.0, green: 53.0 / 255.0, blue: 53.0 / 255.0, alpha: 1.0)
+        view.backgroundColor = AppColor.AppIconRed
         loadPlaylistData()
         createTableView()
         createPinchGesture()
     }
 
     func loadPlaylistData() {
+        showLoader()
         downloadPlaylistVersion().then { currentPlaylistVersion -> Void in
             let userDefaults = NSUserDefaults.standardUserDefaults()
             let playlistVersion = userDefaults.integerForKey(UserDefaultsKey.PlaylistVersion)
             if playlistVersion == currentPlaylistVersion && false {
                 print("playlist is up-to-date")
             } else {
+                self.showLoader()
                 self.downloadPlaylistJSON().then { Void -> Void in
                     userDefaults.setInteger(currentPlaylistVersion, forKey: UserDefaultsKey.PlaylistVersion)
                     self.tableView.reloadData()
                     return
+                }.always {
+                    self.hideLoader()
                 }.error { error in
                     switch error {
                         case PromiseError.ApiFailure(let error):
@@ -63,6 +68,8 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                     self.getLocalPlaylistJSON()
                 }
             }
+        }.always {
+            self.hideLoader()
         }.error { error in
             switch error {
                 case PromiseError.ApiFailure(let error):
@@ -76,7 +83,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func downloadPlaylistVersion() -> Promise<Int> {
-        let versionUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/version.txt"
+        let versionUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/version.txt2"
         return Promise { fulfill, reject in
             Alamofire.request(.GET, versionUrl).validate().responseString { response in
                 if response.result.isSuccess {
@@ -93,7 +100,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func downloadPlaylistJSON() -> Promise<Void> {
-        let playlistUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/playlists.json"
+        let playlistUrl = "https://gist.githubusercontent.com/Gerst20051/d8ff84358883664c5c07f0748fedbef4/raw/playlists.json2"
         return Promise<Void> { fulfill, reject in
             Alamofire.request(.GET, playlistUrl).validate().responseArray { (response: Response<[Playlist], NSError>) in
                 if response.result.isSuccess {
@@ -128,6 +135,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView(frame: CGRectZero)
         view.addSubview(tableView)
         tableView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(20.0)
@@ -138,8 +146,10 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectedPlaylistName.isEmpty {
+            print("count => \(playlists.count)")
             return playlists.count
         } else {
+            print("count => \(items.count)")
             return items.count
         }
     }
@@ -162,6 +172,31 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
             showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
         }
     }
+
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .Normal, title: "More") { action, index in
+            print("more button tapped")
+        }
+        more.backgroundColor = UIColor.lightGrayColor()
+
+        let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
+            print("favorite button tapped")
+        }
+        favorite.backgroundColor = UIColor.orangeColor()
+
+        let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
+            print("share button tapped")
+        }
+        share.backgroundColor = UIColor.blueColor()
+
+        return [ more, favorite, share ].reverse()
+    }
+
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
 
     func createPinchGesture() {
         let gesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.detectPinch(_:)))
