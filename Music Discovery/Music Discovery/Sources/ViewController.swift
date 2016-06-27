@@ -8,14 +8,13 @@ import SnapKit
 import SwiftyUserDefaults
 import UIKit
 import XCDYouTubeKit
-// import YouTubePlayer
 
-class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource { // YouTubePlayerDelegate
+class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     let realm = try! Realm()
     let userDefaults = NSUserDefaults.standardUserDefaults()
-    // var videoPlayer: YouTubePlayerView?
-    var client = XCDYouTubeClient(languageIdentifier: "en")
+    var videoPlayerContainerView: UIView?
+    var videoPlayerViewController: XCDYouTubeVideoPlayerViewController!
     let tableView = UITableView()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
@@ -41,12 +40,15 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func monitorDeviceOrientationChange() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.deviceOrientationDidChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(ViewController.playbackStateChanged), name: MPMoviePlayerPlaybackStateDidChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.deviceOrientationDidChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.videoReceived), name: XCDYouTubeVideoPlayerViewControllerDidReceiveVideoNotification, object: nil)
     }
 
     func deviceOrientationDidChange() {
         addTableViewContraints()
-        // addVideoPlayerContraints()
+        addVideoPlayerContainerContraints()
     }
 
     func addSwipeGestureRecognizer() {
@@ -59,7 +61,16 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
                 case UISwipeGestureRecognizerDirection.Right:
-                    returnToListOfPlaylists()
+                    if let videoPlayerContainerView = videoPlayerContainerView {
+                        let videoPlayerContainsPoint = CGRectContainsPoint(videoPlayerContainerView.bounds, swipeGesture.locationInView(videoPlayerContainerView))
+                        if videoPlayerContainsPoint {
+                            removeVideoPlayerContainerView()
+                        } else {
+                            returnToListOfPlaylists()
+                        }
+                    } else {
+                        returnToListOfPlaylists()
+                    }
                 default:
                     break
             }
@@ -71,7 +82,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         loadPlaylistData()
         createTableView()
         createPinchGesture()
-        // createVideoPlayer()
+        createVideoContainerView()
     }
 
     func loadPlaylistData() {
@@ -196,24 +207,14 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                 Cloud.getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
                     print("youtube video id => \(videoId)")
                     self.showLoader()
-                    // self.videoPlayer?.loadVideoID(videoId)
-                    self.client.getVideoWithIdentifier(videoId) { (video: XCDYouTubeVideo?, error: NSError?) -> Void in
-                        guard let video = video where error == nil else {
-                            print("error => \(error?.localizedDescription)")
-                            return
-                        }
-                        print("video => \(video)")
-                    }
-                    let videoPlayerViewController: XCDYouTubeVideoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: videoId)
-                    videoPlayerViewController.presentInView(self.view)
-                    videoPlayerViewController.moviePlayer.play()
+                    self.loadVideo(videoId)
                 }.error { error in
                     print("error loading youtube video id => \(error)")
                 }
             } else {
                 print("error parsing youtube api url")
             }
-            if Defaults[.HelpOverlayShownForSpreadGesture] == false && false {
+            if Defaults[.HelpOverlayShownForSpreadGesture] == false {
                 Defaults[.HelpOverlayShownForSpreadGesture] = true
                 showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
             }
@@ -251,17 +252,18 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func scrollTableViewToTop() {
-        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0), atScrollPosition: .Top, animated: false)
     }
 
     func createPinchGesture() {
-        let gesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.detectPinch(_:)))
+        let gesture = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.detectPinch(_:)))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
     }
 
     func detectPinch(sender: UIPinchGestureRecognizer) {
         if sender.scale > 1.0 { // spread gesture
+            videoPlayerViewController?.moviePlayer.setFullscreen(true, animated: true)
         } else { // pinch gesture
             returnToListOfPlaylists()
         }
@@ -276,50 +278,54 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         }
     }
 
-    // func createVideoPlayer() {
-    //     videoPlayer = YouTubePlayerView(frame: CGRectMake(0.0, 0.0, 0.0, 0.0))
-    //     videoPlayer!.delegate = self
-    //     hideVideoPlayer()
-    //     view.addSubview(videoPlayer!)
-    //     addVideoPlayerContraints()
-    // }
+    func createVideoContainerView() {
+        guard videoPlayerContainerView == nil else { return }
+        videoPlayerContainerView = UIView()
+        videoPlayerContainerView!.hidden = true
+        view.addSubview(videoPlayerContainerView!)
+        addVideoPlayerContainerContraints()
+    }
 
-    // func addVideoPlayerContraints() {
-    //     videoPlayer?.snp_remakeConstraints { (make) -> Void in
-    //         make.bottom.equalTo(0.0)
-    //         make.height.equalTo(100.0)
-    //         make.width.equalTo(self.view.frame.size.width)
-    //     }
-    // }
+    func addVideoPlayerContainerContraints() {
+        videoPlayerContainerView?.snp_remakeConstraints { (make) -> Void in
+            make.bottom.right.equalTo(0.0)
+            make.height.equalTo(140.0)
+            make.width.equalTo(200.0)
+        }
+    }
 
-    // func showVideoPlayer() {
-    //     videoPlayer?.hidden = false
-    // }
+    func loadVideo(videoId: String) {
+        guard let containerView = videoPlayerContainerView else { return }
+        videoPlayerViewController?.moviePlayer.stop()
+        videoPlayerViewController?.view.removeFromSuperview()
+        videoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: videoId)
+        videoPlayerViewController.presentInView(containerView)
+        videoPlayerViewController.moviePlayer.play()
+    }
 
-    // func hideVideoPlayer() {
-    //     videoPlayer?.hidden = true
-    // }
+    func removeVideoPlayerContainerView() {
+        videoPlayerContainerView?.hidden = true
+        videoPlayerViewController?.view.hidden = true
+        videoPlayerViewController?.moviePlayer.stop()
+        videoPlayerViewController?.view.removeFromSuperview()
+        videoPlayerContainerView?.removeFromSuperview()
+        videoPlayerContainerView = nil
+    }
 
-    // func playerReady(videoPlayer: YouTubePlayerView) {
-    //     videoPlayer.play()
-    // }
+    func videoReceived() {
+        videoPlayerContainerView?.hidden = false
+        hideLoader()
+    }
 
-    // func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-    //     print("playerStateChanged - playerState => \(playerState)")
-    //     if [ .Unstarted, .Ended, .Paused ].contains(playerState) {
-    //         hideLoader()
-    //         if playerState == .Unstarted {
-    //             NBMaterialToast.showWithText(view, text: "Restricted Video", duration: NBLunchDuration.LONG)
-    //         }
-    //     }
-    // }
-
-    // func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
-    //     print("playerQualityChanged - playbackQuality => \(playbackQuality)")
-    // }
+    func playbackStateChanged() {
+        print("playbackState => \(videoPlayerViewController?.moviePlayer.playbackState.rawValue)") // hide video when it reaches the end or select next video if in shuffle mode
+    }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: MPMoviePlayerPlaybackStateDidChangeNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+        notificationCenter.removeObserver(self, name: XCDYouTubeVideoPlayerViewControllerDidReceiveVideoNotification, object: nil)
     }
 
 }
