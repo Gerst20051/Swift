@@ -21,12 +21,24 @@
 		F709B3C41D1F18AA005704EC /* pinch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C01D1F18AA005704EC /* pinch@2x.png */; };
 		F709B3C51D1F18AA005704EC /* spread.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C11D1F18AA005704EC /* spread.png */; };
 		F709B3C61D1F18AA005704EC /* spread@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C21D1F18AA005704EC /* spread@2x.png */; };
+		F72372A71D20BD9F00D2494B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72372A61D20BD9F00D2494B /* SnapshotHelper.swift */; };
+		F78989181D20B84100003DDB /* Music_Discovery_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78989171D20B84100003DDB /* Music_Discovery_UITests.swift */; };
 		F7A0D87D1D209E4F00A87046 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0D87B1D209E4F00A87046 /* logo.png */; };
 		F7A0D87E1D209E4F00A87046 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0D87C1D209E4F00A87046 /* logo@2x.png */; };
 		F7A0D8801D20A04E00A87046 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A0D87F1D20A04E00A87046 /* StoreKit.framework */; };
 		F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */; };
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F789891A1D20B84100003DDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7BB04DF1D1C71F200B1A270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7BB04E61D1C71F200B1A270;
+			remoteInfo = "Music Discovery";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		16B63678B2E4F848B8B79A33 /* Pods-Music Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Discovery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Music Discovery/Pods-Music Discovery.debug.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +57,10 @@
 		F709B3C01D1F18AA005704EC /* pinch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinch@2x.png"; path = "Resources/Images/pinch@2x.png"; sourceTree = "<group>"; };
 		F709B3C11D1F18AA005704EC /* spread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spread.png; path = Resources/Images/spread.png; sourceTree = "<group>"; };
 		F709B3C21D1F18AA005704EC /* spread@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spread@2x.png"; path = "Resources/Images/spread@2x.png"; sourceTree = "<group>"; };
+		F72372A61D20BD9F00D2494B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		F78989151D20B84100003DDB /* Music Discovery UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Music Discovery UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F78989171D20B84100003DDB /* Music_Discovery_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music_Discovery_UITests.swift; sourceTree = "<group>"; };
+		F78989191D20B84100003DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7A0D87B1D209E4F00A87046 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/Images/logo.png; sourceTree = "<group>"; };
 		F7A0D87C1D209E4F00A87046 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "Resources/Images/logo@2x.png"; sourceTree = "<group>"; };
 		F7A0D87F1D20A04E00A87046 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -55,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F78989121D20B84100003DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7BB04E41D1C71F200B1A270 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,10 +144,21 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		F78989161D20B84100003DDB /* Music Discovery UITests */ = {
+			isa = PBXGroup;
+			children = (
+				F72372A61D20BD9F00D2494B /* SnapshotHelper.swift */,
+				F78989171D20B84100003DDB /* Music_Discovery_UITests.swift */,
+				F78989191D20B84100003DDB /* Info.plist */,
+			);
+			path = "Music Discovery UITests";
+			sourceTree = "<group>";
+		};
 		F7BB04DE1D1C71F200B1A270 = {
 			isa = PBXGroup;
 			children = (
 				F7BB04E91D1C71F200B1A270 /* Music Discovery */,
+				F78989161D20B84100003DDB /* Music Discovery UITests */,
 				F7BB04E81D1C71F200B1A270 /* Products */,
 				40372A32250872D9A698D387 /* Pods */,
 				82C5B2E0522A783F43BD0C4D /* Frameworks */,
@@ -135,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				F7BB04E71D1C71F200B1A270 /* Music Discovery.app */,
+				F78989151D20B84100003DDB /* Music Discovery UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +190,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F78989141D20B84100003DDB /* Music Discovery UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F789891C1D20B84100003DDB /* Build configuration list for PBXNativeTarget "Music Discovery UITests" */;
+			buildPhases = (
+				F78989111D20B84100003DDB /* Sources */,
+				F78989121D20B84100003DDB /* Frameworks */,
+				F78989131D20B84100003DDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F789891B1D20B84100003DDB /* PBXTargetDependency */,
+			);
+			name = "Music Discovery UITests";
+			productName = "Music Discovery UITests";
+			productReference = F78989151D20B84100003DDB /* Music Discovery UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F7BB04E61D1C71F200B1A270 /* Music Discovery */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7BB04F91D1C71F200B1A270 /* Build configuration list for PBXNativeTarget "Music Discovery" */;
@@ -185,6 +238,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Andrew Gerst";
 				TargetAttributes = {
+					F78989141D20B84100003DDB = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F7BB04E61D1C71F200B1A270;
+					};
 					F7BB04E61D1C71F200B1A270 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = VLF9HQZ98F;
@@ -210,11 +267,19 @@
 			projectRoot = "";
 			targets = (
 				F7BB04E61D1C71F200B1A270 /* Music Discovery */,
+				F78989141D20B84100003DDB /* Music Discovery UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F78989131D20B84100003DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7BB04E51D1C71F200B1A270 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +347,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F78989111D20B84100003DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F78989181D20B84100003DDB /* Music_Discovery_UITests.swift in Sources */,
+				F72372A71D20BD9F00D2494B /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7BB04E31D1C71F200B1A270 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,7 +373,39 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F789891B1D20B84100003DDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7BB04E61D1C71F200B1A270 /* Music Discovery */;
+			targetProxy = F789891A1D20B84100003DDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F789891D1D20B84100003DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Music Discovery UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Music-Discovery-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a304fc7-7376-4185-8a3a-5b593c68d227";
+				TEST_TARGET_NAME = "Music Discovery";
+			};
+			name = Debug;
+		};
+		F789891E1D20B84100003DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Music Discovery UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Music-Discovery-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a304fc7-7376-4185-8a3a-5b593c68d227";
+				TEST_TARGET_NAME = "Music Discovery";
+			};
+			name = Release;
+		};
 		F7BB04F71D1C71F200B1A270 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -390,13 +496,13 @@
 			baseConfigurationReference = 16B63678B2E4F848B8B79A33 /* Pods-Music Discovery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Gerst (Z8AYHL83QK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Gerst (Z8AYHL83QK)";
 				INFOPLIST_FILE = "Music Discovery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hnswave.music.discovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a48f3e6d-61f5-4379-b8fe-8083b79e4328";
 			};
 			name = Debug;
 		};
@@ -405,19 +511,28 @@
 			baseConfigurationReference = AC5ACF9E80562CC5E7E8E76A /* Pods-Music Discovery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrew Gerst (VLF9HQZ98F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Andrew Gerst (VLF9HQZ98F)";
 				INFOPLIST_FILE = "Music Discovery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hnswave.music.discovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2a304fc7-7376-4185-8a3a-5b593c68d227";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F789891C1D20B84100003DDB /* Build configuration list for PBXNativeTarget "Music Discovery UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F789891D1D20B84100003DDB /* Debug */,
+				F789891E1D20B84100003DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F7BB04E21D1C71F200B1A270 /* Build configuration list for PBXProject "Music Discovery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
