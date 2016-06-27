@@ -321,6 +321,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func loadVideo(videoId: String) {
+        createVideoContainerView()
         guard let containerView = videoPlayerContainerView else { return }
         videoPlayerViewController?.moviePlayer.stop()
         videoPlayerViewController?.view.removeFromSuperview()
