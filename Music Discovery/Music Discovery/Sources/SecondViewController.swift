@@ -14,9 +14,9 @@ class SecondViewController: BaseViewController {
     }
 
     func showNavigationButton() {
-        let button: UIButton = UIButton()
+        let button = UIButton()
         button.backgroundColor = UIColor.blackColor()
-        button.setTitle("Back", forState: UIControlState.Normal)
+        button.setTitle("Back", forState: .Normal)
         button.addTarget(self, action: #selector(self.buttonClicked), forControlEvents: .TouchUpInside)
         view.addSubview(button)
         button.snp_makeConstraints { (make) -> Void in
@@ -30,4 +30,5 @@ class SecondViewController: BaseViewController {
         print("Back Button Clicked")
         app.nav.popViewControllerAnimated(true)
     }
+
 }

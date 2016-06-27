@@ -19,7 +19,7 @@ class PlaylistController {
 
     func addPlaylist(playlist: Playlist) {
         try! realm.write {
-            self.realm.add(playlist, update: true)
+            realm.add(playlist, update: true)
         }
     }
 }

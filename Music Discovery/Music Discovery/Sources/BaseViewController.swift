@@ -42,7 +42,7 @@ class BaseViewController: UIViewController {
 
     func getPopUpViewNibFile() -> String {
         var nibName = "PopUpViewController"
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             nibName = "PopUpViewController_iPad"
         } else {
             if UIScreen.mainScreen().bounds.size.width > 320.0 {

@@ -23,7 +23,7 @@ extension UITableViewCell {
     func removeMargins() {
         self.layoutMargins = UIEdgeInsetsZero
         self.preservesSuperviewLayoutMargins = false
-        self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.selectionStyle = .None
         self.separatorInset = UIEdgeInsetsZero
     }
 }
