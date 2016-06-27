@@ -1,13 +1,15 @@
 import AlamofireNetworkActivityIndicator
+import SwiftyTimer
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
-    let nav = UINavigationController(rootViewController: ViewController())
+    var nav: UINavigationController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        setupSplashScreen()
         setupNetworkActivityIndicatorManager()
         setupNavigationController()
         return true
@@ -23,6 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {}
 
+    func setupSplashScreen() {
+        if let splashScreen = NSBundle.mainBundle().loadNibNamed("SplashScreen", owner: self, options: nil).first as? SplashScreenViewController {
+            nav = UINavigationController(rootViewController: splashScreen)
+            NSTimer.after(2.5.seconds) {
+                self.nav.setViewControllers([ ViewController() ], animated: false)
+            }
+        } else {
+            nav = UINavigationController(rootViewController: ViewController())
+        }
+    }
+
     func setupNetworkActivityIndicatorManager() {
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
     }
@@ -34,3 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+class SplashScreenViewController: UIViewController {}

@@ -22,6 +22,7 @@ PODS:
   - RealmSwift (1.0.1):
     - Realm (= 1.0.1)
   - SnapKit (0.21.0)
+  - SwiftyTimer (1.4.0)
   - SwiftyUserDefaults (2.2.0)
   - UIColor+BFPaperColors (1.7.2)
   - XCDYouTubeKit (2.5.3)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - PromiseKit/CorePromise (= 3.2.0)
   - RealmSwift (= 1.0.1)
   - SnapKit (= 0.21.0)
+  - SwiftyTimer (= 1.4.0)
   - SwiftyUserDefaults (= 2.2.0)
   - XCDYouTubeKit (= 2.5.3)
 
@@ -58,10 +60,11 @@ SPEC CHECKSUMS:
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
+  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
   UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 219252cade51149b1e4f3e6a3e65283e30fd9812
+PODFILE CHECKSUM: fef943824364e1ebbe6c0cccc4108ae7de8151dc
 
 COCOAPODS: 1.0.1
