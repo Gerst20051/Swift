@@ -1,4 +1,11 @@
+import SwiftyUserDefaults
 import UIKit
+
+extension DefaultsKeys {
+    static let HelpOverlayShownForPinchGesture = DefaultsKey<Bool>("help_overlay_shown_for_pinch_gesture")
+    static let HelpOverlayShownForSpreadGesture = DefaultsKey<Bool>("help_overlay_shown_for_spread_gesture")
+    static let PlaylistVersion = DefaultsKey<Int>("playlist_version")
+}
 
 extension Int {
     var isEmpty: Bool {

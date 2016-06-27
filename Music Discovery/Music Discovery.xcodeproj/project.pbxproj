@@ -21,9 +21,11 @@
 		F709B3C41D1F18AA005704EC /* pinch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C01D1F18AA005704EC /* pinch@2x.png */; };
 		F709B3C51D1F18AA005704EC /* spread.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C11D1F18AA005704EC /* spread.png */; };
 		F709B3C61D1F18AA005704EC /* spread@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F709B3C21D1F18AA005704EC /* spread@2x.png */; };
+		F7A0D87D1D209E4F00A87046 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0D87B1D209E4F00A87046 /* logo.png */; };
+		F7A0D87E1D209E4F00A87046 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0D87C1D209E4F00A87046 /* logo@2x.png */; };
+		F7A0D8801D20A04E00A87046 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A0D87F1D20A04E00A87046 /* StoreKit.framework */; };
 		F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */; };
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
-		F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,10 +45,12 @@
 		F709B3C01D1F18AA005704EC /* pinch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinch@2x.png"; path = "Resources/Images/pinch@2x.png"; sourceTree = "<group>"; };
 		F709B3C11D1F18AA005704EC /* spread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spread.png; path = Resources/Images/spread.png; sourceTree = "<group>"; };
 		F709B3C21D1F18AA005704EC /* spread@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spread@2x.png"; path = "Resources/Images/spread@2x.png"; sourceTree = "<group>"; };
+		F7A0D87B1D209E4F00A87046 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/Images/logo.png; sourceTree = "<group>"; };
+		F7A0D87C1D209E4F00A87046 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "Resources/Images/logo@2x.png"; sourceTree = "<group>"; };
+		F7A0D87F1D20A04E00A87046 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F7BB04E71D1C71F200B1A270 /* Music Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BB04EA1D1C71F200B1A270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BB04F11D1C71F200B1A270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F7BB04F41D1C71F200B1A270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7BB04F61D1C71F200B1A270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A9C14669B26F8F6FF7602D /* Pods_Music_Discovery.framework in Frameworks */,
+				F7A0D8801D20A04E00A87046 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,7 @@
 		82C5B2E0522A783F43BD0C4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7A0D87F1D20A04E00A87046 /* StoreKit.framework */,
 				7D7687BFBE958DFEE696B359 /* Pods_Music_Discovery.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +111,8 @@
 		F709B3BE1D1F189D005704EC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F7A0D87B1D209E4F00A87046 /* logo.png */,
+				F7A0D87C1D209E4F00A87046 /* logo@2x.png */,
 				F709B3BF1D1F18AA005704EC /* pinch.png */,
 				F709B3C01D1F18AA005704EC /* pinch@2x.png */,
 				F709B3C11D1F18AA005704EC /* spread.png */,
@@ -138,7 +146,6 @@
 				F7BB04F11D1C71F200B1A270 /* Assets.xcassets */,
 				F709B3A31D1CCF62005704EC /* Base.lproj */,
 				F7BB04F61D1C71F200B1A270 /* Info.plist */,
-				F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */,
 				F709B3AB1D1CCFBD005704EC /* Resources */,
 				F709B3AA1D1CCFB6005704EC /* Sources */,
 			);
@@ -181,6 +188,11 @@
 					F7BB04E61D1C71F200B1A270 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = VLF9HQZ98F;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -208,10 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F709B3C51D1F18AA005704EC /* spread.png in Resources */,
+				F7A0D87E1D209E4F00A87046 /* logo@2x.png in Resources */,
 				F709B3C61D1F18AA005704EC /* spread@2x.png in Resources */,
-				F7BB04F51D1C71F200B1A270 /* LaunchScreen.storyboard in Resources */,
 				F709B3C31D1F18AA005704EC /* pinch.png in Resources */,
 				F709B3A71D1CCF62005704EC /* Base.lproj in Resources */,
+				F7A0D87D1D209E4F00A87046 /* logo.png in Resources */,
 				F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */,
 				F709B3B31D1DAD15005704EC /* playlists.json in Resources */,
 				F709B3C41D1F18AA005704EC /* pinch@2x.png in Resources */,
@@ -285,17 +298,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F7BB04F31D1C71F200B1A270 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7BB04F41D1C71F200B1A270 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F7BB04F71D1C71F200B1A270 /* Debug */ = {

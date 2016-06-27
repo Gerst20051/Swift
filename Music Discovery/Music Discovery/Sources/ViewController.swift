@@ -1,11 +1,13 @@
 import Alamofire
 import AlamofireObjectMapper
+import NBMaterialDialogIOS
 import NMPopUpViewSwift
 import NVActivityIndicatorView
 import ObjectMapper
 import PromiseKit
 import RealmSwift
 import SnapKit
+import SwiftyUserDefaults
 import UIKit
 import XCDYouTubeKit
 import YouTubePlayer
@@ -31,13 +33,12 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
         }
     }
     var selectedPlaylistItem: String = ""
-    var hasShownPinchGesture = false
-    var hasShownSpreadGesture = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Realm File Location => \(Realm.Configuration.defaultConfiguration.fileURL)")
         monitorDeviceOrientationChange()
+        addSwipeGestureRecognizer()
         setupUI()
     }
 
@@ -48,6 +49,23 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
     func deviceOrientationDidChange() {
         addTableViewContraints()
         addVideoPlayerContraints()
+    }
+
+    func addSwipeGestureRecognizer() {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
+        swipeGesture.direction = .Right
+        view.addGestureRecognizer(swipeGesture)
+    }
+
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+                case UISwipeGestureRecognizerDirection.Right:
+                    returnToListOfPlaylists()
+                default:
+                    break
+            }
+        }
     }
 
     func setupUI() {
@@ -66,7 +84,7 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
             } else {
                 self.showLoader()
                 self.downloadPlaylistJSON().then { Void -> Void in
-                    self.userDefaults.setInteger(currentPlaylistVersion, forKey: UserDefaultsKey.PlaylistVersion)
+                    Defaults[.PlaylistVersion] = currentPlaylistVersion
                     self.tableView.reloadData()
                     self.scrollTableViewToTop()
                     return
@@ -100,7 +118,7 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
     }
 
     func getPlaylistVersion() -> Int {
-        return userDefaults.integerForKey(UserDefaultsKey.PlaylistVersion)
+        return Defaults[.PlaylistVersion]
     }
 
     func downloadPlaylistVersion() -> Promise<Int> {
@@ -230,9 +248,9 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if selectedPlaylistName.isEmpty {
             selectedPlaylistName = playlists[indexPath.row].name
-            if hasShownPinchGesture == false {
-                hasShownPinchGesture = true
-                showPopupView(image: "pinch", title: "Pinch Gesture", message: "A pinch gesture will take you back to your playlists.")
+            if Defaults[.HelpOverlayShownForPinchGesture] == false {
+                Defaults[.HelpOverlayShownForPinchGesture] = true
+                showPopupView(image: "pinch", title: "Pinch Gesture", message: "Pinch or swipe right to return to your playlists.")
             }
         } else {
             selectedPlaylistItem = items[indexPath.row].value!
@@ -242,18 +260,24 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
                     print("youtube video id => \(videoId)")
                     self.showLoader()
                     self.videoPlayer?.loadVideoID(videoId)
-                    // self.client.getVideoWithIdentifier(videoId) { (video: XCDYouTubeVideo?, error: NSError?) -> Void in
-                    //     video
-                    //     error?.localizedDescription
-                    // }
+                    self.client.getVideoWithIdentifier(videoId) { (video: XCDYouTubeVideo?, error: NSError?) -> Void in
+                        guard let video = video where error == nil else {
+                            print("error => \(error?.localizedDescription)")
+                            return
+                        }
+                        print("video => \(video)")
+                    }
+                    let videoPlayerViewController: XCDYouTubeVideoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: videoId)
+                    videoPlayerViewController.presentInView(self.view)
+                    videoPlayerViewController.moviePlayer.play()
                 }.error { error in
                     print("error loading youtube video id => \(error)")
                 }
             } else {
                 print("error parsing youtube api url")
             }
-            if hasShownSpreadGesture == false && false {
-                hasShownSpreadGesture = true
+            if Defaults[.HelpOverlayShownForSpreadGesture] == false && false {
+                Defaults[.HelpOverlayShownForSpreadGesture] = true
                 showPopupView(image: "spread", title: "Spread Gesture", message: "A spread gesture will make your video fullscreen.")
             }
         }
@@ -302,7 +326,13 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
     func detectPinch(sender: UIPinchGestureRecognizer) {
         if sender.scale > 1.0 { // spread gesture
         } else { // pinch gesture
-            hideVideoPlayer()
+            returnToListOfPlaylists()
+        }
+    }
+
+    func returnToListOfPlaylists() {
+        if !loader.animating {
+            hideLoader()
             if selectedPlaylistName.isNotEmpty {
                 selectedPlaylistName = ""
             }
@@ -341,7 +371,9 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
         print("playerStateChanged - playerState => \(playerState)")
         if [ .Unstarted, .Ended, .Paused ].contains(playerState) {
             hideLoader()
-            // show dialog explaining that the video is restricted...
+            if playerState == .Unstarted {
+                NBMaterialToast.showWithText(view, text: "Restricted Video", duration: NBLunchDuration.LONG)
+            }
         }
     }
 
