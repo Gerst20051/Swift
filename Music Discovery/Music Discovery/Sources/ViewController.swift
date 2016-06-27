@@ -18,10 +18,10 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     let tableView = UITableView()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
-        return realm.objects(Playlist).filter("items.@count > 0").sorted([ "favorite", "name" ])
+        return realm.objects(Playlist).filter("items.@count > 0").sorted([ SortDescriptor(property: "favorite", ascending: false), "name" ])
     }
     var items: Results<StringObject> {
-        return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted([ "favorite", "value" ])
+        return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted([ SortDescriptor(property: "favorite", ascending: false), "value" ])
     }
     var selectedPlaylistName: String = "" {
         didSet {
@@ -204,12 +204,13 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
             selectedPlaylistItem = items[indexPath.row].value!
             if let apiUrl = CloudUtils.getYouTubeApiUrl(selectedPlaylistItem) {
                 print("apiUrl => \(apiUrl)")
+                showLoader()
                 Cloud.getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
                     print("youtube video id => \(videoId)")
-                    self.showLoader()
                     self.loadVideo(videoId)
                 }.error { error in
                     print("error loading youtube video id => \(error)")
+                    self.hideLoader()
                 }
             } else {
                 print("error parsing youtube api url")
@@ -222,18 +223,26 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
 
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let more = UITableViewRowAction(style: .Normal, title: "More") { action, index in
-            print("more button tapped") // idk
-        }
-        more.backgroundColor = UIColor.lightGrayColor()
+        // let more = UITableViewRowAction(style: .Normal, title: "More") { action, index in
+        //     print("more button tapped") // idk
+        // }
+        // more.backgroundColor = UIColor.lightGrayColor()
 
-        let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
-            print("favorite button tapped") // add playlist or playlist item to favorites
+        let isFavorite = selectedPlaylistName.isEmpty ? playlists[indexPath.row].favorite : items[indexPath.row].favorite
+        let favorite = UITableViewRowAction(style: .Normal, title: isFavorite ? "Unfavorite" : "Favorite") { action, index in
+            print("(un)favorite button tapped")
+            if self.selectedPlaylistName.isEmpty {
+                self.playlistController.toggleFavorite(self.playlists[index.row])
+            } else {
+                self.playlistController.toggleFavorite(self.items[index.row])
+            }
+            self.tableView.reloadData()
         }
         favorite.backgroundColor = UIColor.orangeColor()
 
         let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
-            print("share button tapped") // load youtube link
+            print("share button tapped")
+            self.handlePlaylistItemShare(self.items[index.row].value!)
         }
         share.backgroundColor = UIColor.blueColor()
 
@@ -249,6 +258,23 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
+    }
+
+    func handlePlaylistItemShare(searchTerm: String) {
+        if let apiUrl = CloudUtils.getYouTubeApiUrl(searchTerm) {
+            showLoader()
+            Cloud.getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
+                print("sharing youtube video id => \(videoId)")
+                UIPasteboard.generalPasteboard().string = "https://www.youtube.com/watch?v=\(videoId)"
+                NBMaterialToast.showWithText(self.view, text: "A Sharable Link To This Video Has Been Copied To Your Clipboard")
+            }.always {
+                self.hideLoader()
+            }.error { error in
+                print("error loading youtube video id => \(error)")
+            }
+        } else {
+            print("error parsing youtube api url")
+        }
     }
 
     func scrollTableViewToTop() {

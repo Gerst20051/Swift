@@ -22,4 +22,16 @@ class PlaylistController {
             realm.add(playlist, update: true)
         }
     }
+
+    func toggleFavorite(playlist: Playlist) {
+        try! realm.write {
+            playlist.favorite = !playlist.favorite
+        }
+    }
+
+    func toggleFavorite(playlistItem: StringObject) {
+        try! realm.write {
+            playlistItem.favorite = !playlistItem.favorite
+        }
+    }
 }
