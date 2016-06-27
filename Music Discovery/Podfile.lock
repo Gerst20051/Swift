@@ -43,7 +43,6 @@ PODS:
   - SwiftyUserDefaults (2.2.0)
   - UIColor+BFPaperColors (1.7.2)
   - XCDYouTubeKit (2.5.3)
-  - YouTubePlayer (0.3.0)
 
 DEPENDENCIES:
   - Alamofire (= 3.4.1)
@@ -60,7 +59,6 @@ DEPENDENCIES:
   - SnapKit (= 0.21.0)
   - SwiftyUserDefaults (= 2.2.0)
   - XCDYouTubeKit (= 2.5.3)
-  - YouTubePlayer (= 0.3.0)
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
@@ -82,8 +80,7 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
   UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
-  YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
 
-PODFILE CHECKSUM: edaed726ba3f08dc9826de1cff77f3f32da657d0
+PODFILE CHECKSUM: b86199c57922f8f6f94526cf60a84567ebbdedde
 
 COCOAPODS: 1.0.1

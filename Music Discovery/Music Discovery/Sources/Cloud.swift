@@ -5,10 +5,10 @@ import PromiseKit
 
 class CloudUtils {
 
-    class func getYouTubeApiUrl(query: String) -> String? {
+    class func getYouTubeApiUrl(query: String, shouldFilter: Bool = false) -> String? {
         if let query = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()), fields = "items/id/videoId".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            let results = 1, key = "AIzaSyBSXDaYvJGY4dbLFDF66NrSrlUYH9rVZ9A"
-            return "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=\(results)&q=\(query)&type=video&videoEmbeddable=true&videoSyndicated=true&fields=\(fields)&key=\(key)"
+            let results = 1, key = "AIzaSyBSXDaYvJGY4dbLFDF66NrSrlUYH9rVZ9A", filter = shouldFilter ? "&videoEmbeddable=true&videoSyndicated=true" : ""
+            return "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=\(results)&q=\(query)&type=video\(filter)&fields=\(fields)&key=\(key)"
         }
         return nil
     }
@@ -56,7 +56,7 @@ class Cloud {
             Alamofire.request(.GET, url).responseObject { (response: Response<YouTubeVideoSearchResults, NSError>) in
                 if response.result.isSuccess {
                     if let results = response.result.value, result = results.items?.first, videoId = result.id?.videoId {
-                        fulfill(videoId) // maybe return an array of videoIds since so many videos are restricted on certain sites
+                        fulfill(videoId)
                     } else {
                         reject(PromiseError.NoYouTubeSearchResults())
                     }

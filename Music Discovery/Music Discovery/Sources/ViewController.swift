@@ -8,13 +8,13 @@ import SnapKit
 import SwiftyUserDefaults
 import UIKit
 import XCDYouTubeKit
-import YouTubePlayer
+// import YouTubePlayer
 
-class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource { // YouTubePlayerDelegate
 
     let realm = try! Realm()
     let userDefaults = NSUserDefaults.standardUserDefaults()
-    var videoPlayer: YouTubePlayerView?
+    // var videoPlayer: YouTubePlayerView?
     var client = XCDYouTubeClient(languageIdentifier: "en")
     let tableView = UITableView()
     let playlistController = PlaylistController()
@@ -46,7 +46,7 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
 
     func deviceOrientationDidChange() {
         addTableViewContraints()
-        addVideoPlayerContraints()
+        // addVideoPlayerContraints()
     }
 
     func addSwipeGestureRecognizer() {
@@ -71,7 +71,7 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
         loadPlaylistData()
         createTableView()
         createPinchGesture()
-        createVideoPlayer()
+        // createVideoPlayer()
     }
 
     func loadPlaylistData() {
@@ -196,7 +196,7 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
                 Cloud.getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
                     print("youtube video id => \(videoId)")
                     self.showLoader()
-                    self.videoPlayer?.loadVideoID(videoId)
+                    // self.videoPlayer?.loadVideoID(videoId)
                     self.client.getVideoWithIdentifier(videoId) { (video: XCDYouTubeVideo?, error: NSError?) -> Void in
                         guard let video = video where error == nil else {
                             print("error => \(error?.localizedDescription)")
@@ -276,47 +276,47 @@ class ViewController: BaseViewController, YouTubePlayerDelegate, UIGestureRecogn
         }
     }
 
-    func createVideoPlayer() {
-        videoPlayer = YouTubePlayerView(frame: CGRectMake(0.0, 0.0, 0.0, 0.0))
-        videoPlayer!.delegate = self
-        hideVideoPlayer()
-        view.addSubview(videoPlayer!)
-        addVideoPlayerContraints()
-    }
+    // func createVideoPlayer() {
+    //     videoPlayer = YouTubePlayerView(frame: CGRectMake(0.0, 0.0, 0.0, 0.0))
+    //     videoPlayer!.delegate = self
+    //     hideVideoPlayer()
+    //     view.addSubview(videoPlayer!)
+    //     addVideoPlayerContraints()
+    // }
 
-    func addVideoPlayerContraints() {
-        videoPlayer?.snp_remakeConstraints { (make) -> Void in
-            make.bottom.equalTo(0.0)
-            make.height.equalTo(100.0)
-            make.width.equalTo(self.view.frame.size.width)
-        }
-    }
+    // func addVideoPlayerContraints() {
+    //     videoPlayer?.snp_remakeConstraints { (make) -> Void in
+    //         make.bottom.equalTo(0.0)
+    //         make.height.equalTo(100.0)
+    //         make.width.equalTo(self.view.frame.size.width)
+    //     }
+    // }
 
-    func showVideoPlayer() {
-        videoPlayer?.hidden = false
-    }
+    // func showVideoPlayer() {
+    //     videoPlayer?.hidden = false
+    // }
 
-    func hideVideoPlayer() {
-        videoPlayer?.hidden = true
-    }
+    // func hideVideoPlayer() {
+    //     videoPlayer?.hidden = true
+    // }
 
-    func playerReady(videoPlayer: YouTubePlayerView) {
-        videoPlayer.play()
-    }
+    // func playerReady(videoPlayer: YouTubePlayerView) {
+    //     videoPlayer.play()
+    // }
 
-    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        print("playerStateChanged - playerState => \(playerState)")
-        if [ .Unstarted, .Ended, .Paused ].contains(playerState) {
-            hideLoader()
-            if playerState == .Unstarted {
-                NBMaterialToast.showWithText(view, text: "Restricted Video", duration: NBLunchDuration.LONG)
-            }
-        }
-    }
+    // func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+    //     print("playerStateChanged - playerState => \(playerState)")
+    //     if [ .Unstarted, .Ended, .Paused ].contains(playerState) {
+    //         hideLoader()
+    //         if playerState == .Unstarted {
+    //             NBMaterialToast.showWithText(view, text: "Restricted Video", duration: NBLunchDuration.LONG)
+    //         }
+    //     }
+    // }
 
-    func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
-        print("playerQualityChanged - playbackQuality => \(playbackQuality)")
-    }
+    // func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+    //     print("playerQualityChanged - playbackQuality => \(playbackQuality)")
+    // }
 
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)

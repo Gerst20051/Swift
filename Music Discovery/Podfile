@@ -16,5 +16,4 @@ target 'Music Discovery' do
   pod 'SnapKit', '0.21.0'
   pod 'SwiftyUserDefaults', '2.2.0'
   pod 'XCDYouTubeKit', '2.5.3'
-  pod 'YouTubePlayer', '0.3.0'
 end
