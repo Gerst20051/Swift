@@ -55,6 +55,9 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGesture.direction = .Right
         view.addGestureRecognizer(swipeGesture)
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
+        swipeUpGesture.direction = .Up
+        view.addGestureRecognizer(swipeUpGesture)
     }
 
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -70,6 +73,13 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                         }
                     } else {
                         returnToListOfPlaylists()
+                    }
+                case UISwipeGestureRecognizerDirection.Up:
+                    if let videoPlayerContainerView = videoPlayerContainerView {
+                        let videoPlayerContainsPoint = CGRectContainsPoint(videoPlayerContainerView.bounds, swipeGesture.locationInView(videoPlayerContainerView))
+                        if videoPlayerContainsPoint {
+                            videoPlayerViewController?.moviePlayer.setFullscreen(true, animated: true)
+                        }
                     }
                 default:
                     break
