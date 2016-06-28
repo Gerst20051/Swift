@@ -171,12 +171,22 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         animateTableView()
     }
 
+    func getHeaderLabel() -> UILabel {
+        let headerLabel = UILabel()
+        headerLabel.frame = tableView.dequeueReusableCellWithIdentifier("cell")!.frame
+        headerLabel.text = "Playlist Discovery"
+        headerLabel.textAlignment = .Center
+        headerLabel.textColor = UIColor.whiteColor()
+        return headerLabel
+    }
+
     func createTableView() {
         tableView.backgroundColor = UIColor.clearColor()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        tableView.tableHeaderView = getHeaderLabel()
         view.addSubview(tableView)
         addTableViewContraints()
     }
