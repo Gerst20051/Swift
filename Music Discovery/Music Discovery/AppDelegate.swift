@@ -47,5 +47,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-class SplashScreenViewController: UIViewController {}

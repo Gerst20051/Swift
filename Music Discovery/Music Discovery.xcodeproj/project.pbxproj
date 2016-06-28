@@ -31,6 +31,7 @@
 		F7BB04F21D1C71F200B1A270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BB04F11D1C71F200B1A270 /* Assets.xcassets */; };
 		F7D4C01F1D21A20A00ADC37A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D4C01D1D21A20A00ADC37A /* LaunchScreen.storyboard */; };
 		F7D4C0331D21A94200ADC37A /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D4C0311D21A94200ADC37A /* SplashScreen.xib */; };
+		F7D4C0351D2210F200ADC37A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4C0341D2210F200ADC37A /* SplashScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		F7BB04F61D1C71F200B1A270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7D4C01E1D21A20A00ADC37A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7D4C0321D21A94200ADC37A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SplashScreen.xib; sourceTree = "<group>"; };
+		F7D4C0341D2210F200ADC37A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashScreenViewController.swift; path = Sources/SplashScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				F709B3B41D1E18D8005704EC /* Models.swift */,
 				F709B3B81D1E5AD2005704EC /* RealmControllers.swift */,
 				F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */,
+				F7D4C0341D2210F200ADC37A /* SplashScreenViewController.swift */,
 				F709B3AD1D1CCFCE005704EC /* ViewController.swift */,
 			);
 			name = Sources;
@@ -392,6 +395,7 @@
 				49F67DF01D21ECC400A4BFF5 /* AnimatedEqualizerView.swift in Sources */,
 				F709B3B11D1CD54D005704EC /* BaseViewController.swift in Sources */,
 				F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */,
+				F7D4C0351D2210F200ADC37A /* SplashScreenViewController.swift in Sources */,
 				F709B3BB1D1E6F27005704EC /* Extensions.swift in Sources */,
 				F7BB04EB1D1C71F200B1A270 /* AppDelegate.swift in Sources */,
 				F709B3B51D1E18D8005704EC /* Models.swift in Sources */,

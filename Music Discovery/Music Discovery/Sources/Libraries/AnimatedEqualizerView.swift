@@ -21,11 +21,11 @@ class AnimatedEqualizerView: UIView {
     init(containerView: UIView) {
         self.containerView = containerView
         super.init(frame: containerView.frame)
-        self.initCommon()
-        self.initContainerLayer()
-        self.initBezierPath()
-        self.initBars()
-        self.initAnimation()
+        initCommon()
+        initContainerLayer()
+        initBezierPath()
+        initBars()
+        initAnimation()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,14 +47,14 @@ class AnimatedEqualizerView: UIView {
     }
 
     func initCommon() {
-        self.frame = CGRectMake(0.0, 0.0, containerView!.frame.size.width, containerView!.frame.size.height)
+        frame = CGRectMake(0.0, 0.0, containerView.frame.size.width, containerView.frame.size.height)
     }
 
     func initContainerLayer() {
         containerLayer.frame = CGRectMake(0.0, 0.0, 60.0, 65.0)
         containerLayer.anchorPoint = CGPointMake(0.5, 0.5)
-        containerLayer.position = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0)
-        self.layer.addSublayer(containerLayer)
+        containerLayer.position = CGPointMake(frame.size.width / 2.0, frame.size.height / 2.0)
+        layer.addSublayer(containerLayer)
     }
 
     func initBezierPath() {
@@ -83,9 +83,9 @@ class AnimatedEqualizerView: UIView {
     func initBars() {
         for index in 0 ... 4 {
             let bar = CAShapeLayer()
+            bar.fillColor = UIColor.whiteColor().CGColor
             bar.frame = CGRectMake(CGFloat(15 * index), 0.0, 3.0, 65.0)
             bar.path = lowBezierPath.CGPath
-            bar.fillColor = UIColor.whiteColor().CGColor
             containerLayer.addSublayer(bar)
             childLayers.append(bar)
         }
@@ -109,7 +109,6 @@ class AnimatedEqualizerView: UIView {
     }
 
     func addAnimation(index: Int) {
-        let animationKey = "\(index)Animation"
-        childLayers[index].addAnimation(animations[index], forKey: animationKey)
+        childLayers[index].addAnimation(animations[index], forKey: "\(index)Animation")
     }
 }
