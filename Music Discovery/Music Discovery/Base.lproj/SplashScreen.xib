@@ -29,7 +29,7 @@
                         <rect key="frame" x="20" y="157" width="280" height="260"/>
                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                     </imageView>
-                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXg-Na-jIT">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXg-Na-jIT">
                         <rect key="frame" x="110" y="415" width="100" height="65"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -40,6 +40,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.84705882352941175" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="JXg-Na-jIT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="79e-6H-UVW"/>
                     <constraint firstItem="dXS-LN-TJq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="4" id="Bmy-j4-Sx6"/>
                     <constraint firstItem="6Q6-gv-ATj" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="32" id="Kao-f2-o0A"/>
                     <constraint firstItem="dXS-LN-TJq" firstAttribute="top" secondItem="6Q6-gv-ATj" secondAttribute="bottom" constant="45" id="LYK-qH-bXD"/>
