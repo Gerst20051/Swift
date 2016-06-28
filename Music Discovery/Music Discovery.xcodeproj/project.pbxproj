@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49F67DF01D21ECC400A4BFF5 /* AnimatedEqualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F67DEF1D21ECC400A4BFF5 /* AnimatedEqualizerView.swift */; };
 		71A9C14669B26F8F6FF7602D /* Pods_Music_Discovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7687BFBE958DFEE696B359 /* Pods_Music_Discovery.framework */; };
 		F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */; };
 		F709B3AF1D1CCFCE005704EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709B3AD1D1CCFCE005704EC /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		16B63678B2E4F848B8B79A33 /* Pods-Music Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Discovery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Music Discovery/Pods-Music Discovery.debug.xcconfig"; sourceTree = "<group>"; };
+		49F67DEF1D21ECC400A4BFF5 /* AnimatedEqualizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedEqualizerView.swift; sourceTree = "<group>"; };
 		7D7687BFBE958DFEE696B359 /* Pods_Music_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5ACF9E80562CC5E7E8E76A /* Pods-Music Discovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Discovery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Music Discovery/Pods-Music Discovery.release.xcconfig"; sourceTree = "<group>"; };
 		F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Sources/SecondViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		49F67DEE1D21ECC400A4BFF5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				49F67DEF1D21ECC400A4BFF5 /* AnimatedEqualizerView.swift */,
+			);
+			name = Libraries;
+			path = Sources/Libraries;
+			sourceTree = "<group>";
+		};
 		82C5B2E0522A783F43BD0C4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +130,7 @@
 				F7631F741D20E49B0054DED1 /* Cloud.swift */,
 				F709B3B61D1E234E005704EC /* Constants.swift */,
 				F709B3BA1D1E6F27005704EC /* Extensions.swift */,
+				49F67DEE1D21ECC400A4BFF5 /* Libraries */,
 				F709B3B41D1E18D8005704EC /* Models.swift */,
 				F709B3B81D1E5AD2005704EC /* RealmControllers.swift */,
 				F709B3AC1D1CCFCE005704EC /* SecondViewController.swift */,
@@ -377,6 +389,7 @@
 			files = (
 				F709B3AF1D1CCFCE005704EC /* ViewController.swift in Sources */,
 				F7631F751D20E49B0054DED1 /* Cloud.swift in Sources */,
+				49F67DF01D21ECC400A4BFF5 /* AnimatedEqualizerView.swift in Sources */,
 				F709B3B11D1CD54D005704EC /* BaseViewController.swift in Sources */,
 				F709B3AE1D1CCFCE005704EC /* SecondViewController.swift in Sources */,
 				F709B3BB1D1E6F27005704EC /* Extensions.swift in Sources */,

@@ -25,8 +25,8 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
     }
     var selectedPlaylistName: String = "" {
         didSet {
-            tableView.reloadData()
             scrollTableViewToTop()
+            animateTableView(selectedPlaylistName == "")
         }
     }
     var selectedPlaylistItem: String = ""
@@ -79,10 +79,10 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
 
     func setupUI() {
         view.backgroundColor = Color.AppIconRed
-        loadPlaylistData()
         createTableView()
         createPinchGesture()
         createVideoContainerView()
+        loadPlaylistData()
     }
 
     func loadPlaylistData() {
@@ -98,8 +98,8 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                     for playlist in playlists {
                         self.playlistController.addPlaylist(playlist)
                     }
-                    self.tableView.reloadData()
                     self.scrollTableViewToTop()
+                    self.animateTableView()
                     return
                 }.always {
                     self.hideLoader()
@@ -157,8 +157,8 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                 playlistController.addPlaylist(playlistObject)
             }
         }
-        tableView.reloadData()
         scrollTableViewToTop()
+        animateTableView()
     }
 
     func createTableView() {
@@ -236,7 +236,9 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
             } else {
                 self.playlistController.toggleFavorite(self.items[index.row])
             }
-            self.tableView.reloadData()
+            self.animateTableViewCell(tableView.cellForRowAtIndexPath(indexPath)!) { finished in
+                self.animateTableView()
+            }
         }
         favorite.backgroundColor = UIColor.orangeColor()
 
@@ -260,6 +262,22 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
         return true
     }
 
+    func animateTableViewCell(cell: UITableViewCell, completion: ((Bool) -> Void)?) {
+        UIView.animateWithDuration(0.5, delay: 0.06, usingSpringWithDamping: 0.0, initialSpringVelocity: 0.0, options: [], animations: {
+            cell.transform = CGAffineTransformMakeTranslation(-self.tableView.bounds.size.width, 0.0)
+        }, completion: completion)
+    }
+
+    func animateTableView(directionLeft: Bool = false) {
+        tableView.reloadData()
+        for cell in tableView.visibleCells {
+            cell.transform = CGAffineTransformMakeTranslation(directionLeft ? -tableView.bounds.size.width : tableView.bounds.size.width, 0.0)
+            UIView.animateWithDuration(0.5, delay: 0.06, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.25, options: [], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+            }, completion: nil)
+        }
+    }
+
     func handlePlaylistItemShare(searchTerm: String) {
         if let apiUrl = CloudUtils.getYouTubeApiUrl(searchTerm) {
             showLoader()
@@ -269,6 +287,7 @@ class ViewController: BaseViewController, UIGestureRecognizerDelegate, UITableVi
                 NBMaterialToast.showWithText(self.view, text: "A Sharable Link To This Video Has Been Copied To Your Clipboard")
             }.always {
                 self.hideLoader()
+                self.tableView.setEditing(false, animated: true)
             }.error { error in
                 print("error loading youtube video id => \(error)")
             }

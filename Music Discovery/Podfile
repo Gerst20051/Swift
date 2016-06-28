@@ -5,6 +5,7 @@ target 'Music Discovery' do
   pod 'Alamofire', '3.4.1'
   pod 'AlamofireNetworkActivityIndicator', '1.0.1'
   pod 'AlamofireObjectMapper', '3.0.0'
+  pod 'AsyncDisplayKit', '1.9.80'
   pod 'Dollar', '5.1.0'
   pod 'FileKit', '2.0.0'
   pod 'Material', '1.42.6'

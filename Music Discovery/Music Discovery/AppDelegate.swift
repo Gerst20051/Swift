@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let splashScreen = NSBundle.mainBundle().loadNibNamed("SplashScreen", owner: self, options: nil).first as? SplashScreenViewController {
             nav = UINavigationController(rootViewController: splashScreen)
             NSTimer.after(2.5.seconds) {
-                self.nav.setViewControllers([ ViewController() ], animated: false)
+                self.nav.setViewControllers([ ViewController() ], animated: true)
             }
         } else {
             nav = UINavigationController(rootViewController: ViewController())
