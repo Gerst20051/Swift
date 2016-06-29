@@ -19,6 +19,10 @@ class BaseViewController: UIViewController {
         addActivityIndicatorView()
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
     func addLoadingOverlayView() {
         loadingOverlay = UIView()
         loadingOverlay.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
