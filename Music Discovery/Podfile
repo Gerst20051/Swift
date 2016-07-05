@@ -14,6 +14,7 @@ target 'Music Discovery' do
   pod 'NVActivityIndicatorView', '2.8'
   pod 'PromiseKit/CorePromise', '3.2.0'
   pod 'RealmSwift', '1.0.1'
+  pod 'Reveal-iOS-SDK', '1.6.2', :configurations => ['Debug']
   pod 'SnapKit', '0.21.0'
   pod 'SwiftyTimer', '1.4.0'
   pod 'SwiftyUserDefaults', '2.2.0'

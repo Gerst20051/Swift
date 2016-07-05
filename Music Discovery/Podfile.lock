@@ -34,6 +34,7 @@ PODS:
   - Realm/Headers (1.0.1)
   - RealmSwift (1.0.1):
     - Realm (= 1.0.1)
+  - Reveal-iOS-SDK (1.6.2)
   - SnapKit (0.21.0)
   - SwiftyTimer (1.4.0)
   - SwiftyUserDefaults (2.2.0)
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView (= 2.8)
   - PromiseKit/CorePromise (= 3.2.0)
   - RealmSwift (= 1.0.1)
+  - Reveal-iOS-SDK (= 1.6.2)
   - SnapKit (= 0.21.0)
   - SwiftyTimer (= 1.4.0)
   - SwiftyUserDefaults (= 2.2.0)
@@ -76,12 +78,13 @@ SPEC CHECKSUMS:
   PromiseKit: 1db024241265f428137a9f3c00ff9590740c4be6
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
   SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
   UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: b7b0ea2cfafe496261a185858dc3a56f75c34316
+PODFILE CHECKSUM: 1c549242886195f81590db6c6823bcfde32d3254
 
 COCOAPODS: 1.0.1
