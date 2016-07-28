@@ -618,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BC3EB80AA8AE4979C3A7DCD /* Pods-Gitlab Client.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -633,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7AFB018E265A8060A6E077C /* Pods-Gitlab Client.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
