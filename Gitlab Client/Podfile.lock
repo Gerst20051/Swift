@@ -1,22 +1,93 @@
 PODS:
+  - Alamofire (3.4.1)
+  - Dollar (5.1.0)
   - Material (2.0.0)
+  - OMGHTTPURLRQ (3.2.0):
+    - OMGHTTPURLRQ/RQ (= 3.2.0)
+  - OMGHTTPURLRQ/FormURLEncode (3.2.0)
+  - OMGHTTPURLRQ/RQ (3.2.0):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.2.0)
+  - PromiseKit (4.0.0):
+    - PromiseKit/Foundation (= 4.0.0)
+    - PromiseKit/QuartzCore (= 4.0.0)
+    - PromiseKit/UIKit (= 4.0.0)
+  - PromiseKit/CorePromise (4.0.0)
+  - PromiseKit/Foundation (4.0.0):
+    - OMGHTTPURLRQ (~> 3.2.0)
+    - PromiseKit/CorePromise
+    - PromiseKit/Foundation/Deprecated (= 4.0.0)
+  - PromiseKit/Foundation/Deprecated (4.0.0):
+    - OMGHTTPURLRQ (~> 3.2.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.0):
+    - PromiseKit/CorePromise
+    - PromiseKit/UIKit/Deprecated (= 4.0.0)
+  - PromiseKit/UIKit/Deprecated (4.0.0):
+    - PromiseKit/CorePromise
+  - SnapKit (0.40.0.beta2)
+  - SwiftyUserDefaults (2.2.0)
 
 DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift3`)
+  - Dollar (from `https://github.com/ankurp/Dollar.git`, branch `swift-3`)
   - Material (from `https://github.com/CosmicMind/Material.git`, branch `development`)
+  - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-3.0`)
+  - SnapKit (from `https://github.com/SnapKit/SnapKit`, branch `feature/0.40.0`)
+  - SwiftyUserDefaults (from `https://github.com/radex/SwiftyUserDefaults.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift3
+    :git: https://github.com/Alamofire/Alamofire.git
+  Dollar:
+    :branch: swift-3
+    :git: https://github.com/ankurp/Dollar.git
   Material:
     :branch: development
     :git: https://github.com/CosmicMind/Material.git
+  PromiseKit:
+    :branch: swift-3.0
+    :git: https://github.com/mxcl/PromiseKit.git
+  SnapKit:
+    :branch: feature/0.40.0
+    :git: https://github.com/SnapKit/SnapKit
+  SwiftyUserDefaults:
+    :branch: swift3
+    :git: https://github.com/radex/SwiftyUserDefaults.git
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 304cb54998ab56765b8bd638c6c8bfc9a0bf6756
+    :git: https://github.com/Alamofire/Alamofire.git
+  Dollar:
+    :commit: 3d5f83a93bd53a44292b448379ee3549d17091c7
+    :git: https://github.com/ankurp/Dollar.git
   Material:
     :commit: f93224df902db3479f8876923c0d9f720eb59e93
     :git: https://github.com/CosmicMind/Material.git
+  PromiseKit:
+    :commit: 54a230b31fe2e0dc5bf8c170adb0a1b9b84c6c26
+    :git: https://github.com/mxcl/PromiseKit.git
+  SnapKit:
+    :commit: 9f8ad446773e5a075d2a8cd8eac520cfa52c2a41
+    :git: https://github.com/SnapKit/SnapKit
+  SwiftyUserDefaults:
+    :commit: 086277b6d729c239eda3ca214c85698fceb4f86b
+    :git: https://github.com/radex/SwiftyUserDefaults.git
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Dollar: d40032c85eced868f65b86aaede4ef7c093a1bb2
   Material: 437cd15bddb544bb0f41ba24215351038e565a1d
+  OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
+  PromiseKit: 20ef1aa78b1995504a95c57caa81dcd0fbb3e568
+  SnapKit: 405236dfbf278b9d545db29f3950ae7e7f14f348
+  SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
 
-PODFILE CHECKSUM: 223f414e164c5395c202a895e20ac6bba3edfb7e
+PODFILE CHECKSUM: 35f145282e78e430d3fbf78e9f1f909f416177aa
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.1

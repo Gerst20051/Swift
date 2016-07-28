@@ -3,7 +3,12 @@ platform :osx, '10.10'
 target 'Gitlab Client' do
   use_frameworks!
 
-  pod 'Material', :git => 'https://github.com/CosmicMind/Material.git', :branch => 'development'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift3' # '3.4.1'
+  pod 'Dollar', :git => 'https://github.com/ankurp/Dollar.git', :branch => 'swift-3' # '5.1.0'
+  pod 'Material', :git => 'https://github.com/CosmicMind/Material.git', :branch => 'development' # '2.0.0'
+  pod 'PromiseKit', :git => 'https://github.com/mxcl/PromiseKit.git', :branch => 'swift-3.0' # '4.0.0'
+  pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit', :branch => 'feature/0.40.0' # '0.40.0.beta2'
+  pod 'SwiftyUserDefaults', git: 'https://github.com/radex/SwiftyUserDefaults.git', branch: 'swift3' # '2.2.0'
 
   target 'Gitlab ClientTests' do
     inherit! :search_paths
@@ -12,5 +17,12 @@ target 'Gitlab Client' do
   target 'Gitlab ClientUITests' do
     inherit! :search_paths
   end
+end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |configuration|
+      target.build_settings(configuration.name)['SWIFT_VERSION'] = '3.0' # until all cocoapods support swift 3.0
+    end
+  end
 end
