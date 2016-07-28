@@ -1,5 +1,6 @@
 import Cocoa
 import SnapKit
+import SwiftyUserDefaults
 
 class TokenViewController : BaseViewController {
 
@@ -22,11 +23,11 @@ class TokenViewController : BaseViewController {
     }
 
     func buildUI() {
-        self.view.addSubview(input)
+        view.addSubview(input)
         button.action = #selector(TokenViewController.myAction)
         button.target = self
         button.title = "Continue"
-        self.view.addSubview(button)
+        view.addSubview(button)
     }
 
     func makeConstraints() {
@@ -45,7 +46,10 @@ class TokenViewController : BaseViewController {
     }
 
     func myAction(sender: AnyObject) {
-        app.showMainViewController()
+        if !input.stringValue.isEmpty {
+            Defaults[.GitlabToken] = input.stringValue
+            app.showMainViewController()
+        }
     }
 
 }

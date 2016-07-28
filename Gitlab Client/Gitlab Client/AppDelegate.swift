@@ -1,4 +1,5 @@
 import Cocoa
+import SwiftyUserDefaults
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -8,7 +9,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let mainViewController = MainViewController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        showTokenViewController()
+        if let gitlabToken = Defaults[.GitlabToken], !gitlabToken.isEmpty {
+            showMainViewController()
+        } else {
+            showTokenViewController()
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {}
