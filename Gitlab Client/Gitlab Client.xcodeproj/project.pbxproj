@@ -15,6 +15,10 @@
 		F72209F71D4994F000C96A92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72209F51D4994F000C96A92 /* MainMenu.xib */; };
 		F7220A021D4994F100C96A92 /* Gitlab_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7220A011D4994F100C96A92 /* Gitlab_ClientTests.swift */; };
 		F7220A0D1D4994F100C96A92 /* Gitlab_ClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7220A0C1D4994F100C96A92 /* Gitlab_ClientUITests.swift */; };
+		F7E9BED91D49B70A001C1C23 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BED81D49B70A001C1C23 /* BaseViewController.swift */; };
+		F7E9BEDB1D49B77A001C1C23 /* Extension+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEDA1D49B77A001C1C23 /* Extension+NSViewController.swift */; };
+		F7E9BEDD1D49B849001C1C23 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEDC1D49B849001C1C23 /* TokenViewController.swift */; };
+		F7E9BEDF1D49BC7B001C1C23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEDE1D49BC7B001C1C23 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		F7220A081D4994F100C96A92 /* Gitlab ClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gitlab ClientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7220A0C1D4994F100C96A92 /* Gitlab_ClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gitlab_ClientUITests.swift; sourceTree = "<group>"; };
 		F7220A0E1D4994F100C96A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E9BED81D49B70A001C1C23 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
+		F7E9BEDA1D49B77A001C1C23 /* Extension+NSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+NSViewController.swift"; path = "Sources/Extension+NSViewController.swift"; sourceTree = "<group>"; };
+		F7E9BEDC1D49B849001C1C23 /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenViewController.swift; path = Sources/TokenViewController.swift; sourceTree = "<group>"; };
+		F7E9BEDE1D49BC7B001C1C23 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Sources/MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +143,10 @@
 			children = (
 				F72209F11D4994F000C96A92 /* AppDelegate.swift */,
 				F72209F31D4994F000C96A92 /* Assets.xcassets */,
-				F72209F51D4994F000C96A92 /* MainMenu.xib */,
 				F72209F81D4994F000C96A92 /* Info.plist */,
+				F72209F51D4994F000C96A92 /* MainMenu.xib */,
+				F7E9BED61D49B6EE001C1C23 /* Resources */,
+				F7E9BED71D49B6FB001C1C23 /* Sources */,
 			);
 			path = "Gitlab Client";
 			sourceTree = "<group>";
@@ -157,6 +167,24 @@
 				F7220A0E1D4994F100C96A92 /* Info.plist */,
 			);
 			path = "Gitlab ClientUITests";
+			sourceTree = "<group>";
+		};
+		F7E9BED61D49B6EE001C1C23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F7E9BED71D49B6FB001C1C23 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F7E9BED81D49B70A001C1C23 /* BaseViewController.swift */,
+				F7E9BEDA1D49B77A001C1C23 /* Extension+NSViewController.swift */,
+				F7E9BEDE1D49BC7B001C1C23 /* MainViewController.swift */,
+				F7E9BEDC1D49B849001C1C23 /* TokenViewController.swift */,
+			);
+			name = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,7 +473,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E9BEDD1D49B849001C1C23 /* TokenViewController.swift in Sources */,
 				F72209F21D4994F000C96A92 /* AppDelegate.swift in Sources */,
+				F7E9BEDB1D49B77A001C1C23 /* Extension+NSViewController.swift in Sources */,
+				F7E9BED91D49B70A001C1C23 /* BaseViewController.swift in Sources */,
+				F7E9BEDF1D49BC7B001C1C23 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
