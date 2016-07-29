@@ -1,7 +1,11 @@
 PODS:
   - Alamofire (3.4.1)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
   - Dollar (5.1.0)
   - Material (2.0.0)
+  - ObjectMapper (1.3.0)
   - OMGHTTPURLRQ (3.2.0):
     - OMGHTTPURLRQ/RQ (= 3.2.0)
   - OMGHTTPURLRQ/FormURLEncode (3.2.0)
@@ -33,8 +37,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift3`)
+  - AlamofireObjectMapper (from `https://github.com/tristanhimmelman/AlamofireObjectMapper.git`, branch `swift-3`)
   - Dollar (from `https://github.com/ankurp/Dollar.git`, branch `swift-3`)
   - Material (from `https://github.com/CosmicMind/Material.git`, branch `development`)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-3`)
   - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-3.0`)
   - SnapKit (from `https://github.com/SnapKit/SnapKit`, branch `feature/0.40.0`)
   - SwiftyUserDefaults (from `https://github.com/radex/SwiftyUserDefaults.git`, branch `swift3`)
@@ -43,12 +49,18 @@ EXTERNAL SOURCES:
   Alamofire:
     :branch: swift3
     :git: https://github.com/Alamofire/Alamofire.git
+  AlamofireObjectMapper:
+    :branch: swift-3
+    :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
   Dollar:
     :branch: swift-3
     :git: https://github.com/ankurp/Dollar.git
   Material:
     :branch: development
     :git: https://github.com/CosmicMind/Material.git
+  ObjectMapper:
+    :branch: swift-3
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
   PromiseKit:
     :branch: swift-3.0
     :git: https://github.com/mxcl/PromiseKit.git
@@ -63,12 +75,18 @@ CHECKOUT OPTIONS:
   Alamofire:
     :commit: 304cb54998ab56765b8bd638c6c8bfc9a0bf6756
     :git: https://github.com/Alamofire/Alamofire.git
+  AlamofireObjectMapper:
+    :commit: 2d570c37d4e297c5d8fc94769976a940c3f945e2
+    :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
   Dollar:
     :commit: 3d5f83a93bd53a44292b448379ee3549d17091c7
     :git: https://github.com/ankurp/Dollar.git
   Material:
     :commit: f93224df902db3479f8876923c0d9f720eb59e93
     :git: https://github.com/CosmicMind/Material.git
+  ObjectMapper:
+    :commit: a8ba5a6b4d87ab6d57571ea7a01c6439ecfa09b2
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
   PromiseKit:
     :commit: 54a230b31fe2e0dc5bf8c170adb0a1b9b84c6c26
     :git: https://github.com/mxcl/PromiseKit.git
@@ -81,13 +99,15 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
   Dollar: d40032c85eced868f65b86aaede4ef7c093a1bb2
   Material: 437cd15bddb544bb0f41ba24215351038e565a1d
+  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
   OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
   PromiseKit: 20ef1aa78b1995504a95c57caa81dcd0fbb3e568
   SnapKit: 405236dfbf278b9d545db29f3950ae7e7f14f348
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
 
-PODFILE CHECKSUM: 81fddb10b95bd1db9296ec02b4ea36c1e80b50e7
+PODFILE CHECKSUM: 8313671647c7f674aee87da1a2343fa407da22f3
 
 COCOAPODS: 1.1.0.beta.1

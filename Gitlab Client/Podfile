@@ -4,8 +4,10 @@ target 'Gitlab Client' do
   use_frameworks!
 
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift3' # '3.4.1'
+  pod 'AlamofireObjectMapper', :git => 'https://github.com/tristanhimmelman/AlamofireObjectMapper.git', :branch => 'swift-3' # '3.0.0'
   pod 'Dollar', :git => 'https://github.com/ankurp/Dollar.git', :branch => 'swift-3' # '5.1.0'
   pod 'Material', :git => 'https://github.com/CosmicMind/Material.git', :branch => 'development' # '2.0.0'
+  pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-3'
   pod 'PromiseKit', :git => 'https://github.com/mxcl/PromiseKit.git', :branch => 'swift-3.0' # '4.0.0'
   pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit', :branch => 'feature/0.40.0' # '0.40.0.beta2'
   pod 'SwiftyUserDefaults', git: 'https://github.com/radex/SwiftyUserDefaults.git', branch: 'swift3' # '2.2.0'

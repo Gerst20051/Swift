@@ -22,6 +22,7 @@ class MainViewController : BaseViewController {
     }
 
     func buildUI() {
+        label.alignment = .center
         label.drawsBackground = false
         label.isBezeled = false
         label.isBordered = false
