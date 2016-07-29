@@ -4,44 +4,62 @@ import SwiftyUserDefaults
 
 class MainViewController : BaseViewController {
 
-    let label = NSTextField()
+    let scrollView = NSScrollView()
+    let tableView = NSTableView()
+    let dataSource = TableViewDataSource()
 
     override func loadView() {
         createView()
         buildUI()
-        makeConstraints()
+        sendRequest()
     }
 
     func createView() {
-        let view = NSView(frame: NSMakeRect(0.0, 0.0, 50.0, 50.0))
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.blue().cgColor
-        view.layer?.borderColor = NSColor.blue().cgColor
-        view.layer?.borderWidth = 2.0
-        self.view = view
+        self.view = NSView()
     }
 
     func buildUI() {
-        label.alignment = .center
-        label.drawsBackground = false
-        label.isBezeled = false
-        label.isBordered = false
-        label.isEditable = false
-        label.isSelectable = false
-        label.stringValue = Defaults[.GitlabToken]!
-        view.addSubview(label)
-    }
-
-    func makeConstraints() {
-        label.snp.makeConstraints { (make) -> Void in
-            make.height.equalTo(50.0)
-            make.width.equalTo(200.0)
-            make.centerX.centerY.equalTo(self.view) // center is missing in swift 3 branch?
+        if 0 < self.dataSource.data.count {
+            buildListViewUI()
+            makeListViewConstraints()
         }
     }
 
-    func myAction(sender: AnyObject) {
-        app.showTokenViewController()
+    func buildListViewUI() {
+        scrollView.autoresizingMask = .viewHeightSizable
+        scrollView.documentView = tableView
+        scrollView.hasVerticalScroller = true
+        view.addSubview(scrollView)
+
+        tableView.addTableColumn(NSTableColumn())
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        tableView.gridColor = NSColor.clear()
+        tableView.gridStyleMask = []
+        tableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
+        tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.none
+        tableView.headerView = nil
+    }
+
+    func makeListViewConstraints() {
+        scrollView.snp.makeConstraints { (make) -> Void in
+            make.left.top.equalTo(0.0)
+            make.height.width.equalTo(self.view)
+        }
+        tableView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(0.0)
+            make.width.equalTo(scrollView)
+        }
+    }
+
+    func sendRequest() {
+        _ = Cloud.getProjectList().then { projects -> Void in
+            self.dataSource.data = projects
+            self.buildUI()
+            print("projects => \(projects)")
+        }.catch { error in
+            print("error => \(error)")
+        }
     }
 
 }
