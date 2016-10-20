@@ -46,20 +46,21 @@ class DiffDataSource : NSObject, NSTableViewDataSource, NSTableViewDelegate {
         return DiffData()
     }
 
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return data.places.count
     }
 
-    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 50.0
     }
 
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = NSView()
         cellView.wantsLayer = true
-        cellView.layer?.backgroundColor = NSColor.orangeColor().CGColor
+        cellView.layer?.backgroundColor = NSColor.orange.cgColor
         return cellView
     }
+
 }
 
 class SavedDiffDataSource : NSObject, NSTableViewDataSource, NSTableViewDelegate {
@@ -68,18 +69,19 @@ class SavedDiffDataSource : NSObject, NSTableViewDataSource, NSTableViewDelegate
         return SavedDiffData()
     }
 
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return data.places.count
     }
 
-    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 50.0
     }
 
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = NSView()
         cellView.wantsLayer = true
-        cellView.layer?.backgroundColor = NSColor.greenColor().CGColor
+        cellView.layer?.backgroundColor = NSColor.green.cgColor
         return cellView
     }
+
 }

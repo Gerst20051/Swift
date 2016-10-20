@@ -7,14 +7,13 @@ class AppDelegate : NSObject, NSApplicationDelegate, NSWindowDelegate {
     let myViewController = MyViewController()
     let mySecondViewController = MySecondViewController()
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         showMyViewController()
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
-    }
+    func applicationWillTerminate(_ aNotification: Notification) {}
 
-    func windowWillResize(sender: NSWindow, toSize frameSize: NSSize) -> NSSize { // TODO: Figure Out Why This Isn't Working...
+    func windowWillResize(_ sender: NSWindow, to frameSize: NSSize) -> NSSize { // TODO: Figure Out Why This Isn't Working...
         print("frameSize => \(frameSize)")
         return frameSize
     }

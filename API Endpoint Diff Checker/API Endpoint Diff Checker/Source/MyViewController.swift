@@ -28,24 +28,24 @@ class MyViewController : BaseViewController {
 
     func buildListViewUI() {
         listView.wantsLayer = true
-        listView.layer?.backgroundColor = NSColor.whiteColor().CGColor
+        listView.layer?.backgroundColor = NSColor.white.cgColor
         self.view.addSubview(listView)
 
-        listView.snp_makeConstraints { (make) -> Void in
+        listView.snp.makeConstraints { (make) -> Void in
             make.left.bottom.equalTo(0.0)
             make.height.equalTo(self.view)
             make.width.equalTo(self.view).multipliedBy(0.25)
         }
 
         diffTableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
-        diffTableView.gridColor = NSColor.clearColor()
-        diffTableView.gridStyleMask = NSTableViewGridLineStyle.GridNone
-        diffTableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
-        diffTableView.setDelegate(diffDataSource)
-        diffTableView.setDataSource(diffDataSource)
+        diffTableView.gridColor = NSColor.clear
+        diffTableView.gridStyleMask = NSTableViewGridLineStyle()
+        diffTableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.none
+        diffTableView.delegate = diffDataSource
+        diffTableView.dataSource = diffDataSource
         listView.addSubview(diffTableView)
 
-        diffTableView.snp_makeConstraints { (make) -> Void in
+        diffTableView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(0.0)
             make.width.equalTo(listView)
         }
@@ -57,7 +57,7 @@ class MyViewController : BaseViewController {
     func buildDiffUI() {
         self.view.addSubview(diffView)
 
-        diffView.snp_makeConstraints { (make) -> Void in
+        diffView.snp.makeConstraints { (make) -> Void in
             make.right.bottom.equalTo(0.0)
             make.height.equalTo(self.view)
             make.width.equalTo(self.view).multipliedBy(0.75)
@@ -65,30 +65,30 @@ class MyViewController : BaseViewController {
 
         let topView = NSView()
         topView.wantsLayer = true
-        topView.layer?.backgroundColor = NSColor.blueColor().CGColor
+        topView.layer?.backgroundColor = NSColor.blue.cgColor
 
         let bottomLeftView = NSView()
         bottomLeftView.wantsLayer = true
-        bottomLeftView.layer?.backgroundColor = NSColor.yellowColor().CGColor
+        bottomLeftView.layer?.backgroundColor = NSColor.yellow.cgColor
 
         let bottomRightView = NSView()
         bottomRightView.wantsLayer = true
-        bottomRightView.layer?.backgroundColor = NSColor.grayColor().CGColor
+        bottomRightView.layer?.backgroundColor = NSColor.gray.cgColor
 
         diffView.addSubview(topView)
         diffView.addSubview(bottomLeftView)
         diffView.addSubview(bottomRightView)
 
-        topView.snp_makeConstraints { (make) -> Void in
+        topView.snp.makeConstraints { (make) -> Void in
             make.top.left.right.equalTo(0.0)
             make.height.equalTo(diffView).multipliedBy(0.1)
         }
-        bottomLeftView.snp_makeConstraints { (make) -> Void in
+        bottomLeftView.snp.makeConstraints { (make) -> Void in
             make.left.bottom.equalTo(0.0)
             make.height.equalTo(diffView).multipliedBy(0.9)
             make.width.equalTo(diffView).multipliedBy(0.25)
         }
-        bottomRightView.snp_makeConstraints { (make) -> Void in
+        bottomRightView.snp.makeConstraints { (make) -> Void in
             make.right.bottom.equalTo(0.0)
             make.height.equalTo(diffView).multipliedBy(0.9)
             make.width.equalTo(diffView).multipliedBy(0.75)
@@ -99,20 +99,20 @@ class MyViewController : BaseViewController {
         button.target = self
         bottomRightView.addSubview(button)
 
-        button.snp_makeConstraints { (make) -> Void in
+        button.snp.makeConstraints { (make) -> Void in
             make.height.width.equalTo(50.0)
             make.center.equalTo(bottomRightView)
         }
 
         savedDiffTableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
-        savedDiffTableView.gridColor = NSColor.clearColor()
-        savedDiffTableView.gridStyleMask = NSTableViewGridLineStyle.GridNone
-        savedDiffTableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
-        savedDiffTableView.setDelegate(savedDiffDataSource)
-        savedDiffTableView.setDataSource(savedDiffDataSource)
+        savedDiffTableView.gridColor = NSColor.clear
+        savedDiffTableView.gridStyleMask = NSTableViewGridLineStyle()
+        savedDiffTableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.none
+        savedDiffTableView.delegate = savedDiffDataSource
+        savedDiffTableView.dataSource = savedDiffDataSource
         bottomLeftView.addSubview(savedDiffTableView)
 
-        savedDiffTableView.snp_makeConstraints { (make) -> Void in
+        savedDiffTableView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(0.0)
             make.width.equalTo(bottomLeftView)
         }
@@ -121,7 +121,7 @@ class MyViewController : BaseViewController {
         savedDiffTableView.addTableColumn(column)
     }
 
-    func myAction(sender: AnyObject) {
+    func myAction(_ sender: AnyObject) {
         updateDataStore()
         app.showMySecondViewController()
     }
@@ -132,7 +132,7 @@ class MyViewController : BaseViewController {
         let realm = try! Realm()
 
         let myDiff = Diff()
-        myDiff.id = (realm.objects(Diff).filter("deleted == nil").sorted("id", ascending: false).first?.id ?? -1) + 1
+        myDiff.id = (realm.objects(Diff.self).filter("deleted == nil").sorted(byProperty: "id", ascending: false).first?.id ?? -1) + 1
         myDiff.name = "Test Diff"
 
         try! realm.write {
