@@ -1,8 +1,8 @@
 import ObjectMapper
 import RealmSwift
 
-public class StringObject: Object {
-    public dynamic var value: String?
+open class StringObject: Object {
+    open dynamic var value: String?
     dynamic var favorite = false
 
     convenience init(_ string: String) {
@@ -17,7 +17,7 @@ class Playlist: Object, Mappable {
     dynamic var itemCount: Int = 0
     internal let items = List<StringObject>()
 
-    required convenience init?(_ map: Map) {
+    required convenience init?(map: Map) {
         self.init()
     }
 
@@ -32,7 +32,7 @@ class Playlist: Object, Mappable {
         items?.forEach(addItem)
     }
 
-    func addItem(string: String) {
+    func addItem(_ string: String) {
         items.append(StringObject(string))
         itemCount += 1
     }
@@ -41,7 +41,7 @@ class Playlist: Object, Mappable {
 class YouTubeVideoSearchResults: Mappable {
     var items: [YouTubeVideoSearchResult]?
 
-    required init?(_ map: Map) {}
+    required init?(map: Map) {}
 
     func mapping(map: Map) {
         items <- map["items"]
@@ -51,7 +51,7 @@ class YouTubeVideoSearchResults: Mappable {
 class YouTubeVideoSearchResult: Mappable {
     var id: YouTubeVideoSearchResultId?
 
-    required init?(_ map: Map) {}
+    required init?(map: Map) {}
 
     func mapping(map: Map) {
         id <- map["id"]
@@ -61,7 +61,7 @@ class YouTubeVideoSearchResult: Mappable {
 class YouTubeVideoSearchResultId: Mappable {
     var videoId: String?
 
-    required init?(_ map: Map) {}
+    required init?(map: Map) {}
 
     func mapping(map: Map) {
         videoId <- map["videoId"]

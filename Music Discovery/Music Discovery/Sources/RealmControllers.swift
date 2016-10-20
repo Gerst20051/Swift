@@ -17,19 +17,19 @@ class PlaylistController {
         }
     }
 
-    func addPlaylist(playlist: Playlist) {
+    func addPlaylist(_ playlist: Playlist) {
         try! realm.write {
             realm.add(playlist, update: true)
         }
     }
 
-    func toggleFavorite(playlist: Playlist) {
+    func toggleFavorite(_ playlist: Playlist) {
         try! realm.write {
             playlist.favorite = !playlist.favorite
         }
     }
 
-    func toggleFavorite(playlistItem: StringObject) {
+    func toggleFavorite(_ playlistItem: StringObject) {
         try! realm.write {
             playlistItem.favorite = !playlistItem.favorite
         }

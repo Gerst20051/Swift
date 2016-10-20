@@ -39,53 +39,53 @@ class AnimatedEqualizerView: UIView {
         isShowing = true
         for index in 0 ... 4 {
             let delay = 0.1 * Double(index)
-            let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
-            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
                 self.addAnimation(index)
             })
         }
     }
 
     func initCommon() {
-        frame = CGRectMake(0.0, 0.0, containerView.frame.size.width, containerView.frame.size.height)
+        frame = CGRect(x: 0.0, y: 0.0, width: containerView.frame.size.width, height: containerView.frame.size.height)
     }
 
     func initContainerLayer() {
-        containerLayer.frame = CGRectMake(0.0, 0.0, 60.0, 65.0)
-        containerLayer.anchorPoint = CGPointMake(0.5, 0.5)
-        containerLayer.position = CGPointMake(frame.size.width / 2.0, frame.size.height / 2.0)
+        containerLayer.frame = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 65.0)
+        containerLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        containerLayer.position = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
         layer.addSublayer(containerLayer)
     }
 
     func initBezierPath() {
-        lowBezierPath.moveToPoint(CGPointMake(0.0, 55.0))
-        lowBezierPath.addLineToPoint(CGPointMake(0.0, 65.0))
-        lowBezierPath.addLineToPoint(CGPointMake(3.0, 65.0))
-        lowBezierPath.addLineToPoint(CGPointMake(3.0, 55.0))
-        lowBezierPath.addLineToPoint(CGPointMake(0.0, 55.0))
-        lowBezierPath.closePath()
+        lowBezierPath.move(to: CGPoint(x: 0.0, y: 55.0))
+        lowBezierPath.addLine(to: CGPoint(x: 0.0, y: 65.0))
+        lowBezierPath.addLine(to: CGPoint(x: 3.0, y: 65.0))
+        lowBezierPath.addLine(to: CGPoint(x: 3.0, y: 55.0))
+        lowBezierPath.addLine(to: CGPoint(x: 0.0, y: 55.0))
+        lowBezierPath.close()
 
-        middleBezierPath.moveToPoint(CGPointMake(0.0, 15.0))
-        middleBezierPath.addLineToPoint(CGPointMake(0.0, 65.0))
-        middleBezierPath.addLineToPoint(CGPointMake(3.0, 65.0))
-        middleBezierPath.addLineToPoint(CGPointMake(3.0, 15.0))
-        middleBezierPath.addLineToPoint(CGPointMake(0.0, 15.0))
-        middleBezierPath.closePath()
+        middleBezierPath.move(to: CGPoint(x: 0.0, y: 15.0))
+        middleBezierPath.addLine(to: CGPoint(x: 0.0, y: 65.0))
+        middleBezierPath.addLine(to: CGPoint(x: 3.0, y: 65.0))
+        middleBezierPath.addLine(to: CGPoint(x: 3.0, y: 15.0))
+        middleBezierPath.addLine(to: CGPoint(x: 0.0, y: 15.0))
+        middleBezierPath.close()
 
-        highBezierPath.moveToPoint(CGPointMake(0.0, 0.0))
-        highBezierPath.addLineToPoint(CGPointMake(0.0, 65.0))
-        highBezierPath.addLineToPoint(CGPointMake(3.0, 65.0))
-        highBezierPath.addLineToPoint(CGPointMake(3.0, 0.0))
-        highBezierPath.addLineToPoint(CGPointMake(0.0, 0.0))
-        highBezierPath.closePath()
+        highBezierPath.move(to: CGPoint(x: 0.0, y: 0.0))
+        highBezierPath.addLine(to: CGPoint(x: 0.0, y: 65.0))
+        highBezierPath.addLine(to: CGPoint(x: 3.0, y: 65.0))
+        highBezierPath.addLine(to: CGPoint(x: 3.0, y: 0.0))
+        highBezierPath.addLine(to: CGPoint(x: 0.0, y: 0.0))
+        highBezierPath.close()
     }
 
     func initBars() {
         for index in 0 ... 4 {
             let bar = CAShapeLayer()
-            bar.fillColor = UIColor.whiteColor().CGColor
-            bar.frame = CGRectMake(CGFloat(15 * index), 0.0, 3.0, 65.0)
-            bar.path = lowBezierPath.CGPath
+            bar.fillColor = UIColor.white.cgColor
+            bar.frame = CGRect(x: CGFloat(15 * index), y: 0.0, width: 3.0, height: 65.0)
+            bar.path = lowBezierPath.cgPath
             containerLayer.addSublayer(bar)
             childLayers.append(bar)
         }
@@ -94,11 +94,11 @@ class AnimatedEqualizerView: UIView {
     func initAnimation() {
         for index in 0 ... 4 {
             let animation = CABasicAnimation(keyPath: "path")
-            animation.fromValue = lowBezierPath.CGPath
+            animation.fromValue = lowBezierPath.cgPath
             if index % 2 == 0 {
-                animation.toValue = middleBezierPath.CGPath
+                animation.toValue = middleBezierPath.cgPath
             } else {
-                animation.toValue = highBezierPath.CGPath
+                animation.toValue = highBezierPath.cgPath
             }
             animation.autoreverses = true
             animation.duration = 0.5
@@ -108,7 +108,7 @@ class AnimatedEqualizerView: UIView {
         }
     }
 
-    func addAnimation(index: Int) {
-        childLayers[index].addAnimation(animations[index], forKey: "\(index)Animation")
+    func addAnimation(_ index: Int) {
+        childLayers[index].add(animations[index], forKey: "\(index)Animation")
     }
 }

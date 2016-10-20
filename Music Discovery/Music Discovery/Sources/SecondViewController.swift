@@ -9,17 +9,17 @@ class SecondViewController: BaseViewController {
     }
 
     func setupUI() {
-        view.backgroundColor = UIColor.blueColor()
+        view.backgroundColor = UIColor.blue
         showNavigationButton()
     }
 
     func showNavigationButton() {
         let button = UIButton()
-        button.backgroundColor = UIColor.blackColor()
-        button.setTitle("Back", forState: .Normal)
-        button.addTarget(self, action: #selector(self.buttonClicked), forControlEvents: .TouchUpInside)
+        button.backgroundColor = UIColor.black
+        button.setTitle("Back", for: UIControlState())
+        button.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
         view.addSubview(button)
-        button.snp_makeConstraints { (make) -> Void in
+        button.snp.makeConstraints { (make) -> Void in
             make.height.equalTo(50.0)
             make.width.equalTo(100.0)
             make.center.equalTo(self.view)
@@ -28,7 +28,7 @@ class SecondViewController: BaseViewController {
 
     func buttonClicked() {
         print("Back Button Clicked")
-        app.nav.popViewControllerAnimated(true)
+        app.nav.popViewController(animated: true)
     }
 
 }

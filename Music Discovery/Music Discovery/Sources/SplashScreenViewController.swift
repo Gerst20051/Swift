@@ -11,7 +11,7 @@ class SplashScreenViewController: UIViewController {
 
     func addEqualizerView() {
         let equalizerView = AnimatedEqualizerView(containerView: equalizerCountainerView)
-        equalizerCountainerView.backgroundColor = UIColor.clearColor()
+        equalizerCountainerView.backgroundColor = UIColor.clear
         equalizerCountainerView.addSubview(equalizerView)
         equalizerView.animate()
     }

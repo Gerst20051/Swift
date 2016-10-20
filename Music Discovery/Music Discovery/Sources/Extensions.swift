@@ -21,9 +21,9 @@ extension String {
 
 extension UITableViewCell {
     func removeMargins() {
-        self.layoutMargins = UIEdgeInsetsZero
+        self.layoutMargins = UIEdgeInsets.zero
         self.preservesSuperviewLayoutMargins = false
-        self.selectionStyle = .None
-        self.separatorInset = UIEdgeInsetsZero
+        self.selectionStyle = .none
+        self.separatorInset = UIEdgeInsets.zero
     }
 }
