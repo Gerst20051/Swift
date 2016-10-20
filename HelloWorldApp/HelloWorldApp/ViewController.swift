@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var nameLabel: UILabel! = nil
+    @IBOutlet var nameLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +27,3 @@ class ViewController: UIViewController {
     }
 
 }
-
