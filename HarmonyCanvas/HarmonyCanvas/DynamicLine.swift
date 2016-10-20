@@ -3,24 +3,24 @@ import SpriteKit
 class DynamicLine {
 
     var shapeNode: SKShapeNode?
-    var path = CGPathCreateMutable()
+    var path = CGMutablePath()
     var points: [CGPoint] = []
 
     init() {
         shapeNode = SKShapeNode()
     }
 
-    func addPoint(point: CGPoint) {
+    func addPoint(_ point: CGPoint) {
         points.append(point)
         if points.count <= 1 {
-            CGPathMoveToPoint(path, nil, point.x, point.y)
+            path.move(to: CGPoint(x: point.x, y: point.y))
         } else {
-            CGPathAddLineToPoint(path, nil, point.x, point.y)
+            path.addLine(to: CGPoint(x: point.x, y: point.y))
         }
     }
 
     func clearPoints() {
-        points.removeAll(keepCapacity: false)
+        points.removeAll(keepingCapacity: false)
     }
 
     func updatePath() {
@@ -29,7 +29,7 @@ class DynamicLine {
         }
     }
 
-    func draw(scene: GameScene) {
+    func draw(_ scene: GameScene) {
         if let node = shapeNode {
             node.lineWidth = 2
             node.name = "line"
