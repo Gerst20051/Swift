@@ -37,7 +37,7 @@ class RealmUtils {
     class func logDebugInfo() {
         let realm = try! Realm()
         print("realm => \(realm)")
-        print("realm path => \(realm.path)")
+        print("realm path => \(realm.configuration.fileURL!.absoluteString)")
     }
 
     class func deleteAllData() {

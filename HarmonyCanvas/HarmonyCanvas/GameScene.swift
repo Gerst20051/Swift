@@ -16,44 +16,42 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
-            let location = touch.locationInNode(self)
-            println("touchesBegan location => \(location)")
-            let node = nodeAtPoint(location)
-            println("touchesBegan node => \(node)")
-            var dynamicLine = DynamicLine()
-            println("touchesBegan dynamicLine => \(dynamicLine)")
-            dynamicLine.addPoint(location)
-            currentDynamicLine = dynamicLine
-            currentDynamicLine!.draw(self)
-            // var line = Line()
-            // println("touchesBegan line => \(line)")
-            // line.clearPoints()
-            // line.addPoint(location)
-            // currentLine = line
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches[touches.index(touches.startIndex, offsetBy: 0)]
+        let location = touch.location(in: self)
+        print("touchesBegan location => \(location)")
+        let node = atPoint(location)
+        print("touchesBegan node => \(node)")
+        let dynamicLine = DynamicLine()
+        print("touchesBegan dynamicLine => \(dynamicLine)")
+        dynamicLine.addPoint(location)
+        currentDynamicLine = dynamicLine
+        currentDynamicLine!.draw(self)
+        // var line = Line()
+        // println("touchesBegan line => \(line)")
+        // line.clearPoints()
+        // line.addPoint(location)
+        // currentLine = line
     }
 
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
-            let location = touch.locationInNode(self)
-            println("touchesMoved location => \(location)")
-            if let line = currentDynamicLine {
-                line.addPoint(location)
-                line.updatePath()
-                // line.draw(self)
-                // drawLine(line, tmp: true)
-            }
-            // if let line = currentLine {
-            //     line.addPoint(location)
-            //     drawLine(line, tmp: true)
-            // }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches[touches.index(touches.startIndex, offsetBy: 0)]
+        let location = touch.location(in: self)
+        print("touchesMoved location => \(location)")
+        if let line = currentDynamicLine {
+            line.addPoint(location)
+            line.updatePath()
+            // line.draw(self)
+            // drawLine(line, tmp: true)
         }
+        // if let line = currentLine {
+        //     line.addPoint(location)
+        //     drawLine(line, tmp: true)
+        // }
     }
 
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touchesEnded currentDynamicLine => \(currentDynamicLine)")
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesEnded currentDynamicLine => \(currentDynamicLine)")
         if let line = currentDynamicLine {
             dynamicLines.append(line)
         }
@@ -69,12 +67,12 @@ class GameScene: SKScene {
         // drawLines()
     }
 
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         // println("update currentTime => \(currentTime)")
         // drawLines()
     }
 
-    func drawLine(line: Line, tmp: Bool = false) {
+    func drawLine(_ line: Line, tmp: Bool = false) {
         // enumerateChildNodesWithName("line", usingBlock: { node, stop in
         //     println("drawLine node => \(node)")
         //     if node.tmp == true {
@@ -100,8 +98,8 @@ class GameScene: SKScene {
     }
 
     func clearLines() {
-        enumerateChildNodesWithName("line", usingBlock: { node, stop in
-            println("restartGame node => \(node)")
+        enumerateChildNodes(withName: "line", using: { node, stop in
+            print("restartGame node => \(node)")
             node.removeFromParent()
         })
     }

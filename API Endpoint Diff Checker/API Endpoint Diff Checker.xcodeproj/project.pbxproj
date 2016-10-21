@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98A1FFC03E6D377C1FC240B1 /* Pods_API_Endpoint_Diff_Checker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E31750D1695201D3335173 /* Pods_API_Endpoint_Diff_Checker.framework */; };
+		EA5369330A197C83895F4BBD /* Pods_API_Endpoint_Diff_Checker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4506D48433CB188B84844384 /* Pods_API_Endpoint_Diff_Checker.framework */; };
 		F7B118BE1C6938D8006041E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B118BD1C6938D8006041E8 /* AppDelegate.swift */; };
 		F7B118C01C6938D8006041E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B118BF1C6938D8006041E8 /* Assets.xcassets */; };
 		F7B118C31C6938D8006041E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B118C11C6938D8006041E8 /* MainMenu.xib */; };
@@ -23,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39E31750D1695201D3335173 /* Pods_API_Endpoint_Diff_Checker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_API_Endpoint_Diff_Checker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75D800F78A137A3DFCE11D9E /* Pods-API Endpoint Diff Checker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API Endpoint Diff Checker.release.xcconfig"; path = "Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker.release.xcconfig"; sourceTree = "<group>"; };
-		7B3F6D9624E13A5D8D1A3831 /* Pods-API Endpoint Diff Checker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API Endpoint Diff Checker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker.debug.xcconfig"; sourceTree = "<group>"; };
+		4506D48433CB188B84844384 /* Pods_API_Endpoint_Diff_Checker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_API_Endpoint_Diff_Checker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93400814ADC390DB81E4748C /* Pods-API Endpoint Diff Checker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API Endpoint Diff Checker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker.debug.xcconfig"; sourceTree = "<group>"; };
+		A21767E6EE96C4E3B2D9D4E4 /* Pods-API Endpoint Diff Checker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API Endpoint Diff Checker.release.xcconfig"; path = "Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker.release.xcconfig"; sourceTree = "<group>"; };
 		F7B118BA1C6938D8006041E8 /* API Endpoint Diff Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API Endpoint Diff Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B118BD1C6938D8006041E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7B118BF1C6938D8006041E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,28 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A1FFC03E6D377C1FC240B1 /* Pods_API_Endpoint_Diff_Checker.framework in Frameworks */,
+				EA5369330A197C83895F4BBD /* Pods_API_Endpoint_Diff_Checker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		74C2CB687BCEE12BD2E4B9DC /* Frameworks */ = {
+		E99FDB186377E03109CC654A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				39E31750D1695201D3335173 /* Pods_API_Endpoint_Diff_Checker.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EBA4C0E6B6A11733E9D96D5A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7B3F6D9624E13A5D8D1A3831 /* Pods-API Endpoint Diff Checker.debug.xcconfig */,
-				75D800F78A137A3DFCE11D9E /* Pods-API Endpoint Diff Checker.release.xcconfig */,
+				93400814ADC390DB81E4748C /* Pods-API Endpoint Diff Checker.debug.xcconfig */,
+				A21767E6EE96C4E3B2D9D4E4 /* Pods-API Endpoint Diff Checker.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F013BEC60F2404F511D4E0DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4506D48433CB188B84844384 /* Pods_API_Endpoint_Diff_Checker.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F7B118B11C6938D8006041E8 = {
@@ -76,8 +76,8 @@
 			children = (
 				F7B118BC1C6938D8006041E8 /* API Endpoint Diff Checker */,
 				F7B118BB1C6938D8006041E8 /* Products */,
-				EBA4C0E6B6A11733E9D96D5A /* Pods */,
-				74C2CB687BCEE12BD2E4B9DC /* Frameworks */,
+				E99FDB186377E03109CC654A /* Pods */,
+				F013BEC60F2404F511D4E0DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,12 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7B118C71C6938D8006041E8 /* Build configuration list for PBXNativeTarget "API Endpoint Diff Checker" */;
 			buildPhases = (
-				D8973504C27A82DB7E91A9DE /* Check Pods Manifest.lock */,
+				B2C409FC055F2E818FE56C51 /* [CP] Check Pods Manifest.lock */,
 				F7B118B61C6938D8006041E8 /* Sources */,
 				F7B118B71C6938D8006041E8 /* Frameworks */,
 				F7B118B81C6938D8006041E8 /* Resources */,
-				F2A049FD37B012252F245F51 /* Embed Pods Frameworks */,
-				21C47CF62695C456A699AA05 /* Copy Pods Resources */,
+				2E131E9B8B327FA08AC22569 /* [CP] Embed Pods Frameworks */,
+				567E68EAE8D27EB0BC1306FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,11 +155,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Andrew Gerst";
 				TargetAttributes = {
 					F7B118B91C6938D8006041E8 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -195,14 +196,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21C47CF62695C456A699AA05 /* Copy Pods Resources */ = {
+		2E131E9B8B327FA08AC22569 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		567E68EAE8D27EB0BC1306FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,34 +226,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8973504C27A82DB7E91A9DE /* Check Pods Manifest.lock */ = {
+		B2C409FC055F2E818FE56C51 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F2A049FD37B012252F245F51 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-API Endpoint Diff Checker/Pods-API Endpoint Diff Checker-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -286,8 +287,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -330,8 +333,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -350,32 +355,37 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
 		F7B118C81C6938D8006041E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B3F6D9624E13A5D8D1A3831 /* Pods-API Endpoint Diff Checker.debug.xcconfig */;
+			baseConfigurationReference = 93400814ADC390DB81E4748C /* Pods-API Endpoint Diff Checker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "API Endpoint Diff Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.API-Endpoint-Diff-Checker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		F7B118C91C6938D8006041E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75D800F78A137A3DFCE11D9E /* Pods-API Endpoint Diff Checker.release.xcconfig */;
+			baseConfigurationReference = A21767E6EE96C4E3B2D9D4E4 /* Pods-API Endpoint Diff Checker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "API Endpoint Diff Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.API-Endpoint-Diff-Checker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

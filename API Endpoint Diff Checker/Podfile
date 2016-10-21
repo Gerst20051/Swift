@@ -1,10 +1,10 @@
-platform :osx, '10.10'
+platform :osx, '10.11'
 use_frameworks!
 
 target 'API Endpoint Diff Checker' do
-    pod 'Dollar', '4.1.0'
-    pod 'FileKit', '2.0.0'
-    pod 'Forrest', '1.0.3'
-    pod 'RealmSwift', '0.98.0'
-    pod 'SnapKit', '0.19.1'
+    pod 'Dollar', '6.0.0'
+    pod 'FileKit', '4.0.0'
+    pod 'Forrest', :git => "https://github.com/Gerst20051/Run-Forrest-Run.git", :branch => "swift3" # '2.0.0'
+    pod 'RealmSwift', '2.0.2'
+    pod 'SnapKit', '3.0.2'
 end
