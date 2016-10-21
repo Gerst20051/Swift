@@ -12,40 +12,40 @@ import SwiftyUserDefaults
 import UIKit
 import XCDYouTubeKit
 
-class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, SwitchDelegate, UITabBarDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    private var toolbar: Toolbar!
-    private var bottomTabBar: BottomTabBar!
-    private var searchBar: SearchBar!
-    private var toolbarBackButton: MaterialButton!
+    fileprivate var toolbar: Toolbar!
+    fileprivate var bottomTabBar: BottomTabBar!
+    fileprivate var searchBar: SearchBar!
+    fileprivate var toolbarBackButton: IconButton!
     let realm = try! Realm()
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     var videoPlayerContainerView: UIView?
     var player: AVPlayer?
     let tableView = UITableView()
     let playlistController = PlaylistController()
     var playlists: Results<Playlist> {
-        return realm.objects(Playlist).filter("items.@count > 0").sorted([ SortDescriptor(property: "favorite", ascending: false), "name" ])
+        return realm.objects(Playlist.self).filter("items.@count > 0").sorted(by: [ SortDescriptor(property: "favorite", ascending: false), "name" ])
     }
     var items: Results<StringObject> {
-        return realm.objects(Playlist).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted([ SortDescriptor(property: "favorite", ascending: false), "value" ])
+        return realm.objects(Playlist.self).filter(NSPredicate(format: "name = %@", selectedPlaylistName)).first!.items.sorted(by: [ SortDescriptor(property: "favorite", ascending: false), "value" ])
     }
     var favorites: Results<StringObject> {
-        return realm.objects(StringObject).filter("favorite == 1").sorted("value")
+        return realm.objects(StringObject.self).filter("favorite == 1").sorted(byProperty: "value")
     }
     var searchItems: Results<StringObject> {
         if searchText.isEmpty {
-            return realm.objects(StringObject).filter("value == ''") // return empty set
+            return realm.objects(StringObject.self).filter("value == ''") // return empty set
         } else {
             if favoritesMode { // search favorites
             } else if selectedPlaylistName.isNotEmpty { // search selected playlist
             } else { // search all items
             }
-            return realm.objects(StringObject).filter(NSPredicate(format: "value CONTAINS %@", searchText)).sorted("value")
+            return realm.objects(StringObject.self).filter(NSPredicate(format: "value CONTAINS %@", searchText)).sorted(byProperty: "value")
         }
     }
     var appName: String {
-        return NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
+        return Bundle.main.infoDictionary!["CFBundleName"] as! String
     }
     var selectedPlaylistName: String = "" {
         didSet {
@@ -83,10 +83,10 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func monitorDeviceOrientationChange() {
-        let notificationCenter = NSNotificationCenter.defaultCenter()
+        let notificationCenter = NotificationCenter.default
         // notificationCenter.addObserver(self, selector: #selector(ViewController.playerDidFinishPlaying), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ViewController.playerPlaybackStalled), name: AVPlayerItemPlaybackStalledNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ViewController.deviceOrientationDidChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.playerPlaybackStalled), name: NSNotification.Name.AVPlayerItemPlaybackStalled, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.deviceOrientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 
     func deviceOrientationDidChange() {
@@ -94,30 +94,30 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func addSwipeGestureRecognizer() {
-        for gesture in [ .Left, .Right, .Up ] as [UISwipeGestureRecognizerDirection] {
+        for gesture in [ .left, .right, .up ] as [UISwipeGestureRecognizerDirection] {
             let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
             swipeGesture.direction = gesture
             view.addGestureRecognizer(swipeGesture)
         }
     }
 
-    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+    func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction as UISwipeGestureRecognizerDirection {
-                case UISwipeGestureRecognizerDirection.Left, UISwipeGestureRecognizerDirection.Right:
+                case UISwipeGestureRecognizerDirection.left, UISwipeGestureRecognizerDirection.right:
                     if let videoPlayerContainerView = videoPlayerContainerView {
-                        let videoPlayerContainsPoint = CGRectContainsPoint(videoPlayerContainerView.bounds, swipeGesture.locationInView(videoPlayerContainerView))
+                        let videoPlayerContainsPoint = videoPlayerContainerView.bounds.contains(swipeGesture.location(in: videoPlayerContainerView))
                         if videoPlayerContainsPoint {
                             removeVideoPlayerContainerView()
                         } else {
                             returnToListOfPlaylists()
                         }
-                    } else if swipeGesture.direction == UISwipeGestureRecognizerDirection.Right {
+                    } else if swipeGesture.direction == UISwipeGestureRecognizerDirection.right {
                         returnToListOfPlaylists()
                     }
-                case UISwipeGestureRecognizerDirection.Up:
+                case UISwipeGestureRecognizerDirection.up:
                     if let videoPlayerContainerView = videoPlayerContainerView {
-                        let videoPlayerContainsPoint = CGRectContainsPoint(videoPlayerContainerView.bounds, swipeGesture.locationInView(videoPlayerContainerView))
+                        let videoPlayerContainsPoint = videoPlayerContainerView.bounds.contains(swipeGesture.location(in: videoPlayerContainerView))
                         if videoPlayerContainsPoint {
                             // set video full screen
                         }
@@ -128,12 +128,12 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         }
     }
 
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         favoritesMode = item.title == "Starred"
     }
 
     func setupUI() {
-        view.backgroundColor = MaterialColor.white
+        view.backgroundColor = Color.white
         createToolbar()
         createSearchBar()
         showToolbarOrSearchBar()
@@ -161,44 +161,44 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func addToolbarContraints() {
-        toolbar.snp_remakeConstraints { (make) -> Void in
-            make.bottom.equalTo(tableView.snp_top)
+        toolbar.snp.remakeConstraints { (make) -> Void in
+            make.bottom.equalTo(tableView.snp.top)
             make.height.equalTo(50.0)
             make.top.width.equalTo(view)
         }
     }
 
     func addSearchBarContraints() {
-        searchBar.snp_remakeConstraints { (make) -> Void in
-            make.bottom.equalTo(tableView.snp_top)
+        searchBar.snp.remakeConstraints { (make) -> Void in
+            make.bottom.equalTo(tableView.snp.top)
             make.height.equalTo(50.0)
             make.top.width.equalTo(view)
         }
     }
 
     func addTableViewContraints() {
-        tableView.snp_remakeConstraints { (make) -> Void in
-            make.bottom.equalTo(bottomTabBar.snp_top)
+        tableView.snp.remakeConstraints { (make) -> Void in
+            make.bottom.equalTo(bottomTabBar.snp.top)
             if searchMode {
-                make.top.equalTo(searchBar.snp_bottom)
+                make.top.equalTo(searchBar.snp.bottom)
             } else {
-                make.top.equalTo(toolbar.snp_bottom)
+                make.top.equalTo(toolbar.snp.bottom)
             }
             make.width.equalTo(view)
         }
     }
 
     func addTabBarContraints() {
-        bottomTabBar.snp_remakeConstraints { (make) -> Void in
+        bottomTabBar.snp.remakeConstraints { (make) -> Void in
             make.height.equalTo(50.0)
-            make.top.equalTo(tableView.snp_bottom)
+            make.top.equalTo(tableView.snp.bottom)
             make.width.equalTo(view)
         }
     }
 
     func addVideoPlayerContainerContraints() {
-        videoPlayerContainerView?.snp_remakeConstraints { (make) -> Void in
-            make.bottom.equalTo(bottomTabBar.snp_top)
+        videoPlayerContainerView?.snp.remakeConstraints { (make) -> Void in
+            make.bottom.equalTo(bottomTabBar.snp.top)
             make.height.equalTo(140.0)
             make.right.equalTo(0.0)
             make.width.equalTo(200.0)
@@ -223,11 +223,11 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
                     return
                 }.always {
                     self.hideLoader()
-                }.error { error in
+                }.catch { error in
                     switch error {
-                        case PromiseError.ApiFailure(let error):
+                        case PromiseError.apiFailure(let error):
                             print("api failure => \(error)")
-                        case PromiseError.InvalidPlaylist:
+                        case PromiseError.invalidPlaylist:
                             print("invalid playist")
                         default:
                             print("unhandled error => \(error)")
@@ -237,11 +237,11 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
             }
         }.always {
             self.hideLoader()
-        }.error { error in
+        }.catch { error in
             switch error {
-                case PromiseError.ApiFailure(let error):
+                case PromiseError.apiFailure(let error):
                     print("api failure => \(error)")
-                case PromiseError.InvalidPlaylistVersion:
+                case PromiseError.invalidPlaylistVersion:
                     print("invalid playist version")
                 default:
                     print("unhandled error => \(error)")
@@ -260,9 +260,9 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
             return
         }
         print("loading local playlist json file")
-        if let filePath = NSBundle.mainBundle().pathForResource("playlists", ofType: "json"), data = NSData(contentsOfFile: filePath) {
+        if let filePath = Bundle.main.path(forResource: "playlists", ofType: "json"), let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+                let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
                 parseLocalPlaylist(json as! [[String: AnyObject]])
             } catch let error {
                 print("error parsing local json file => \(error)")
@@ -270,10 +270,10 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         }
     }
 
-    func parseLocalPlaylist(playlists: [[String: AnyObject]]) {
+    func parseLocalPlaylist(_ playlists: [[String: Any]]) {
         playlistController.clearPlaylists()
         for playlist in playlists {
-            if let playlistObject = Mapper<Playlist>().map(playlist) {
+            if let playlistObject = Mapper<Playlist>().map(JSON: playlist) {
                 playlistController.addPlaylist(playlistObject)
             }
         }
@@ -283,11 +283,11 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
 
     func createToolbar() {
         toolbar = Toolbar()
-        toolbar.backgroundColor = MaterialColor.teal.base
-        toolbar.detailLabel.textColor = MaterialColor.white
-        toolbar.titleLabel.textColor = MaterialColor.white
-        toolbar.leftControls = []
-        toolbar.rightControls = [ createToolbarSwitchControl(), createToolbarSearchButton() ]
+        toolbar.backgroundColor = Color.teal.base
+        toolbar.detailLabel.textColor = Color.white
+        toolbar.titleLabel.textColor = Color.white
+        toolbar.leftViews = []
+        toolbar.rightViews = [ createToolbarSwitchControl(), createToolbarSearchButton() ]
         setToolbarTitle()
         setToolbarSubtitle()
         toolbarBackButton = createToolbarBackButton()
@@ -302,40 +302,40 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         toolbar.removeFromSuperview()
     }
 
-    func createToolbarBackButton() -> MaterialButton {
-        let backImage = MaterialIcon.cm.arrowBack
+    func createToolbarBackButton() -> IconButton {
+        let backImage = Icon.cm.arrowBack
         let backButton = IconButton()
-        backButton.pulseColor = MaterialColor.white
-        backButton.tintColor = MaterialColor.white
-        backButton.setImage(backImage, forState: .Normal)
-        backButton.setImage(backImage, forState: .Highlighted)
-        backButton.addTarget(self, action: #selector(handleToolbarBackButton), forControlEvents: .TouchUpInside)
+        backButton.pulseColor = Color.white
+        backButton.tintColor = Color.white
+        backButton.setImage(backImage, for: .normal)
+        backButton.setImage(backImage, for: .highlighted)
+        backButton.addTarget(self, action: #selector(handleToolbarBackButton), for: .touchUpInside)
         return backButton
     }
 
-    func createToolbarSwitchControl() -> MaterialSwitch {
-        let switchControl = MaterialSwitch(state: .Off, style: .LightContent, size: .Small)
+    func createToolbarSwitchControl() -> Switch {
+        let switchControl = Switch(state: .off, style: .light, size: .small)
         switchControl.delegate = self
         return switchControl
     }
 
-    func createToolbarSearchButton() -> MaterialButton {
-        let searchImage = MaterialIcon.cm.search
+    func createToolbarSearchButton() -> IconButton {
+        let searchImage = Icon.cm.search
         let searchButton = IconButton()
-        searchButton.pulseColor = MaterialColor.white
-        searchButton.tintColor = MaterialColor.white
-        searchButton.setImage(searchImage, forState: .Normal)
-        searchButton.setImage(searchImage, forState: .Highlighted)
-        searchButton.addTarget(self, action: #selector(handleToolbarSearchButton), forControlEvents: .TouchUpInside)
+        searchButton.pulseColor = Color.white
+        searchButton.tintColor = Color.white
+        searchButton.setImage(searchImage, for: .normal)
+        searchButton.setImage(searchImage, for: .highlighted)
+        searchButton.addTarget(self, action: #selector(handleToolbarSearchButton), for: .touchUpInside)
         return searchButton
     }
 
     func showToolbarBackButton() {
-        toolbar.leftControls = [ toolbarBackButton ]
+        toolbar.leftViews = [ toolbarBackButton ]
     }
 
     func hideToolbarBackButton() {
-        toolbar.leftControls = []
+        toolbar.leftViews = []
     }
 
     func handleToolbarBackButton() {
@@ -355,24 +355,24 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         toolbar.detail = selectedPlaylistItem
     }
 
-    internal func materialSwitchStateChanged(control: MaterialSwitch) {
+    func switchDidChangeState(control: Switch, state: SwitchState) {
         shuffleMode = control.on
     }
 
     func createSearchBar() {
         searchBar = SearchBar()
-        searchBar.backgroundColor = MaterialColor.teal.base
-        searchBar.placeholderColor = MaterialColor.white
-        searchBar.textColor = MaterialColor.white
-        searchBar.tintColor = MaterialColor.white
-        let image = MaterialIcon.cm.arrowBack
+        searchBar.backgroundColor = Color.teal.base
+        searchBar.placeholderColor = Color.white
+        searchBar.textColor = Color.white
+        searchBar.tintColor = Color.white
+        let image = Icon.cm.arrowBack
         let button = IconButton()
-        button.pulseColor = MaterialColor.white
-        button.tintColor = MaterialColor.white
-        button.setImage(image, forState: .Normal)
-        button.setImage(image, forState: .Highlighted)
-        button.addTarget(self, action: #selector(handleSearchBackButton), forControlEvents: .TouchUpInside)
-        searchBar.leftControls = [ button ]
+        button.pulseColor = Color.white
+        button.tintColor = Color.white
+        button.setImage(image, for: .normal)
+        button.setImage(image, for: .highlighted)
+        button.addTarget(self, action: #selector(handleSearchBackButton), for: .touchUpInside)
+        searchBar.leftViews = [ button ]
         searchBar.textField.delegate = self
     }
 
@@ -394,7 +394,7 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
             }
             showToolbar()
         }
-        if let _ = tableView.superview, _ = bottomTabBar.superview {
+        if let _ = tableView.superview, let _ = bottomTabBar.superview {
             addContraintsToViews() // TODO: maybe only re-add more specific constraints
         }
         tableView.reloadData()
@@ -411,29 +411,29 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func createTableView() {
-        tableView.backgroundColor = MaterialColor.clear
+        tableView.backgroundColor = Color.clear
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
         view.addSubview(tableView)
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchMode ? searchItems.count : (favoritesMode ? favorites.count : (selectedPlaylistName.isEmpty ? playlists.count : items.count))
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.backgroundColor = MaterialColor.clear
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = (indexPath as NSIndexPath).row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        cell.backgroundColor = Color.clear
         cell.removeMargins()
         cell.textLabel?.text = searchMode ? searchItems[row].value : (favoritesMode ? favorites[row].value : (selectedPlaylistName.isEmpty ? playlists[row].name : items[row].value))
-        cell.textLabel?.textColor = MaterialColor.darkText.secondary
+        cell.textLabel?.textColor = Color.darkText.secondary
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectedPlaylistName.isEmpty && !favoritesMode && !searchMode {
             selectedPlaylistName = playlists[indexPath.row].name
             if Defaults[.HelpOverlayShownForPinchGesture] == false {
@@ -444,7 +444,7 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
             if searchMode {
                 searchBar.textField.resignFirstResponder()
             }
-            let row = indexPath.row
+            let row = (indexPath as NSIndexPath).row
             selectedPlaylistItem = searchMode ? searchItems[row].value! : (favoritesMode ? favorites[row].value! : items[row].value!)
             if let apiUrl = CloudUtils.getYouTubeApiUrl(selectedPlaylistItem) {
                 print("apiUrl => \(apiUrl)")
@@ -452,7 +452,7 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
                 Cloud.getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
                     print("youtube video id => \(videoId)")
                     self.loadVideo(videoId)
-                }.error { error in
+                }.catch { error in
                     print("error loading youtube video id => \(error)")
                     self.hideLoader()
                 }
@@ -466,8 +466,8 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         }
     }
 
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let row = indexPath.row
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let row = (indexPath as NSIndexPath).row
 
         // let more = UITableViewRowAction(style: .Normal, title: "More") { action, index in
         //     print("more button tapped") // idk
@@ -475,7 +475,7 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         // more.backgroundColor = UIColor.lightGrayColor()
 
         let isFavorite = favoritesMode ? true : (searchMode ? searchItems[row].favorite : (selectedPlaylistName.isEmpty ? playlists[row].favorite : items[row].favorite))
-        let favorite = UITableViewRowAction(style: .Normal, title: isFavorite ? "Unfavorite" : "Favorite") { action, index in
+        let favorite = UITableViewRowAction(style: .normal, title: isFavorite ? "Unfavorite" : "Favorite") { action, index in
             print("(un)favorite button tapped")
             let row = index.row
             if self.selectedPlaylistName.isEmpty && !self.favoritesMode && !self.searchMode {
@@ -483,18 +483,18 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
             } else {
                 self.playlistController.toggleFavorite(self.searchMode ? self.searchItems[row] : (self.favoritesMode ? self.favorites[row] : self.items[row]))
             }
-            self.animateTableViewCell(tableView.cellForRowAtIndexPath(indexPath)!) { finished in
+            self.animateTableViewCell(tableView.cellForRow(at: indexPath)!) { finished in
                 self.animateTableView()
             }
         }
-        favorite.backgroundColor = isFavorite ? MaterialColor.red.accent1 : MaterialColor.orange.accent1
+        favorite.backgroundColor = isFavorite ? Color.red.accent1 : Color.orange.accent1
 
-        let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
+        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
             print("share button tapped")
-            let row = index.row
+            let row = (index as NSIndexPath).row
             self.handlePlaylistItemShare(self.searchMode ? self.searchItems[row].value! : (self.favoritesMode ? self.favorites[row].value! : self.items[row].value!))
         }
-        share.backgroundColor = MaterialColor.blue.base
+        share.backgroundColor = Color.blue.base
 
         var editActions: [UITableViewRowAction]? = []
         // editActions!.append(more)
@@ -503,40 +503,40 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
             editActions!.append(share)
         }
 
-        return editActions!.reverse()
+        return editActions!.reversed()
     }
 
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    func animateTableViewCell(cell: UITableViewCell, completion: ((Bool) -> Void)?) {
-        UIView.animateWithDuration(0.5, delay: 0.06, usingSpringWithDamping: 0.0, initialSpringVelocity: 0.0, options: [], animations: {
-            cell.transform = CGAffineTransformMakeTranslation(-self.tableView.bounds.size.width, 0.0)
+    func animateTableViewCell(_ cell: UITableViewCell, completion: ((Bool) -> Void)?) {
+        UIView.animate(withDuration: 0.5, delay: 0.06, usingSpringWithDamping: 0.0, initialSpringVelocity: 0.0, options: [], animations: {
+            cell.transform = CGAffineTransform(translationX: -self.tableView.bounds.size.width, y: 0.0)
         }, completion: completion)
     }
 
-    func animateTableView(directionLeft: Bool = false) {
+    func animateTableView(_ directionLeft: Bool = false) {
         tableView.reloadData()
         for cell in tableView.visibleCells {
-            cell.transform = CGAffineTransformMakeTranslation(directionLeft ? -tableView.bounds.size.width : tableView.bounds.size.width, 0.0)
-            UIView.animateWithDuration(0.5, delay: 0.06, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.25, options: [], animations: {
-                cell.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+            cell.transform = CGAffineTransform(translationX: directionLeft ? -tableView.bounds.size.width : tableView.bounds.size.width, y: 0.0)
+            UIView.animate(withDuration: 0.5, delay: 0.06, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.25, options: [], animations: {
+                cell.transform = CGAffineTransform(translationX: 0.0, y: 0.0)
             }, completion: nil)
         }
     }
 
-    func handlePlaylistItemShare(searchTerm: String) {
+    func handlePlaylistItemShare(_ searchTerm: String) {
         if let apiUrl = CloudUtils.getYouTubeApiUrl(searchTerm) {
             showLoader()
             Cloud.getYouTubeVideo(apiUrl).then { (videoId: String) -> Void in
                 print("sharing youtube video id => \(videoId)")
-                UIPasteboard.generalPasteboard().string = "https://www.youtube.com/watch?v=\(videoId)"
+                UIPasteboard.general.string = "https://www.youtube.com/watch?v=\(videoId)"
                 // NBMaterialToast.showWithText(self.view, text: "A Sharable Link To This Video Has Been Copied To Your Clipboard")
             }.always {
                 self.hideLoader()
                 self.tableView.setEditing(false, animated: true)
-            }.error { error in
+            }.catch { error in
                 print("error loading youtube video id => \(error)")
             }
         } else {
@@ -545,27 +545,27 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func scrollTableViewToTop() {
-        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0), atScrollPosition: .Top, animated: false)
+        tableView.scrollToRow(at: IndexPath(row: Foundation.NSNotFound, section: 0), at: .top, animated: false)
     }
 
-    private func createTabBar() {
+    fileprivate func createTabBar() {
         bottomTabBar = BottomTabBar()
-        bottomTabBar.backgroundColor = MaterialColor.grey.darken4
+        bottomTabBar.backgroundColor = Color.grey.darken4
         bottomTabBar.delegate = self
         view.addSubview(bottomTabBar)
 
-        let libraryItem = UITabBarItem(title: "Library", image: MaterialIcon.cm.audioLibrary, selectedImage: nil)
-        libraryItem.setTitleColor(MaterialColor.grey.base, forState: .Normal)
-        libraryItem.setTitleColor(MaterialColor.teal.base, forState: .Selected)
+        let libraryItem = UITabBarItem(title: "Library", image: Icon.cm.audioLibrary, selectedImage: nil)
+        libraryItem.setTitleColor(color: Color.grey.base, forState: .normal)
+        libraryItem.setTitleColor(color: Color.teal.base, forState: .selected)
 
-        let starredItem = UITabBarItem(title: "Starred", image: MaterialIcon.cm.star, selectedImage: nil)
-        starredItem.setTitleColor(MaterialColor.grey.base, forState: .Normal)
-        starredItem.setTitleColor(MaterialColor.teal.base, forState: .Selected)
+        let starredItem = UITabBarItem(title: "Starred", image: Icon.cm.star, selectedImage: nil)
+        starredItem.setTitleColor(color: Color.grey.base, forState: .normal)
+        starredItem.setTitleColor(color: Color.teal.base, forState: .selected)
 
-        bottomTabBar.itemPositioning = .Automatic
+        bottomTabBar.itemPositioning = .automatic
         bottomTabBar.setItems([ libraryItem, starredItem ], animated: true)
         bottomTabBar.selectedItem = libraryItem
-        bottomTabBar.tintColor = MaterialColor.teal.base
+        bottomTabBar.tintColor = Color.teal.base
     }
 
     func createPinchGesture() {
@@ -574,7 +574,7 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
         view.addGestureRecognizer(gesture)
     }
 
-    func detectPinch(sender: UIPinchGestureRecognizer) {
+    func detectPinch(_ sender: UIPinchGestureRecognizer) {
         if sender.scale > 1.0 { // spread gesture
             // set video full screen
         } else { // pinch gesture
@@ -594,23 +594,23 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     func createVideoContainerView() {
         guard videoPlayerContainerView == nil else { return }
         videoPlayerContainerView = UIView()
-        videoPlayerContainerView!.hidden = true
+        videoPlayerContainerView!.isHidden = true
         view.addSubview(videoPlayerContainerView!)
         addVideoPlayerContainerContraints()
     }
 
-    func loadVideo(videoId: String) {
+    func loadVideo(_ videoId: String) {
         createVideoContainerView()
         guard let containerView = videoPlayerContainerView else { return }
-        XCDYouTubeClient.defaultClient().getVideoWithIdentifier(videoId) { [unowned containerView] (video: XCDYouTubeVideo?, error: NSError?) in
-            if let streamURL = video?.streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? video?.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue] ?? video?.streamURLs[XCDYouTubeVideoQuality.Medium360.rawValue] ?? video?.streamURLs[XCDYouTubeVideoQuality.Small240.rawValue] {
-                let playerItem = AVPlayerItem(URL: streamURL)
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.playerDidFinishPlaying(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
+        XCDYouTubeClient.default().getVideoWithIdentifier(videoId) { [unowned containerView] (video: XCDYouTubeVideo?, error: Error?) in
+            if let streamURL = video?.streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? video?.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue] ?? video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue] ?? video?.streamURLs[XCDYouTubeVideoQuality.small240.rawValue] {
+                let playerItem = AVPlayerItem(url: streamURL)
+                NotificationCenter.default.addObserver(self, selector: #selector(ViewController.playerDidFinishPlaying(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
                 self.player = AVPlayer(playerItem: playerItem)
                 // self.player.delegate = self
                 let playerLayer = AVPlayerLayer()
                 playerLayer.player = self.player
-                playerLayer.frame = CGRect(origin: CGPointZero, size: containerView.frame.size)
+                playerLayer.frame = CGRect(origin: CGPoint.zero, size: containerView.frame.size)
                 // playerLayer.backgroundColor = UIColor.blackColor().CGColor
                 // playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
                 containerView.layer.addSublayer(playerLayer)
@@ -621,7 +621,7 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func removeVideoPlayerContainerView() {
-        videoPlayerContainerView?.hidden = true
+        videoPlayerContainerView?.isHidden = true
         player?.pause() // how to stop video
         videoPlayerContainerView?.removeFromSuperview()
         videoPlayerContainerView = nil
@@ -629,11 +629,11 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     func videoReceived() {
-        videoPlayerContainerView?.hidden = false
+        videoPlayerContainerView?.isHidden = false
         hideLoader()
     }
 
-    func playerDidFinishPlaying(notification: NSNotification) {
+    func playerDidFinishPlaying(_ notification: Notification) {
         print("playerDidFinishPlaying notification")
     }
 
@@ -646,35 +646,35 @@ class ViewController: BaseViewController, MaterialSwitchDelegate, UITabBarDelega
     }
 
     deinit {
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
-        notificationCenter.removeObserver(self, name: AVPlayerItemPlaybackStalledNotification, object: nil)
-        notificationCenter.removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.AVPlayerItemPlaybackStalled, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 
 }
 
 extension ViewController: TextFieldDelegate {
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         tableView.reloadData()
     }
 
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         tableView.reloadData()
     }
 
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        searchText = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
-        tableView.reloadData()
-        return true
-    }
-
-    func textFieldShouldClear(textField: UITextField) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        searchText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         tableView.reloadData()
         return true
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        tableView.reloadData()
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchBar.textField.resignFirstResponder()
         tableView.reloadData()
         return true

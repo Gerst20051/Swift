@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <viewController id="01J-lp-oVM" customClass="SplashScreenViewController" customModule="Music_Discovery" customModuleProvider="target">
@@ -12,33 +13,33 @@
                 <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
             </layoutGuides>
             <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Discovery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q6-gv-ATj">
-                        <rect key="frame" x="20" y="52" width="280" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Music Discovery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q6-gv-ATj">
+                        <frame key="frameInset" minX="20" minY="52" width="280" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="bDI-Ge-6xi"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="40"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dXS-LN-TJq">
-                        <rect key="frame" x="20" y="157" width="280" height="260"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dXS-LN-TJq">
+                        <frame key="frameInset" minX="20" minY="157" width="280" height="260"/>
                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                     </imageView>
-                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXg-Na-jIT">
-                        <rect key="frame" x="110" y="415" width="100" height="65"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXg-Na-jIT">
+                        <frame key="frameInset" minX="110" minY="415" width="100" height="65"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="65" id="3tN-UX-gll"/>
                             <constraint firstAttribute="width" constant="100" id="qLE-wz-4WA"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.84705882352941175" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.84705882352941175" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="JXg-Na-jIT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="79e-6H-UVW"/>
                     <constraint firstItem="dXS-LN-TJq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="4" id="Bmy-j4-Sx6"/>
@@ -51,7 +52,6 @@
                     <constraint firstItem="6Q6-gv-ATj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tW9-cq-O2m"/>
                 </constraints>
             </view>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="equalizerCountainerView" destination="JXg-Na-jIT" id="Ci2-dp-25f"/>
             </connections>

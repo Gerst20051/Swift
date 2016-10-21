@@ -5,30 +5,30 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     var nav: UINavigationController!
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupSplashScreen()
         setupNetworkActivityIndicatorManager()
         setupNavigationController()
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {}
+    func applicationWillResignActive(_ application: UIApplication) {}
 
-    func applicationDidEnterBackground(application: UIApplication) {}
+    func applicationDidEnterBackground(_ application: UIApplication) {}
 
-    func applicationWillEnterForeground(application: UIApplication) {}
+    func applicationWillEnterForeground(_ application: UIApplication) {}
 
-    func applicationDidBecomeActive(application: UIApplication) {}
+    func applicationDidBecomeActive(_ application: UIApplication) {}
 
-    func applicationWillTerminate(application: UIApplication) {}
+    func applicationWillTerminate(_ application: UIApplication) {}
 
     func setupSplashScreen() {
-        if let splashScreen = NSBundle.mainBundle().loadNibNamed("SplashScreen", owner: self, options: nil).first as? SplashScreenViewController {
+        if let splashScreen = Bundle.main.loadNibNamed("SplashScreen", owner: self, options: nil)?.first as? SplashScreenViewController {
             nav = UINavigationController(rootViewController: splashScreen)
-            NSTimer.after(2.seconds) {
+            Timer.after(2.seconds) {
                 self.nav.setViewControllers([ ViewController() ], animated: true)
             }
         } else {
@@ -37,11 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setupNetworkActivityIndicatorManager() {
-        NetworkActivityIndicatorManager.sharedManager.isEnabled = true
+        NetworkActivityIndicatorManager.shared.isEnabled = true
     }
 
     func setupNavigationController() {
-        nav.navigationBarHidden = true
+        nav.isNavigationBarHidden = true
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }

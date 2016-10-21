@@ -1,90 +1,116 @@
 PODS:
-  - Alamofire (3.4.1)
-  - AlamofireNetworkActivityIndicator (1.0.1):
-    - Alamofire (~> 3.3)
-  - AlamofireObjectMapper (3.0.0):
-    - Alamofire (~> 3.2)
-    - ObjectMapper (~> 1.0)
-  - AsyncDisplayKit (1.9.80):
-    - AsyncDisplayKit/PINRemoteImage (= 1.9.80)
-  - AsyncDisplayKit/ASDealloc2MainObject (1.9.80)
-  - AsyncDisplayKit/Core (1.9.80):
+  - Alamofire (4.0.1)
+  - AlamofireNetworkActivityIndicator (2.0.1):
+    - Alamofire (~> 4.0)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - AsyncDisplayKit (1.9.91):
+    - AsyncDisplayKit/PINRemoteImage (= 1.9.91)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.91)
+  - AsyncDisplayKit/Core (1.9.91):
     - AsyncDisplayKit/ASDealloc2MainObject
-  - AsyncDisplayKit/PINRemoteImage (1.9.80):
+  - AsyncDisplayKit/PINRemoteImage (1.9.91):
     - AsyncDisplayKit/Core
-    - PINRemoteImage/iOS (>= 3.0.0-beta.2)
+    - PINRemoteImage/iOS (= 3.0.0-beta.3)
   - BFPaperButton (2.0.29):
     - UIColor+BFPaperColors
-  - Dollar (5.1.0)
-  - FileKit (2.0.0)
-  - Material (1.42.6)
-  - NBMaterialDialogIOS (0.2.2):
+  - Dollar (6.0.0)
+  - FileKit (4.0.0)
+  - Material (2.2.1)
+  - NBMaterialDialogIOS (1.0.0):
     - BFPaperButton (~> 2.0.18)
-  - NMPopUpViewSwift (3.0.1)
-  - NVActivityIndicatorView (2.8)
-  - ObjectMapper (1.3.0)
-  - PINCache (2.2.2)
-  - PINRemoteImage/Core (3.0.0-beta.2):
-    - PINCache (>= 2.1)
-  - PINRemoteImage/iOS (3.0.0-beta.2):
+  - NMPopUpViewSwift (5.0.0)
+  - NVActivityIndicatorView (3.0)
+  - ObjectMapper (2.1.0)
+  - PINCache (3.0.1-beta)
+  - PINRemoteImage/Core (3.0.0-beta.3):
+    - PINCache (>= 3.0.0-beta)
+  - PINRemoteImage/iOS (3.0.0-beta.3):
     - PINRemoteImage/Core
-  - PromiseKit/CorePromise (3.2.0)
-  - Realm (1.0.1):
-    - Realm/Headers (= 1.0.1)
-  - Realm/Headers (1.0.1)
-  - RealmSwift (1.0.1):
-    - Realm (= 1.0.1)
-  - Reveal-iOS-SDK (1.6.2)
-  - SnapKit (0.21.0)
-  - SwiftyTimer (1.4.0)
-  - SwiftyUserDefaults (2.2.0)
-  - UIColor+BFPaperColors (1.7.2)
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.4):
+    - PromiseKit/CorePromise
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
+  - RealmSwift (2.0.2):
+    - Realm (= 2.0.2)
+  - Reveal-SDK (2)
+  - SnapKit (3.0.2)
+  - SwiftyTimer (2.0.0)
+  - SwiftyUserDefaults (3.0.0)
+  - UIColor+BFPaperColors (1.7.6)
   - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
-  - Alamofire (= 3.4.1)
-  - AlamofireNetworkActivityIndicator (= 1.0.1)
-  - AlamofireObjectMapper (= 3.0.0)
-  - AsyncDisplayKit (= 1.9.80)
-  - Dollar (= 5.1.0)
-  - FileKit (= 2.0.0)
-  - Material (= 1.42.6)
-  - NBMaterialDialogIOS (= 0.2.2)
-  - NMPopUpViewSwift (= 3.0.1)
-  - NVActivityIndicatorView (= 2.8)
-  - PromiseKit/CorePromise (= 3.2.0)
-  - RealmSwift (= 1.0.1)
-  - Reveal-iOS-SDK (= 1.6.2)
-  - SnapKit (= 0.21.0)
-  - SwiftyTimer (= 1.4.0)
-  - SwiftyUserDefaults (= 2.2.0)
+  - Alamofire (= 4.0.1)
+  - AlamofireNetworkActivityIndicator (= 2.0.1)
+  - AlamofireObjectMapper (= 4.0.0)
+  - AsyncDisplayKit (= 1.9.91)
+  - Dollar (= 6.0.0)
+  - FileKit (= 4.0.0)
+  - Material (= 2.2.1)
+  - NBMaterialDialogIOS (from `https://github.com/Gerst20051/NBMaterialDialogIOS.git`, branch `swift3`)
+  - NMPopUpViewSwift (from `https://github.com/Gerst20051/NMPopUpView.git`, branch `swift3`)
+  - NVActivityIndicatorView (= 3.0)
+  - PromiseKit (= 4.0.4)
+  - RealmSwift (= 2.0.2)
+  - Reveal-SDK (= 2.0.0)
+  - SnapKit (= 3.0.2)
+  - SwiftyTimer (= 2.0.0)
+  - SwiftyUserDefaults (= 3.0.0)
   - XCDYouTubeKit (= 2.5.3)
 
+EXTERNAL SOURCES:
+  NBMaterialDialogIOS:
+    :branch: swift3
+    :git: https://github.com/Gerst20051/NBMaterialDialogIOS.git
+  NMPopUpViewSwift:
+    :branch: swift3
+    :git: https://github.com/Gerst20051/NMPopUpView.git
+
+CHECKOUT OPTIONS:
+  NBMaterialDialogIOS:
+    :commit: c0b7b7ca551444566e216cdbb6d7282d60b2c93a
+    :git: https://github.com/Gerst20051/NBMaterialDialogIOS.git
+  NMPopUpViewSwift:
+    :commit: bd8e69831f06f65d4a2998e66aaa46faea603a54
+    :git: https://github.com/Gerst20051/NMPopUpView.git
+
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
-  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
-  AsyncDisplayKit: ab57b10cd058797015c77be10407f3dc13027c85
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireNetworkActivityIndicator: 3e55069ada3e1ff7703665156429eedcdfea0bc1
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  AsyncDisplayKit: 96b6939ccc95d18ce1ac9bcaddecfba3f8b4f4af
   BFPaperButton: 7df738f2e749a9a4edd3e043f0621ee02215e417
-  Dollar: d40032c85eced868f65b86aaede4ef7c093a1bb2
-  FileKit: fd360f82f62a1f70dd2ccdbe0950d3a6d1e25d1d
-  Material: 76dc9b14ad8b3a2ad673b77ad73dd66ed1eee68c
-  NBMaterialDialogIOS: f7aa80ee3b6c609bc70bbb8f340ba017627bce55
-  NMPopUpViewSwift: 23a44d6db17a9abc6b806f9fac597be6d7e9f300
-  NVActivityIndicatorView: 6aba1dbbd893f615a9452c9e66ae46473e1ce092
-  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
-  PINCache: 078426d356ab95ef875e9e62e5c35a2ea3333c28
-  PINRemoteImage: 197554c5ba57a6ae90f5db441651180039fc9062
-  PromiseKit: 1db024241265f428137a9f3c00ff9590740c4be6
-  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
-  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
-  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
-  SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
-  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
-  SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
-  UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
+  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
+  FileKit: 2589d0393b3bfdc599c2ba6e41419be6db4279e0
+  Material: b96946ee3c6ea3b6d1745af2f75525e77357d200
+  NBMaterialDialogIOS: 00c3c5c75e35d9a6af83ecd8c11c510b1631889e
+  NMPopUpViewSwift: 71a93f8afdc548df5172f3bf5710e45e5f2acf92
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
+  PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Reveal-SDK: 4d36a47c7091843eee525b72219e005b90bbac0b
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  UIColor+BFPaperColors: 37e7b48fa86b29ff2e97a11208ab9cb5ab0b883d
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 1c549242886195f81590db6c6823bcfde32d3254
+PODFILE CHECKSUM: d06bd9cbeac115ca650da4f464a7417b27ce13b6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0

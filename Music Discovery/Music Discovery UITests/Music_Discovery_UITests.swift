@@ -9,20 +9,20 @@ class Music_Discovery_UITests: XCTestCase {
         continueAfterFailure = false
         setupSnapshot(app)
         app.launch()
-        XCUIDevice.sharedDevice().orientation = .Portrait
+        XCUIDevice.shared().orientation = .portrait
     }
 
     override func tearDown() {
         super.tearDown()
     }
 
-    private func waitForElementToAppear(element: XCUIElement, file: String = #file, line: UInt = #line) {
+    fileprivate func waitForElementToAppear(_ element: XCUIElement, file: String = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
-        expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
-        waitForExpectationsWithTimeout(30.0) { error -> Void in
+        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+        waitForExpectations(timeout: 30.0) { error -> Void in
             if error != nil {
                 let message = "Failed to find \(element) after 30 seconds."
-                self.recordFailureWithDescription(message, inFile: file, atLine: line, expected: true)
+                self.recordFailure(withDescription: message, inFile: file, atLine: line, expected: true)
             }
         }
     }
