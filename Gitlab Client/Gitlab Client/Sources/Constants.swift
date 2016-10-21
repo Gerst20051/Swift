@@ -1,5 +1,5 @@
-enum PromiseError: ErrorProtocol {
-    case ApiFailure(ErrorProtocol?)
-    case InvalidProjects()
-    case InvalidUrl()
+enum PromiseError: Error {
+    case apiFailure(Error?)
+    case invalidProjects()
+    case invalidUrl()
 }

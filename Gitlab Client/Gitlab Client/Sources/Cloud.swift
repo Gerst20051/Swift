@@ -24,13 +24,13 @@ class CloudUtils {
 
 class Networking {
 
-    static let manager: Manager = {
+    static let manager: SessionManager = {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             CloudUtils.domain: .disableEvaluation
         ]
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = Alamofire.Manager.defaultHTTPHeaders
-        return Alamofire.Manager(configuration: configuration, serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
+        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
+        return SessionManager(configuration: configuration, serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
     }()
 
 }
@@ -40,18 +40,18 @@ class Cloud {
     class func getProjectList() -> Promise<[GitlabProjectResult]> {
         return Promise { fulfill, reject in
             guard let url = CloudUtils.getUrl(forEndpoint: CloudEndpoints.Projects) else {
-                reject(PromiseError.InvalidUrl())
+                reject(PromiseError.invalidUrl())
                 return
             }
-            _ = Networking.manager.request(.GET, url).validate().responseArray { (response: Response<[GitlabProjectResult], NSError>) in
+            _ = Networking.manager.request(url, method: .get).validate().responseArray { (response: DataResponse<[GitlabProjectResult]>) in
                 if response.result.isSuccess {
                     if let projects = response.result.value {
                         fulfill(projects)
                     } else {
-                        reject(PromiseError.InvalidProjects())
+                        reject(PromiseError.invalidProjects())
                     }
                 } else {
-                    reject(PromiseError.ApiFailure(response.result.error))
+                    reject(PromiseError.apiFailure(response.result.error))
                 }
             }
         }

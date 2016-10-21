@@ -34,7 +34,7 @@ class MainViewController : BaseViewController {
         tableView.addTableColumn(NSTableColumn())
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
-        tableView.gridColor = NSColor.clear()
+        tableView.gridColor = NSColor.clear
         tableView.gridStyleMask = []
         tableView.intercellSpacing = NSSize(width: 1.0, height: 1.0)
         tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.none

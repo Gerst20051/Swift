@@ -16,8 +16,8 @@ class TokenViewController : BaseViewController {
     func createView() {
         let view = NSView(frame: NSMakeRect(0.0, 0.0, 50.0, 50.0))
         view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.green().cgColor
-        view.layer?.borderColor = NSColor.green().cgColor
+        view.layer?.backgroundColor = NSColor.green.cgColor
+        view.layer?.borderColor = NSColor.green.cgColor
         view.layer?.borderWidth = 2.0
         self.view = view
     }
@@ -45,7 +45,7 @@ class TokenViewController : BaseViewController {
         }
     }
 
-    func myAction(sender: AnyObject) {
+    func myAction(_ sender: AnyObject) {
         if !input.stringValue.isEmpty {
             Defaults[.GitlabToken] = input.stringValue
             app.showMainViewController()

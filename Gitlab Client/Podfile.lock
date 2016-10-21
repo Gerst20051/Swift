@@ -1,113 +1,44 @@
 PODS:
-  - Alamofire (3.4.1)
-  - AlamofireObjectMapper (3.0.0):
-    - Alamofire (~> 3.2)
-    - ObjectMapper (~> 1.0)
-  - Dollar (5.1.0)
-  - Material (2.0.0)
-  - ObjectMapper (1.3.0)
-  - OMGHTTPURLRQ (3.2.0):
-    - OMGHTTPURLRQ/RQ (= 3.2.0)
-  - OMGHTTPURLRQ/FormURLEncode (3.2.0)
-  - OMGHTTPURLRQ/RQ (3.2.0):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.2.0)
-  - PromiseKit (4.0.0):
-    - PromiseKit/Foundation (= 4.0.0)
-    - PromiseKit/QuartzCore (= 4.0.0)
-    - PromiseKit/UIKit (= 4.0.0)
-  - PromiseKit/CorePromise (4.0.0)
-  - PromiseKit/Foundation (4.0.0):
-    - OMGHTTPURLRQ (~> 3.2.0)
+  - Alamofire (4.0.1)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - Dollar (6.0.0)
+  - Material (2.2.1)
+  - ObjectMapper (2.1.0)
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
     - PromiseKit/CorePromise
-    - PromiseKit/Foundation/Deprecated (= 4.0.0)
-  - PromiseKit/Foundation/Deprecated (4.0.0):
-    - OMGHTTPURLRQ (~> 3.2.0)
+  - PromiseKit/QuartzCore (4.0.4):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.0.0):
+  - PromiseKit/UIKit (4.0.4):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.0.0):
-    - PromiseKit/CorePromise
-    - PromiseKit/UIKit/Deprecated (= 4.0.0)
-  - PromiseKit/UIKit/Deprecated (4.0.0):
-    - PromiseKit/CorePromise
-  - SnapKit (0.40.0.beta2)
-  - SwiftyUserDefaults (2.2.0)
+  - SnapKit (3.0.2)
+  - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift3`)
-  - AlamofireObjectMapper (from `https://github.com/tristanhimmelman/AlamofireObjectMapper.git`, branch `swift-3`)
-  - Dollar (from `https://github.com/ankurp/Dollar.git`, branch `swift-3`)
-  - Material (from `https://github.com/CosmicMind/Material.git`, branch `development`)
-  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-3`)
-  - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-3.0`)
-  - SnapKit (from `https://github.com/SnapKit/SnapKit`, branch `feature/0.40.0`)
-  - SwiftyUserDefaults (from `https://github.com/radex/SwiftyUserDefaults.git`, branch `swift3`)
-
-EXTERNAL SOURCES:
-  Alamofire:
-    :branch: swift3
-    :git: https://github.com/Alamofire/Alamofire.git
-  AlamofireObjectMapper:
-    :branch: swift-3
-    :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
-  Dollar:
-    :branch: swift-3
-    :git: https://github.com/ankurp/Dollar.git
-  Material:
-    :branch: development
-    :git: https://github.com/CosmicMind/Material.git
-  ObjectMapper:
-    :branch: swift-3
-    :git: https://github.com/Hearst-DD/ObjectMapper.git
-  PromiseKit:
-    :branch: swift-3.0
-    :git: https://github.com/mxcl/PromiseKit.git
-  SnapKit:
-    :branch: feature/0.40.0
-    :git: https://github.com/SnapKit/SnapKit
-  SwiftyUserDefaults:
-    :branch: swift3
-    :git: https://github.com/radex/SwiftyUserDefaults.git
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 304cb54998ab56765b8bd638c6c8bfc9a0bf6756
-    :git: https://github.com/Alamofire/Alamofire.git
-  AlamofireObjectMapper:
-    :commit: 2d570c37d4e297c5d8fc94769976a940c3f945e2
-    :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
-  Dollar:
-    :commit: 3d5f83a93bd53a44292b448379ee3549d17091c7
-    :git: https://github.com/ankurp/Dollar.git
-  Material:
-    :commit: f93224df902db3479f8876923c0d9f720eb59e93
-    :git: https://github.com/CosmicMind/Material.git
-  ObjectMapper:
-    :commit: a8ba5a6b4d87ab6d57571ea7a01c6439ecfa09b2
-    :git: https://github.com/Hearst-DD/ObjectMapper.git
-  PromiseKit:
-    :commit: 54a230b31fe2e0dc5bf8c170adb0a1b9b84c6c26
-    :git: https://github.com/mxcl/PromiseKit.git
-  SnapKit:
-    :commit: 9f8ad446773e5a075d2a8cd8eac520cfa52c2a41
-    :git: https://github.com/SnapKit/SnapKit
-  SwiftyUserDefaults:
-    :commit: 086277b6d729c239eda3ca214c85698fceb4f86b
-    :git: https://github.com/radex/SwiftyUserDefaults.git
+  - Alamofire (= 4.0.1)
+  - AlamofireObjectMapper (= 4.0.0)
+  - Dollar (= 6.0.0)
+  - Material (= 2.2.1)
+  - PromiseKit (= 4.0.4)
+  - SnapKit (= 3.0.2)
+  - SwiftyUserDefaults (= 3.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
-  Dollar: d40032c85eced868f65b86aaede4ef7c093a1bb2
-  Material: 437cd15bddb544bb0f41ba24215351038e565a1d
-  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
-  OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
-  PromiseKit: 20ef1aa78b1995504a95c57caa81dcd0fbb3e568
-  SnapKit: 405236dfbf278b9d545db29f3950ae7e7f14f348
-  SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
+  Material: b96946ee3c6ea3b6d1745af2f75525e77357d200
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 8313671647c7f674aee87da1a2343fa407da22f3
+PODFILE CHECKSUM: b098f502ba3a4e6bd559fc3a14b07b0f1202940e
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.0

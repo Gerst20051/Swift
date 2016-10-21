@@ -281,12 +281,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VLF9HQZ98F;
 						DevelopmentTeamName = "Andrew Gerst";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					F72209FC1D4994F100C96A92 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VLF9HQZ98F;
 						DevelopmentTeamName = "Andrew Gerst";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F72209ED1D4994F000C96A92;
 					};
@@ -294,6 +296,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VLF9HQZ98F;
 						DevelopmentTeamName = "Andrew Gerst";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F72209ED1D4994F000C96A92;
 					};
@@ -667,6 +670,7 @@
 			baseConfigurationReference = 18E7235AB7471DA9E1AC06C1 /* Pods-Gitlab ClientTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Gitlab ClientTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -682,6 +686,7 @@
 			baseConfigurationReference = 0C76DBDA8250DB1E48B9EDFC /* Pods-Gitlab ClientTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Gitlab ClientTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -696,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 831EC84A97FD290EA335D6C7 /* Pods-Gitlab ClientUITests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Gitlab ClientUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -710,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E47105D2D72DBAD5947FA00C /* Pods-Gitlab ClientUITests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Gitlab ClientUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
