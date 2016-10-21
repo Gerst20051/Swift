@@ -1,0 +1,21 @@
+platform :osx, '10.11'
+
+target 'Gitlab Client' do
+  use_frameworks!
+
+  pod 'Alamofire', '4.0.1'
+  pod 'AlamofireObjectMapper', '4.0.0'
+  pod 'Dollar', '6.0.0'
+  pod 'Material', '2.2.1'
+  pod 'PromiseKit', '4.0.4'
+  pod 'SnapKit', '3.0.2'
+  pod 'SwiftyUserDefaults', '3.0.0'
+
+  target 'Gitlab ClientTests' do
+    inherit! :search_paths
+  end
+
+  target 'Gitlab ClientUITests' do
+    inherit! :search_paths
+  end
+end

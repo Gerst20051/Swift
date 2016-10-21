@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6144251A40FEACD4260CE1C3 /* Pods_Gitlab_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB17653C81FCDBE6CDAFFD6C /* Pods_Gitlab_ClientTests.framework */; };
+		AD1D5613355CBC82B9FF7B19 /* Pods_Gitlab_ClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E136615ABDC27B3815F46C2 /* Pods_Gitlab_ClientUITests.framework */; };
+		C11CB9A5E1997467D53AC0E6 /* Pods_Gitlab_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A81D2AE6B80C22D8F07FEB5 /* Pods_Gitlab_Client.framework */; };
+		F72209F21D4994F000C96A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72209F11D4994F000C96A92 /* AppDelegate.swift */; };
+		F72209F41D4994F000C96A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72209F31D4994F000C96A92 /* Assets.xcassets */; };
+		F72209F71D4994F000C96A92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72209F51D4994F000C96A92 /* MainMenu.xib */; };
+		F7220A021D4994F100C96A92 /* Gitlab_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7220A011D4994F100C96A92 /* Gitlab_ClientTests.swift */; };
+		F7220A0D1D4994F100C96A92 /* Gitlab_ClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7220A0C1D4994F100C96A92 /* Gitlab_ClientUITests.swift */; };
+		F7E9BED91D49B70A001C1C23 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BED81D49B70A001C1C23 /* BaseViewController.swift */; };
+		F7E9BEDB1D49B77A001C1C23 /* Extension+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEDA1D49B77A001C1C23 /* Extension+NSViewController.swift */; };
+		F7E9BEDD1D49B849001C1C23 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEDC1D49B849001C1C23 /* TokenViewController.swift */; };
+		F7E9BEDF1D49BC7B001C1C23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEDE1D49BC7B001C1C23 /* MainViewController.swift */; };
+		F7E9BEE11D49CEDE001C1C23 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEE01D49CEDE001C1C23 /* Extensions.swift */; };
+		F7E9BEE31D4AF702001C1C23 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEE21D4AF702001C1C23 /* Cloud.swift */; };
+		F7E9BEE61D4B0CCD001C1C23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEE41D4B0CCD001C1C23 /* Constants.swift */; };
+		F7E9BEE71D4B0CCD001C1C23 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEE51D4B0CCD001C1C23 /* Models.swift */; };
+		F7E9BEE91D4B1436001C1C23 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9BEE81D4B1435001C1C23 /* TableView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F72209FE1D4994F100C96A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F72209E61D4994F000C96A92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F72209ED1D4994F000C96A92;
+			remoteInfo = "Gitlab Client";
+		};
+		F7220A091D4994F100C96A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F72209E61D4994F000C96A92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F72209ED1D4994F000C96A92;
+			remoteInfo = "Gitlab Client";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BC3EB80AA8AE4979C3A7DCD /* Pods-Gitlab Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitlab Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gitlab Client/Pods-Gitlab Client.debug.xcconfig"; sourceTree = "<group>"; };
+		0C76DBDA8250DB1E48B9EDFC /* Pods-Gitlab ClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitlab ClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gitlab ClientTests/Pods-Gitlab ClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		18E7235AB7471DA9E1AC06C1 /* Pods-Gitlab ClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitlab ClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gitlab ClientTests/Pods-Gitlab ClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E136615ABDC27B3815F46C2 /* Pods_Gitlab_ClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitlab_ClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		831EC84A97FD290EA335D6C7 /* Pods-Gitlab ClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitlab ClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gitlab ClientUITests/Pods-Gitlab ClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A81D2AE6B80C22D8F07FEB5 /* Pods_Gitlab_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitlab_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB17653C81FCDBE6CDAFFD6C /* Pods_Gitlab_ClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitlab_ClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7AFB018E265A8060A6E077C /* Pods-Gitlab Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitlab Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gitlab Client/Pods-Gitlab Client.release.xcconfig"; sourceTree = "<group>"; };
+		E47105D2D72DBAD5947FA00C /* Pods-Gitlab ClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitlab ClientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gitlab ClientUITests/Pods-Gitlab ClientUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F72209EE1D4994F000C96A92 /* Gitlab Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gitlab Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72209F11D4994F000C96A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F72209F31D4994F000C96A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F72209F61D4994F000C96A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F72209F81D4994F000C96A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72209FD1D4994F100C96A92 /* Gitlab ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gitlab ClientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7220A011D4994F100C96A92 /* Gitlab_ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gitlab_ClientTests.swift; sourceTree = "<group>"; };
+		F7220A031D4994F100C96A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7220A081D4994F100C96A92 /* Gitlab ClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gitlab ClientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7220A0C1D4994F100C96A92 /* Gitlab_ClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gitlab_ClientUITests.swift; sourceTree = "<group>"; };
+		F7220A0E1D4994F100C96A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E9BED81D49B70A001C1C23 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
+		F7E9BEDA1D49B77A001C1C23 /* Extension+NSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+NSViewController.swift"; path = "Sources/Extension+NSViewController.swift"; sourceTree = "<group>"; };
+		F7E9BEDC1D49B849001C1C23 /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenViewController.swift; path = Sources/TokenViewController.swift; sourceTree = "<group>"; };
+		F7E9BEDE1D49BC7B001C1C23 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Sources/MainViewController.swift; sourceTree = "<group>"; };
+		F7E9BEE01D49CEDE001C1C23 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
+		F7E9BEE21D4AF702001C1C23 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloud.swift; path = Sources/Cloud.swift; sourceTree = "<group>"; };
+		F7E9BEE41D4B0CCD001C1C23 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Sources/Constants.swift; sourceTree = "<group>"; };
+		F7E9BEE51D4B0CCD001C1C23 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
+		F7E9BEE81D4B1435001C1C23 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableView.swift; path = Sources/TableView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F72209EB1D4994F000C96A92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C11CB9A5E1997467D53AC0E6 /* Pods_Gitlab_Client.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72209FA1D4994F100C96A92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6144251A40FEACD4260CE1C3 /* Pods_Gitlab_ClientTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7220A051D4994F100C96A92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1D5613355CBC82B9FF7B19 /* Pods_Gitlab_ClientUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B63BC763AB68813BAA4A209 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BC3EB80AA8AE4979C3A7DCD /* Pods-Gitlab Client.debug.xcconfig */,
+				B7AFB018E265A8060A6E077C /* Pods-Gitlab Client.release.xcconfig */,
+				18E7235AB7471DA9E1AC06C1 /* Pods-Gitlab ClientTests.debug.xcconfig */,
+				0C76DBDA8250DB1E48B9EDFC /* Pods-Gitlab ClientTests.release.xcconfig */,
+				831EC84A97FD290EA335D6C7 /* Pods-Gitlab ClientUITests.debug.xcconfig */,
+				E47105D2D72DBAD5947FA00C /* Pods-Gitlab ClientUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C84D2922E1F582C73AFEEA98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A81D2AE6B80C22D8F07FEB5 /* Pods_Gitlab_Client.framework */,
+				AB17653C81FCDBE6CDAFFD6C /* Pods_Gitlab_ClientTests.framework */,
+				1E136615ABDC27B3815F46C2 /* Pods_Gitlab_ClientUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F72209E51D4994F000C96A92 = {
+			isa = PBXGroup;
+			children = (
+				F72209F01D4994F000C96A92 /* Gitlab Client */,
+				F7220A001D4994F100C96A92 /* Gitlab ClientTests */,
+				F7220A0B1D4994F100C96A92 /* Gitlab ClientUITests */,
+				F72209EF1D4994F000C96A92 /* Products */,
+				8B63BC763AB68813BAA4A209 /* Pods */,
+				C84D2922E1F582C73AFEEA98 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F72209EF1D4994F000C96A92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F72209EE1D4994F000C96A92 /* Gitlab Client.app */,
+				F72209FD1D4994F100C96A92 /* Gitlab ClientTests.xctest */,
+				F7220A081D4994F100C96A92 /* Gitlab ClientUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F72209F01D4994F000C96A92 /* Gitlab Client */ = {
+			isa = PBXGroup;
+			children = (
+				F72209F11D4994F000C96A92 /* AppDelegate.swift */,
+				F72209F31D4994F000C96A92 /* Assets.xcassets */,
+				F72209F81D4994F000C96A92 /* Info.plist */,
+				F72209F51D4994F000C96A92 /* MainMenu.xib */,
+				F7E9BED61D49B6EE001C1C23 /* Resources */,
+				F7E9BED71D49B6FB001C1C23 /* Sources */,
+			);
+			path = "Gitlab Client";
+			sourceTree = "<group>";
+		};
+		F7220A001D4994F100C96A92 /* Gitlab ClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7220A011D4994F100C96A92 /* Gitlab_ClientTests.swift */,
+				F7220A031D4994F100C96A92 /* Info.plist */,
+			);
+			path = "Gitlab ClientTests";
+			sourceTree = "<group>";
+		};
+		F7220A0B1D4994F100C96A92 /* Gitlab ClientUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7220A0C1D4994F100C96A92 /* Gitlab_ClientUITests.swift */,
+				F7220A0E1D4994F100C96A92 /* Info.plist */,
+			);
+			path = "Gitlab ClientUITests";
+			sourceTree = "<group>";
+		};
+		F7E9BED61D49B6EE001C1C23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F7E9BED71D49B6FB001C1C23 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F7E9BED81D49B70A001C1C23 /* BaseViewController.swift */,
+				F7E9BEE21D4AF702001C1C23 /* Cloud.swift */,
+				F7E9BEE41D4B0CCD001C1C23 /* Constants.swift */,
+				F7E9BEDA1D49B77A001C1C23 /* Extension+NSViewController.swift */,
+				F7E9BEE01D49CEDE001C1C23 /* Extensions.swift */,
+				F7E9BEDE1D49BC7B001C1C23 /* MainViewController.swift */,
+				F7E9BEE51D4B0CCD001C1C23 /* Models.swift */,
+				F7E9BEE81D4B1435001C1C23 /* TableView.swift */,
+				F7E9BEDC1D49B849001C1C23 /* TokenViewController.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F72209ED1D4994F000C96A92 /* Gitlab Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7220A111D4994F100C96A92 /* Build configuration list for PBXNativeTarget "Gitlab Client" */;
+			buildPhases = (
+				360889A25054FA7C22017E21 /* [CP] Check Pods Manifest.lock */,
+				F72209EA1D4994F000C96A92 /* Sources */,
+				F72209EB1D4994F000C96A92 /* Frameworks */,
+				F72209EC1D4994F000C96A92 /* Resources */,
+				E523A6DB3293CEE6CB8C8688 /* [CP] Embed Pods Frameworks */,
+				8A57C419A51EF9E512313822 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gitlab Client";
+			productName = "Gitlab Client";
+			productReference = F72209EE1D4994F000C96A92 /* Gitlab Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F72209FC1D4994F100C96A92 /* Gitlab ClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7220A141D4994F100C96A92 /* Build configuration list for PBXNativeTarget "Gitlab ClientTests" */;
+			buildPhases = (
+				3FFA5D540D4E973F6131B9E7 /* [CP] Check Pods Manifest.lock */,
+				F72209F91D4994F100C96A92 /* Sources */,
+				F72209FA1D4994F100C96A92 /* Frameworks */,
+				F72209FB1D4994F100C96A92 /* Resources */,
+				0E3DC06738D0B251F861E96F /* [CP] Embed Pods Frameworks */,
+				3C85A8E29A9F34BB462F86C7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F72209FF1D4994F100C96A92 /* PBXTargetDependency */,
+			);
+			name = "Gitlab ClientTests";
+			productName = "Gitlab ClientTests";
+			productReference = F72209FD1D4994F100C96A92 /* Gitlab ClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7220A071D4994F100C96A92 /* Gitlab ClientUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7220A171D4994F100C96A92 /* Build configuration list for PBXNativeTarget "Gitlab ClientUITests" */;
+			buildPhases = (
+				3573FCAD3E65CD69A907D8E0 /* [CP] Check Pods Manifest.lock */,
+				F7220A041D4994F100C96A92 /* Sources */,
+				F7220A051D4994F100C96A92 /* Frameworks */,
+				F7220A061D4994F100C96A92 /* Resources */,
+				47BFF97C5F06B362F1B3B79A /* [CP] Copy Pods Resources */,
+				84E21B413880A374FBD589D9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7220A0A1D4994F100C96A92 /* PBXTargetDependency */,
+			);
+			name = "Gitlab ClientUITests";
+			productName = "Gitlab ClientUITests";
+			productReference = F7220A081D4994F100C96A92 /* Gitlab ClientUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F72209E61D4994F000C96A92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Andrew Gerst";
+				TargetAttributes = {
+					F72209ED1D4994F000C96A92 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VLF9HQZ98F;
+						DevelopmentTeamName = "Andrew Gerst";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					F72209FC1D4994F100C96A92 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VLF9HQZ98F;
+						DevelopmentTeamName = "Andrew Gerst";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F72209ED1D4994F000C96A92;
+					};
+					F7220A071D4994F100C96A92 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VLF9HQZ98F;
+						DevelopmentTeamName = "Andrew Gerst";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F72209ED1D4994F000C96A92;
+					};
+				};
+			};
+			buildConfigurationList = F72209E91D4994F000C96A92 /* Build configuration list for PBXProject "Gitlab Client" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F72209E51D4994F000C96A92;
+			productRefGroup = F72209EF1D4994F000C96A92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F72209ED1D4994F000C96A92 /* Gitlab Client */,
+				F72209FC1D4994F100C96A92 /* Gitlab ClientTests */,
+				F7220A071D4994F100C96A92 /* Gitlab ClientUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F72209EC1D4994F000C96A92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72209F41D4994F000C96A92 /* Assets.xcassets in Resources */,
+				F72209F71D4994F000C96A92 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72209FB1D4994F100C96A92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7220A061D4994F100C96A92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E3DC06738D0B251F861E96F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitlab ClientTests/Pods-Gitlab ClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3573FCAD3E65CD69A907D8E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		360889A25054FA7C22017E21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3C85A8E29A9F34BB462F86C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitlab ClientTests/Pods-Gitlab ClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FFA5D540D4E973F6131B9E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		47BFF97C5F06B362F1B3B79A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitlab ClientUITests/Pods-Gitlab ClientUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84E21B413880A374FBD589D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitlab ClientUITests/Pods-Gitlab ClientUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A57C419A51EF9E512313822 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitlab Client/Pods-Gitlab Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E523A6DB3293CEE6CB8C8688 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitlab Client/Pods-Gitlab Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F72209EA1D4994F000C96A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E9BEDD1D49B849001C1C23 /* TokenViewController.swift in Sources */,
+				F7E9BEE91D4B1436001C1C23 /* TableView.swift in Sources */,
+				F7E9BEE11D49CEDE001C1C23 /* Extensions.swift in Sources */,
+				F72209F21D4994F000C96A92 /* AppDelegate.swift in Sources */,
+				F7E9BEDB1D49B77A001C1C23 /* Extension+NSViewController.swift in Sources */,
+				F7E9BEE31D4AF702001C1C23 /* Cloud.swift in Sources */,
+				F7E9BED91D49B70A001C1C23 /* BaseViewController.swift in Sources */,
+				F7E9BEE71D4B0CCD001C1C23 /* Models.swift in Sources */,
+				F7E9BEDF1D49BC7B001C1C23 /* MainViewController.swift in Sources */,
+				F7E9BEE61D4B0CCD001C1C23 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72209F91D4994F100C96A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7220A021D4994F100C96A92 /* Gitlab_ClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7220A041D4994F100C96A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7220A0D1D4994F100C96A92 /* Gitlab_ClientUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F72209FF1D4994F100C96A92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F72209ED1D4994F000C96A92 /* Gitlab Client */;
+			targetProxy = F72209FE1D4994F100C96A92 /* PBXContainerItemProxy */;
+		};
+		F7220A0A1D4994F100C96A92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F72209ED1D4994F000C96A92 /* Gitlab Client */;
+			targetProxy = F7220A091D4994F100C96A92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F72209F51D4994F000C96A92 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F72209F61D4994F000C96A92 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7220A0F1D4994F100C96A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7220A101D4994F100C96A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		F7220A121D4994F100C96A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BC3EB80AA8AE4979C3A7DCD /* Pods-Gitlab Client.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Gitlab Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Gitlab-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F7220A131D4994F100C96A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7AFB018E265A8060A6E077C /* Pods-Gitlab Client.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Gitlab Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Gitlab-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F7220A151D4994F100C96A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18E7235AB7471DA9E1AC06C1 /* Pods-Gitlab ClientTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Gitlab ClientTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Gitlab-ClientTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gitlab Client.app/Contents/MacOS/Gitlab Client";
+			};
+			name = Debug;
+		};
+		F7220A161D4994F100C96A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C76DBDA8250DB1E48B9EDFC /* Pods-Gitlab ClientTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Gitlab ClientTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Gitlab-ClientTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gitlab Client.app/Contents/MacOS/Gitlab Client";
+			};
+			name = Release;
+		};
+		F7220A181D4994F100C96A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 831EC84A97FD290EA335D6C7 /* Pods-Gitlab ClientUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Gitlab ClientUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Gitlab-ClientUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Gitlab Client";
+			};
+			name = Debug;
+		};
+		F7220A191D4994F100C96A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47105D2D72DBAD5947FA00C /* Pods-Gitlab ClientUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Gitlab ClientUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Gitlab-ClientUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Gitlab Client";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F72209E91D4994F000C96A92 /* Build configuration list for PBXProject "Gitlab Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7220A0F1D4994F100C96A92 /* Debug */,
+				F7220A101D4994F100C96A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7220A111D4994F100C96A92 /* Build configuration list for PBXNativeTarget "Gitlab Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7220A121D4994F100C96A92 /* Debug */,
+				F7220A131D4994F100C96A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7220A141D4994F100C96A92 /* Build configuration list for PBXNativeTarget "Gitlab ClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7220A151D4994F100C96A92 /* Debug */,
+				F7220A161D4994F100C96A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7220A171D4994F100C96A92 /* Build configuration list for PBXNativeTarget "Gitlab ClientUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7220A181D4994F100C96A92 /* Debug */,
+				F7220A191D4994F100C96A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F72209E61D4994F000C96A92 /* Project object */;
+}

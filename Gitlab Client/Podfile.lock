@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - Dollar (6.0.0)
+  - Material (2.2.1)
+  - ObjectMapper (2.1.0)
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.4):
+    - PromiseKit/CorePromise
+  - SnapKit (3.0.2)
+  - SwiftyUserDefaults (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.0.1)
+  - AlamofireObjectMapper (= 4.0.0)
+  - Dollar (= 6.0.0)
+  - Material (= 2.2.1)
+  - PromiseKit (= 4.0.4)
+  - SnapKit (= 3.0.2)
+  - SwiftyUserDefaults (= 3.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
+  Material: b96946ee3c6ea3b6d1745af2f75525e77357d200
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+
+PODFILE CHECKSUM: b098f502ba3a4e6bd559fc3a14b07b0f1202940e
+
+COCOAPODS: 1.1.0
