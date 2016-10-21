@@ -1,0 +1,8 @@
+###################### More Options ######################
+# If you want to have even more control, check out the documentation
+# https://github.com/fastlane/fastlane/blob/master/deliver/Deliverfile.md
+
+app_identifier "hnswave.music.discovery"
+automatic_release true
+price_tier 1
+username "andrewgerstdeveloper@gmail.com"
