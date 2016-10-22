@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (4.0.0):
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
+  - CSV.swift (1.1.0)
   - Dollar (6.0.0)
   - Material (2.2.1)
   - ObjectMapper (2.1.0)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.0.1)
   - AlamofireObjectMapper (= 4.0.0)
+  - CSV.swift (= 1.1.0)
   - Dollar (= 6.0.0)
   - Material (= 2.2.1)
   - PromiseKit (= 4.0.4)
@@ -42,6 +44,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  CSV.swift: 169a2c48ccce90084ceb6d704dfb649895e1d559
   Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
   Material: b96946ee3c6ea3b6d1745af2f75525e77357d200
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
@@ -53,6 +56,6 @@ SPEC CHECKSUMS:
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 737f2ac8f6e218af7bf2bf806a42f8666ea8d2c2
+PODFILE CHECKSUM: 0ca9d653a950cd92d6b6ff855050b7936486c992
 
 COCOAPODS: 1.1.0
