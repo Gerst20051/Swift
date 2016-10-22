@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */; };
 		F7DE56CF1DBAF0CE003ACE66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */; };
-		F7DE56D21DBAF0CE003ACE66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */; };
 		F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */; };
-		F7DE56D71DBAF0CE003ACE66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */; };
 		F7DE56E21DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */; };
 		F7DE56ED1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */; };
+		F7DE56FB1DBAF39E003ACE66 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56FA1DBAF39E003ACE66 /* Base.lproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +36,7 @@
 		F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Market Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F7DE56D11DBAF0CE003ACE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F7DE56D61DBAF0CE003ACE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7DE56D81DBAF0CE003ACE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7DE56DD1DBAF0CE003ACE66 /* Stock Market DiscoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock Market DiscoveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_Market_DiscoveryTests.swift; sourceTree = "<group>"; };
@@ -47,6 +44,7 @@
 		F7DE56E81DBAF0CE003ACE66 /* Stock Market DiscoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock Market DiscoveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_Market_DiscoveryUITests.swift; sourceTree = "<group>"; };
 		F7DE56EE1DBAF0CE003ACE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7DE56FA1DBAF39E003ACE66 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +97,8 @@
 			children = (
 				F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */,
 				F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */,
+				F7DE56FA1DBAF39E003ACE66 /* Base.lproj */,
 				F7DE56D81DBAF0CE003ACE66 /* Info.plist */,
-				F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */,
-				F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */,
 				F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */,
 			);
 			path = "Stock Market Discovery";
@@ -235,9 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7DE56D71DBAF0CE003ACE66 /* LaunchScreen.storyboard in Resources */,
+				F7DE56FB1DBAF39E003ACE66 /* Base.lproj in Resources */,
 				F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */,
-				F7DE56D21DBAF0CE003ACE66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,25 +293,6 @@
 			targetProxy = F7DE56E91DBAF0CE003ACE66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7DE56D11DBAF0CE003ACE66 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7DE56D61DBAF0CE003ACE66 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F7DE56EF1DBAF0CE003ACE66 /* Debug */ = {
