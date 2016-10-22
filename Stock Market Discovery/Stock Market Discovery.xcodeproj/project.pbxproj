@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */,
-				F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */,
-				F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */,
 				F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */,
-				F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */,
 				F7DE56D81DBAF0CE003ACE66 /* Info.plist */,
+				F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */,
+				F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */,
+				F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */,
 			);
 			path = "Stock Market Discovery";
 			sourceTree = "<group>";
@@ -110,8 +110,8 @@
 		F7DE56E01DBAF0CE003ACE66 /* Stock Market DiscoveryTests */ = {
 			isa = PBXGroup;
 			children = (
-				F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */,
 				F7DE56E31DBAF0CE003ACE66 /* Info.plist */,
+				F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */,
 			);
 			path = "Stock Market DiscoveryTests";
 			sourceTree = "<group>";
@@ -119,8 +119,8 @@
 		F7DE56EB1DBAF0CE003ACE66 /* Stock Market DiscoveryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */,
 				F7DE56EE1DBAF0CE003ACE66 /* Info.plist */,
+				F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */,
 			);
 			path = "Stock Market DiscoveryUITests";
 			sourceTree = "<group>";
