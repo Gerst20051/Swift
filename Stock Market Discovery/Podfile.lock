@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - Dollar (6.0.0)
+  - Material (2.2.1)
+  - ObjectMapper (2.1.0)
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.4):
+    - PromiseKit/CorePromise
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
+  - RealmSwift (2.0.2):
+    - Realm (= 2.0.2)
+  - Reveal-SDK (2)
+  - SnapKit (3.0.2)
+  - SwiftyTimer (2.0.0)
+  - SwiftyUserDefaults (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.0.1)
+  - AlamofireObjectMapper (= 4.0.0)
+  - Dollar (= 6.0.0)
+  - Material (= 2.2.1)
+  - PromiseKit (= 4.0.4)
+  - RealmSwift (= 2.0.2)
+  - Reveal-SDK (= 2.0.0)
+  - SnapKit (= 3.0.2)
+  - SwiftyTimer (= 2.0.0)
+  - SwiftyUserDefaults (= 3.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
+  Material: b96946ee3c6ea3b6d1745af2f75525e77357d200
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Reveal-SDK: 4d36a47c7091843eee525b72219e005b90bbac0b
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+
+PODFILE CHECKSUM: 737f2ac8f6e218af7bf2bf806a42f8666ea8d2c2
+
+COCOAPODS: 1.1.0

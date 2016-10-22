@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75D57350C5AF7C2CA894E7C7 /* Pods_Stock_Market_Discovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */; };
+		96EFA6C98AF317DA4882E76F /* Pods_Stock_Market_DiscoveryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */; };
 		F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */; };
 		F7DE56CF1DBAF0CE003ACE66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */; };
 		F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */; };
 		F7DE56E21DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */; };
 		F7DE56ED1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */; };
 		F7DE56FB1DBAF39E003ACE66 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56FA1DBAF39E003ACE66 /* Base.lproj */; };
+		FF62B8373091A0397574A5B3 /* Pods_Stock_Market_DiscoveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7083D0728801771E6D8031A0 /* Pods_Stock_Market_DiscoveryTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18EA1BC462AA13B3121E0AB0 /* Pods-Stock Market DiscoveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market DiscoveryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market DiscoveryTests/Pods-Stock Market DiscoveryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E3BFDDA57371E7082FFA8C6 /* Pods-Stock Market Discovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market Discovery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market Discovery/Pods-Stock Market Discovery.release.xcconfig"; sourceTree = "<group>"; };
+		700D2B863B7AAB1FECF8DF84 /* Pods-Stock Market DiscoveryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market DiscoveryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market DiscoveryUITests/Pods-Stock Market DiscoveryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7083D0728801771E6D8031A0 /* Pods_Stock_Market_DiscoveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_DiscoveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		727B01FCEC5BE525AF372C32 /* Pods-Stock Market DiscoveryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market DiscoveryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market DiscoveryUITests/Pods-Stock Market DiscoveryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8254EF776A51631545F7961C /* Pods-Stock Market Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market Discovery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market Discovery/Pods-Stock Market Discovery.debug.xcconfig"; sourceTree = "<group>"; };
+		9B6412B68781719E35DB3026 /* Pods-Stock Market DiscoveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market DiscoveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market DiscoveryTests/Pods-Stock Market DiscoveryTests.release.xcconfig"; sourceTree = "<group>"; };
+		DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_DiscoveryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Market Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D57350C5AF7C2CA894E7C7 /* Pods_Stock_Market_Discovery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF62B8373091A0397574A5B3 /* Pods_Stock_Market_DiscoveryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +80,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EFA6C98AF317DA4882E76F /* Pods_Stock_Market_DiscoveryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191C4711B785155818317602 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8254EF776A51631545F7961C /* Pods-Stock Market Discovery.debug.xcconfig */,
+				6E3BFDDA57371E7082FFA8C6 /* Pods-Stock Market Discovery.release.xcconfig */,
+				18EA1BC462AA13B3121E0AB0 /* Pods-Stock Market DiscoveryTests.debug.xcconfig */,
+				9B6412B68781719E35DB3026 /* Pods-Stock Market DiscoveryTests.release.xcconfig */,
+				700D2B863B7AAB1FECF8DF84 /* Pods-Stock Market DiscoveryUITests.debug.xcconfig */,
+				727B01FCEC5BE525AF372C32 /* Pods-Stock Market DiscoveryUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		93C9400218B599F0FC7A4E72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */,
+				7083D0728801771E6D8031A0 /* Pods_Stock_Market_DiscoveryTests.framework */,
+				DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7DE56C01DBAF0CE003ACE66 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +117,8 @@
 				F7DE56E01DBAF0CE003ACE66 /* Stock Market DiscoveryTests */,
 				F7DE56EB1DBAF0CE003ACE66 /* Stock Market DiscoveryUITests */,
 				F7DE56CA1DBAF0CE003ACE66 /* Products */,
+				191C4711B785155818317602 /* Pods */,
+				93C9400218B599F0FC7A4E72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DE56F11DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market Discovery" */;
 			buildPhases = (
+				355C33F07479B30900906884 /* [CP] Check Pods Manifest.lock */,
 				F7DE56C51DBAF0CE003ACE66 /* Sources */,
 				F7DE56C61DBAF0CE003ACE66 /* Frameworks */,
 				F7DE56C71DBAF0CE003ACE66 /* Resources */,
+				7AE8E07740B67925A2D0470E /* [CP] Embed Pods Frameworks */,
+				426A90134B482CCB6E4401C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DE56F41DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryTests" */;
 			buildPhases = (
+				8F6B2D9A3E8198A04CE5DF5F /* [CP] Check Pods Manifest.lock */,
 				F7DE56D91DBAF0CE003ACE66 /* Sources */,
 				F7DE56DA1DBAF0CE003ACE66 /* Frameworks */,
 				F7DE56DB1DBAF0CE003ACE66 /* Resources */,
+				E8792081A9EF123C7277A6DA /* [CP] Embed Pods Frameworks */,
+				8A676C566369120BB2CE1546 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DE56F71DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryUITests" */;
 			buildPhases = (
+				86E9A9A1A2DCFE96322495E7 /* [CP] Check Pods Manifest.lock */,
 				F7DE56E41DBAF0CE003ACE66 /* Sources */,
 				F7DE56E51DBAF0CE003ACE66 /* Frameworks */,
 				F7DE56E61DBAF0CE003ACE66 /* Resources */,
+				3B1D5E87A6424F1468AA0A03 /* [CP] Embed Pods Frameworks */,
+				87185248C856D22C58BD2A3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +301,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		355C33F07479B30900906884 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B1D5E87A6424F1468AA0A03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stock Market DiscoveryUITests/Pods-Stock Market DiscoveryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		426A90134B482CCB6E4401C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stock Market Discovery/Pods-Stock Market Discovery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE8E07740B67925A2D0470E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stock Market Discovery/Pods-Stock Market Discovery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86E9A9A1A2DCFE96322495E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		87185248C856D22C58BD2A3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stock Market DiscoveryUITests/Pods-Stock Market DiscoveryUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A676C566369120BB2CE1546 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stock Market DiscoveryTests/Pods-Stock Market DiscoveryTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F6B2D9A3E8198A04CE5DF5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8792081A9EF123C7277A6DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stock Market DiscoveryTests/Pods-Stock Market DiscoveryTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7DE56C51DBAF0CE003ACE66 /* Sources */ = {
@@ -390,6 +577,7 @@
 		};
 		F7DE56F21DBAF0CE003ACE66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8254EF776A51631545F7961C /* Pods-Stock Market Discovery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
@@ -403,6 +591,7 @@
 		};
 		F7DE56F31DBAF0CE003ACE66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3BFDDA57371E7082FFA8C6 /* Pods-Stock Market Discovery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
@@ -416,6 +605,7 @@
 		};
 		F7DE56F51DBAF0CE003ACE66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18EA1BC462AA13B3121E0AB0 /* Pods-Stock Market DiscoveryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -431,6 +621,7 @@
 		};
 		F7DE56F61DBAF0CE003ACE66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B6412B68781719E35DB3026 /* Pods-Stock Market DiscoveryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -446,6 +637,7 @@
 		};
 		F7DE56F81DBAF0CE003ACE66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 700D2B863B7AAB1FECF8DF84 /* Pods-Stock Market DiscoveryUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
@@ -460,6 +652,7 @@
 		};
 		F7DE56F91DBAF0CE003ACE66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 727B01FCEC5BE525AF372C32 /* Pods-Stock Market DiscoveryUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
@@ -491,6 +684,7 @@
 				F7DE56F31DBAF0CE003ACE66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7DE56F41DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +693,7 @@
 				F7DE56F61DBAF0CE003ACE66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7DE56F71DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +702,7 @@
 				F7DE56F91DBAF0CE003ACE66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
