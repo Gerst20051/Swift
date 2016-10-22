@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */; };
+		F7DE56CF1DBAF0CE003ACE66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */; };
+		F7DE56D21DBAF0CE003ACE66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */; };
+		F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */; };
+		F7DE56D71DBAF0CE003ACE66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */; };
+		F7DE56E21DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */; };
+		F7DE56ED1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7DE56DE1DBAF0CE003ACE66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7DE56C11DBAF0CE003ACE66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7DE56C81DBAF0CE003ACE66;
+			remoteInfo = "Stock Market Discovery";
+		};
+		F7DE56E91DBAF0CE003ACE66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7DE56C11DBAF0CE003ACE66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7DE56C81DBAF0CE003ACE66;
+			remoteInfo = "Stock Market Discovery";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Market Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7DE56D11DBAF0CE003ACE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7DE56D61DBAF0CE003ACE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7DE56D81DBAF0CE003ACE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7DE56DD1DBAF0CE003ACE66 /* Stock Market DiscoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock Market DiscoveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_Market_DiscoveryTests.swift; sourceTree = "<group>"; };
+		F7DE56E31DBAF0CE003ACE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7DE56E81DBAF0CE003ACE66 /* Stock Market DiscoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock Market DiscoveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_Market_DiscoveryUITests.swift; sourceTree = "<group>"; };
+		F7DE56EE1DBAF0CE003ACE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7DE56C61DBAF0CE003ACE66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DE56DA1DBAF0CE003ACE66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DE56E51DBAF0CE003ACE66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7DE56C01DBAF0CE003ACE66 = {
+			isa = PBXGroup;
+			children = (
+				F7DE56CB1DBAF0CE003ACE66 /* Stock Market Discovery */,
+				F7DE56E01DBAF0CE003ACE66 /* Stock Market DiscoveryTests */,
+				F7DE56EB1DBAF0CE003ACE66 /* Stock Market DiscoveryUITests */,
+				F7DE56CA1DBAF0CE003ACE66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7DE56CA1DBAF0CE003ACE66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */,
+				F7DE56DD1DBAF0CE003ACE66 /* Stock Market DiscoveryTests.xctest */,
+				F7DE56E81DBAF0CE003ACE66 /* Stock Market DiscoveryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7DE56CB1DBAF0CE003ACE66 /* Stock Market Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */,
+				F7DE56CE1DBAF0CE003ACE66 /* ViewController.swift */,
+				F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */,
+				F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */,
+				F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */,
+				F7DE56D81DBAF0CE003ACE66 /* Info.plist */,
+			);
+			path = "Stock Market Discovery";
+			sourceTree = "<group>";
+		};
+		F7DE56E01DBAF0CE003ACE66 /* Stock Market DiscoveryTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */,
+				F7DE56E31DBAF0CE003ACE66 /* Info.plist */,
+			);
+			path = "Stock Market DiscoveryTests";
+			sourceTree = "<group>";
+		};
+		F7DE56EB1DBAF0CE003ACE66 /* Stock Market DiscoveryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */,
+				F7DE56EE1DBAF0CE003ACE66 /* Info.plist */,
+			);
+			path = "Stock Market DiscoveryUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7DE56C81DBAF0CE003ACE66 /* Stock Market Discovery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7DE56F11DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market Discovery" */;
+			buildPhases = (
+				F7DE56C51DBAF0CE003ACE66 /* Sources */,
+				F7DE56C61DBAF0CE003ACE66 /* Frameworks */,
+				F7DE56C71DBAF0CE003ACE66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stock Market Discovery";
+			productName = "Stock Market Discovery";
+			productReference = F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7DE56DC1DBAF0CE003ACE66 /* Stock Market DiscoveryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7DE56F41DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryTests" */;
+			buildPhases = (
+				F7DE56D91DBAF0CE003ACE66 /* Sources */,
+				F7DE56DA1DBAF0CE003ACE66 /* Frameworks */,
+				F7DE56DB1DBAF0CE003ACE66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7DE56DF1DBAF0CE003ACE66 /* PBXTargetDependency */,
+			);
+			name = "Stock Market DiscoveryTests";
+			productName = "Stock Market DiscoveryTests";
+			productReference = F7DE56DD1DBAF0CE003ACE66 /* Stock Market DiscoveryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7DE56E71DBAF0CE003ACE66 /* Stock Market DiscoveryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7DE56F71DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryUITests" */;
+			buildPhases = (
+				F7DE56E41DBAF0CE003ACE66 /* Sources */,
+				F7DE56E51DBAF0CE003ACE66 /* Frameworks */,
+				F7DE56E61DBAF0CE003ACE66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7DE56EA1DBAF0CE003ACE66 /* PBXTargetDependency */,
+			);
+			name = "Stock Market DiscoveryUITests";
+			productName = "Stock Market DiscoveryUITests";
+			productReference = F7DE56E81DBAF0CE003ACE66 /* Stock Market DiscoveryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7DE56C11DBAF0CE003ACE66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Andrew Gerst";
+				TargetAttributes = {
+					F7DE56C81DBAF0CE003ACE66 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VLF9HQZ98F;
+						ProvisioningStyle = Automatic;
+					};
+					F7DE56DC1DBAF0CE003ACE66 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VLF9HQZ98F;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F7DE56C81DBAF0CE003ACE66;
+					};
+					F7DE56E71DBAF0CE003ACE66 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VLF9HQZ98F;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F7DE56C81DBAF0CE003ACE66;
+					};
+				};
+			};
+			buildConfigurationList = F7DE56C41DBAF0CE003ACE66 /* Build configuration list for PBXProject "Stock Market Discovery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7DE56C01DBAF0CE003ACE66;
+			productRefGroup = F7DE56CA1DBAF0CE003ACE66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7DE56C81DBAF0CE003ACE66 /* Stock Market Discovery */,
+				F7DE56DC1DBAF0CE003ACE66 /* Stock Market DiscoveryTests */,
+				F7DE56E71DBAF0CE003ACE66 /* Stock Market DiscoveryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7DE56C71DBAF0CE003ACE66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DE56D71DBAF0CE003ACE66 /* LaunchScreen.storyboard in Resources */,
+				F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */,
+				F7DE56D21DBAF0CE003ACE66 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DE56DB1DBAF0CE003ACE66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DE56E61DBAF0CE003ACE66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7DE56C51DBAF0CE003ACE66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DE56CF1DBAF0CE003ACE66 /* ViewController.swift in Sources */,
+				F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DE56D91DBAF0CE003ACE66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DE56E21DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DE56E41DBAF0CE003ACE66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DE56ED1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7DE56DF1DBAF0CE003ACE66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7DE56C81DBAF0CE003ACE66 /* Stock Market Discovery */;
+			targetProxy = F7DE56DE1DBAF0CE003ACE66 /* PBXContainerItemProxy */;
+		};
+		F7DE56EA1DBAF0CE003ACE66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7DE56C81DBAF0CE003ACE66 /* Stock Market Discovery */;
+			targetProxy = F7DE56E91DBAF0CE003ACE66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7DE56D01DBAF0CE003ACE66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7DE56D11DBAF0CE003ACE66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7DE56D51DBAF0CE003ACE66 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7DE56D61DBAF0CE003ACE66 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7DE56EF1DBAF0CE003ACE66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7DE56F01DBAF0CE003ACE66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7DE56F21DBAF0CE003ACE66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				INFOPLIST_FILE = "Stock Market Discovery/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Stock-Market-Discovery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F7DE56F31DBAF0CE003ACE66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				INFOPLIST_FILE = "Stock Market Discovery/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Stock-Market-Discovery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F7DE56F51DBAF0CE003ACE66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				INFOPLIST_FILE = "Stock Market DiscoveryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Stock-Market-DiscoveryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stock Market Discovery.app/Stock Market Discovery";
+			};
+			name = Debug;
+		};
+		F7DE56F61DBAF0CE003ACE66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				INFOPLIST_FILE = "Stock Market DiscoveryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Stock-Market-DiscoveryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stock Market Discovery.app/Stock Market Discovery";
+			};
+			name = Release;
+		};
+		F7DE56F81DBAF0CE003ACE66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				INFOPLIST_FILE = "Stock Market DiscoveryUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Stock-Market-DiscoveryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Stock Market Discovery";
+			};
+			name = Debug;
+		};
+		F7DE56F91DBAF0CE003ACE66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				INFOPLIST_FILE = "Stock Market DiscoveryUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hnswave.Stock-Market-DiscoveryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Stock Market Discovery";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7DE56C41DBAF0CE003ACE66 /* Build configuration list for PBXProject "Stock Market Discovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7DE56EF1DBAF0CE003ACE66 /* Debug */,
+				F7DE56F01DBAF0CE003ACE66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7DE56F11DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market Discovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7DE56F21DBAF0CE003ACE66 /* Debug */,
+				F7DE56F31DBAF0CE003ACE66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F7DE56F41DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7DE56F51DBAF0CE003ACE66 /* Debug */,
+				F7DE56F61DBAF0CE003ACE66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F7DE56F71DBAF0CE003ACE66 /* Build configuration list for PBXNativeTarget "Stock Market DiscoveryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7DE56F81DBAF0CE003ACE66 /* Debug */,
+				F7DE56F91DBAF0CE003ACE66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7DE56C11DBAF0CE003ACE66 /* Project object */;
+}
