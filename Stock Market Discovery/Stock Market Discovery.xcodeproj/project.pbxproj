@@ -20,6 +20,7 @@
 		F7FF407C1DBB09AE000124D5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF40791DBB09AE000124D5 /* Models.swift */; };
 		F7FF407E1DBB0C39000124D5 /* RealmControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF407D1DBB0C39000124D5 /* RealmControllers.swift */; };
 		F7FF40801DBB1458000124D5 /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF407F1DBB1458000124D5 /* RealmUtils.swift */; };
+		F7FF40821DBBCD29000124D5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF40811DBBCD29000124D5 /* BaseViewController.swift */; };
 		FF62B8373091A0397574A5B3 /* Pods_Stock_Market_DiscoveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7083D0728801771E6D8031A0 /* Pods_Stock_Market_DiscoveryTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		F7FF40791DBB09AE000124D5 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
 		F7FF407D1DBB0C39000124D5 /* RealmControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmControllers.swift; path = Sources/RealmControllers.swift; sourceTree = "<group>"; };
 		F7FF407F1DBB1458000124D5 /* RealmUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmUtils.swift; path = Sources/RealmUtils.swift; sourceTree = "<group>"; };
+		F7FF40811DBBCD29000124D5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		F7DE56FE1DBAFB20003ACE66 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F7FF40811DBBCD29000124D5 /* BaseViewController.swift */,
 				F7FF40771DBB09AE000124D5 /* Cloud.swift */,
 				F7FF40781DBB09AE000124D5 /* Extensions.swift */,
 				F7FF40791DBB09AE000124D5 /* Models.swift */,
@@ -473,6 +476,7 @@
 				F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */,
 				F7FF407E1DBB0C39000124D5 /* RealmControllers.swift in Sources */,
 				F7FF407B1DBB09AE000124D5 /* Extensions.swift in Sources */,
+				F7FF40821DBBCD29000124D5 /* BaseViewController.swift in Sources */,
 				F7FF407C1DBB09AE000124D5 /* Models.swift in Sources */,
 				F7FF40801DBB1458000124D5 /* RealmUtils.swift in Sources */,
 			);
