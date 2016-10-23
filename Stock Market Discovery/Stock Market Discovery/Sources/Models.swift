@@ -14,4 +14,11 @@ class StockTicker: Object {
     override static func primaryKey() -> String? {
         return "symbol"
     }
+
+    func toggleStarred() {
+        let realm = try! Realm()
+        try! realm.write {
+            starred = !starred
+        }
+    }
 }

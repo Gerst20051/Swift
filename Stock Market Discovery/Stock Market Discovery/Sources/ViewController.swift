@@ -187,10 +187,12 @@ class GenericTableViewCell: UITableViewCell {
 class CustomTableViewCell: GenericTableViewCell {
 
     var isSimpleCell = true
+    var stockTicker: StockTicker?
     let customView = UIView()
     let simpleLabel = UILabel()
     let complexTitleLabel = UILabel()
     let complexDetailLabel = UILabel()
+    let complexImageView = UIImageView()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -219,7 +221,16 @@ class CustomTableViewCell: GenericTableViewCell {
             complexTitleLabel.textColor = Color.darkText.secondary
             complexDetailLabel.textColor = AppColor.base
             complexDetailLabel.font = UIFont(name: complexDetailLabel.font.fontName, size: 13.0)!
+            complexImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
+            complexImageView.image = Icon.cm.star!.withRenderingMode(.alwaysTemplate)
+            complexImageView.isUserInteractionEnabled = true
+            complexImageView.tintColor = stockTicker!.starred ? AppColor.base : Color.grey.base
         }
+    }
+
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        stockTicker!.toggleStarred()
+        complexImageView.tintColor = stockTicker!.starred ? AppColor.base : Color.grey.base
     }
 
     func removeSimpleCell() {
@@ -239,18 +250,21 @@ class CustomTableViewCell: GenericTableViewCell {
     func removeComplexCell() {
         complexTitleLabel.removeFromSuperview()
         complexDetailLabel.removeFromSuperview()
+        complexImageView.removeFromSuperview()
+        stockTicker = nil
     }
 
     func buildComplexCell() {
         customView.addSubview(complexTitleLabel)
         customView.addSubview(complexDetailLabel)
+        customView.addSubview(complexImageView)
 
         complexTitleLabel.snp.makeConstraints { make -> Void in
             make.bottom.equalTo(complexDetailLabel.snp.top)
             make.height.equalTo(complexDetailLabel)
             make.top.equalTo(contentView).offset(10.0)
             make.left.equalTo(contentView).offset(10.0)
-            make.right.equalTo(contentView).offset(-10.0)
+            make.right.equalTo(complexImageView.snp.left).offset(-5.0)
         }
 
         complexDetailLabel.snp.makeConstraints { make -> Void in
@@ -258,7 +272,14 @@ class CustomTableViewCell: GenericTableViewCell {
             make.height.equalTo(complexTitleLabel)
             make.top.equalTo(complexTitleLabel.snp.bottom)
             make.left.equalTo(contentView).offset(10.0)
-            make.right.equalTo(contentView).offset(-10.0)
+            make.right.equalTo(complexImageView.snp.left).offset(-5.0)
+        }
+
+        complexImageView.snp.makeConstraints { make -> Void in
+            make.bottom.equalTo(contentView).offset(-15.0)
+            make.right.equalTo(contentView).offset(-8.0)
+            make.top.equalTo(contentView).offset(15.0)
+            make.width.equalTo(30.0)
         }
     }
 
@@ -308,13 +329,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let row = (indexPath as NSIndexPath).row
         let cell = (tableView.dequeueReusableCell(withIdentifier: "cell") as? CustomTableViewCell) ?? CustomTableViewCell.init(style: .default, reuseIdentifier: "cell")
         cell.isSimpleCell = isSimpleCell
-        cell.applyCustomStyle()
         if isSimpleCell {
             cell.simpleLabel.text = getTextForRow(row)
         } else {
+            let ticker = getTickerForRow(row)
+            cell.stockTicker = ticker
             cell.complexTitleLabel.text = getTextForRow(row)
-            cell.complexDetailLabel.text = getTickerForRow(row).name
+            cell.complexDetailLabel.text = ticker.name
         }
+        cell.applyCustomStyle()
         return cell
     }
 

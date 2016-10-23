@@ -1,8 +1,7 @@
 Test Caching Realm Results For Optimal Performance
 Download Forex And Other Instruments Like UWTI
-Check To Make Sure Starred Tickers Stay Starred On Update
+Check To Make Sure Starred Tickers Stay Starred On Stock Data Update
 Build Stock Ticker View Controller
-Build Star Functionality
 Build Settings View Controller
 Build Analysis View Controller
 Query Stock Dividend / Earnings Data
