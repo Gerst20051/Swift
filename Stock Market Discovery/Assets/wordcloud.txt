@@ -1,0 +1,122 @@
+http://www.wordclouds.com/
+http://www.stock-market-strategy.com/education/terminology/
+[$]> [].slice.call(document.getElementsByTagName('strong')).map(element => { return element.innerText; }).join(';;');
+
+=====================================================================================================================
+
+Ask
+At the Money
+Averages and Indices
+Averaging Down
+Bear Market
+Bear Trap
+Bid
+Black Box
+Blue Chip Stock
+Breakaway Gap
+Bull Market
+Buying Into Weakness
+Call Option
+Candlestick
+Chart Analysis
+Choppy Market
+Commission
+Commodity
+Correction
+Day Order
+Day Trading
+Divergence
+Dividend
+Dow Jones Industrial Average
+Dow Theory
+Elliot Wave Theory
+Equities
+Exchange Traded Funds – ETF
+Exhaustion Gap
+Expiration Date
+Filters
+Front Month
+Fundamental Analysis – FA
+Futures
+Gap
+Good Till Cancel Order – GTC
+Good Till Date Order – GTD
+Hedge Fund
+HOD
+Index
+Indicator
+Initial Public Offering – IPO
+Inside Information
+Insider
+Insider Trading
+Investment Advisor
+Island Reversal
+Limit Order
+Line Chart
+Liquidity
+LOD
+Long
+Margin Account
+Market Capitalization
+Market Maker
+Market Order
+Momentum
+Mutual Fund
+Nasdaq 100 Index
+Nasdaq Composite Index
+Net Change
+Net Worth
+NYSE Composite Index
+Offer
+OHLC Bar Chart
+Open Interest
+Open Order
+Option
+Order Sends Order – OSO
+Overbought
+Oversold
+Painting The Tape
+Paper Trade
+Pattern Day Trader
+Penny Stock
+Point & Figure Chart
+Portfolio
+Price/Earnings Ratio – P/E Ratio
+Pull Back
+Put Option
+Range Bound Trading
+Relative Strength Comparison
+Resistance
+Reversal
+Risk/Reward
+Run Away Gap
+Russel 2000
+S&P 500
+S/R
+Sector
+Selling Into Strength
+Securities
+Securities and Exchange Commission – SEC
+Settlement Date
+Shake Out
+Short Interest
+Short Selling
+Sideways Market
+Spread
+Stop Loss
+Strike Price
+Support
+Swing Trading
+Technical Analysis
+Thin Market
+Tick
+Ticker Tape
+Times & Sales
+Top Down Approach
+Trading Session
+Trailing Stop
+Trend
+Volatility
+Volume
+Washout Day
+Whipsaw

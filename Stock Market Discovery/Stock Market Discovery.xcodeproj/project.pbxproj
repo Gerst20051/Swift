@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		75D57350C5AF7C2CA894E7C7 /* Pods_Stock_Market_Discovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */; };
 		96EFA6C98AF317DA4882E76F /* Pods_Stock_Market_DiscoveryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */; };
+		F78FF4061DBC723E00970C70 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = F78FF4051DBC723E00970C70 /* launch.png */; };
+		F78FF40B1DBC72B100970C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78FF4091DBC72B100970C70 /* LaunchScreen.storyboard */; };
 		F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */; };
 		F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */; };
 		F7DE56E21DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56E11DBAF0CE003ACE66 /* Stock_Market_DiscoveryTests.swift */; };
 		F7DE56ED1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */; };
-		F7DE56FB1DBAF39E003ACE66 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F7DE56FA1DBAF39E003ACE66 /* Base.lproj */; };
 		F7FF40761DBAFEE3000124D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF40751DBAFEE3000124D5 /* ViewController.swift */; };
 		F7FF407A1DBB09AE000124D5 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF40771DBB09AE000124D5 /* Cloud.swift */; };
 		F7FF407B1DBB09AE000124D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FF40781DBB09AE000124D5 /* Extensions.swift */; };
@@ -51,6 +52,8 @@
 		9B6412B68781719E35DB3026 /* Pods-Stock Market DiscoveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market DiscoveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market DiscoveryTests/Pods-Stock Market DiscoveryTests.release.xcconfig"; sourceTree = "<group>"; };
 		DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_DiscoveryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F78FF4051DBC723E00970C70 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Resources/Images/launch.png; sourceTree = "<group>"; };
+		F78FF40A1DBC72B100970C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Market Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		F7DE56E81DBAF0CE003ACE66 /* Stock Market DiscoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock Market DiscoveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DE56EC1DBAF0CE003ACE66 /* Stock_Market_DiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_Market_DiscoveryUITests.swift; sourceTree = "<group>"; };
 		F7DE56EE1DBAF0CE003ACE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7DE56FA1DBAF39E003ACE66 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		F7FF40751DBAFEE3000124D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
 		F7FF40771DBB09AE000124D5 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloud.swift; path = Sources/Cloud.swift; sourceTree = "<group>"; };
 		F7FF40781DBB09AE000124D5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
@@ -122,6 +124,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F78FF3FD1DBC6C8000970C70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F78FF4041DBC723400970C70 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F78FF4041DBC723400970C70 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F78FF4051DBC723E00970C70 /* launch.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F78FF4081DBC729C00970C70 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F78FF4091DBC72B100970C70 /* LaunchScreen.storyboard */,
+			);
+			name = Base.lproj;
+			sourceTree = "<group>";
+		};
 		F7DE56C01DBAF0CE003ACE66 = {
 			isa = PBXGroup;
 			children = (
@@ -149,8 +175,9 @@
 			children = (
 				F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */,
 				F7DE56D31DBAF0CE003ACE66 /* Assets.xcassets */,
-				F7DE56FA1DBAF39E003ACE66 /* Base.lproj */,
+				F78FF4081DBC729C00970C70 /* Base.lproj */,
 				F7DE56D81DBAF0CE003ACE66 /* Info.plist */,
+				F78FF3FD1DBC6C8000970C70 /* Resources */,
 				F7DE56FE1DBAFB20003ACE66 /* Sources */,
 			);
 			path = "Stock Market Discovery";
@@ -307,7 +334,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7DE56FB1DBAF39E003ACE66 /* Base.lproj in Resources */,
+				F78FF40B1DBC72B100970C70 /* LaunchScreen.storyboard in Resources */,
+				F78FF4061DBC723E00970C70 /* launch.png in Resources */,
 				F7DE56D41DBAF0CE003ACE66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +540,17 @@
 			targetProxy = F7DE56E91DBAF0CE003ACE66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F78FF4091DBC72B100970C70 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F78FF40A1DBC72B100970C70 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F7DE56EF1DBAF0CE003ACE66 /* Debug */ = {
