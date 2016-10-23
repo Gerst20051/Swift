@@ -11,6 +11,7 @@ class ViewController: BaseViewController {
     fileprivate var bottomTabBar: BottomTabBar!
     fileprivate var searchBar: SearchBar!
     fileprivate var toolbarBackButton: IconButton!
+    fileprivate var toolbarSettingsButton: IconButton!
     let realm = try! Realm()
     let tableView = UITableView()
     let stockTickersController = StockTickersController()
@@ -21,10 +22,10 @@ class ViewController: BaseViewController {
         return realm.objects(StockTicker.self).sorted(byProperty: "symbol")
     }
     var sectorTickers: Results<StockTicker> {
-        if searchMode && searchText.isEmpty {
-            return realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
+        if searchMode && searchText.isNotEmpty {
+            return realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry)).filter(NSPredicate(format: "symbol BEGINSWITH %@", searchText)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
         }
-        return realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry)).filter(NSPredicate(format: "symbol BEGINSWITH %@", searchText)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
+        return realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
     }
     var starred: Results<StockTicker> {
         return realm.objects(StockTicker.self).filter("starred == 1").sorted(byProperty: "symbol")
@@ -32,7 +33,7 @@ class ViewController: BaseViewController {
     var searchItems: Results<StockTicker> {
         return realm.objects(StockTicker.self).filter(NSPredicate(format: "symbol BEGINSWITH %@", searchText)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
     }
-    var selectedTicker: StockTicker?
+    var currentResults: Results<StockTicker>? // TODO: test caching results for optimal performance?
     var selectedSector: String = "" {
         didSet {
             if selectedSector.isEmpty {
@@ -116,6 +117,7 @@ extension ViewController {
 
     func loadListOfStockTickers() {
         Defaults[.StockTickerDownloadDate] = Date()
+        // TODO: Also Need To Download Forex And Other Instruments Like UWTI
         for exchange in [ "NASDAQ", "NYSE" ] {
             let contents = try! String(contentsOf: URL(string: CloudUtils.getStockTickerUrlForExchange(exchange: exchange))!)
             parseStockTickerResults(exchange: exchange, contents: contents)
@@ -128,7 +130,7 @@ extension ViewController {
         for row in csv {
             let ticker = StockTicker()
             ticker.symbol = row[0]
-            ticker.name = row[1].replacingOccurrences(of: "&#39;", with: "'")
+            ticker.name = row[1].replacingOccurrences(of: "&#39;", with: "'").replacingOccurrences(of: "  ", with: " ")
             ticker.lastSalePrice = row[2]
             ticker.marketCap = row[3]
             ticker.ipoYear = row[5]
@@ -138,9 +140,13 @@ extension ViewController {
             tickers.append(ticker)
         }
         stockTickersController.addStockTickers(tickers)
+        // TODO: Check To Make Sure Starred Tickers Stay Starred On Update
     }
 
     func cleanIndustryName(_ name: String) -> String {
+        if name == "n/a" {
+            return name
+        }
         var name = name.capitalized
         name = name.replacingOccurrences(of: ":O.E.M.", with: ": O.E.M.")
         name = name.replacingOccurrences(of: "&", with: " & ")
@@ -211,7 +217,7 @@ class CustomTableViewCell: GenericTableViewCell {
             removeSimpleCell()
             buildComplexCell()
             complexTitleLabel.textColor = Color.darkText.secondary
-            complexDetailLabel.textColor = Color.teal.base
+            complexDetailLabel.textColor = AppColor.base
             complexDetailLabel.font = UIFont(name: complexDetailLabel.font.fontName, size: 13.0)!
         }
     }
@@ -282,6 +288,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func createTableView() {
         tableView.backgroundColor = Color.clear
+        tableView.cellLayoutMarginsFollowReadableWidth = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
@@ -318,12 +325,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             } else if selectedSectorIndustry.isEmpty && selectedSector != "n/a" {
                 selectedSectorIndustry = distinctSectorIndustries[indexPath.row]
             } else {
-                selectedTicker = sectorTickers[indexPath.row]
-                // ticker view controller
+                let stockViewController = StockViewController()
+                stockViewController.selectedTicker = sectorTickers[indexPath.row]
+                app.setRootViewController(view: stockViewController)
             }
         } else {
-            selectedTicker = sectorTickers[indexPath.row]
-            // ticker view controller
+            let stockViewController = StockViewController()
+            stockViewController.selectedTicker = sectorTickers[indexPath.row]
+            app.setRootViewController(view: stockViewController)
         }
     }
 
@@ -458,10 +467,11 @@ extension ViewController {
 
     func createToolbar() {
         toolbar = Toolbar()
-        toolbar.backgroundColor = Color.teal.base
+        toolbar.backgroundColor = AppColor.base
         toolbar.detailLabel.textColor = Color.white
         toolbar.titleLabel.textColor = Color.white
-        toolbar.leftViews = []
+        toolbarSettingsButton = createToolbarSettingsButton()
+        toolbar.leftViews = [ toolbarSettingsButton ]
         toolbar.rightViews = [ createToolbarSearchButton() ]
         setToolbarTitle()
         setToolbarSubtitle()
@@ -488,6 +498,17 @@ extension ViewController {
         return backButton
     }
 
+    func createToolbarSettingsButton() -> IconButton {
+        let searchImage = Icon.cm.settings
+        let searchButton = IconButton()
+        searchButton.pulseColor = Color.white
+        searchButton.tintColor = Color.white
+        searchButton.setImage(searchImage, for: .normal)
+        searchButton.setImage(searchImage, for: .highlighted)
+        searchButton.addTarget(self, action: #selector(handleToolbarSettingsButtonPressed), for: .touchUpInside)
+        return searchButton
+    }
+
     func createToolbarSearchButton() -> IconButton {
         let searchImage = Icon.cm.search
         let searchButton = IconButton()
@@ -504,7 +525,7 @@ extension ViewController {
     }
 
     func hideToolbarBackButton() {
-        toolbar.leftViews = []
+        toolbar.leftViews = [ toolbarSettingsButton ]
     }
 
     func handleToolbarBackButtonPressed() {
@@ -513,6 +534,10 @@ extension ViewController {
         } else {
             selectedSectorIndustry = ""
         }
+    }
+
+    func handleToolbarSettingsButtonPressed() {
+        app.setRootViewController(view: SettingsViewController())
     }
 
     func handleToolbarSearchButtonPressed() {
@@ -541,7 +566,7 @@ extension ViewController {
 
     func createSearchBar() {
         searchBar = SearchBar()
-        searchBar.backgroundColor = Color.teal.base
+        searchBar.backgroundColor = AppColor.base
         searchBar.placeholderColor = Color.white
         searchBar.textColor = Color.white
         searchBar.textField.autocapitalizationType = .allCharacters
@@ -604,6 +629,10 @@ extension ViewController: UITabBarDelegate {
         searchText = ""
         searchBar.textField.text = ""
         starredMode = item.title == "Starred"
+        if item.title == "Analysis" {
+            print("Analysis Pressed")
+            app.setRootViewController(view: AnalysisViewController())
+        }
     }
 
     func addTabBarContraints() {
@@ -622,16 +651,22 @@ extension ViewController: UITabBarDelegate {
 
         let discoverItem = UITabBarItem(title: "Discover", image: Icon.cm.audioLibrary, selectedImage: nil)
         discoverItem.setTitleColor(color: Color.grey.base, forState: .normal)
-        discoverItem.setTitleColor(color: Color.teal.base, forState: .selected)
+        discoverItem.setTitleColor(color: AppColor.base, forState: .selected)
+
+        let analysisItem = UITabBarItem(title: "Analysis", image: Icon.cm.share, selectedImage: nil)
+        analysisItem.setTitleColor(color: Color.grey.base, forState: .normal)
+        analysisItem.setTitleColor(color: AppColor.base, forState: .selected)
 
         let starredItem = UITabBarItem(title: "Starred", image: Icon.cm.star, selectedImage: nil)
         starredItem.setTitleColor(color: Color.grey.base, forState: .normal)
-        starredItem.setTitleColor(color: Color.teal.base, forState: .selected)
+        starredItem.setTitleColor(color: AppColor.base, forState: .selected)
 
         bottomTabBar.itemPositioning = .automatic
-        bottomTabBar.setItems([ discoverItem, starredItem ], animated: true)
-        bottomTabBar.selectedItem = discoverItem
-        bottomTabBar.tintColor = Color.teal.base
+        bottomTabBar.setItems([ discoverItem, analysisItem, starredItem ], animated: true)
+        bottomTabBar.selectedItem = starred.isEmpty ? discoverItem : starredItem
+        bottomTabBar.tintColor = AppColor.base
+
+        starredMode = !starred.isEmpty
     }
 
 }

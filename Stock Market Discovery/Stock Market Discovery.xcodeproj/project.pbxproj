@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		75D57350C5AF7C2CA894E7C7 /* Pods_Stock_Market_Discovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */; };
 		96EFA6C98AF317DA4882E76F /* Pods_Stock_Market_DiscoveryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */; };
+		F7713FEF1DBD1F530033AC63 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7713FEC1DBD1F530033AC63 /* AnalysisViewController.swift */; };
+		F7713FF01DBD1F530033AC63 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7713FED1DBD1F530033AC63 /* Constants.swift */; };
+		F7713FF11DBD1F530033AC63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7713FEE1DBD1F530033AC63 /* SettingsViewController.swift */; };
+		F7713FF31DBD21920033AC63 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7713FF21DBD21920033AC63 /* StockViewController.swift */; };
 		F78FF4061DBC723E00970C70 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = F78FF4051DBC723E00970C70 /* launch.png */; };
 		F78FF40B1DBC72B100970C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78FF4091DBC72B100970C70 /* LaunchScreen.storyboard */; };
 		F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE56CC1DBAF0CE003ACE66 /* AppDelegate.swift */; };
@@ -52,6 +56,10 @@
 		9B6412B68781719E35DB3026 /* Pods-Stock Market DiscoveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Market DiscoveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Market DiscoveryTests/Pods-Stock Market DiscoveryTests.release.xcconfig"; sourceTree = "<group>"; };
 		DCEAF633A0200769D3F69026 /* Pods_Stock_Market_DiscoveryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_DiscoveryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE69CCABDC1B82C96A7F6597 /* Pods_Stock_Market_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Market_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7713FEC1DBD1F530033AC63 /* AnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalysisViewController.swift; path = Sources/AnalysisViewController.swift; sourceTree = "<group>"; };
+		F7713FED1DBD1F530033AC63 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Sources/Constants.swift; sourceTree = "<group>"; };
+		F7713FEE1DBD1F530033AC63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Sources/SettingsViewController.swift; sourceTree = "<group>"; };
+		F7713FF21DBD21920033AC63 /* StockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StockViewController.swift; path = Sources/StockViewController.swift; sourceTree = "<group>"; };
 		F78FF4051DBC723E00970C70 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Resources/Images/launch.png; sourceTree = "<group>"; };
 		F78FF40A1DBC72B100970C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7DE56C91DBAF0CE003ACE66 /* Stock Market Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Market Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,12 +212,16 @@
 		F7DE56FE1DBAFB20003ACE66 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F7713FEC1DBD1F530033AC63 /* AnalysisViewController.swift */,
 				F7FF40811DBBCD29000124D5 /* BaseViewController.swift */,
 				F7FF40771DBB09AE000124D5 /* Cloud.swift */,
+				F7713FED1DBD1F530033AC63 /* Constants.swift */,
 				F7FF40781DBB09AE000124D5 /* Extensions.swift */,
 				F7FF40791DBB09AE000124D5 /* Models.swift */,
 				F7FF407D1DBB0C39000124D5 /* RealmControllers.swift */,
 				F7FF407F1DBB1458000124D5 /* RealmUtils.swift */,
+				F7713FEE1DBD1F530033AC63 /* SettingsViewController.swift */,
+				F7713FF21DBD21920033AC63 /* StockViewController.swift */,
 				F7FF40751DBAFEE3000124D5 /* ViewController.swift */,
 			);
 			name = Sources;
@@ -501,9 +513,13 @@
 			files = (
 				F7FF40761DBAFEE3000124D5 /* ViewController.swift in Sources */,
 				F7FF407A1DBB09AE000124D5 /* Cloud.swift in Sources */,
+				F7713FF11DBD1F530033AC63 /* SettingsViewController.swift in Sources */,
 				F7DE56CD1DBAF0CE003ACE66 /* AppDelegate.swift in Sources */,
 				F7FF407E1DBB0C39000124D5 /* RealmControllers.swift in Sources */,
 				F7FF407B1DBB09AE000124D5 /* Extensions.swift in Sources */,
+				F7713FF01DBD1F530033AC63 /* Constants.swift in Sources */,
+				F7713FF31DBD21920033AC63 /* StockViewController.swift in Sources */,
+				F7713FEF1DBD1F530033AC63 /* AnalysisViewController.swift in Sources */,
 				F7FF40821DBBCD29000124D5 /* BaseViewController.swift in Sources */,
 				F7FF407C1DBB09AE000124D5 /* Models.swift in Sources */,
 				F7FF40801DBB1458000124D5 /* RealmUtils.swift in Sources */,

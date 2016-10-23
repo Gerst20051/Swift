@@ -25,4 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 
+    func setRootViewController(view: UIViewController) {
+        window?.rootViewController = view
+    }
+
 }
