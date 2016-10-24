@@ -15,11 +15,44 @@ class StockViewController: BaseViewController {
         view.backgroundColor = .white
         createToolbar()
         updateToolbarTitle()
+        createLabels()
         addContraintsToViews()
     }
 
     func addContraintsToViews() {
         addToolbarContraints()
+    }
+
+}
+
+extension StockViewController {
+
+    func createLabels() {
+        let details = [
+            "Price": "$" + selectedTicker.lastSalePrice,
+            "Market Cap": selectedTicker.marketCap,
+            "IPO Year": selectedTicker.ipoYear,
+            "Sector": selectedTicker.sector,
+            "Industry": selectedTicker.industry
+        ]
+        let keyOrder = [
+            "Price",
+            "Market Cap",
+            "IPO Year",
+            "Sector",
+            "Industry"
+        ]
+        for (index, key) in keyOrder.enumerated() {
+            let label = UILabel()
+            label.text = "\(key): \(details[key]!)"
+            label.textAlignment = .center
+            view.addSubview(label)
+            label.snp.makeConstraints { make -> Void in
+                make.height.equalTo(40.0)
+                make.top.equalTo(40.0 * Double(index + 2))
+                make.width.equalTo(view)
+            }
+        }
     }
 
 }
