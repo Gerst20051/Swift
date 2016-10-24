@@ -569,7 +569,7 @@ extension ViewController {
 
     func setToolbarTitle() {
         if starredMode {
-            toolbar.title = "Starred Stock Tickers"
+            toolbar.title = "Watchlist"
         } else {
             if selectedSector.isEmpty {
                 toolbar.title = appName
@@ -651,7 +651,7 @@ extension ViewController: UITabBarDelegate {
         searchMode = false
         searchText = ""
         searchBar.textField.text = ""
-        starredMode = item.title == "Starred"
+        starredMode = item.title == "Watchlist"
         if item.title == "Analysis" {
             print("Analysis Pressed")
             app.setRootViewController(view: AnalysisViewController())
@@ -680,7 +680,7 @@ extension ViewController: UITabBarDelegate {
         analysisItem.setTitleColor(color: Color.grey.base, forState: .normal)
         analysisItem.setTitleColor(color: AppColor.base, forState: .selected)
 
-        let starredItem = UITabBarItem(title: "Starred", image: Icon.cm.star, selectedImage: nil)
+        let starredItem = UITabBarItem(title: "Watchlist", image: Icon.cm.star, selectedImage: nil)
         starredItem.setTitleColor(color: Color.grey.base, forState: .normal)
         starredItem.setTitleColor(color: AppColor.base, forState: .selected)
 
