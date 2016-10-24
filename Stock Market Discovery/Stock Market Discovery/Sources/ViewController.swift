@@ -8,10 +8,10 @@ import UIKit
 class ViewController: BaseViewController {
 
     fileprivate var toolbar: Toolbar!
-    fileprivate var bottomTabBar: BottomTabBar!
     fileprivate var searchBar: SearchBar!
     fileprivate var toolbarBackButton: IconButton!
     fileprivate var toolbarSettingsButton: IconButton!
+    var bottomTabBar: BottomTabBar!
     let realm = try! Realm()
     let tableView = UITableView()
     let stockTickersController = StockTickersController()
@@ -663,10 +663,10 @@ extension ViewController: UITabBarDelegate {
         searchMode = false
         searchText = ""
         searchBar.textField.text = ""
-        starredMode = item.title == "Watchlist"
         if item.title == "Analysis" {
             app.setRootViewController(view: AnalysisViewController())
         } else {
+            starredMode = item.title == "Watchlist"
             previousSelectedTab = item
         }
     }
