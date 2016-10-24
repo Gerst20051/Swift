@@ -4,6 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    let rootViewController = ViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setRootViewController()
@@ -21,12 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {}
 
     func setRootViewController() {
-        window?.rootViewController = ViewController()
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
 
     func setRootViewController(view: UIViewController) {
         window?.rootViewController = view
+    }
+
+    func restoreRootViewController() {
+        window?.rootViewController = rootViewController
     }
 
 }

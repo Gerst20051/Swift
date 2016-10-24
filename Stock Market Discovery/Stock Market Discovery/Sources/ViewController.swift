@@ -77,6 +77,14 @@ class ViewController: BaseViewController {
     var searchText = ""
     var distinctSectors = [String]()
     var distinctSectorIndustries = [String]()
+    var previousSelectedTab: UITabBarItem?
+
+    override func viewDidAppear(_ animated: Bool) {
+        if let selectedTab = previousSelectedTab {
+            bottomTabBar.selectedItem = selectedTab
+            starredMode = selectedTab.title == "Watchlist"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -655,6 +663,8 @@ extension ViewController: UITabBarDelegate {
         if item.title == "Analysis" {
             print("Analysis Pressed")
             app.setRootViewController(view: AnalysisViewController())
+        } else {
+            previousSelectedTab = item
         }
     }
 
@@ -690,6 +700,7 @@ extension ViewController: UITabBarDelegate {
         bottomTabBar.tintColor = AppColor.base
 
         starredMode = !starred.isEmpty
+        previousSelectedTab = starred.isEmpty ? bottomTabBar.items?[0] : bottomTabBar.items?[2]
     }
 
 }
