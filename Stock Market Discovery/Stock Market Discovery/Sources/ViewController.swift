@@ -23,15 +23,23 @@ class ViewController: BaseViewController {
     }
     var sectorTickers: Results<StockTicker> {
         if searchMode && searchText.isNotEmpty {
-            return realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry)).filter(NSPredicate(format: "symbol BEGINSWITH %@", searchText)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
+            let industryTickers = realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry))
+            var results = industryTickers.filter(NSPredicate(format: "symbol BEGINSWITH %@", searchText))
+            if results.count.isEmpty {
+                results = industryTickers.filter(NSPredicate(format: "name CONTAINS[c] %@", searchText))
+            }
+            return results.sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
         }
         return realm.objects(StockTicker.self).filter(NSPredicate(format: "industry == %@", selectedSectorIndustry.isEmpty ? "n/a" : selectedSectorIndustry)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
     }
     var starred: Results<StockTicker> {
         return realm.objects(StockTicker.self).filter("starred == 1").sorted(byProperty: "symbol")
     }
-    var searchItems: Results<StockTicker> {
+    var searchTickers: Results<StockTicker> {
         return realm.objects(StockTicker.self).filter(NSPredicate(format: "symbol BEGINSWITH %@", searchText)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
+    }
+    var searchNames: Results<StockTicker> {
+        return realm.objects(StockTicker.self).filter(NSPredicate(format: "name CONTAINS[c] %@", searchText)).sorted(by: [ SortDescriptor(property: "starred", ascending: false), "symbol" ])
     }
     var currentResults: Results<StockTicker>? // TODO: test caching results for optimal performance?
     var selectedSector: String = "" {
@@ -378,14 +386,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if (selectedSectorIndustry.isNotEmpty || selectedSector == "n/a") && !starredMode {
             return sectorTickers.count
         }
-        if selectedSector.isNotEmpty && !starredMode {
+        if selectedSector.isNotEmpty && !starredMode && !searchMode {
             return distinctSectorIndustries.count
         }
         if searchMode {
             if searchText.isEmpty {
                 return tickers.count
             } else {
-                return searchItems.count
+                return searchTickers.count.isEmpty ? searchNames.count : searchTickers.count
             }
         }
         return distinctSectors.count
@@ -398,15 +406,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if (selectedSectorIndustry.isNotEmpty || selectedSector == "n/a") && !starredMode {
             return getTickerForRow(row).symbol
         }
-        if selectedSector.isNotEmpty && !starredMode {
+        if selectedSector.isNotEmpty && !starredMode && !searchMode {
             return distinctSectorIndustries[row]
         }
         if searchMode {
-            if searchText.isEmpty {
-                return getTickerForRow(row).symbol
-            } else {
-                return getTickerForRow(row).symbol
-            }
+            return getTickerForRow(row).symbol
         }
         return distinctSectors[row] == "n/a" ? "Other" : distinctSectors[row]
     }
@@ -422,7 +426,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             if searchText.isEmpty {
                 return tickers[row]
             } else {
-                return searchItems[row]
+                return searchTickers.count.isEmpty ? searchNames[row] : searchTickers[row]
             }
         }
         return tickers[row]
@@ -661,7 +665,6 @@ extension ViewController: UITabBarDelegate {
         searchBar.textField.text = ""
         starredMode = item.title == "Watchlist"
         if item.title == "Analysis" {
-            print("Analysis Pressed")
             app.setRootViewController(view: AnalysisViewController())
         } else {
             previousSelectedTab = item
