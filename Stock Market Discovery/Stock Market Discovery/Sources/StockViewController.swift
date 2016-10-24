@@ -14,6 +14,7 @@ class StockViewController: BaseViewController {
     func setupInterface() {
         view.backgroundColor = .white
         createToolbar()
+        updateToolbarTitle()
         addContraintsToViews()
     }
 
@@ -55,6 +56,11 @@ extension StockViewController {
 
     func handleToolbarBackButtonPressed() {
         app.restoreRootViewController()
+    }
+
+    func updateToolbarTitle() {
+        toolbar.title = selectedTicker.symbol + "  :  " + selectedTicker.exchange
+        toolbar.detail = selectedTicker.name
     }
 
 }

@@ -361,18 +361,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if !searchMode && !starredMode {
             if selectedSector.isEmpty {
                 selectedSector = distinctSectors[indexPath.row]
+                return
             } else if selectedSectorIndustry.isEmpty && selectedSector != "n/a" {
                 selectedSectorIndustry = distinctSectorIndustries[indexPath.row]
-            } else {
-                let stockViewController = StockViewController()
-                stockViewController.selectedTicker = sectorTickers[indexPath.row]
-                app.setRootViewController(view: stockViewController)
+                return
             }
-        } else {
-            let stockViewController = StockViewController()
-            stockViewController.selectedTicker = sectorTickers[indexPath.row]
-            app.setRootViewController(view: stockViewController)
         }
+        let stockViewController = StockViewController()
+        stockViewController.selectedTicker = getTickerForRow(indexPath.row)
+        app.setRootViewController(view: stockViewController)
     }
 
     func scrollTableViewToTop() {
