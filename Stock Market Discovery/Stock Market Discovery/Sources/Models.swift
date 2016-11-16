@@ -1,3 +1,4 @@
+import ObjectMapper
 import RealmSwift
 
 class StockTicker: Object {
@@ -20,5 +21,25 @@ class StockTicker: Object {
         try! realm.write {
             starred = !starred
         }
+    }
+}
+
+class StockHistoryResult: Mappable {
+    var date: String?
+    var open: Float?
+    var high: Float?
+    var low: Float?
+    var close: Float?
+    var volume: Int?
+
+    required init?(map: Map) {}
+
+    func mapping(map: Map) {
+        date <- map["date"]
+        open <- map["open"]
+        high <- map["high"]
+        low <- map["low"]
+        close <- map["close"]
+        volume <- map["volume"]
     }
 }

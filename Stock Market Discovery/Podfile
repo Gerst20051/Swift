@@ -3,15 +3,17 @@ platform :ios, '9.0'
 target 'Stock Market Discovery' do
   use_frameworks!
 
-  pod 'Alamofire', '4.0.1'
+  pod 'Alamofire', '4.1.0'
   pod 'AlamofireObjectMapper', '4.0.0'
-  pod 'CSV.swift', '1.1.0'
-  pod 'Dollar', '6.0.0'
-  pod 'Material', '2.2.1'
+  pod 'Charts', '3.0.0'
+  pod 'CSV.swift', '1.1.1'
+  pod 'Dollar', '6.1.0'
+  pod 'Material', '2.3.10'
   pod 'PromiseKit', '4.0.4'
-  pod 'RealmSwift', '2.0.2'
-  pod 'Reveal-SDK', '2.0.0', :configurations => ['Debug']
+  pod 'RealmSwift', '2.0.4'
+  pod 'Reveal-SDK', '4', :configurations => ['Debug']
   pod 'SnapKit', '3.0.2'
+  # pod 'SwiftCharts', '0.4'
   pod 'SwiftyTimer', '2.0.0'
   pod 'SwiftyUserDefaults', '3.0.0'
 

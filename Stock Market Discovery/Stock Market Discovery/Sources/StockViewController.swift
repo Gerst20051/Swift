@@ -1,3 +1,4 @@
+import Charts
 import Material
 import SnapKit
 
@@ -5,6 +6,7 @@ class StockViewController: BaseViewController {
 
     fileprivate var toolbar: Toolbar!
     var selectedTicker: StockTicker!
+    @IBOutlet var candleStickChartView: CandleStickChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,12 +17,33 @@ class StockViewController: BaseViewController {
         view.backgroundColor = .white
         createToolbar()
         updateToolbarTitle()
+        loadDailyStockHistory()
+        // load daily stock history
+        // create stock chart
         createLabels()
         addContraintsToViews()
     }
 
     func addContraintsToViews() {
         addToolbarContraints()
+    }
+
+}
+
+extension StockViewController {
+
+    func loadDailyStockHistory() {
+        _ = Cloud.getStockHistory(ticker: selectedTicker.symbol).then { history -> Void in
+            print("history => \(history)")
+            self.createChart()
+        }.catch { error in
+            print("error => \(error)")
+        }
+    }
+
+    func createChart() {
+        // candleStickChartView = CandleStickChartView()
+        view.addSubview(candleStickChartView)
     }
 
 }
