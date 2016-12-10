@@ -13,7 +13,7 @@ target 'Stock Market Discovery' do
   pod 'RealmSwift', '2.0.4'
   pod 'Reveal-SDK', '4', :configurations => ['Debug']
   pod 'SnapKit', '3.0.2'
-  # pod 'SwiftCharts', '0.4'
+  pod 'SwiftCharts', :git => 'https://github.com/i-schuetz/SwiftCharts.git'
   pod 'SwiftyTimer', '2.0.0'
   pod 'SwiftyUserDefaults', '3.0.0'
 

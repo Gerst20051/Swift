@@ -6,7 +6,7 @@ class StockViewController: BaseViewController {
 
     fileprivate var toolbar: Toolbar!
     var selectedTicker: StockTicker!
-    @IBOutlet var candleStickChartView: CandleStickChartView!
+    // @IBOutlet var candleStickChartView: CandleStickChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ extension StockViewController {
 
     func createChart() {
         // candleStickChartView = CandleStickChartView()
-        view.addSubview(candleStickChartView)
+        // view.addSubview(candleStickChartView)
     }
 
 }

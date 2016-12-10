@@ -30,6 +30,7 @@ PODS:
     - Realm (= 2.0.4)
   - Reveal-SDK (4)
   - SnapKit (3.0.2)
+  - SwiftCharts (0.4)
   - SwiftyTimer (2.0.0)
   - SwiftyUserDefaults (3.0.0)
 
@@ -44,8 +45,18 @@ DEPENDENCIES:
   - RealmSwift (= 2.0.4)
   - Reveal-SDK (= 4)
   - SnapKit (= 3.0.2)
+  - SwiftCharts (from `https://github.com/i-schuetz/SwiftCharts.git`)
   - SwiftyTimer (= 2.0.0)
   - SwiftyUserDefaults (= 3.0.0)
+
+EXTERNAL SOURCES:
+  SwiftCharts:
+    :git: https://github.com/i-schuetz/SwiftCharts.git
+
+CHECKOUT OPTIONS:
+  SwiftCharts:
+    :commit: 1705b493b9239cbeb74c484eb9fa9694e42e5b7d
+    :git: https://github.com/i-schuetz/SwiftCharts.git
 
 SPEC CHECKSUMS:
   Alamofire: e266cf991b933498df791e645e0d8ac294492153
@@ -60,9 +71,10 @@ SPEC CHECKSUMS:
   RealmSwift: 01e8db006035f16003e6307ae8eae1adccce68db
   Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftCharts: 84b43d9d70b791459ff5f50ae5a6704326de309d
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 8f6d72f4ebed42bac3a7668f69850f570c55f4f3
+PODFILE CHECKSUM: 60a112a3d91213dd3c94320e31ff0107e6e50cd4
 
 COCOAPODS: 1.1.0
