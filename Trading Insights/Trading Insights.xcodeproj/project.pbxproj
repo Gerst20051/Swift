@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DCC7A28CEF991E7C8009993 /* Pods_Trading_Insights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504E39CF1C465F0B35CD00AC /* Pods_Trading_Insights.framework */; };
+		3CB11B282CA9BB5FEE8507E8 /* Pods_Trading_InsightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3C148CCA2F07039B34C491 /* Pods_Trading_InsightsTests.framework */; };
+		B761B7D48D3B31A73CE1BAE3 /* Pods_Trading_InsightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CBB50C3121C1FD5EAFC40D7 /* Pods_Trading_InsightsUITests.framework */; };
+		F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74409691DFCC0B400F6E1C7 /* LaunchScreen.storyboard */; };
+		F773BD8F1DFCBF69003749A5 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = F773BD8E1DFCBF69003749A5 /* launch.png */; };
+		F78C87CD1DFCB2E1001F7AE1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C61DFCB2E1001F7AE1 /* BaseViewController.swift */; };
+		F78C87CE1DFCB2E1001F7AE1 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */; };
+		F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */; };
+		F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C91DFCB2E1001F7AE1 /* Models.swift */; };
+		F78C87D11DFCB2E1001F7AE1 /* RealmControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */; };
+		F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */; };
+		F78C87D31DFCB2E1001F7AE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CC1DFCB2E1001F7AE1 /* ViewController.swift */; };
 		F78F37F41DFCA94200AFDBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F37F31DFCA94200AFDBE4 /* AppDelegate.swift */; };
-		F78F37F61DFCA94200AFDBE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F37F51DFCA94200AFDBE4 /* ViewController.swift */; };
-		F78F37F91DFCA94200AFDBE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78F37F71DFCA94200AFDBE4 /* Main.storyboard */; };
 		F78F37FB1DFCA94200AFDBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F78F37FA1DFCA94200AFDBE4 /* Assets.xcassets */; };
-		F78F37FE1DFCA94200AFDBE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78F37FC1DFCA94200AFDBE4 /* LaunchScreen.storyboard */; };
 		F78F38091DFCA94200AFDBE4 /* Trading_InsightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F38081DFCA94200AFDBE4 /* Trading_InsightsTests.swift */; };
 		F78F38141DFCA94200AFDBE4 /* Trading_InsightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F38131DFCA94200AFDBE4 /* Trading_InsightsUITests.swift */; };
 /* End PBXBuildFile section */
@@ -34,12 +43,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CF0385D3E0347E83B76929D /* Pods-Trading InsightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsTests/Pods-Trading InsightsTests.release.xcconfig"; sourceTree = "<group>"; };
+		504E39CF1C465F0B35CD00AC /* Pods_Trading_Insights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trading_Insights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5357CE3466D9E256BCB1B07B /* Pods-Trading InsightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsUITests/Pods-Trading InsightsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7CBB50C3121C1FD5EAFC40D7 /* Pods_Trading_InsightsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trading_InsightsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D54D3A45D1B4F40B85C0AB /* Pods-Trading Insights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading Insights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trading Insights/Pods-Trading Insights.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1708D132AF42C2007FEC9F /* Pods-Trading InsightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsTests/Pods-Trading InsightsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D47C27558AB220D01F355409 /* Pods-Trading Insights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading Insights.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trading Insights/Pods-Trading Insights.release.xcconfig"; sourceTree = "<group>"; };
+		DC503239D8B174E09EAFE38D /* Pods-Trading InsightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsUITests/Pods-Trading InsightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F744096A1DFCC0B400F6E1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F773BD8E1DFCBF69003749A5 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Resources/Images/launch.png; sourceTree = "<group>"; };
+		F78C87C61DFCB2E1001F7AE1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
+		F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloud.swift; path = Sources/Cloud.swift; sourceTree = "<group>"; };
+		F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
+		F78C87C91DFCB2E1001F7AE1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
+		F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmControllers.swift; path = Sources/RealmControllers.swift; sourceTree = "<group>"; };
+		F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmUtils.swift; path = Sources/RealmUtils.swift; sourceTree = "<group>"; };
+		F78C87CC1DFCB2E1001F7AE1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
 		F78F37F01DFCA94200AFDBE4 /* Trading Insights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Insights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78F37F31DFCA94200AFDBE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F78F37F51DFCA94200AFDBE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F78F37F81DFCA94200AFDBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F78F37FA1DFCA94200AFDBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F78F37FD1DFCA94200AFDBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F78F37FF1DFCA94200AFDBE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F78F38041DFCA94200AFDBE4 /* Trading InsightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trading InsightsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78F38081DFCA94200AFDBE4 /* Trading_InsightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trading_InsightsTests.swift; sourceTree = "<group>"; };
@@ -47,6 +70,7 @@
 		F78F380F1DFCA94200AFDBE4 /* Trading InsightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trading InsightsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78F38131DFCA94200AFDBE4 /* Trading_InsightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trading_InsightsUITests.swift; sourceTree = "<group>"; };
 		F78F38151DFCA94200AFDBE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE3C148CCA2F07039B34C491 /* Pods_Trading_InsightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trading_InsightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCC7A28CEF991E7C8009993 /* Pods_Trading_Insights.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB11B282CA9BB5FEE8507E8 /* Pods_Trading_InsightsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +94,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B761B7D48D3B31A73CE1BAE3 /* Pods_Trading_InsightsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54A23AC473ADDCDE91EC9296 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8D54D3A45D1B4F40B85C0AB /* Pods-Trading Insights.debug.xcconfig */,
+				D47C27558AB220D01F355409 /* Pods-Trading Insights.release.xcconfig */,
+				CF1708D132AF42C2007FEC9F /* Pods-Trading InsightsTests.debug.xcconfig */,
+				4CF0385D3E0347E83B76929D /* Pods-Trading InsightsTests.release.xcconfig */,
+				DC503239D8B174E09EAFE38D /* Pods-Trading InsightsUITests.debug.xcconfig */,
+				5357CE3466D9E256BCB1B07B /* Pods-Trading InsightsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D75D056B34C8816BA0E03BEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				504E39CF1C465F0B35CD00AC /* Pods_Trading_Insights.framework */,
+				FE3C148CCA2F07039B34C491 /* Pods_Trading_InsightsTests.framework */,
+				7CBB50C3121C1FD5EAFC40D7 /* Pods_Trading_InsightsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F74409681DFCC09900F6E1C7 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F74409691DFCC0B400F6E1C7 /* LaunchScreen.storyboard */,
+			);
+			name = Base.lproj;
+			sourceTree = "<group>";
+		};
+		F773BD8D1DFCBF5F003749A5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F773BD8E1DFCBF69003749A5 /* launch.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F78C87C41DFCB2C7001F7AE1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F773BD8D1DFCBF5F003749A5 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F78C87C51DFCB2D3001F7AE1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F78C87C61DFCB2E1001F7AE1 /* BaseViewController.swift */,
+				F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */,
+				F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */,
+				F78C87C91DFCB2E1001F7AE1 /* Models.swift */,
+				F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */,
+				F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */,
+				F78C87CC1DFCB2E1001F7AE1 /* ViewController.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
 		F78F37E71DFCA94200AFDBE4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +169,8 @@
 				F78F38071DFCA94200AFDBE4 /* Trading InsightsTests */,
 				F78F38121DFCA94200AFDBE4 /* Trading InsightsUITests */,
 				F78F37F11DFCA94200AFDBE4 /* Products */,
+				54A23AC473ADDCDE91EC9296 /* Pods */,
+				D75D056B34C8816BA0E03BEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +188,11 @@
 			isa = PBXGroup;
 			children = (
 				F78F37F31DFCA94200AFDBE4 /* AppDelegate.swift */,
-				F78F37F51DFCA94200AFDBE4 /* ViewController.swift */,
-				F78F37F71DFCA94200AFDBE4 /* Main.storyboard */,
 				F78F37FA1DFCA94200AFDBE4 /* Assets.xcassets */,
-				F78F37FC1DFCA94200AFDBE4 /* LaunchScreen.storyboard */,
+				F74409681DFCC09900F6E1C7 /* Base.lproj */,
 				F78F37FF1DFCA94200AFDBE4 /* Info.plist */,
+				F78C87C41DFCB2C7001F7AE1 /* Resources */,
+				F78C87C51DFCB2D3001F7AE1 /* Sources */,
 			);
 			path = "Trading Insights";
 			sourceTree = "<group>";
@@ -110,8 +200,8 @@
 		F78F38071DFCA94200AFDBE4 /* Trading InsightsTests */ = {
 			isa = PBXGroup;
 			children = (
-				F78F38081DFCA94200AFDBE4 /* Trading_InsightsTests.swift */,
 				F78F380A1DFCA94200AFDBE4 /* Info.plist */,
+				F78F38081DFCA94200AFDBE4 /* Trading_InsightsTests.swift */,
 			);
 			path = "Trading InsightsTests";
 			sourceTree = "<group>";
@@ -119,8 +209,8 @@
 		F78F38121DFCA94200AFDBE4 /* Trading InsightsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F78F38131DFCA94200AFDBE4 /* Trading_InsightsUITests.swift */,
 				F78F38151DFCA94200AFDBE4 /* Info.plist */,
+				F78F38131DFCA94200AFDBE4 /* Trading_InsightsUITests.swift */,
 			);
 			path = "Trading InsightsUITests";
 			sourceTree = "<group>";
@@ -132,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F78F38181DFCA94200AFDBE4 /* Build configuration list for PBXNativeTarget "Trading Insights" */;
 			buildPhases = (
+				E90E35172EF1DEE4C9A6A46F /* [CP] Check Pods Manifest.lock */,
 				F78F37EC1DFCA94200AFDBE4 /* Sources */,
 				F78F37ED1DFCA94200AFDBE4 /* Frameworks */,
 				F78F37EE1DFCA94200AFDBE4 /* Resources */,
+				D64C5566A796DD2E7DEAB0FD /* [CP] Embed Pods Frameworks */,
+				BBE5EE0609782D70132183AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F78F381B1DFCA94200AFDBE4 /* Build configuration list for PBXNativeTarget "Trading InsightsTests" */;
 			buildPhases = (
+				C129E1F7EDD4F38675074996 /* [CP] Check Pods Manifest.lock */,
 				F78F38001DFCA94200AFDBE4 /* Sources */,
 				F78F38011DFCA94200AFDBE4 /* Frameworks */,
 				F78F38021DFCA94200AFDBE4 /* Resources */,
+				F3E3B8D593F64198E6A311A0 /* [CP] Embed Pods Frameworks */,
+				F28E62496B6AAE3EE192071D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F78F381E1DFCA94200AFDBE4 /* Build configuration list for PBXNativeTarget "Trading InsightsUITests" */;
 			buildPhases = (
+				7B66C88C896D9019218A7145 /* [CP] Check Pods Manifest.lock */,
 				F78F380B1DFCA94200AFDBE4 /* Sources */,
 				F78F380C1DFCA94200AFDBE4 /* Frameworks */,
 				F78F380D1DFCA94200AFDBE4 /* Resources */,
+				367A6317F7C47D6D57B22E26 /* [CP] Embed Pods Frameworks */,
+				E9F7D125F1CCC3414912BA94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +334,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F78F37FE1DFCA94200AFDBE4 /* LaunchScreen.storyboard in Resources */,
+				F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */,
+				F773BD8F1DFCBF69003749A5 /* launch.png in Resources */,
 				F78F37FB1DFCA94200AFDBE4 /* Assets.xcassets in Resources */,
-				F78F37F91DFCA94200AFDBE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +356,157 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		367A6317F7C47D6D57B22E26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trading InsightsUITests/Pods-Trading InsightsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B66C88C896D9019218A7145 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BBE5EE0609782D70132183AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trading Insights/Pods-Trading Insights-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C129E1F7EDD4F38675074996 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D64C5566A796DD2E7DEAB0FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trading Insights/Pods-Trading Insights-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E90E35172EF1DEE4C9A6A46F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E9F7D125F1CCC3414912BA94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trading InsightsUITests/Pods-Trading InsightsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F28E62496B6AAE3EE192071D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trading InsightsTests/Pods-Trading InsightsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3E3B8D593F64198E6A311A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trading InsightsTests/Pods-Trading InsightsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F78F37EC1DFCA94200AFDBE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F78F37F61DFCA94200AFDBE4 /* ViewController.swift in Sources */,
 				F78F37F41DFCA94200AFDBE4 /* AppDelegate.swift in Sources */,
+				F78C87CE1DFCB2E1001F7AE1 /* Cloud.swift in Sources */,
+				F78C87CD1DFCB2E1001F7AE1 /* BaseViewController.swift in Sources */,
+				F78C87D11DFCB2E1001F7AE1 /* RealmControllers.swift in Sources */,
+				F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */,
+				F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */,
+				F78C87D31DFCB2E1001F7AE1 /* ViewController.swift in Sources */,
+				F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,18 +542,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F78F37F71DFCA94200AFDBE4 /* Main.storyboard */ = {
+		F74409691DFCC0B400F6E1C7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F78F37F81DFCA94200AFDBE4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F78F37FC1DFCA94200AFDBE4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F78F37FD1DFCA94200AFDBE4 /* Base */,
+				F744096A1DFCC0B400F6E1C7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +571,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -386,6 +622,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -413,7 +650,9 @@
 		};
 		F78F38191DFCA94200AFDBE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D54D3A45D1B4F40B85C0AB /* Pods-Trading Insights.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
 				INFOPLIST_FILE = "Trading Insights/Info.plist";
@@ -426,7 +665,9 @@
 		};
 		F78F381A1DFCA94200AFDBE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D47C27558AB220D01F355409 /* Pods-Trading Insights.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
 				INFOPLIST_FILE = "Trading Insights/Info.plist";
@@ -439,6 +680,7 @@
 		};
 		F78F381C1DFCA94200AFDBE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF1708D132AF42C2007FEC9F /* Pods-Trading InsightsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +696,7 @@
 		};
 		F78F381D1DFCA94200AFDBE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF0385D3E0347E83B76929D /* Pods-Trading InsightsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +712,7 @@
 		};
 		F78F381F1DFCA94200AFDBE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC503239D8B174E09EAFE38D /* Pods-Trading InsightsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
@@ -483,6 +727,7 @@
 		};
 		F78F38201DFCA94200AFDBE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5357CE3466D9E256BCB1B07B /* Pods-Trading InsightsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VLF9HQZ98F;
@@ -514,6 +759,7 @@
 				F78F381A1DFCA94200AFDBE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F78F381B1DFCA94200AFDBE4 /* Build configuration list for PBXNativeTarget "Trading InsightsTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +768,7 @@
 				F78F381D1DFCA94200AFDBE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F78F381E1DFCA94200AFDBE4 /* Build configuration list for PBXNativeTarget "Trading InsightsUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +777,7 @@
 				F78F38201DFCA94200AFDBE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
