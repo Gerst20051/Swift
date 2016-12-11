@@ -3,11 +3,11 @@ import UIKit
 open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableView: UITableView?
-    let rowHeight: CGFloat = 54.0
+    let rowHeight: CGFloat = 60.0
     let titles = [
-        "Current Ideas",
-        "Past Ideas",
-        "Idea Insights"
+        AppString.CurrentIdeas,
+        AppString.PastIdeas,
+        AppString.IdeaInsights
     ]
 
     override open func viewDidLoad() {
@@ -69,8 +69,8 @@ open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITabl
             let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
             cell.backgroundColor = .clear
             cell.selectedBackgroundView = UIView()
-            cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 21.0)
-            cell.textLabel?.highlightedTextColor = .lightGray
+            cell.textLabel?.font = UIFont(name: AppFont.base, size: 21.0)
+            cell.textLabel?.highlightedTextColor = .white
             cell.textLabel?.textColor = .white
             return cell
         }

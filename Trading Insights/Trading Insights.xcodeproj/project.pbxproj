@@ -18,6 +18,11 @@
 		F74D26841DFCF441006E01CD /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267F1DFCF441006E01CD /* LeftMenuViewController.swift */; };
 		F74D26851DFCF441006E01CD /* PastIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D26801DFCF441006E01CD /* PastIdeasViewController.swift */; };
 		F773BD8F1DFCBF69003749A5 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = F773BD8E1DFCBF69003749A5 /* launch.png */; };
+		F775AD641DFD013D00C3E64F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = F775AD601DFD013D00C3E64F /* add.png */; };
+		F775AD651DFD013D00C3E64F /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F775AD611DFD013D00C3E64F /* add@2x.png */; };
+		F775AD661DFD013D00C3E64F /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F775AD621DFD013D00C3E64F /* menu.png */; };
+		F775AD671DFD013D00C3E64F /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F775AD631DFD013D00C3E64F /* menu@2x.png */; };
+		F775AD691DFD044C00C3E64F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775AD681DFD044C00C3E64F /* Constants.swift */; };
 		F78C87CE1DFCB2E1001F7AE1 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */; };
 		F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */; };
 		F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C91DFCB2E1001F7AE1 /* Models.swift */; };
@@ -63,6 +68,11 @@
 		F74D267F1DFCF441006E01CD /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = Sources/ViewControllers/LeftMenuViewController.swift; sourceTree = "<group>"; };
 		F74D26801DFCF441006E01CD /* PastIdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PastIdeasViewController.swift; path = Sources/ViewControllers/PastIdeasViewController.swift; sourceTree = "<group>"; };
 		F773BD8E1DFCBF69003749A5 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Resources/Images/launch.png; sourceTree = "<group>"; };
+		F775AD601DFD013D00C3E64F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Resources/Images/Icons/add.png; sourceTree = "<group>"; };
+		F775AD611DFD013D00C3E64F /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add@2x.png"; path = "Resources/Images/Icons/add@2x.png"; sourceTree = "<group>"; };
+		F775AD621DFD013D00C3E64F /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Resources/Images/Icons/menu.png; sourceTree = "<group>"; };
+		F775AD631DFD013D00C3E64F /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "Resources/Images/Icons/menu@2x.png"; sourceTree = "<group>"; };
+		F775AD681DFD044C00C3E64F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Sources/Constants.swift; sourceTree = "<group>"; };
 		F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloud.swift; path = Sources/Cloud.swift; sourceTree = "<group>"; };
 		F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
 		F78C87C91DFCB2E1001F7AE1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
@@ -155,10 +165,22 @@
 		F773BD8D1DFCBF5F003749A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F775AD5F1DFD012C00C3E64F /* Icons */,
 				F74D26731DFCECBD006E01CD /* background.png */,
 				F773BD8E1DFCBF69003749A5 /* launch.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		F775AD5F1DFD012C00C3E64F /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				F775AD601DFD013D00C3E64F /* add.png */,
+				F775AD611DFD013D00C3E64F /* add@2x.png */,
+				F775AD621DFD013D00C3E64F /* menu.png */,
+				F775AD631DFD013D00C3E64F /* menu@2x.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		F78C87C41DFCB2C7001F7AE1 /* Resources */ = {
@@ -173,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */,
+				F775AD681DFD044C00C3E64F /* Constants.swift */,
 				F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */,
 				F78C87C91DFCB2E1001F7AE1 /* Models.swift */,
 				F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */,
@@ -307,7 +330,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Andrew Gerst";
 				TargetAttributes = {
 					F78F37EF1DFCA94200AFDBE4 = {
@@ -356,7 +379,11 @@
 			files = (
 				F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */,
 				F74D26741DFCECBD006E01CD /* background.png in Resources */,
+				F775AD651DFD013D00C3E64F /* add@2x.png in Resources */,
 				F773BD8F1DFCBF69003749A5 /* launch.png in Resources */,
+				F775AD661DFD013D00C3E64F /* menu.png in Resources */,
+				F775AD671DFD013D00C3E64F /* menu@2x.png in Resources */,
+				F775AD641DFD013D00C3E64F /* add.png in Resources */,
 				F78F37FB1DFCA94200AFDBE4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +558,7 @@
 				F74D26821DFCF441006E01CD /* CurrentIdeasViewController.swift in Sources */,
 				F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */,
 				F74D26831DFCF441006E01CD /* IdeaInsightsViewController.swift in Sources */,
+				F775AD691DFD044C00C3E64F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

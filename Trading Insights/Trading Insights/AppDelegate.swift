@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
         RealmUtils.logDebugInfo()
         setSideMenuViewController()
         setRootViewController()
-        sideMenuViewController!.presentLeftMenuViewController()
+        showSideMenu()
         return true
     }
 
@@ -41,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
     func setRootViewController() {
         window?.rootViewController = sideMenuViewController
         window?.makeKeyAndVisible()
+    }
+
+    func showSideMenu() {
+        sideMenuViewController!.presentLeftMenuViewController()
     }
 
     open func sideMenu(_ sideMenu: AKSideMenu, willShowMenuViewController menuViewController: UIViewController) {
