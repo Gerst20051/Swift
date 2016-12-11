@@ -29,6 +29,7 @@ PODS:
   - SnapKit (3.0.2)
   - SwiftyTimer (2.0.0)
   - SwiftyUserDefaults (3.0.0)
+  - WSTagsField (2.0.0)
 
 DEPENDENCIES:
   - AKSideMenu (= 1.3.1)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - SnapKit (= 3.0.2)
   - SwiftyTimer (= 2.0.0)
   - SwiftyUserDefaults (= 3.0.0)
+  - WSTagsField (= 2.0.0)
 
 SPEC CHECKSUMS:
   AKSideMenu: 1891ead7606775b9d820884c543ed492e91d276a
@@ -57,7 +59,8 @@ SPEC CHECKSUMS:
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  WSTagsField: df3f020590e1c0f26d85293e4ce24c5d4fcc3c80
 
-PODFILE CHECKSUM: 1323160c70bf7210d5d3c0e1bbe38cd9220ad688
+PODFILE CHECKSUM: 6031ce0430c5e2168b3496d147030b4a76a5c7b0
 
 COCOAPODS: 1.1.1

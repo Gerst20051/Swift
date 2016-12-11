@@ -10,6 +10,9 @@
 		1DCC7A28CEF991E7C8009993 /* Pods_Trading_Insights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504E39CF1C465F0B35CD00AC /* Pods_Trading_Insights.framework */; };
 		3CB11B282CA9BB5FEE8507E8 /* Pods_Trading_InsightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3C148CCA2F07039B34C491 /* Pods_Trading_InsightsTests.framework */; };
 		B761B7D48D3B31A73CE1BAE3 /* Pods_Trading_InsightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CBB50C3121C1FD5EAFC40D7 /* Pods_Trading_InsightsUITests.framework */; };
+		F73D8C0D1DFDDC37003D344D /* AddIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D8C0C1DFDDC37003D344D /* AddIdeaViewController.swift */; };
+		F73D8C101DFDDE75003D344D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F73D8C0E1DFDDE75003D344D /* back.png */; };
+		F73D8C111DFDDE75003D344D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F73D8C0F1DFDDE75003D344D /* back@2x.png */; };
 		F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74409691DFCC0B400F6E1C7 /* LaunchScreen.storyboard */; };
 		F74D26741DFCECBD006E01CD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F74D26731DFCECBD006E01CD /* background.png */; };
 		F74D26811DFCF441006E01CD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267C1DFCF441006E01CD /* BaseViewController.swift */; };
@@ -60,6 +63,9 @@
 		CF1708D132AF42C2007FEC9F /* Pods-Trading InsightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsTests/Pods-Trading InsightsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D47C27558AB220D01F355409 /* Pods-Trading Insights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading Insights.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trading Insights/Pods-Trading Insights.release.xcconfig"; sourceTree = "<group>"; };
 		DC503239D8B174E09EAFE38D /* Pods-Trading InsightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsUITests/Pods-Trading InsightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F73D8C0C1DFDDC37003D344D /* AddIdeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddIdeaViewController.swift; path = Sources/ViewControllers/AddIdeaViewController.swift; sourceTree = "<group>"; };
+		F73D8C0E1DFDDE75003D344D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Resources/Images/Icons/back.png; sourceTree = "<group>"; };
+		F73D8C0F1DFDDE75003D344D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back@2x.png"; path = "Resources/Images/Icons/back@2x.png"; sourceTree = "<group>"; };
 		F744096A1DFCC0B400F6E1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F74D26731DFCECBD006E01CD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/Images/background.png; sourceTree = "<group>"; };
 		F74D267C1DFCF441006E01CD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		F74D267B1DFCF3FD006E01CD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F73D8C0C1DFDDC37003D344D /* AddIdeaViewController.swift */,
 				F74D267C1DFCF441006E01CD /* BaseViewController.swift */,
 				F74D267D1DFCF441006E01CD /* CurrentIdeasViewController.swift */,
 				F74D267E1DFCF441006E01CD /* IdeaInsightsViewController.swift */,
@@ -177,6 +184,8 @@
 			children = (
 				F775AD601DFD013D00C3E64F /* add.png */,
 				F775AD611DFD013D00C3E64F /* add@2x.png */,
+				F73D8C0E1DFDDE75003D344D /* back.png */,
+				F73D8C0F1DFDDE75003D344D /* back@2x.png */,
 				F775AD621DFD013D00C3E64F /* menu.png */,
 				F775AD631DFD013D00C3E64F /* menu@2x.png */,
 			);
@@ -379,10 +388,12 @@
 			files = (
 				F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */,
 				F74D26741DFCECBD006E01CD /* background.png in Resources */,
+				F73D8C101DFDDE75003D344D /* back.png in Resources */,
 				F775AD651DFD013D00C3E64F /* add@2x.png in Resources */,
 				F773BD8F1DFCBF69003749A5 /* launch.png in Resources */,
 				F775AD661DFD013D00C3E64F /* menu.png in Resources */,
 				F775AD671DFD013D00C3E64F /* menu@2x.png in Resources */,
+				F73D8C111DFDDE75003D344D /* back@2x.png in Resources */,
 				F775AD641DFD013D00C3E64F /* add.png in Resources */,
 				F78F37FB1DFCA94200AFDBE4 /* Assets.xcassets in Resources */,
 			);
@@ -558,6 +569,7 @@
 				F74D26821DFCF441006E01CD /* CurrentIdeasViewController.swift in Sources */,
 				F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */,
 				F74D26831DFCF441006E01CD /* IdeaInsightsViewController.swift in Sources */,
+				F73D8C0D1DFDDC37003D344D /* AddIdeaViewController.swift in Sources */,
 				F775AD691DFD044C00C3E64F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

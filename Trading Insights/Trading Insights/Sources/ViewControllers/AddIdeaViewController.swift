@@ -2,7 +2,7 @@ import Material
 import SnapKit
 import UIKit
 
-class PastIdeasViewController: BaseViewController {
+class AddIdeaViewController: BaseViewController {
 
     fileprivate var toolbar: Toolbar!
 
@@ -32,25 +32,25 @@ class PastIdeasViewController: BaseViewController {
     func createToolbar() {
         toolbar = Toolbar()
         toolbar.backgroundColor = AppColor.base
-        toolbar.leftViews = [ createToolbarMenuButton() ]
-        toolbar.title = AppString.PastIdeas
+        toolbar.leftViews = [ createToolbarBackButton() ]
+        toolbar.title = AppString.AddIdea
         toolbar.titleLabel.adjustsFontSizeToFitWidth = true
         toolbar.titleLabel.font = UIFont(name: AppFont.base, size: AppConstants.ToolbarFontSize)!
         toolbar.titleLabel.textColor = Color.white
         view.addSubview(toolbar)
     }
 
-   func createToolbarMenuButton() -> IconButton {
-        let menuImage = UIImage(named: AppIcon.menu)
+   func createToolbarBackButton() -> IconButton {
+        let menuImage = UIImage(named: AppIcon.back)
         let menuButton = IconButton()
         menuButton.setImage(menuImage, for: .normal)
         menuButton.setImage(menuImage, for: .highlighted)
-        menuButton.addTarget(self, action: #selector(handleToolbarMenuButtonPressed), for: .touchUpInside)
+        menuButton.addTarget(self, action: #selector(handleToolbarBackButtonPressed), for: .touchUpInside)
         return menuButton
     }
 
-    func handleToolbarMenuButtonPressed() {
-        app.showSideMenu()
+    func handleToolbarBackButtonPressed() {
+        app.sideMenuViewController?.setContentViewController(CurrentIdeasViewController(), animated: true)
     }
 
 }

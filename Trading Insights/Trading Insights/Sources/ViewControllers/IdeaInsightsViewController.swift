@@ -24,7 +24,7 @@ class IdeaInsightsViewController: BaseViewController {
     func addToolbarContraints() {
         toolbar.snp.remakeConstraints { make -> Void in
             // make.bottom.equalTo(tableView.snp.top)
-            make.height.equalTo(80.0)
+            make.height.equalTo(AppConstants.ToolbarHeight)
             make.top.width.equalTo(view)
         }
     }
@@ -35,7 +35,7 @@ class IdeaInsightsViewController: BaseViewController {
         toolbar.leftViews = [ createToolbarMenuButton() ]
         toolbar.title = AppString.IdeaInsights
         toolbar.titleLabel.adjustsFontSizeToFitWidth = true
-        toolbar.titleLabel.font = UIFont(name: AppFont.base, size: 32.0)!
+        toolbar.titleLabel.font = UIFont(name: AppFont.base, size: AppConstants.ToolbarFontSize)!
         toolbar.titleLabel.textColor = Color.white
         view.addSubview(toolbar)
     }

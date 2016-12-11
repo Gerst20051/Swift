@@ -14,6 +14,7 @@ target 'Trading Insights' do
   pod 'SnapKit', '3.0.2'
   pod 'SwiftyTimer', '2.0.0'
   pod 'SwiftyUserDefaults', '3.0.0'
+  pod 'WSTagsField', '2.0.0'
 
   target 'Trading InsightsTests' do
     inherit! :search_paths
