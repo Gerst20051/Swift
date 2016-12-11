@@ -5,7 +5,7 @@ struct AppColor {
 }
 
 struct AppFont {
-    static let base = "HelveticaNeue"
+    static let base = "HelveticaNeue-Thin"
 }
 
 struct AppIcon {
