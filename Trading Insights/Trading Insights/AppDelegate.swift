@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
     func applicationWillTerminate(_ application: UIApplication) {}
 
     func setSideMenuViewController() {
-        sideMenuViewController = AKSideMenu(contentViewController: ViewController(), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: UIViewController())
+        sideMenuViewController = AKSideMenu(contentViewController: CurrentIdeasViewController(), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: UIViewController())
         sideMenuViewController!.backgroundImage = UIImage(named: "background")!
         sideMenuViewController!.contentViewShadowColor = .black
         sideMenuViewController!.contentViewShadowEnabled = true

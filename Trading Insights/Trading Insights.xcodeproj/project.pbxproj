@@ -11,16 +11,18 @@
 		3CB11B282CA9BB5FEE8507E8 /* Pods_Trading_InsightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3C148CCA2F07039B34C491 /* Pods_Trading_InsightsTests.framework */; };
 		B761B7D48D3B31A73CE1BAE3 /* Pods_Trading_InsightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CBB50C3121C1FD5EAFC40D7 /* Pods_Trading_InsightsUITests.framework */; };
 		F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74409691DFCC0B400F6E1C7 /* LaunchScreen.storyboard */; };
-		F744096D1DFCCA6700F6E1C7 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F744096C1DFCCA6700F6E1C7 /* LeftMenuViewController.swift */; };
 		F74D26741DFCECBD006E01CD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F74D26731DFCECBD006E01CD /* background.png */; };
+		F74D26811DFCF441006E01CD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267C1DFCF441006E01CD /* BaseViewController.swift */; };
+		F74D26821DFCF441006E01CD /* CurrentIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267D1DFCF441006E01CD /* CurrentIdeasViewController.swift */; };
+		F74D26831DFCF441006E01CD /* IdeaInsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267E1DFCF441006E01CD /* IdeaInsightsViewController.swift */; };
+		F74D26841DFCF441006E01CD /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267F1DFCF441006E01CD /* LeftMenuViewController.swift */; };
+		F74D26851DFCF441006E01CD /* PastIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D26801DFCF441006E01CD /* PastIdeasViewController.swift */; };
 		F773BD8F1DFCBF69003749A5 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = F773BD8E1DFCBF69003749A5 /* launch.png */; };
-		F78C87CD1DFCB2E1001F7AE1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C61DFCB2E1001F7AE1 /* BaseViewController.swift */; };
 		F78C87CE1DFCB2E1001F7AE1 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */; };
 		F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */; };
 		F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C91DFCB2E1001F7AE1 /* Models.swift */; };
 		F78C87D11DFCB2E1001F7AE1 /* RealmControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */; };
 		F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */; };
-		F78C87D31DFCB2E1001F7AE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CC1DFCB2E1001F7AE1 /* ViewController.swift */; };
 		F78F37F41DFCA94200AFDBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F37F31DFCA94200AFDBE4 /* AppDelegate.swift */; };
 		F78F37FB1DFCA94200AFDBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F78F37FA1DFCA94200AFDBE4 /* Assets.xcassets */; };
 		F78F38091DFCA94200AFDBE4 /* Trading_InsightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F38081DFCA94200AFDBE4 /* Trading_InsightsTests.swift */; };
@@ -54,16 +56,18 @@
 		D47C27558AB220D01F355409 /* Pods-Trading Insights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading Insights.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trading Insights/Pods-Trading Insights.release.xcconfig"; sourceTree = "<group>"; };
 		DC503239D8B174E09EAFE38D /* Pods-Trading InsightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trading InsightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trading InsightsUITests/Pods-Trading InsightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F744096A1DFCC0B400F6E1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F744096C1DFCCA6700F6E1C7 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = Sources/LeftMenuViewController.swift; sourceTree = "<group>"; };
 		F74D26731DFCECBD006E01CD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/Images/background.png; sourceTree = "<group>"; };
+		F74D267C1DFCF441006E01CD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
+		F74D267D1DFCF441006E01CD /* CurrentIdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentIdeasViewController.swift; path = Sources/ViewControllers/CurrentIdeasViewController.swift; sourceTree = "<group>"; };
+		F74D267E1DFCF441006E01CD /* IdeaInsightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaInsightsViewController.swift; path = Sources/ViewControllers/IdeaInsightsViewController.swift; sourceTree = "<group>"; };
+		F74D267F1DFCF441006E01CD /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = Sources/ViewControllers/LeftMenuViewController.swift; sourceTree = "<group>"; };
+		F74D26801DFCF441006E01CD /* PastIdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PastIdeasViewController.swift; path = Sources/ViewControllers/PastIdeasViewController.swift; sourceTree = "<group>"; };
 		F773BD8E1DFCBF69003749A5 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Resources/Images/launch.png; sourceTree = "<group>"; };
-		F78C87C61DFCB2E1001F7AE1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/BaseViewController.swift; sourceTree = "<group>"; };
 		F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloud.swift; path = Sources/Cloud.swift; sourceTree = "<group>"; };
 		F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
 		F78C87C91DFCB2E1001F7AE1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
 		F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmControllers.swift; path = Sources/RealmControllers.swift; sourceTree = "<group>"; };
 		F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmUtils.swift; path = Sources/RealmUtils.swift; sourceTree = "<group>"; };
-		F78C87CC1DFCB2E1001F7AE1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
 		F78F37F01DFCA94200AFDBE4 /* Trading Insights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Insights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78F37F31DFCA94200AFDBE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F78F37FA1DFCA94200AFDBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +140,18 @@
 			name = Base.lproj;
 			sourceTree = "<group>";
 		};
+		F74D267B1DFCF3FD006E01CD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F74D267C1DFCF441006E01CD /* BaseViewController.swift */,
+				F74D267D1DFCF441006E01CD /* CurrentIdeasViewController.swift */,
+				F74D267E1DFCF441006E01CD /* IdeaInsightsViewController.swift */,
+				F74D267F1DFCF441006E01CD /* LeftMenuViewController.swift */,
+				F74D26801DFCF441006E01CD /* PastIdeasViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F773BD8D1DFCBF5F003749A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,14 +172,12 @@
 		F78C87C51DFCB2D3001F7AE1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F78C87C61DFCB2E1001F7AE1 /* BaseViewController.swift */,
 				F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */,
 				F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */,
-				F744096C1DFCCA6700F6E1C7 /* LeftMenuViewController.swift */,
 				F78C87C91DFCB2E1001F7AE1 /* Models.swift */,
 				F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */,
 				F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */,
-				F78C87CC1DFCB2E1001F7AE1 /* ViewController.swift */,
+				F74D267B1DFCF3FD006E01CD /* ViewControllers */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -508,13 +522,15 @@
 			files = (
 				F78F37F41DFCA94200AFDBE4 /* AppDelegate.swift in Sources */,
 				F78C87CE1DFCB2E1001F7AE1 /* Cloud.swift in Sources */,
-				F78C87CD1DFCB2E1001F7AE1 /* BaseViewController.swift in Sources */,
 				F78C87D11DFCB2E1001F7AE1 /* RealmControllers.swift in Sources */,
 				F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */,
-				F744096D1DFCCA6700F6E1C7 /* LeftMenuViewController.swift in Sources */,
+				F74D26841DFCF441006E01CD /* LeftMenuViewController.swift in Sources */,
 				F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */,
-				F78C87D31DFCB2E1001F7AE1 /* ViewController.swift in Sources */,
+				F74D26851DFCF441006E01CD /* PastIdeasViewController.swift in Sources */,
+				F74D26811DFCF441006E01CD /* BaseViewController.swift in Sources */,
+				F74D26821DFCF441006E01CD /* CurrentIdeasViewController.swift in Sources */,
 				F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */,
+				F74D26831DFCF441006E01CD /* IdeaInsightsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
