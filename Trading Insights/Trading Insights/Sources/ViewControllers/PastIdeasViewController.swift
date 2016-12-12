@@ -4,7 +4,7 @@ import UIKit
 
 class PastIdeasViewController: BaseViewController {
 
-    fileprivate var toolbar: Toolbar!
+    fileprivate let toolbar = Toolbar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class PastIdeasViewController: BaseViewController {
     }
 
     func addToolbarContraints() {
-        toolbar.snp.remakeConstraints { make -> Void in
+        toolbar.snp.makeConstraints { make -> Void in
             // make.bottom.equalTo(tableView.snp.top)
             make.height.equalTo(AppConstants.ToolbarHeight)
             make.top.width.equalTo(view)
@@ -30,7 +30,6 @@ class PastIdeasViewController: BaseViewController {
     }
 
     func createToolbar() {
-        toolbar = Toolbar()
         toolbar.backgroundColor = AppColor.base
         toolbar.leftViews = [ createToolbarMenuButton() ]
         toolbar.title = AppString.PastIdeas

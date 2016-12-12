@@ -3,11 +3,11 @@ import UIKit
 open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableView: UITableView?
-    let rowHeight: CGFloat = 60.0
     let titles = [
         AppString.CurrentIdeas,
         AppString.PastIdeas,
-        AppString.IdeaInsights
+        AppString.IdeaInsights,
+        AppString.Settings
     ]
 
     override open func viewDidLoad() {
@@ -16,7 +16,7 @@ open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     open func createTableView() {
-        tableView = UITableView(frame: CGRect(x: 0.0, y: (view.frame.size.height - rowHeight * CGFloat(titles.count)) / 2.0, width: view.frame.size.width, height: rowHeight * CGFloat(titles.count)), style: .plain)
+        tableView = UITableView(frame: CGRect(x: 0.0, y: (view.frame.size.height - AppConstants.SideMenuRowHeight * CGFloat(titles.count)) / 2.0, width: view.frame.size.width, height: AppConstants.SideMenuRowHeight * CGFloat(titles.count)), style: .plain)
         tableView!.autoresizingMask = [ .flexibleTopMargin, .flexibleBottomMargin, .flexibleWidth ]
         tableView!.backgroundColor = .clear
         tableView!.backgroundView = nil
@@ -33,20 +33,20 @@ open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITabl
         switch indexPath.row {
             case 0:
                 sideMenuViewController!.setContentViewController(CurrentIdeasViewController(), animated: true)
-                sideMenuViewController!.hideMenuViewController()
             case 1:
                 sideMenuViewController!.setContentViewController(PastIdeasViewController(), animated: true)
-                sideMenuViewController!.hideMenuViewController()
             case 2:
                 sideMenuViewController!.setContentViewController(IdeaInsightsViewController(), animated: true)
-                sideMenuViewController!.hideMenuViewController()
+            case 3:
+                sideMenuViewController!.setContentViewController(SettingsViewController(), animated: true)
             default:
                 break
         }
+        sideMenuViewController!.hideMenuViewController()
     }
 
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return rowHeight
+        return AppConstants.SideMenuRowHeight
     }
 
     open func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,7 +69,7 @@ open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITabl
             let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
             cell.backgroundColor = .clear
             cell.selectedBackgroundView = UIView()
-            cell.textLabel?.font = UIFont(name: AppFont.base, size: 21.0)
+            cell.textLabel?.font = UIFont(name: AppFont.base, size: AppConstants.SideMenuFontSize)
             cell.textLabel?.highlightedTextColor = .white
             cell.textLabel?.textColor = .white
             return cell

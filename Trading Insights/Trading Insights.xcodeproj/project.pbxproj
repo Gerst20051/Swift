@@ -14,6 +14,8 @@
 		F73D8C101DFDDE75003D344D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F73D8C0E1DFDDE75003D344D /* back.png */; };
 		F73D8C111DFDDE75003D344D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F73D8C0F1DFDDE75003D344D /* back@2x.png */; };
 		F744096B1DFCC0B400F6E1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74409691DFCC0B400F6E1C7 /* LaunchScreen.storyboard */; };
+		F7497A901DFE0944008E35F7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7497A8F1DFE0944008E35F7 /* SettingsViewController.swift */; };
+		F7497A921DFE1442008E35F7 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7497A911DFE1442008E35F7 /* RealmModels.swift */; };
 		F74D26741DFCECBD006E01CD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F74D26731DFCECBD006E01CD /* background.png */; };
 		F74D26811DFCF441006E01CD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267C1DFCF441006E01CD /* BaseViewController.swift */; };
 		F74D26821DFCF441006E01CD /* CurrentIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D267D1DFCF441006E01CD /* CurrentIdeasViewController.swift */; };
@@ -28,7 +30,6 @@
 		F775AD691DFD044C00C3E64F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775AD681DFD044C00C3E64F /* Constants.swift */; };
 		F78C87CE1DFCB2E1001F7AE1 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */; };
 		F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */; };
-		F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87C91DFCB2E1001F7AE1 /* Models.swift */; };
 		F78C87D11DFCB2E1001F7AE1 /* RealmControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */; };
 		F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */; };
 		F78F37F41DFCA94200AFDBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F37F31DFCA94200AFDBE4 /* AppDelegate.swift */; };
@@ -67,6 +68,8 @@
 		F73D8C0E1DFDDE75003D344D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Resources/Images/Icons/back.png; sourceTree = "<group>"; };
 		F73D8C0F1DFDDE75003D344D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back@2x.png"; path = "Resources/Images/Icons/back@2x.png"; sourceTree = "<group>"; };
 		F744096A1DFCC0B400F6E1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7497A8F1DFE0944008E35F7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Sources/ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		F7497A911DFE1442008E35F7 /* RealmModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmModels.swift; path = Sources/RealmModels.swift; sourceTree = "<group>"; };
 		F74D26731DFCECBD006E01CD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/Images/background.png; sourceTree = "<group>"; };
 		F74D267C1DFCF441006E01CD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Sources/ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
 		F74D267D1DFCF441006E01CD /* CurrentIdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentIdeasViewController.swift; path = Sources/ViewControllers/CurrentIdeasViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +84,6 @@
 		F775AD681DFD044C00C3E64F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Sources/Constants.swift; sourceTree = "<group>"; };
 		F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloud.swift; path = Sources/Cloud.swift; sourceTree = "<group>"; };
 		F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
-		F78C87C91DFCB2E1001F7AE1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/Models.swift; sourceTree = "<group>"; };
 		F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmControllers.swift; path = Sources/RealmControllers.swift; sourceTree = "<group>"; };
 		F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmUtils.swift; path = Sources/RealmUtils.swift; sourceTree = "<group>"; };
 		F78F37F01DFCA94200AFDBE4 /* Trading Insights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Insights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				F74D267E1DFCF441006E01CD /* IdeaInsightsViewController.swift */,
 				F74D267F1DFCF441006E01CD /* LeftMenuViewController.swift */,
 				F74D26801DFCF441006E01CD /* PastIdeasViewController.swift */,
+				F7497A8F1DFE0944008E35F7 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -206,8 +209,8 @@
 				F78C87C71DFCB2E1001F7AE1 /* Cloud.swift */,
 				F775AD681DFD044C00C3E64F /* Constants.swift */,
 				F78C87C81DFCB2E1001F7AE1 /* Extensions.swift */,
-				F78C87C91DFCB2E1001F7AE1 /* Models.swift */,
 				F78C87CA1DFCB2E1001F7AE1 /* RealmControllers.swift */,
+				F7497A911DFE1442008E35F7 /* RealmModels.swift */,
 				F78C87CB1DFCB2E1001F7AE1 /* RealmUtils.swift */,
 				F74D267B1DFCF3FD006E01CD /* ViewControllers */,
 			);
@@ -563,12 +566,13 @@
 				F78C87D11DFCB2E1001F7AE1 /* RealmControllers.swift in Sources */,
 				F78C87CF1DFCB2E1001F7AE1 /* Extensions.swift in Sources */,
 				F74D26841DFCF441006E01CD /* LeftMenuViewController.swift in Sources */,
-				F78C87D01DFCB2E1001F7AE1 /* Models.swift in Sources */,
 				F74D26851DFCF441006E01CD /* PastIdeasViewController.swift in Sources */,
 				F74D26811DFCF441006E01CD /* BaseViewController.swift in Sources */,
 				F74D26821DFCF441006E01CD /* CurrentIdeasViewController.swift in Sources */,
+				F7497A901DFE0944008E35F7 /* SettingsViewController.swift in Sources */,
 				F78C87D21DFCB2E1001F7AE1 /* RealmUtils.swift in Sources */,
 				F74D26831DFCF441006E01CD /* IdeaInsightsViewController.swift in Sources */,
+				F7497A921DFE1442008E35F7 /* RealmModels.swift in Sources */,
 				F73D8C0D1DFDDC37003D344D /* AddIdeaViewController.swift in Sources */,
 				F775AD691DFD044C00C3E64F /* Constants.swift in Sources */,
 			);

@@ -1,10 +1,15 @@
 import Material
 import SnapKit
 import UIKit
+import WSTagsField
 
 class AddIdeaViewController: BaseViewController {
 
-    fileprivate var toolbar: Toolbar!
+    fileprivate let toolbar = Toolbar()
+    fileprivate let tickerField = UITextField()
+    fileprivate let tickerNameField = UITextField()
+    fileprivate let ideaSourceField = UITextField()
+    fileprivate let tagsField = WSTagsField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,8 +17,14 @@ class AddIdeaViewController: BaseViewController {
     }
 
     func setupInterface() {
-        view.backgroundColor = .white
+        // view.backgroundColor = .white
+        view.backgroundColor = .red
         createToolbar()
+        createTickerField()
+        createTickerNameField()
+        createIdeaSourceField()
+        createTagsField()
+        createTagsFieldHandlers()
         addInterfaceContraints()
     }
 
@@ -22,7 +33,7 @@ class AddIdeaViewController: BaseViewController {
     }
 
     func addToolbarContraints() {
-        toolbar.snp.remakeConstraints { make -> Void in
+        toolbar.snp.makeConstraints { make -> Void in
             // make.bottom.equalTo(tableView.snp.top)
             make.height.equalTo(AppConstants.ToolbarHeight)
             make.top.width.equalTo(view)
@@ -30,7 +41,6 @@ class AddIdeaViewController: BaseViewController {
     }
 
     func createToolbar() {
-        toolbar = Toolbar()
         toolbar.backgroundColor = AppColor.base
         toolbar.leftViews = [ createToolbarBackButton() ]
         toolbar.title = AppString.AddIdea
@@ -51,6 +61,58 @@ class AddIdeaViewController: BaseViewController {
 
     func handleToolbarBackButtonPressed() {
         app.sideMenuViewController?.setContentViewController(CurrentIdeasViewController(), animated: true)
+    }
+
+    func createTickerField() {
+        view.addSubview(tickerField)
+    }
+
+    func createTickerNameField() {
+        view.addSubview(tickerNameField)
+    }
+
+    func createIdeaSourceField() {
+        view.addSubview(ideaSourceField)
+    }
+
+    func createTagsField() {
+        tagsField.backgroundColor = .white
+        tagsField.placeholder = AppString.EnterIdeaIndicators
+        tagsField.tintColor = AppColor.base
+        tagsField.frame = CGRect(x: 0.0, y: 44.0 + 50.0, width: 200.0, height: 44.0)
+        // add constraints
+        view.addSubview(tagsField)
+    }
+
+    func createTagsFieldHandlers() {
+        tagsField.onDidAddTag = { _ in // update local list
+            print("DidAddTag => \(self.tagsField.tags)")
+        }
+
+        tagsField.onDidRemoveTag = { _ in // update local list
+            print("DidRemoveTag => \(self.tagsField.tags)")
+        }
+
+        tagsField.onDidChangeText = { _, text in
+            print("DidChangeText => \(text)")
+        }
+
+        tagsField.onDidBeginEditing = { _ in
+            print("DidBeginEditing")
+        }
+
+        tagsField.onDidEndEditing = { _ in
+            print("DidEndEditing")
+        }
+
+        tagsField.onDidChangeHeightTo = { _, height in
+            print("DidChangeHeightTo => \(height)")
+        }
+
+        tagsField.onVerifyTag = { _, text in
+            print("VerifyTag => \(text)")
+            return true
+        }
     }
 
 }

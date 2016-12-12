@@ -6,9 +6,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     var sideMenuViewController: AKSideMenu?
+    let ideaRealmController = IdeaRealmController()
+    let ideaIndicatorRealmController = IdeaIndicatorRealmController()
+    let ideaSourceRealmController = IdeaSourceRealmController()
+    let ideaSentimentRealmController = IdeaSentimentRealmController()
+    let ideaHoldingDurationRealmController = IdeaHoldingDurationRealmController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         RealmUtils.logDebugInfo()
+        if shouldPopulateRealmDatabase() {
+            populateRealmDatabase()
+        }
         setSideMenuViewController()
         setRootViewController()
         showSideMenu()
@@ -27,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
 
     func setSideMenuViewController() {
         sideMenuViewController = AKSideMenu(contentViewController: CurrentIdeasViewController(), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: UIViewController())
-        sideMenuViewController!.backgroundImage = UIImage(named: "background")!
+        sideMenuViewController!.backgroundImage = UIImage(named: AppImage.background)!
         sideMenuViewController!.contentViewShadowColor = .black
         sideMenuViewController!.contentViewShadowEnabled = true
         sideMenuViewController!.contentViewShadowOffset = .zero
@@ -43,24 +51,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
         window?.makeKeyAndVisible()
     }
 
+    func shouldPopulateRealmDatabase() -> Bool {
+        return !ideaIndicatorRealmController.isPopulated() || !ideaSourceRealmController.isPopulated() || !ideaSentimentRealmController.isPopulated() || !ideaHoldingDurationRealmController.isPopulated()
+    }
+
+    func populateRealmDatabase() {
+        ideaIndicatorRealmController.populate()
+        ideaSourceRealmController.populate()
+        ideaSentimentRealmController.populate()
+        ideaHoldingDurationRealmController.populate()
+    }
+
     func showSideMenu() {
         sideMenuViewController!.presentLeftMenuViewController()
     }
 
-    open func sideMenu(_ sideMenu: AKSideMenu, willShowMenuViewController menuViewController: UIViewController) {
-        print("willShowMenuViewController")
-    }
+    open func sideMenu(_ sideMenu: AKSideMenu, willShowMenuViewController menuViewController: UIViewController) {}
 
-    open func sideMenu(_ sideMenu: AKSideMenu, didShowMenuViewController menuViewController: UIViewController) {
-        print("didShowMenuViewController")
-    }
+    open func sideMenu(_ sideMenu: AKSideMenu, didShowMenuViewController menuViewController: UIViewController) {}
 
-    open func sideMenu(_ sideMenu: AKSideMenu, willHideMenuViewController menuViewController: UIViewController) {
-        print("willHideMenuViewController")
-    }
+    open func sideMenu(_ sideMenu: AKSideMenu, willHideMenuViewController menuViewController: UIViewController) {}
 
-    open func sideMenu(_ sideMenu: AKSideMenu, didHideMenuViewController menuViewController: UIViewController) {
-        print("didHideMenuViewController")
-    }
+    open func sideMenu(_ sideMenu: AKSideMenu, didHideMenuViewController menuViewController: UIViewController) {}
 
 }
