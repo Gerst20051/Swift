@@ -63,7 +63,7 @@ class CurrentIdeasViewController: BaseViewController {
     }
 
     func handleToolbarAddButtonPressed() {
-        app.sideMenuViewController?.setContentViewController(AddIdeaViewController(), animated: true)
+        app.sideMenuViewController.setContentViewController(AddIdeaViewController(), animated: true)
     }
 
 }

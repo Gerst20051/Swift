@@ -4,6 +4,7 @@ open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITabl
 
     var tableView: UITableView?
     let titles = [
+        AppString.AddIdea,
         AppString.CurrentIdeas,
         AppString.PastIdeas,
         AppString.IdeaInsights,
@@ -32,12 +33,14 @@ open class LeftMenuViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
             case 0:
-                sideMenuViewController!.setContentViewController(CurrentIdeasViewController(), animated: true)
+                sideMenuViewController!.setContentViewController(AddIdeaViewController(), animated: true)
             case 1:
-                sideMenuViewController!.setContentViewController(PastIdeasViewController(), animated: true)
+                sideMenuViewController!.setContentViewController(CurrentIdeasViewController(), animated: true)
             case 2:
-                sideMenuViewController!.setContentViewController(IdeaInsightsViewController(), animated: true)
+                sideMenuViewController!.setContentViewController(PastIdeasViewController(), animated: true)
             case 3:
+                sideMenuViewController!.setContentViewController(IdeaInsightsViewController(), animated: true)
+            case 4:
                 sideMenuViewController!.setContentViewController(SettingsViewController(), animated: true)
             default:
                 break
