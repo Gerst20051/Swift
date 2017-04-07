@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		F7E27CC71E972A8300DCF068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E27CC61E972A8300DCF068 /* AppDelegate.swift */; };
-		F7E27CC91E972A8300DCF068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E27CC81E972A8300DCF068 /* ViewController.swift */; };
-		F7E27CCC1E972A8300DCF068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E27CCA1E972A8300DCF068 /* Main.storyboard */; };
 		F7E27CCE1E972A8300DCF068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7E27CCD1E972A8300DCF068 /* Assets.xcassets */; };
 		F7E27CD11E972A8300DCF068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E27CCF1E972A8300DCF068 /* LaunchScreen.storyboard */; };
 		F7E27CDC1E972A8400DCF068 /* PodBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E27CDB1E972A8400DCF068 /* PodBuddyTests.swift */; };
 		F7E27CE71E972A8400DCF068 /* PodBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E27CE61E972A8400DCF068 /* PodBuddyUITests.swift */; };
+		F7E27CF91E97306600DCF068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E27CF81E97306600DCF068 /* ViewController.swift */; };
+		F7E27CFB1E97306F00DCF068 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E27CFA1E97306F00DCF068 /* launch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* Begin PBXFileReference section */
 		F7E27CC31E972A8300DCF068 /* PodBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E27CC61E972A8300DCF068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7E27CC81E972A8300DCF068 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F7E27CCB1E972A8300DCF068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7E27CCD1E972A8300DCF068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7E27CD01E972A8300DCF068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7E27CD21E972A8300DCF068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		F7E27CE21E972A8400DCF068 /* PodBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E27CE61E972A8400DCF068 /* PodBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodBuddyUITests.swift; sourceTree = "<group>"; };
 		F7E27CE81E972A8400DCF068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E27CF81E97306600DCF068 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
+		F7E27CFA1E97306F00DCF068 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Resources/Images/launch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +99,10 @@
 			children = (
 				F7E27CC61E972A8300DCF068 /* AppDelegate.swift */,
 				F7E27CCD1E972A8300DCF068 /* Assets.xcassets */,
+				F7E27CF61E972F8200DCF068 /* Base.lproj */,
 				F7E27CD21E972A8300DCF068 /* Info.plist */,
-				F7E27CCF1E972A8300DCF068 /* LaunchScreen.storyboard */,
-				F7E27CCA1E972A8300DCF068 /* Main.storyboard */,
-				F7E27CC81E972A8300DCF068 /* ViewController.swift */,
+				F7E27CF41E972F6F00DCF068 /* Resources */,
+				F7E27CF51E972F7700DCF068 /* Sources */,
 			);
 			path = PodBuddy;
 			sourceTree = "<group>";
@@ -123,6 +123,38 @@
 				F7E27CE61E972A8400DCF068 /* PodBuddyUITests.swift */,
 			);
 			path = PodBuddyUITests;
+			sourceTree = "<group>";
+		};
+		F7E27CF41E972F6F00DCF068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7E27CF71E97300C00DCF068 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F7E27CF51E972F7700DCF068 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F7E27CF81E97306600DCF068 /* ViewController.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		F7E27CF61E972F8200DCF068 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F7E27CCF1E972A8300DCF068 /* LaunchScreen.storyboard */,
+			);
+			name = Base.lproj;
+			sourceTree = "<group>";
+		};
+		F7E27CF71E97300C00DCF068 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F7E27CFA1E97306F00DCF068 /* launch.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E27CFB1E97306F00DCF068 /* launch.png in Resources */,
 				F7E27CD11E972A8300DCF068 /* LaunchScreen.storyboard in Resources */,
 				F7E27CCE1E972A8300DCF068 /* Assets.xcassets in Resources */,
-				F7E27CCC1E972A8300DCF068 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7E27CC91E972A8300DCF068 /* ViewController.swift in Sources */,
+				F7E27CF91E97306600DCF068 /* ViewController.swift in Sources */,
 				F7E27CC71E972A8300DCF068 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,14 +331,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F7E27CCA1E972A8300DCF068 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7E27CCB1E972A8300DCF068 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F7E27CCF1E972A8300DCF068 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
