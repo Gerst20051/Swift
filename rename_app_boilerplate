@@ -1,0 +1,25 @@
+#!/bin/bash
+
+old_name='AppBoilerplate'
+new_name="$1"
+
+echo 'Old Name:' $old_name
+echo 'New Name:' $new_name
+
+mv $old_name $new_name
+mv $new_name/$old_name $new_name/$new_name
+sed -i '' "s/$old_name/$new_name/g" $new_name/Podfile
+mv $new_name/$old_name.xcodeproj $new_name/$new_name.xcodeproj
+sed -i '' "s/$old_name/$new_name/" $new_name/$new_name.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+mv $new_name/$new_name.xcodeproj/xcuserdata/andrewgerst.xcuserdatad/xcschemes/$old_name.xcscheme $new_name/$new_name.xcodeproj/xcuserdata/andrewgerst.xcuserdatad/xcschemes/$new_name.xcscheme
+sed -i '' "s/$old_name/$new_name/" $new_name/$new_name.xcodeproj/xcuserdata/andrewgerst.xcuserdatad/xcschemes/$new_name.xcscheme
+sed -i '' "s/$old_name/$new_name/" $new_name/$new_name.xcodeproj/xcuserdata/andrewgerst.xcuserdatad/xcschemes/xcschememanagement.plist
+sed -i '' "s/$old_name/$new_name/g" $new_name/$new_name.xcodeproj/project.pbxproj
+mv $new_name/$old_name.xcworkspace $new_name/$new_name.xcworkspace
+sed -i '' "s/$old_name/$new_name/" $new_name/$new_name.xcworkspace/contents.xcworkspacedata
+mv $new_name/$old_name'Tests' $new_name/$new_name'Tests'
+mv $new_name/$new_name'Tests'/$old_name'Tests.swift' $new_name/$new_name'Tests'/$new_name'Tests.swift'
+mv $new_name/$old_name'UITests' $new_name/$new_name'UITests'
+sed -i '' "s/$old_name/$new_name/g" $new_name/$new_name'Tests'/$new_name'Tests.swift'
+mv $new_name/$new_name'UITests'/$old_name'UITests.swift' $new_name/$new_name'UITests'/$new_name'UITests.swift'
+sed -i '' "s/$old_name/$new_name/" $new_name/$new_name'UITests'/$new_name'UITests.swift'
