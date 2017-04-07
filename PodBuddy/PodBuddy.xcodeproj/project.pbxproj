@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				F7E27CC61E972A8300DCF068 /* AppDelegate.swift */,
-				F7E27CC81E972A8300DCF068 /* ViewController.swift */,
-				F7E27CCA1E972A8300DCF068 /* Main.storyboard */,
 				F7E27CCD1E972A8300DCF068 /* Assets.xcassets */,
-				F7E27CCF1E972A8300DCF068 /* LaunchScreen.storyboard */,
 				F7E27CD21E972A8300DCF068 /* Info.plist */,
+				F7E27CCF1E972A8300DCF068 /* LaunchScreen.storyboard */,
+				F7E27CCA1E972A8300DCF068 /* Main.storyboard */,
+				F7E27CC81E972A8300DCF068 /* ViewController.swift */,
 			);
 			path = PodBuddy;
 			sourceTree = "<group>";
@@ -110,8 +110,8 @@
 		F7E27CDA1E972A8400DCF068 /* PodBuddyTests */ = {
 			isa = PBXGroup;
 			children = (
-				F7E27CDB1E972A8400DCF068 /* PodBuddyTests.swift */,
 				F7E27CDD1E972A8400DCF068 /* Info.plist */,
+				F7E27CDB1E972A8400DCF068 /* PodBuddyTests.swift */,
 			);
 			path = PodBuddyTests;
 			sourceTree = "<group>";
@@ -119,8 +119,8 @@
 		F7E27CE51E972A8400DCF068 /* PodBuddyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F7E27CE61E972A8400DCF068 /* PodBuddyUITests.swift */,
 				F7E27CE81E972A8400DCF068 /* Info.plist */,
+				F7E27CE61E972A8400DCF068 /* PodBuddyUITests.swift */,
 			);
 			path = PodBuddyUITests;
 			sourceTree = "<group>";
