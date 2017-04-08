@@ -14,6 +14,12 @@ extension String {
     }
 }
 
+extension Array {
+    var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
+}
+
 extension UITableViewCell {
     func removeMargins() {
         self.layoutMargins = UIEdgeInsets.zero
