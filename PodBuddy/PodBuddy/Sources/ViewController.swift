@@ -1,4 +1,5 @@
 import Material
+import RateLimit
 import SnapKit
 import SwiftSpinner
 import UIKit
@@ -27,16 +28,18 @@ class ViewController: BaseViewController {
                 scrollTableViewToTop()
                 tableView.reloadData()
             } else {
-                search(keywords: searchText)
+                searchLimiter?.execute()
             }
         }
     }
     var podcastSearchResults: [PodcastSearchResult] = []
     var podcastFeedResult: PodcastFeedResult?
+    var searchLimiter: DebouncedLimiter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         RealmUtils.logDebugInfo()
+        searchLimiter = DebouncedLimiter(limit: 1.0, block: search)
         setupInterface()
     }
 
@@ -60,8 +63,8 @@ class ViewController: BaseViewController {
 
 extension ViewController {
 
-    func search(keywords: String) {
-        _ = Cloud.searchPodcasts(keywords: keywords).then { podcasts -> Void in
+    func search() {
+        _ = Cloud.searchPodcasts(keywords: searchText).then { podcasts -> Void in
             self.podcastSearchResults = podcasts
             self.scrollTableViewToTop()
             self.tableView.reloadData()

@@ -19,6 +19,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
+  - RateLimit (2.1.1)
   - Realm (2.5.1):
     - Realm/Headers (= 2.5.1)
   - Realm/Headers (2.5.1)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - Dollar (= 6.2.0)
   - Material (= 2.6.3)
   - PromiseKit (= 4.1.7)
+  - RateLimit (= 2.1.1)
   - RealmSwift (= 2.5.1)
   - Reveal-SDK (= 8)
   - SnapKit (= 3.2.0)
@@ -50,6 +52,7 @@ SPEC CHECKSUMS:
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  RateLimit: 7fbf87b1bedabddb258f08230a6ece05b884d41f
   Realm: 32f86104d37c8521f864d4274050b38ba6190733
   RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
   Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
@@ -58,6 +61,6 @@ SPEC CHECKSUMS:
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: d93b37c507b8f398aeadecc6b2c13dde56e5f537
+PODFILE CHECKSUM: 1e19ca7b6d0a1e12cc6a83212c0c45ead0f70d9b
 
 COCOAPODS: 1.2.0
