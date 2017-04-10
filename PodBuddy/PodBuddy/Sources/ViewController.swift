@@ -1,5 +1,6 @@
 import Material
 import SnapKit
+import SwiftSpinner
 import UIKit
 
 class ViewController: BaseViewController {
@@ -73,6 +74,7 @@ extension ViewController {
     }
 
     func podcastFeed(url: String) {
+        SwiftSpinner.show("Loading...")
         _ = Cloud.retrievePodcastFeed(url: url).then { podcastFeed -> Void in
             self.podcastFeedResult = podcastFeed
             self.scrollTableViewToTop() // TEMPORARY
@@ -80,6 +82,8 @@ extension ViewController {
             for episode in podcastFeed.episodes! {
                 print("\(episode.title!) - \(episode.url!)")
             }
+        }.always {
+            SwiftSpinner.hide()
         }.catch { error in
             print("error => \(error)")
         }
@@ -187,7 +191,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: navigate to podcast view controller
         if podcastFeedResult == nil || podcastFeedResult!.episodes!.isEmpty { // TEMPORARY
+            searchBar.textField.resignFirstResponder()
             podcastFeed(url: podcastSearchResults[indexPath.row].url!)
+        } else {
+            let episodeViewController = EpisodeViewController()
+            episodeViewController.podcastFeed = podcastFeedResult
+            episodeViewController.podcastEpisodeId = podcastFeedResult!.episodes![indexPath.row].id
+            app.setRootViewController(view: episodeViewController)
         }
     }
 
@@ -372,6 +382,7 @@ extension ViewController {
         if let _ = podcastFeedResult { // TEMPORARY
             podcastFeedResult = nil
             tableView.reloadData()
+            searchBar.textField.becomeFirstResponder()
             return
         }
         searchBar.textField.resignFirstResponder()
@@ -434,21 +445,21 @@ extension ViewController: UITabBarDelegate {
         bottomTabBar.delegate = self
         view.addSubview(bottomTabBar)
 
-        let aTabItem = UITabBarItem(title: "Tab A", image: Icon.cm.audioLibrary, selectedImage: nil)
-        aTabItem.setTitleColor(color: Color.grey.base, forState: .normal)
-        aTabItem.setTitleColor(color: AppColor.base, forState: .selected)
+        let podcastsTabItem = UITabBarItem(title: "Podcasts", image: Icon.cm.audioLibrary, selectedImage: nil)
+        podcastsTabItem.setTitleColor(color: Color.grey.base, forState: .normal)
+        podcastsTabItem.setTitleColor(color: AppColor.base, forState: .selected)
 
-        let bTabItem = UITabBarItem(title: "Tab B", image: Icon.cm.share, selectedImage: nil)
-        bTabItem.setTitleColor(color: Color.grey.base, forState: .normal)
-        bTabItem.setTitleColor(color: AppColor.base, forState: .selected)
+        let playerTabItem = UITabBarItem(title: "Player", image: Icon.cm.audio, selectedImage: nil)
+        playerTabItem.setTitleColor(color: Color.grey.base, forState: .normal)
+        playerTabItem.setTitleColor(color: AppColor.base, forState: .selected)
 
-        let cTabItem = UITabBarItem(title: "Tab C", image: Icon.cm.star, selectedImage: nil)
-        cTabItem.setTitleColor(color: Color.grey.base, forState: .normal)
-        cTabItem.setTitleColor(color: AppColor.base, forState: .selected)
+        let playlistsTabItem = UITabBarItem(title: "Playlists", image: Icon.cm.star, selectedImage: nil)
+        playlistsTabItem.setTitleColor(color: Color.grey.base, forState: .normal)
+        playlistsTabItem.setTitleColor(color: AppColor.base, forState: .selected)
 
         bottomTabBar.itemPositioning = .automatic
-        bottomTabBar.setItems([ aTabItem, bTabItem, cTabItem ], animated: true)
-        bottomTabBar.selectedItem = aTabItem
+        bottomTabBar.setItems([ podcastsTabItem, playerTabItem, playlistsTabItem ], animated: true)
+        bottomTabBar.selectedItem = podcastsTabItem
         bottomTabBar.tintColor = AppColor.base
     }
 

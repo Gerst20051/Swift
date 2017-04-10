@@ -11,6 +11,7 @@ target 'PodBuddy' do
   pod 'RealmSwift', '2.5.1'
   pod 'Reveal-SDK', '8', :configurations => ['Debug']
   pod 'SnapKit', '3.2.0'
+  pod 'SwiftSpinner', '1.2.1'
   pod 'SwiftyTimer', '2.0.0'
   pod 'SwiftyUserDefaults', '3.0.0'
 

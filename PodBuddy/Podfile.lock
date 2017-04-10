@@ -26,6 +26,7 @@ PODS:
     - Realm (= 2.5.1)
   - Reveal-SDK (8)
   - SnapKit (3.2.0)
+  - SwiftSpinner (1.2.1)
   - SwiftyTimer (2.0.0)
   - SwiftyUserDefaults (3.0.0)
 
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - RealmSwift (= 2.5.1)
   - Reveal-SDK (= 8)
   - SnapKit (= 3.2.0)
+  - SwiftSpinner (= 1.2.1)
   - SwiftyTimer (= 2.0.0)
   - SwiftyUserDefaults (= 3.0.0)
 
@@ -52,9 +54,10 @@ SPEC CHECKSUMS:
   RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
   Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftSpinner: 62a28bbb4035f252a1e91b0e17fc40bdbbfa0aab
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 18d867dce42e353d8eb8b59681edd0c85dab5cfc
+PODFILE CHECKSUM: d93b37c507b8f398aeadecc6b2c13dde56e5f537
 
 COCOAPODS: 1.2.0
