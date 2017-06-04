@@ -1,0 +1,80 @@
+PODS:
+  - Alamofire (4.1.0)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - Charts (3.0.0):
+    - Charts/Core (= 3.0.0)
+  - Charts/Core (3.0.0)
+  - CSV.swift (1.1.1)
+  - Dollar (6.1.0)
+  - Material (2.3.10):
+    - Material/Core (= 2.3.10)
+  - Material/Core (2.3.10)
+  - ObjectMapper (2.2.1)
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.4):
+    - PromiseKit/CorePromise
+  - Realm (2.0.4):
+    - Realm/Headers (= 2.0.4)
+  - Realm/Headers (2.0.4)
+  - RealmSwift (2.0.4):
+    - Realm (= 2.0.4)
+  - Reveal-SDK (4)
+  - SnapKit (3.0.2)
+  - SwiftCharts (0.4)
+  - SwiftyTimer (2.0.0)
+  - SwiftyUserDefaults (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.1.0)
+  - AlamofireObjectMapper (= 4.0.0)
+  - Charts (= 3.0.0)
+  - CSV.swift (= 1.1.1)
+  - Dollar (= 6.1.0)
+  - Material (= 2.3.10)
+  - PromiseKit (= 4.0.4)
+  - RealmSwift (= 2.0.4)
+  - Reveal-SDK (= 4)
+  - SnapKit (= 3.0.2)
+  - SwiftCharts (from `https://github.com/i-schuetz/SwiftCharts.git`)
+  - SwiftyTimer (= 2.0.0)
+  - SwiftyUserDefaults (= 3.0.0)
+
+EXTERNAL SOURCES:
+  SwiftCharts:
+    :git: https://github.com/i-schuetz/SwiftCharts.git
+
+CHECKOUT OPTIONS:
+  SwiftCharts:
+    :commit: 1705b493b9239cbeb74c484eb9fa9694e42e5b7d
+    :git: https://github.com/i-schuetz/SwiftCharts.git
+
+SPEC CHECKSUMS:
+  Alamofire: e266cf991b933498df791e645e0d8ac294492153
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  Charts: beb341928d2135613b4325a6c6aff9f2f6de895e
+  CSV.swift: dff12fbe10f77141210542709966b5365ead54ed
+  Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
+  Material: 47be656e96ae686915f7a2dbd6249a61bc1fc138
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
+  RealmSwift: 01e8db006035f16003e6307ae8eae1adccce68db
+  Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftCharts: 84b43d9d70b791459ff5f50ae5a6704326de309d
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+
+PODFILE CHECKSUM: 60a112a3d91213dd3c94320e31ff0107e6e50cd4
+
+COCOAPODS: 1.1.0
