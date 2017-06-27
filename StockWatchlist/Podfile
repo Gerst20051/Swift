@@ -1,0 +1,26 @@
+platform :ios, '9.0'
+
+target 'StockWatchlist' do
+  use_frameworks!
+
+  pod 'Alamofire', '4.5.0'
+  pod 'AlamofireObjectMapper', '4.1.0'
+  pod 'Dollar', '6.2.0'
+  pod 'Material', '2.6.3'
+  pod 'PromiseKit', '4.2.2'
+  pod 'RealmSwift', '2.8.3'
+  pod 'Reveal-SDK', '8', :configurations => ['Debug']
+  pod 'SnapKit', '3.2.0'
+  pod 'SwiftyTimer', '2.0.0'
+  pod 'SwiftyUserDefaults', '3.0.0'
+  pod 'ZAlertView', '0.3.4'
+
+  target 'StockWatchlistTests' do
+    inherit! :search_paths
+  end
+
+  target 'StockWatchlistUITests' do
+    inherit! :search_paths
+  end
+
+end
