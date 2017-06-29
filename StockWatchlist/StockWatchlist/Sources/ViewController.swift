@@ -17,10 +17,14 @@ class ViewController: BaseViewController {
         return realm.objects(Portfolio.self).sorted(by: [ "name" ])
     }
     var selectedPortfolio: Portfolio?
+    var selectedPortfolioStocks: [Stock] {
+        return selectedPortfolio?.stocks.sorted { $0.name < $1.name } ?? []
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         RealmUtils.logDebugInfo()
+        ZAlertView.neutralColor = AppColor.base
         setupInterface()
     }
 
@@ -34,62 +38,6 @@ class ViewController: BaseViewController {
     func addContraintsToViews() {
         addToolbarConstraints()
         addTableViewContraints()
-    }
-
-}
-
-class GenericTableViewCell: UITableViewCell {
-
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        applyGenericStyle()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    func applyGenericStyle() {
-        backgroundColor = Color.clear
-        removeMargins()
-    }
-
-}
-
-class CustomTableViewCell: GenericTableViewCell {
-
-    let customView = UIView()
-    let simpleLabel = UILabel()
-
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        applyCustomStyle()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    func applyCustomStyle() {
-        customView.removeFromSuperview()
-        contentView.addSubview(customView)
-        customView.snp.makeConstraints { make -> Void in
-            make.center.equalTo(contentView)
-            make.height.equalTo(contentView)
-            make.width.equalTo(contentView)
-        }
-        buildSimpleCell()
-        simpleLabel.textColor = Color.darkText.secondary
-    }
-
-    func buildSimpleCell() {
-        customView.addSubview(simpleLabel)
-        simpleLabel.snp.makeConstraints { make -> Void in
-            make.bottom.equalTo(contentView)
-            make.top.equalTo(contentView)
-            make.left.equalTo(contentView).offset(10.0)
-            make.right.equalTo(contentView).offset(-10.0)
-        }
     }
 
 }
@@ -119,6 +67,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 44.0
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dialog = Dialog(type: .confirmation)
+            dialog.alertTitle = "Confirm Delete"
+            dialog.message = "Are you sure you want to delete this?"
+            dialog.okHandler = { alert in
+                if self.selectedPortfolio == nil {
+                    self.portfolioController.deletePortfolio(self.portfolios[indexPath.row])
+                } else {
+                    self.portfolioController.deleteStock(self.selectedPortfolioStocks[indexPath.row])
+                }
+                tableView.reloadData()
+                alert.dismissAlertView()
+            }
+            dialog.show()
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return getNumberOfRows()
     }
@@ -136,19 +106,34 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             showToolbarBackButton()
             showToolbarShareButton()
             setToolbarTitle()
+        } else {
+            let ticker = selectedPortfolioStocks[indexPath.row].name
+            let dialog = Dialog(type: .multipleChoice)
+            dialog.addButton("Open Finviz") { alert in
+                Utils.openUrl("https://finviz.com/quote.ashx?t=\(ticker)&ty=c&ta=0&p=d")
+            }
+            dialog.addButton("Open Twitter") { alert in
+                let query = "$\(ticker)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                if let twitterDeepLinkUrl = URL(string: "twitter://search?query=\(query)"), UIApplication.shared.canOpenURL(twitterDeepLinkUrl) {
+                    Utils.openUrl(twitterDeepLinkUrl)
+                } else {
+                    Utils.openUrl("https://mobile.twitter.com/search/live?q=\(query)")
+                }
+            }
+            dialog.show()
         }
     }
 
     func getNumberOfRows() -> Int {
         guard selectedPortfolio == nil else {
-            return selectedPortfolio!.stocks.count
+            return selectedPortfolioStocks.count
         }
         return portfolios.count
     }
 
     func getTextForRow(_ row: Int) -> String {
         guard selectedPortfolio == nil else {
-            return selectedPortfolio!.stocks[row].name
+            return selectedPortfolioStocks[row].name
         }
         return portfolios[row].name
     }
@@ -240,10 +225,9 @@ extension ViewController {
     }
 
     func handleToolbarAddButtonPressed() {
-        let dialog = ZAlertView()
+        let dialog = Dialog(type: .confirmation)
         dialog.addTextField("name", placeHolder: selectedPortfolio == nil ? "Enter Name" : "Enter Ticker")
         dialog.alertTitle = selectedPortfolio == nil ? "Create Portfolio" : "Add Stock"
-        dialog.alertType = .confirmation
         dialog.allowTouchOutsideToDismiss = false
         dialog.okHandler = { alert in
             if let name = alert.getTextFieldWithIdentifier("name")!.text, !name.isEmpty {
@@ -266,22 +250,42 @@ extension ViewController {
     }
 
     func handleToolbarShareButtonPressed() {
-        let urlString = "http://finviz.com/screener.ashx?v=211&t=\(getStockListForUrl())&ta=0&o=change"
-        UIPasteboard.general.string = urlString
-        let url = URL(string: urlString)!
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url)
-        } else {
-            UIApplication.shared.openURL(url)
+        let dialog = Dialog(type: .multipleChoice)
+        dialog.alertTitle = "Share"
+        dialog.addButton("Open Finviz") { alert in
+            Utils.openUrl("https://finviz.com/screener.ashx?v=211&t=\(self.getStockListForUrl())&ta=0&o=change")
         }
+        dialog.addButton("Open Twitter") { alert in
+            let query = self.getStockQueryForTwitter().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            if let twitterDeepLinkUrl = URL(string: "twitter://search?query=\(query)"), UIApplication.shared.canOpenURL(twitterDeepLinkUrl) {
+                Utils.openUrl(twitterDeepLinkUrl)
+            } else {
+                Utils.openUrl("https://mobile.twitter.com/search/live?q=\(query)")
+            }
+        }
+        dialog.addButton("Copy Finviz Url") { alert in
+            UIPasteboard.general.string = "https://finviz.com/screener.ashx?v=211&t=\(self.getStockListForUrl())&ta=0&o=change"
+        }
+        dialog.addButton("Copy Twitter Search") { alert in
+            UIPasteboard.general.string = self.getStockQueryForTwitter()
+        }
+        dialog.show()
     }
 
     func getStockListForUrl() -> String {
-        return (selectedPortfolio!.stocks.reduce([]) { (accumulation: [String], nextValue: Stock) -> [String] in
+        return (selectedPortfolioStocks.reduce([]) { (accumulation: [String], nextValue: Stock) -> [String] in
             var accumulation = accumulation
             accumulation.append(nextValue.name)
             return accumulation
         }).joined(separator: ",")
+    }
+
+    func getStockQueryForTwitter() -> String {
+        return (selectedPortfolioStocks.reduce([]) { (accumulation: [String], nextValue: Stock) -> [String] in
+            var accumulation = accumulation
+            accumulation.append("\"$\(nextValue.name)\"")
+            return accumulation
+        }).joined(separator: " OR ")
     }
 
     func setToolbarTitle() {

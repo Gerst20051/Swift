@@ -25,4 +25,17 @@ class PortfolioController {
         }
     }
 
+    func deletePortfolio(_ portfolio: Portfolio) {
+        try! realm.write {
+            portfolio.stocks.forEach { realm.delete($0) }
+            realm.delete(portfolio)
+        }
+    }
+
+    func deleteStock(_ stock: Stock) {
+        try! realm.write {
+            realm.delete(stock)
+        }
+    }
+
 }

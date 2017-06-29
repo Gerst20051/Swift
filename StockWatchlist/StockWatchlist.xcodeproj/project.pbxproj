@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		00941F90BFB33EF3610A9AB4 /* Pods_StockWatchlistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E8FD7319472ABE1FA6104D /* Pods_StockWatchlistTests.framework */; };
 		36D60B361CB7A4AB78DC304C /* Pods_StockWatchlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D0E0CF4E9097472D3EEAF /* Pods_StockWatchlist.framework */; };
+		499D90D51F048CC000F15DB2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D90D41F048CC000F15DB2 /* Utils.swift */; };
+		499D90D71F049EE000F15DB2 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D90D61F049EE000F15DB2 /* Dialog.swift */; };
+		499D90D91F04A37100F15DB2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D90D81F04A37100F15DB2 /* TableViewCell.swift */; };
 		F07FFD088BE64130D0AC0D49 /* Pods_StockWatchlistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1239CD5DB1F55E4E79E3E3AB /* Pods_StockWatchlistUITests.framework */; };
 		F7E27CC71E972A8300DCF068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E27CC61E972A8300DCF068 /* AppDelegate.swift */; };
 		F7E27CCE1E972A8300DCF068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7E27CCD1E972A8300DCF068 /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 		143D0E0CF4E9097472D3EEAF /* Pods_StockWatchlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockWatchlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		199E7326BFC67AD91E902ED0 /* Pods-StockWatchlistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatchlistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockWatchlistTests/Pods-StockWatchlistTests.release.xcconfig"; sourceTree = "<group>"; };
 		1FE6CD27A2353DA97BDFD543 /* Pods-StockWatchlistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatchlistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockWatchlistUITests/Pods-StockWatchlistUITests.release.xcconfig"; sourceTree = "<group>"; };
+		499D90D41F048CC000F15DB2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/Utils.swift; sourceTree = "<group>"; };
+		499D90D61F049EE000F15DB2 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dialog.swift; path = Sources/Dialog.swift; sourceTree = "<group>"; };
+		499D90D81F04A37100F15DB2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = Sources/TableViewCell.swift; sourceTree = "<group>"; };
 		515E04A874A586C716ABD3A5 /* Pods-StockWatchlistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatchlistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockWatchlistTests/Pods-StockWatchlistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		900CA4BB3001BFB6AF40B87E /* Pods-StockWatchlistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatchlistUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockWatchlistUITests/Pods-StockWatchlistUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		95A41A7B18CC644A48B3DFCD /* Pods-StockWatchlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockWatchlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockWatchlist/Pods-StockWatchlist.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,12 +133,12 @@
 		F7E27CBA1E972A8300DCF068 = {
 			isa = PBXGroup;
 			children = (
+				D3960E95356908532DAD8C2C /* Frameworks */,
+				58A514DB97EAE6BE33BD60B9 /* Pods */,
+				F7E27CC41E972A8300DCF068 /* Products */,
 				F7E27CC51E972A8300DCF068 /* StockWatchlist */,
 				F7E27CDA1E972A8400DCF068 /* StockWatchlistTests */,
 				F7E27CE51E972A8400DCF068 /* StockWatchlistUITests */,
-				F7E27CC41E972A8300DCF068 /* Products */,
-				58A514DB97EAE6BE33BD60B9 /* Pods */,
-				D3960E95356908532DAD8C2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,10 +196,13 @@
 			children = (
 				F7E27CFC1E97381600DCF068 /* BaseViewController.swift */,
 				F7E27CFE1E97381600DCF068 /* Constants.swift */,
+				499D90D61F049EE000F15DB2 /* Dialog.swift */,
 				F7E27CFF1E97381600DCF068 /* Extensions.swift */,
 				F7E27D011E97381600DCF068 /* RealmControllers.swift */,
 				F7EE2C3F1F01F69A00587BFD /* RealmModels.swift */,
 				F7E27D021E97381600DCF068 /* RealmUtils.swift */,
+				499D90D81F04A37100F15DB2 /* TableViewCell.swift */,
+				499D90D41F048CC000F15DB2 /* Utils.swift */,
 				F7E27CF81E97306600DCF068 /* ViewController.swift */,
 			);
 			name = Sources;
@@ -536,9 +545,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E27D051E97381600DCF068 /* Constants.swift in Sources */,
+				499D90D71F049EE000F15DB2 /* Dialog.swift in Sources */,
 				F7EE2C401F01F69A00587BFD /* RealmModels.swift in Sources */,
+				499D90D51F048CC000F15DB2 /* Utils.swift in Sources */,
 				F7E27D081E97381600DCF068 /* RealmControllers.swift in Sources */,
 				F7E27D061E97381600DCF068 /* Extensions.swift in Sources */,
+				499D90D91F04A37100F15DB2 /* TableViewCell.swift in Sources */,
 				F7E27CF91E97306600DCF068 /* ViewController.swift in Sources */,
 				F7E27D091E97381600DCF068 /* RealmUtils.swift in Sources */,
 				F7E27CC71E972A8300DCF068 /* AppDelegate.swift in Sources */,
