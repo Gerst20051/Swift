@@ -27,17 +27,17 @@ class ViewController: BaseViewController {
         // createTableView()
         // createTabBar()
         // addContraintsToViews()
-        search()
+        // search()
     }
 
-    func search() {
-        _ = Cloud.searchPodcasts(keywords: "Comedy").then { podcasts -> Void in
-            for podcast in podcasts {
-                print("\(podcast.title!) - \(podcast.url!)")
-            }
-        }.catch { error in
-            print("error => \(error)")
-        }
-    }
+    // func search() {
+    //     _ = Cloud.searchPodcasts(keywords: "Comedy").then { podcasts -> Void in
+    //         for podcast in podcasts {
+    //             print("\(podcast.title!) - \(podcast.url!)")
+    //         }
+    //     }.catch { error in
+    //         print("error => \(error)")
+    //     }
+    // }
 
 }

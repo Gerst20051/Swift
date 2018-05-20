@@ -3,16 +3,16 @@ platform :ios, '9.0'
 target 'CalendarNotes' do
   use_frameworks!
 
-  pod 'Alamofire', '4.4.0'
-  pod 'AlamofireObjectMapper', '4.1.0'
-  pod 'Dollar', '6.2.0'
-  pod 'Material', '2.6.3'
-  pod 'PromiseKit', '4.1.7'
-  pod 'RealmSwift', '2.5.1'
-  pod 'Reveal-SDK', '8', :configurations => ['Debug']
-  pod 'SnapKit', '3.2.0'
+  pod 'Alamofire', '4.7.2'
+  pod 'AlamofireObjectMapper', '5.0.0'
+  pod 'Dollar', '7.1.0'
+  pod 'Material', '2.15.0'
+  pod 'PromiseKit', '6.2.7'
+  pod 'RealmSwift', '3.5.0'
+  pod 'Reveal-SDK', '14', :configurations => ['Debug']
+  pod 'SnapKit', '4.0.0'
   pod 'SwiftyTimer', '2.0.0'
-  pod 'SwiftyUserDefaults', '3.0.0'
+  pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
 
   target 'CalendarNotesTests' do
     inherit! :search_paths
