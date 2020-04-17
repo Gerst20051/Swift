@@ -11,13 +11,15 @@ import SwiftUI
 struct MainView: View {
 
     @State var showGame = false
+    @State var grid: [[String]] = []
+    @State var solutions: [String] = []
 
     var body: some View {
         Group {
             if showGame {
-                GameView()
+                GameView(grid: $grid, solutions: $solutions)
             } else {
-                WelcomeView(showGame: $showGame)
+                WelcomeView(showGame: $showGame, grid: $grid, solutions: $solutions)
             }
         }
     }

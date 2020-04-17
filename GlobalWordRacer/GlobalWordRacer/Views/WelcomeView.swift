@@ -6,11 +6,14 @@
 //  Copyright © 2020 Andrew Gerst. All rights reserved.
 //
 
+import Alamofire
 import SwiftUI
 
 struct WelcomeView: View {
 
     @Binding var showGame: Bool
+    @Binding var grid: [[String]]
+    @Binding var solutions: [String]
 
     @State var title = "Global Word Racer"
 
@@ -26,7 +29,16 @@ struct WelcomeView: View {
                 .padding(10)
 
             Button(
-                action: { self.showGame = true },
+                action: {
+                    AF.request("http://hnswave.co:8000/grid")
+                        .validate()
+                        .responseDecodable(of: GridAndSolutions.self) { response in
+                            guard let data = response.value else { return }
+                            self.grid = data.grid
+                            self.solutions = data.solutions
+                            self.showGame = true
+                        }
+                },
                 label: { Text("Join Game") }
             )
         }
@@ -37,7 +49,7 @@ struct WelcomeView: View {
 struct WelcomeView_Previews: PreviewProvider {
 
     static var previews: some View {
-        WelcomeView(showGame: .constant(false))
+        WelcomeView(showGame: .constant(false), grid: .constant([]), solutions: .constant([]))
     }
 
 }
