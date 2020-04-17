@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		F7F3620C2447DA6300812AED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3620B2447DA6300812AED /* AppDelegate.swift */; };
 		F7F3620E2447DA6300812AED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3620D2447DA6300812AED /* SceneDelegate.swift */; };
-		F7F362102447DA6300812AED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3620F2447DA6300812AED /* ContentView.swift */; };
 		F7F362122447DA6900812AED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F362112447DA6900812AED /* Assets.xcassets */; };
 		F7F362152447DA6900812AED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F362142447DA6900812AED /* Preview Assets.xcassets */; };
 		F7F362182447DA6900812AED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F362162447DA6900812AED /* LaunchScreen.storyboard */; };
 		F7F362232447DA6900812AED /* GlobalWordRacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F362222447DA6900812AED /* GlobalWordRacerTests.swift */; };
 		F7F3622E2447DA6900812AED /* GlobalWordRacerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3622D2447DA6900812AED /* GlobalWordRacerUITests.swift */; };
+		F7F3623C244936C300812AED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623B244936C300812AED /* GameView.swift */; };
+		F7F3623E244936F400812AED /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623D244936F400812AED /* WelcomeView.swift */; };
+		F7F3624024493CF300812AED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623F24493CF300812AED /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		F7F362082447DA6300812AED /* GlobalWordRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalWordRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F3620B2447DA6300812AED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7F3620D2447DA6300812AED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F7F3620F2447DA6300812AED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7F362112447DA6900812AED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7F362142447DA6900812AED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F7F362172447DA6900812AED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		F7F362292447DA6900812AED /* GlobalWordRacerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlobalWordRacerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F3622D2447DA6900812AED /* GlobalWordRacerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalWordRacerUITests.swift; sourceTree = "<group>"; };
 		F7F3622F2447DA6900812AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7F3623B244936C300812AED /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F7F3623D244936F400812AED /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F7F3623F24493CF300812AED /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				F7F3620B2447DA6300812AED /* AppDelegate.swift */,
-				F7F3620D2447DA6300812AED /* SceneDelegate.swift */,
-				F7F3620F2447DA6300812AED /* ContentView.swift */,
 				F7F362112447DA6900812AED /* Assets.xcassets */,
-				F7F362162447DA6900812AED /* LaunchScreen.storyboard */,
+				F7F3623B244936C300812AED /* GameView.swift */,
 				F7F362192447DA6900812AED /* Info.plist */,
+				F7F362162447DA6900812AED /* LaunchScreen.storyboard */,
+				F7F3623F24493CF300812AED /* MainView.swift */,
 				F7F362132447DA6900812AED /* Preview Content */,
+				F7F3620D2447DA6300812AED /* SceneDelegate.swift */,
+				F7F3623D244936F400812AED /* WelcomeView.swift */,
 			);
 			path = GlobalWordRacer;
 			sourceTree = "<group>";
@@ -269,7 +275,9 @@
 			files = (
 				F7F3620C2447DA6300812AED /* AppDelegate.swift in Sources */,
 				F7F3620E2447DA6300812AED /* SceneDelegate.swift in Sources */,
-				F7F362102447DA6300812AED /* ContentView.swift in Sources */,
+				F7F3623C244936C300812AED /* GameView.swift in Sources */,
+				F7F3624024493CF300812AED /* MainView.swift in Sources */,
+				F7F3623E244936F400812AED /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
