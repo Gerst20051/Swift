@@ -16,16 +16,24 @@ struct GameView: View {
     var body: some View {
         VStack {
             Text("Global Word Racer")
-            buildBoard(grid)
+            Spacer()
+            buildBoard()
+            Spacer()
         }
     }
 
-    func buildBoard(_ board: [[String]]) -> some View {
-        VStack(spacing: 5) {
-            ForEach(board, id: \.self) { row in
-                HStack(spacing: 5) {
-                    ForEach(row, id: \.self) { cell in
-                        Text(cell)
+    func buildBoard() -> some View {
+        VStack(spacing: 20) {
+            ForEach(grid.indices) { rowIndex in
+                HStack {
+                    Group {
+                        Spacer()
+                        ForEach(self.grid[rowIndex].indices) { cellIndex in
+                            Group {
+                                LetterView(text: self.$grid[rowIndex][cellIndex])
+                                Spacer()
+                            }
+                        }
                     }
                 }
             }
@@ -37,7 +45,12 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
 
     static var previews: some View {
-        GameView(grid: .constant([]), solutions: .constant([]))
+        GameView(grid: .constant([
+            ["A", "B", "C", "D"],
+            ["E", "Qu", "G", "H"],
+            ["I", "J", "K", "L"],
+            ["M", "N", "O", "P"]
+        ]), solutions: .constant([]))
     }
 
 }
