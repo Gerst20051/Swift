@@ -1,0 +1,1 @@
+Score points by finding words in the grid. The longer the word the more points you earn!

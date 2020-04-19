@@ -1,0 +1,6 @@
+fastlane/Preview.html
+fastlane/report.xml
+*.mobileprovision
+*.zip
+*.ipa
+*.cer

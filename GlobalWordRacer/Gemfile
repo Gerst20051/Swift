@@ -6,3 +6,12 @@ end
 #> sudo gem install bundler
 #> bundle install
 #> bundle exec fastlane
+#> bundle exec fastlane ios release
+
+# It looks like your project isn't set up to do automatic version incrementing
+# To enable fastlane to handle automatic version incrementing for you, please follow this guide:
+#     https://developer.apple.com/library/content/qa/qa1827/_index.html
+# Afterwards check out the fastlane docs on how to set up automatic build increments
+#     https://docs.fastlane.tools/getting-started/ios/beta-deployment/#best-practices
+# 📸  Learn more about how to automatically generate localized App Store screenshots:
+#         https://docs.fastlane.tools/getting-started/ios/screenshots/

@@ -23,7 +23,7 @@
 		F7F3623C244936C300812AED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623B244936C300812AED /* GameView.swift */; };
 		F7F3623E244936F400812AED /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623D244936F400812AED /* WelcomeView.swift */; };
 		F7F3624024493CF300812AED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623F24493CF300812AED /* MainView.swift */; };
-		F7F36243244983FF00812AED /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F7F36242244983FF00812AED /* Alamofire */; };
+		F7F36243244983FF00812AED /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F7F36242244983FF00812AED /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7F36243244983FF00812AED /* Alamofire in Frameworks */,
+				F7F36243244983FF00812AED /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +195,7 @@
 			);
 			name = GlobalWordRacer;
 			packageProductDependencies = (
-				F7F36242244983FF00812AED /* Alamofire */,
+				F7F36242244983FF00812AED /* SwiftPackageProductDependency */,
 			);
 			productName = GlobalWordRacer;
 			productReference = F7F362082447DA6300812AED /* GlobalWordRacer.app */;
@@ -249,13 +249,16 @@
 				TargetAttributes = {
 					F7F362072447DA6300812AED = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 					};
 					F7F3621D2447DA6900812AED = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = F7F362072447DA6300812AED;
 					};
 					F7F362282447DA6900812AED = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = F7F362072447DA6300812AED;
 					};
 				};
@@ -270,7 +273,7 @@
 			);
 			mainGroup = F7F361FF2447DA6300812AED;
 			packageReferences = (
-				F7F36241244983FF00812AED /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F7F36241244983FF00812AED /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = F7F362092447DA6300812AED /* Products */;
 			projectDirPath = "";
@@ -491,8 +494,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GlobalWordRacer/Preview Content\"";
-				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				DEVELOPMENT_TEAM = 2DE824Y55C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GlobalWordRacer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -503,6 +507,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -511,8 +516,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GlobalWordRacer/Preview Content\"";
-				DEVELOPMENT_TEAM = VLF9HQZ98F;
+				DEVELOPMENT_TEAM = 2DE824Y55C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GlobalWordRacer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,6 +529,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -652,7 +659,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F7F36241244983FF00812AED /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		F7F36241244983FF00812AED /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -663,9 +670,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F7F36242244983FF00812AED /* Alamofire */ = {
+		F7F36242244983FF00812AED /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F7F36241244983FF00812AED /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = F7F36241244983FF00812AED /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
