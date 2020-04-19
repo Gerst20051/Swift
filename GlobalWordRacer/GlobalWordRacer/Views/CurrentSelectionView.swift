@@ -24,15 +24,11 @@ struct CurrentSelectionView: View {
                 .font(.title)
                 .padding()
                 .frame(width: UIScreen.main.bounds.width - 60)
-                .background(LinearGradient(
-                    gradient: Gradient(colors: [.green, .blue]),
-                    startPoint: .leading,
-                    endPoint: .trailing
-                ))
+                .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(40)
         }
-            .padding(.top, 40)
+            .padding(.top, 20)
     }
 
 }

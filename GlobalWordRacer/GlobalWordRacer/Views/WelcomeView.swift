@@ -17,7 +17,14 @@ struct WelcomeView: View {
 
     var body: some View {
         VStack {
-            TitleView(title: "Global Word Racer")
+            Spacer()
+
+            Text("Global Word Racer")
+                .fontWeight(.semibold)
+                .font(.system(size: 40))
+                .frame(width: UIScreen.main.bounds.width, height: 140)
+                .background(Color.blue)
+                .foregroundColor(.white)
 
             Button(
                 action: {
@@ -36,6 +43,8 @@ struct WelcomeView: View {
                 }
             )
                 .padding(40)
+
+            Spacer()
         }
     }
 

@@ -22,6 +22,8 @@ struct MainView: View {
                 WelcomeView(showGame: $showGame, grid: $grid, solutions: $solutions)
             }
         }
+            .edgesIgnoringSafeArea(.all)
+            .background(Color.white)
     }
 
 }

@@ -14,29 +14,37 @@ struct FoundSolutionsView: View {
 
     var body: some View {
         VStack {
-            Text(list.count > 0 ? "\(list.count) Word\(list.count > 1 ? "s": "") Found (\(list.count * 20) Points)" : "No Words Found")
+            Text(
+                list.count > 0
+                    ? "\(list.count) Word\(list.count > 1 ? "s": "") Found (\(list.map(self.pointsForWord).reduce(0, +)) Points)"
+                    : "No Words Found"
+            )
+                .foregroundColor(.black)
                 .fontWeight(.semibold)
                 .font(.headline)
-                .padding(.top)
 
             ScrollView(.vertical) {
                 VStack {
                     ForEach(list.reversed(), id: \.self) { word in
                         HStack {
                             Text(word)
+                                .foregroundColor(.black)
                             Spacer()
                             Text("\(self.pointsForWord(word))")
+                                .foregroundColor(.black)
                         }
                     }
                 }.frame(width: UIScreen.main.bounds.width - 60)
             }
 
             Spacer()
-        }.frame(width: UIScreen.main.bounds.width - 60, height: 160)
+        }
+            .frame(width: UIScreen.main.bounds.width - 60, height: 160)
     }
 
     func pointsForWord(_ word: String) -> Int {
-        return 20
+        let wordPointsDistribution = [0, 0, 0, 10, 20, 40, 80, 120, 140, 220, 300]
+        return word.count > 11 ? 400 : wordPointsDistribution[word.count]
     }
 
 }

@@ -12,7 +12,6 @@
 		F795E94E244B916D00CA9AF5 /* CurrentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795E94D244B916D00CA9AF5 /* CurrentSelectionView.swift */; };
 		F795E950244B950D00CA9AF5 /* FoundSolutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795E94F244B950D00CA9AF5 /* FoundSolutionsView.swift */; };
 		F795E952244B99C300CA9AF5 /* InvalidWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795E951244B99C300CA9AF5 /* InvalidWordView.swift */; };
-		F795E954244BC14500CA9AF5 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795E953244BC14500CA9AF5 /* TitleView.swift */; };
 		F7F3620C2447DA6300812AED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3620B2447DA6300812AED /* AppDelegate.swift */; };
 		F7F3620E2447DA6300812AED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3620D2447DA6300812AED /* SceneDelegate.swift */; };
 		F7F362122447DA6900812AED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F362112447DA6900812AED /* Assets.xcassets */; };
@@ -23,7 +22,7 @@
 		F7F3623C244936C300812AED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623B244936C300812AED /* GameView.swift */; };
 		F7F3623E244936F400812AED /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623D244936F400812AED /* WelcomeView.swift */; };
 		F7F3624024493CF300812AED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3623F24493CF300812AED /* MainView.swift */; };
-		F7F36243244983FF00812AED /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F7F36242244983FF00812AED /* SwiftPackageProductDependency */; };
+		F7F36243244983FF00812AED /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F7F36242244983FF00812AED /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		F795E94D244B916D00CA9AF5 /* CurrentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSelectionView.swift; sourceTree = "<group>"; };
 		F795E94F244B950D00CA9AF5 /* FoundSolutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundSolutionsView.swift; sourceTree = "<group>"; };
 		F795E951244B99C300CA9AF5 /* InvalidWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidWordView.swift; sourceTree = "<group>"; };
-		F795E953244BC14500CA9AF5 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F7F362082447DA6300812AED /* GlobalWordRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalWordRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F3620B2447DA6300812AED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7F3620D2447DA6300812AED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7F36243244983FF00812AED /* BuildFile in Frameworks */,
+				F7F36243244983FF00812AED /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +109,6 @@
 				F795E951244B99C300CA9AF5 /* InvalidWordView.swift */,
 				F795E94B244B86E200CA9AF5 /* LetterView.swift */,
 				F7F3623F24493CF300812AED /* MainView.swift */,
-				F795E953244BC14500CA9AF5 /* TitleView.swift */,
 				F7F3623D244936F400812AED /* WelcomeView.swift */,
 			);
 			path = Views;
@@ -195,7 +192,7 @@
 			);
 			name = GlobalWordRacer;
 			packageProductDependencies = (
-				F7F36242244983FF00812AED /* SwiftPackageProductDependency */,
+				F7F36242244983FF00812AED /* Alamofire */,
 			);
 			productName = GlobalWordRacer;
 			productReference = F7F362082447DA6300812AED /* GlobalWordRacer.app */;
@@ -273,7 +270,7 @@
 			);
 			mainGroup = F7F361FF2447DA6300812AED;
 			packageReferences = (
-				F7F36241244983FF00812AED /* RemoteSwiftPackageReference */,
+				F7F36241244983FF00812AED /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F7F362092447DA6300812AED /* Products */;
 			projectDirPath = "";
@@ -326,7 +323,6 @@
 				F7F3623C244936C300812AED /* GameView.swift in Sources */,
 				F795E950244B950D00CA9AF5 /* FoundSolutionsView.swift in Sources */,
 				F7F3624024493CF300812AED /* MainView.swift in Sources */,
-				F795E954244BC14500CA9AF5 /* TitleView.swift in Sources */,
 				F795E949244A3BC400CA9AF5 /* GridAndSolutions.swift in Sources */,
 				F7F3623E244936F400812AED /* WelcomeView.swift in Sources */,
 			);
@@ -659,7 +655,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F7F36241244983FF00812AED /* RemoteSwiftPackageReference */ = {
+		F7F36241244983FF00812AED /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -670,9 +666,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F7F36242244983FF00812AED /* SwiftPackageProductDependency */ = {
+		F7F36242244983FF00812AED /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F7F36241244983FF00812AED /* RemoteSwiftPackageReference */;
+			package = F7F36241244983FF00812AED /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

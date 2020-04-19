@@ -19,12 +19,18 @@ struct GameView: View {
 
     var body: some View {
         VStack {
-            TitleView(title: "Global Word Racer")
-            Spacer()
+            Text("Global Word Racer")
+                .fontWeight(.semibold)
+                .font(.system(size: 40))
+                .frame(width: UIScreen.main.bounds.width, height: 60)
+                .padding(.top, 80)
+                .background(Color.blue)
+                .foregroundColor(.white)
             buildBoard()
             CurrentSelectionView(text: $currentSelection, handler: selectionHandler)
             InvalidWordView(word: $invalidWord, duplicate: $duplicateWord)
             FoundSolutionsView(list: $foundSolutions)
+            Spacer()
         }
     }
 
@@ -44,6 +50,7 @@ struct GameView: View {
                 }
             }
         }
+            .padding(.top, 20)
     }
 
     func letterHandler(letter: String) -> Void {

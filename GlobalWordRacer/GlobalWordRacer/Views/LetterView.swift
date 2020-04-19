@@ -22,11 +22,7 @@ struct LetterView: View {
                 .font(.title)
                 .frame(width: 40)
                 .padding()
-                .background(LinearGradient(
-                    gradient: Gradient(colors: [Color.green, Color.blue]),
-                    startPoint: .leading,
-                    endPoint: .trailing
-                ))
+                .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(40)
         }
