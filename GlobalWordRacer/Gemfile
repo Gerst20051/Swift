@@ -1,0 +1,8 @@
+source 'https://rubygems.org' do
+  gem 'fastlane', '2.145.0'
+end
+
+# Install Bundler
+#> sudo gem install bundler
+#> bundle install
+#> bundle exec fastlane

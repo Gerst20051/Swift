@@ -1,5 +1,5 @@
 //
-//  LetterView.swift
+//  CurrentSelectionView.swift
 //  GlobalWordRacer
 //
 //  Created by Andrew Gerst on 4/18/20.
@@ -8,40 +8,39 @@
 
 import SwiftUI
 
-struct LetterView: View {
+struct CurrentSelectionView: View {
 
     @Binding var text: String
-    var handler: (String) -> Void
+    var handler: () -> Void
 
     var body: some View {
         Button(action: {
-            self.handler(self.text)
+            if (self.text != "") {
+                self.handler()
+            }
         }) {
-            Text(text)
+            Text(text.count > 0 ? text.uppercased() : " ")
                 .fontWeight(.semibold)
                 .font(.title)
-                .frame(width: 40)
                 .padding()
+                .frame(width: UIScreen.main.bounds.width - 60)
                 .background(LinearGradient(
-                    gradient: Gradient(colors: [Color.green, Color.blue]),
+                    gradient: Gradient(colors: [.green, .blue]),
                     startPoint: .leading,
                     endPoint: .trailing
                 ))
                 .foregroundColor(.white)
                 .cornerRadius(40)
         }
+            .padding(.top, 40)
     }
 
 }
 
-struct LetterView_Previews: PreviewProvider {
+struct CurrentSelectionView_Previews: PreviewProvider {
 
     static var previews: some View {
-        VStack(spacing: 20) {
-            LetterView(text: .constant("A"), handler: { (letter: String) in })
-            LetterView(text: .constant("Qu"), handler: { (letter: String) in })
-            LetterView(text: .constant("Z"), handler: { (letter: String) in })
-        }
+        CurrentSelectionView(text: .constant("Quest"), handler: {})
     }
 
 }

@@ -15,18 +15,9 @@ struct WelcomeView: View {
     @Binding var grid: [[String]]
     @Binding var solutions: [String]
 
-    @State var title = "Global Word Racer"
-
     var body: some View {
         VStack {
-            Text(title)
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: 50
-                )
-                .background(Color.blue)
-                .foregroundColor(Color.white)
-                .padding(10)
+            TitleView(title: "Global Word Racer")
 
             Button(
                 action: {
@@ -39,8 +30,12 @@ struct WelcomeView: View {
                             self.showGame = true
                         }
                 },
-                label: { Text("Join Game") }
+                label: {
+                    Text("Join Game")
+                        .font(.system(size: 40))
+                }
             )
+                .padding(40)
         }
     }
 
