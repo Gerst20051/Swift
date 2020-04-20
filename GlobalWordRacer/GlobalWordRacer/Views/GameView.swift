@@ -16,6 +16,10 @@ struct GameView: View {
     @State private var foundSolutions: [String] = []
     @State private var invalidWord = ""
     @State private var duplicateWord = ""
+    @State private var hasRoundEnded = false
+    @State private var timeRemaining: Int = 30
+    let gameTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let loadNewGameHandler: (_ callback: @escaping () -> Void) -> Void
 
     var body: some View {
         VStack {
@@ -27,9 +31,31 @@ struct GameView: View {
                 .background(Color.blue)
                 .foregroundColor(.white)
             buildBoard()
-            CurrentSelectionView(text: $currentSelection, handler: selectionHandler)
+            CurrentSelectionView(text: $currentSelection, hasRoundEnded: $hasRoundEnded, handler: selectionHandler)
+            Text(timeRemaining > 0
+                ? "This Round Ends In \(timeRemaining) Seconds"
+                : "Next Round Starts In \(16 + timeRemaining) Seconds"
+            )
+                .padding(.top)
+                .foregroundColor(.black)
+                .onReceive(gameTimer) { input in
+                    self.timeRemaining -= 1
+                    if (self.timeRemaining <= 0) {
+                        self.hasRoundEnded = true
+                        self.currentSelection = ""
+                        self.invalidWord = ""
+                        self.duplicateWord = ""
+                    }
+                    if (self.timeRemaining <= -15) {
+                        self.loadNewGameHandler({
+                            self.timeRemaining = 30
+                            self.hasRoundEnded = false
+                            self.foundSolutions = []
+                        })
+                    }
+                }
             InvalidWordView(word: $invalidWord, duplicate: $duplicateWord)
-            FoundSolutionsView(list: $foundSolutions)
+            FoundSolutionsView(list: $foundSolutions, solutions: $solutions, hasRoundEnded: $hasRoundEnded)
             Spacer()
         }
     }
@@ -42,7 +68,7 @@ struct GameView: View {
                         Spacer()
                         ForEach(self.grid[rowIndex].indices) { cellIndex in
                             Group {
-                                LetterView(text: self.$grid[rowIndex][cellIndex], handler: self.letterHandler)
+                                LetterView(text: self.$grid[rowIndex][cellIndex], hasRoundEnded: self.$hasRoundEnded, handler: self.letterHandler)
                                 Spacer()
                             }
                         }
@@ -82,7 +108,7 @@ struct GameView_Previews: PreviewProvider {
             ["E", "Qu", "G", "H"],
             ["I", "J", "K", "L"],
             ["M", "N", "O", "P"]
-        ]), solutions: .constant([]))
+        ]), solutions: .constant([]), loadNewGameHandler: { callback in })
     }
 
 }

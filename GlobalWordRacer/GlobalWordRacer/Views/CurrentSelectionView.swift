@@ -11,7 +11,8 @@ import SwiftUI
 struct CurrentSelectionView: View {
 
     @Binding var text: String
-    var handler: () -> Void
+    @Binding var hasRoundEnded: Bool
+    let handler: () -> Void
 
     var body: some View {
         Button(action: {
@@ -19,15 +20,16 @@ struct CurrentSelectionView: View {
                 self.handler()
             }
         }) {
-            Text(text.count > 0 ? text.uppercased() : " ")
+            Text(hasRoundEnded ? "ROUND OVER" : text.count > 0 ? text.uppercased() : " ")
                 .fontWeight(.semibold)
                 .font(.title)
                 .padding()
                 .frame(width: UIScreen.main.bounds.width - 60)
-                .background(Color.blue)
+                .background(hasRoundEnded ? Color.gray : Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(40)
         }
+            .disabled(hasRoundEnded)
             .padding(.top, 20)
     }
 
@@ -36,7 +38,7 @@ struct CurrentSelectionView: View {
 struct CurrentSelectionView_Previews: PreviewProvider {
 
     static var previews: some View {
-        CurrentSelectionView(text: .constant("Quest"), handler: {})
+        CurrentSelectionView(text: .constant("Quest"), hasRoundEnded: .constant(false), handler: {})
     }
 
 }

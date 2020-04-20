@@ -11,7 +11,8 @@ import SwiftUI
 struct LetterView: View {
 
     @Binding var text: String
-    var handler: (String) -> Void
+    @Binding var hasRoundEnded: Bool
+    let handler: (String) -> Void
 
     var body: some View {
         Button(action: {
@@ -22,10 +23,11 @@ struct LetterView: View {
                 .font(.title)
                 .frame(width: 40)
                 .padding()
-                .background(Color.blue)
+                .background(hasRoundEnded ? Color.gray : Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(40)
         }
+            .disabled(hasRoundEnded)
     }
 
 }
@@ -34,9 +36,9 @@ struct LetterView_Previews: PreviewProvider {
 
     static var previews: some View {
         VStack(spacing: 20) {
-            LetterView(text: .constant("A"), handler: { (letter: String) in })
-            LetterView(text: .constant("Qu"), handler: { (letter: String) in })
-            LetterView(text: .constant("Z"), handler: { (letter: String) in })
+            LetterView(text: .constant("A"), hasRoundEnded: .constant(false), handler: { (letter: String) in })
+            LetterView(text: .constant("Qu"), hasRoundEnded: .constant(false), handler: { (letter: String) in })
+            LetterView(text: .constant("Z"), hasRoundEnded: .constant(false), handler: { (letter: String) in })
         }
     }
 

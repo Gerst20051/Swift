@@ -11,13 +11,17 @@ import SwiftUI
 struct FoundSolutionsView: View {
 
     @Binding var list: [String]
+    @Binding var solutions: [String]
+    @Binding var hasRoundEnded: Bool
 
     var body: some View {
         VStack {
             Text(
-                list.count > 0
-                    ? "\(list.count) Word\(list.count > 1 ? "s": "") Found (\(list.map(self.pointsForWord).reduce(0, +)) Points)"
-                    : "No Words Found"
+                hasRoundEnded
+                    ? "Full Solutions List"
+                    : list.count > 0
+                        ? "\(list.count) Word\(list.count > 1 ? "s": "") Found (\(list.map(self.pointsForWord).reduce(0, +)) Points)"
+                        : "No Words Found"
             )
                 .foregroundColor(.black)
                 .fontWeight(.semibold)
@@ -25,13 +29,13 @@ struct FoundSolutionsView: View {
 
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(list.reversed(), id: \.self) { word in
+                    ForEach(hasRoundEnded ? solutions.sorted { $0.count > $1.count } : list.reversed(), id: \.self) { word in
                         HStack {
                             Text(word)
-                                .foregroundColor(.black)
+                                .foregroundColor(self.hasRoundEnded && self.list.contains(word) ? .green : .black)
                             Spacer()
                             Text("\(self.pointsForWord(word))")
-                                .foregroundColor(.black)
+                                .foregroundColor(self.hasRoundEnded && self.list.contains(word) ? .green : .black)
                         }
                     }
                 }.frame(width: UIScreen.main.bounds.width - 60)
@@ -52,7 +56,7 @@ struct FoundSolutionsView: View {
 struct FoundSolutionsView_Previews: PreviewProvider {
 
     static var previews: some View {
-        FoundSolutionsView(list: .constant(["Word1", "Word2"]))
+        FoundSolutionsView(list: .constant(["Word1", "Word2"]), solutions: .constant(["Word1", "Word2"]), hasRoundEnded: .constant(false))
     }
 
 }
